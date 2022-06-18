@@ -62498,7 +62498,7 @@ const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('9.1.1
 /*!********************************************************************************!*\
   !*** ./node_modules/@scullyio/ng-lib/__ivy_ngcc__/fesm2015/scullyio-ng-lib.js ***!
   \********************************************************************************/
-/*! exports provided: IdleMonitorService, ScullyContentComponent, ScullyContentModule, ScullyLibModule, ScullyRoutesService, TransferStateService, isScullyGenerated, isScullyRunning, ɵb, ɵc */
+/*! exports provided: IdleMonitorService, ScullyContentComponent, ScullyContentModule, ScullyLibModule, ScullyRoutesService, TransferStateService, dropEndingSlash, isScullyGenerated, isScullyRunning, ɵb */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -62509,11 +62509,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScullyLibModule", function() { return ScullyLibModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScullyRoutesService", function() { return ScullyRoutesService; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransferStateService", function() { return TransferStateService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dropEndingSlash", function() { return dropEndingSlash; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isScullyGenerated", function() { return isScullyGenerated; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isScullyRunning", function() { return isScullyRunning; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return ScullyDefaultSettings; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return SCULLY_LIB_CONFIG; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return SCULLY_LIB_CONFIG; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/@scullyio/ng-lib/node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
@@ -62529,11 +62529,12 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * @fileoverview added by tsickle
  * Generated from: lib/config/scully-config.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @record
  */
+
 
 
 
@@ -62544,20 +62545,47 @@ if (false) {}
 const ScullyDefaultSettings = {
     useTransferState: true,
     alwaysMonitor: false,
-    manualIdle: false
+    manualIdle: false,
+    baseURIForScullyContent: 'http://localhost:1668',
 };
 /** @type {?} */
 const SCULLY_LIB_CONFIG = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["InjectionToken"]('scullyLibConfig', {
     factory: (/**
      * @return {?}
      */
-    () => ScullyDefaultSettings)
+    () => ScullyDefaultSettings),
+});
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/utils/basePathOnly.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * Take a string, preferably resembling an URL, take out the search params, the anchors, and the ending slash
+ * \@param str
+ * @type {?}
+ */
+const basePathOnly = (/**
+ * @param {?} str
+ * @return {?}
+ */
+(str) => {
+    if (str.includes('#')) {
+        str = str.split('#')[0];
+    }
+    if (str.includes('?')) {
+        str = str.split('?')[0];
+    }
+    /** @type {?} */
+    const cleanedUpVersion = str.endsWith('/') ? str.slice(0, -1) : str;
+    return cleanedUpVersion;
 });
 
 /**
  * @fileoverview added by tsickle
  * Generated from: lib/utils/fetchHttp.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @template T
@@ -62598,7 +62626,7 @@ function fetchHttp(url, responseType = 'json') {
 /**
  * @fileoverview added by tsickle
  * Generated from: lib/utils/isScully.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 // tslint:disable: no-string-literal
 /** @type {?} */
@@ -62615,7 +62643,7 @@ const isScullyGenerated = (/**
 /**
  * @fileoverview added by tsickle
  * Generated from: lib/utils/merge-paths.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @param {?} base
@@ -62634,34 +62662,8 @@ function mergePaths(base, path) {
 
 /**
  * @fileoverview added by tsickle
- * Generated from: lib/utils/basePathOnly.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * Take a string, preferably resembling an URL, take out the search params, the anchors, and the ending slash
- * \@param str
- * @type {?}
- */
-const basePathOnly = (/**
- * @param {?} str
- * @return {?}
- */
-(str) => {
-    if (str.includes('#')) {
-        str = str.split('#')[0];
-    }
-    if (str.includes('?')) {
-        str = str.split('?')[0];
-    }
-    /** @type {?} */
-    const cleanedUpVersion = str.endsWith('/') ? str.slice(0, -1) : str;
-    return cleanedUpVersion;
-});
-
-/**
- * @fileoverview added by tsickle
  * Generated from: lib/transfer-state/transfer-state.service.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const SCULLY_SCRIPT_ID = `ScullyIO-transfer-state`;
@@ -62704,18 +62706,18 @@ class TransferStateService {
          * @param {?} state
          * @return {?}
          */
-        state => state !== undefined)));
+        (state) => state !== undefined)));
         // emit the next url when routing is complete
         this.nextUrl = this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
          * @param {?} e
          * @return {?}
          */
-        e => e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationStart"])), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])((/**
+        (e) => e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationStart"])), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])((/**
          * @param {?} e
          * @return {?}
          */
         (e) => {
-            if (this.initialUrl === e.url) {
+            if (basePathOnly(this.initialUrl) === basePathOnly(e.url)) {
                 /** don't kick off on initial load to prevent flicker */
                 this.initialUrl = initialStateDone;
                 return rxjs__WEBPACK_IMPORTED_MODULE_3__["NEVER"];
@@ -62736,7 +62738,7 @@ class TransferStateService {
          * @param {?} ev
          * @return {?}
          */
-        ev => ev instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"] && ev.url === e.url)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["first"])()))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
+        (ev) => ev instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"] && ev.url === e.url)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["first"])()))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
          * @param {?} ev
          * @return {?}
          */
@@ -62746,9 +62748,7 @@ class TransferStateService {
      * @return {?}
      */
     startMonitoring() {
-        if (window &&
-            window['ScullyIO-injected'] &&
-            window['ScullyIO-injected'].inlineStateOnly) {
+        if (window && window['ScullyIO-injected'] && window['ScullyIO-injected'].inlineStateOnly) {
             this.inlineOnly = true;
         }
         this.setupEnvForTransferState();
@@ -62772,10 +62772,7 @@ class TransferStateService {
         else if (isScullyGenerated()) {
             // On the client AFTER scully rendered it
             this.initialUrl = window.location.pathname || '__no_NO_no__';
-            this.initialUrl =
-                this.initialUrl !== '/' && this.initialUrl.endsWith('/')
-                    ? this.initialUrl.slice(0, -1)
-                    : this.initialUrl;
+            this.initialUrl = this.initialUrl !== '/' && this.initialUrl.endsWith('/') ? this.initialUrl.slice(0, -1) : this.initialUrl;
             /** set the initial state */
             this.stateBS.next((window && window[SCULLY_SCRIPT_ID]) || {});
         }
@@ -62805,7 +62802,9 @@ class TransferStateService {
     getState(name) {
         /** start of the fetch for the current active route. */
         this.fetchTransferState();
-        return this.state$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["pluck"])(name));
+        return this.state$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["pluck"])(name)
+        // tap((data) => console.log('tss', data))
+        );
     }
     /**
      * Read the current state, and see if it has an value for the name.
@@ -62818,14 +62817,12 @@ class TransferStateService {
     }
     /**
      * Read the current state, and see if it has an value for the name.
-     * Checks also if there is actually an value in the state.
+     * ys also if there is actually an value in the state.
      * @param {?} name
      * @return {?}
      */
     stateKeyHasValue(name) {
-        return (this.stateBS.value &&
-            this.stateBS.value.hasOwnProperty(name) &&
-            this.stateBS.value[name] != null);
+        return this.stateBS.value && this.stateBS.value.hasOwnProperty(name) && this.stateBS.value[name] != null;
     }
     /**
      * SetState will update the script in the generated page with data added.
@@ -62847,7 +62844,7 @@ class TransferStateService {
      */
     saveState(newState) {
         if (isScullyRunning()) {
-            this.script.textContent = `window['${SCULLY_SCRIPT_ID}']=${SCULLY_STATE_START}${JSON.stringify(newState)}${SCULLY_STATE_END}`;
+            this.script.textContent = `{window['${SCULLY_SCRIPT_ID}']=_u(\`${SCULLY_STATE_START}${escapeHtml(JSON.stringify(newState))}${SCULLY_STATE_END}\`);function _u(t){t=t.split('${SCULLY_STATE_START}')[1].split('${SCULLY_STATE_END}')[0];const u={'_~b~': "${'`'}",'_~q~': "'",'_~o~': '$','_~s~': '/','_~l~': '<','_~g~': '>'};return JSON.parse(t.replace(/_~d~/g,'\\\\"').replace(/_~[^]~/g, (s) => u[s]).replace(/\\n/g,'\\\\n').replace(/\\t/g,'\\\\t').replace(/\\r/g,'\\\\r'));}}`;
         }
     }
     /**
@@ -62885,7 +62882,7 @@ class TransferStateService {
          * @param {?} state
          * @return {?}
          */
-        state => this.setState(name, state))));
+        (state) => this.setState(name, state))));
     }
     /**
      * @private
@@ -62905,13 +62902,13 @@ class TransferStateService {
              * @param {?} part
              * @return {?}
              */
-            part => part.trim() !== ''))[0]);
+            (part) => part.trim() !== ''))[0]);
             /** put this in the next event cycle so the correct route can be read */
             yield new Promise((/**
              * @param {?} r
              * @return {?}
              */
-            r => setTimeout(r, 0)));
+            (r) => setTimeout(r, 0)));
             /**
              * get the current url
              * @type {?}
@@ -62932,17 +62929,17 @@ class TransferStateService {
              * @param {?} url
              * @return {?}
              */
-            url => base(url) === this.currentBaseUrl)), 
+            (url) => base(url) === this.currentBaseUrl)), 
             // Get the next route's data from the the index or data file
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])((/**
              * @param {?} url
              * @return {?}
              */
-            url => this.inlineOnly ? this.readFromIndex(url) : this.readFromJson(url))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])((/**
+            (url) => (this.inlineOnly ? this.readFromIndex(url) : this.readFromJson(url)))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])((/**
              * @param {?} e
              * @return {?}
              */
-            e => {
+            (e) => {
                 // TODO: come up with better error text.
                 /** the developer needs to know, but its not fatal, so just return an empty state */
                 console.warn('Error while loading of parsing Scully state:', e);
@@ -62951,7 +62948,7 @@ class TransferStateService {
              * @param {?} newState
              * @return {?}
              */
-            newState => {
+            (newState) => {
                 /** and activate the state in the components. on any error it will be empty */
                 this.stateBS.next(newState);
             })))
@@ -62965,7 +62962,7 @@ class TransferStateService {
                 () => {
                     /** reset the currentBaseUrl */
                     this.currentBaseUrl = '//';
-                })
+                }),
             });
         });
     }
@@ -62975,7 +62972,7 @@ class TransferStateService {
      * @return {?}
      */
     readFromJson(url) {
-        return fetchHttp(mergePaths(url, '/data.json'));
+        return fetchHttp(dropPreSlash(mergePaths(url, '/data.json')));
     }
     /**
      * @private
@@ -62983,16 +62980,14 @@ class TransferStateService {
      * @return {?}
      */
     readFromIndex(url) {
-        return fetchHttp(url + '/index.html', 'text').then((/**
+        return fetchHttp(dropPreSlash(mergePaths(url, '/index.html')), 'text').then((/**
          * @param {?} html
          * @return {?}
          */
         (html) => {
             /** @type {?} */
-            const newStateStr = html
-                .split(SCULLY_STATE_START)[1]
-                .split(SCULLY_STATE_END)[0];
-            return JSON.parse(newStateStr);
+            const newStateStr = html.split(SCULLY_STATE_START)[1].split(SCULLY_STATE_END)[0];
+            return JSON.parse(unescapeHtml(newStateStr));
         }));
     }
 }
@@ -63013,26 +63008,84 @@ TransferStateService.ctorParameters = () => [
                 args: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["DOCUMENT"]]
             }] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
 if (false) {}
+/**
+ * @param {?} string
+ * @return {?}
+ */
+function dropPreSlash(string) {
+    return string.startsWith('/') ? string.slice(1) : string;
+}
+/**
+ * we need to escape our HTML to prevent XXS,
+ * It needs to be custom, because the content can already contain html-escaped sequences
+ *
+ * @param {?} text
+ * @return {?}
+ */
+function escapeHtml(text) {
+    /** @type {?} */
+    const escapedText = {
+        "'": '_~q~',
+        $: '_~o~',
+        '`': '_~b~',
+        '/': '_~s~',
+        '<': '_~l~',
+        '>': '_~g~',
+    };
+    return (text
+        /** escape the json */
+        .replace(/[\$`'<>\/]/g, (/**
+     * @param {?} s
+     * @return {?}
+     */
+    (s) => escapedText[s]))
+        /** replace escaped double-quotes with single */
+        .replace(/\\\"/g, `_~d~`));
+}
+/**
+ * Unescape our custom escaped texts
+ * @param {?} text
+ * @return {?}
+ */
+function unescapeHtml(text) {
+    /** @type {?} */
+    const unescapedText = {
+        '_~q~': "'",
+        '_~b~': '`',
+        '_~o~': '$',
+        '_~s~': '/',
+        '_~l~': '<',
+        '_~g~': '>',
+    };
+    return (text
+        /** put back escaped double quotes to make valid json again */
+        .replace(/_~d~/g, `\\"`)
+        /** replace the custom escapes */
+        .replace(/_~[^]~/g, (/**
+     * @param {?} s
+     * @return {?}
+     */
+    (s) => unescapedText[s]))
+        /** restore newlines+cr */
+        .replace(/\n/g, '\\n')
+        .replace(/\r/g, '\\r'));
+}
 
 /**
  * @fileoverview added by tsickle
  * Generated from: lib/idleMonitor/idle-monitor.service.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @record
  */
 function LocalState() { }
 if (false) {}
-if (window) {
-    window.addEventListener('AngularReady', (/**
-     * @param {?} ev
-     * @return {?}
-     */
-    ev => {
-        console.log('appReady fired', ev);
-    }));
-}
+// if (window) {
+//   window.addEventListener('AngularReady', ev => {
+//     console.log('appReady fired', ev);
+//   });
+// }
 class IdleMonitorService {
     /**
      * @param {?} zone
@@ -63046,23 +63099,23 @@ class IdleMonitorService {
         /**
          * store the 'landing' url so we can skip it in idle-check.
          */
-        this.initialUrl = dropEndingSlash(window && window.location.pathname) || '';
+        this.initialUrl = dropEndingSlash(window && window.location && window.location.pathname) || '';
         this.imState = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"]({
             idle: false,
-            timeOut: 5 * 1000 // 5 seconds timeout as default
+            timeOut: 5 * 1000,
         });
         this.idle$ = this.imState.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["pluck"])('idle'));
         this.initApp = new Event('AngularInitialized', {
             bubbles: true,
-            cancelable: false
+            cancelable: false,
         });
         this.appReady = new Event('AngularReady', {
             bubbles: true,
-            cancelable: false
+            cancelable: false,
         });
         this.appTimeout = new Event('AngularTimeout', {
             bubbles: true,
-            cancelable: false
+            cancelable: false,
         });
         /** provide the default for missing conf paramter */
         this.scullyLibConfig = Object.assign({}, ScullyDefaultSettings, conf);
@@ -63070,22 +63123,20 @@ class IdleMonitorService {
         const exposed = window['ScullyIO-exposed'] || {};
         /** @type {?} */
         const manualIdle = !!exposed.manualIdle;
-        if (!this.scullyLibConfig.manualIdle &&
-            window &&
-            (this.scullyLibConfig.alwaysMonitor || isScullyRunning())) {
+        if (!this.scullyLibConfig.manualIdle && window && (this.scullyLibConfig.alwaysMonitor || isScullyRunning())) {
             window.dispatchEvent(this.initApp);
             this.router.events
                 .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
              * @param {?} ev
              * @return {?}
              */
-            ev => ev instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"] && ev.urlAfterRedirects !== undefined)), 
+            (ev) => ev instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"] && ev.urlAfterRedirects !== undefined)), 
             /** don't check the page that has this setting. event is only importand on page load */
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
              * @param {?} ev
              * @return {?}
              */
-            (ev) => manualIdle ? ev.urlAfterRedirects !== this.initialUrl : true)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])((/**
+            (ev) => (manualIdle ? ev.urlAfterRedirects !== this.initialUrl : true))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])((/**
              * @return {?}
              */
             () => this.zoneIdleCheck())))
@@ -63161,7 +63212,8 @@ class IdleMonitorService {
                          * @param {?} z
                          * @return {?}
                          */
-                        (z) => z.source.includes('XMLHttpRequest'))) !== undefined) ||
+                        (z) => z.source.includes('XMLHttpRequest'))) !==
+                            undefined) ||
                         count < 1 // make sure it runs at least once!
                     ) {
                         tCancel = setTimeout((/**
@@ -63173,8 +63225,19 @@ class IdleMonitorService {
                         }), 50);
                         return;
                     }
-                    window.dispatchEvent(this.appReady);
-                    this.setState('idle', true);
+                    this.zone.run((/**
+                     * @return {?}
+                     */
+                    () => {
+                        /** run this inside the zone, and give the app 250Ms to wrap up, before scraping starts */
+                        setTimeout((/**
+                         * @return {?}
+                         */
+                        () => {
+                            window.dispatchEvent(this.appReady);
+                            this.setState('idle', true);
+                        }), 250);
+                    }));
                 });
                 monitor();
             }));
@@ -63192,7 +63255,7 @@ class IdleMonitorService {
              * @param {?} r
              * @return {?}
              */
-            r => setTimeout(r, this.imState.value.timeOut)));
+            (r) => setTimeout(r, this.imState.value.timeOut)));
             window.dispatchEvent(this.appReady);
         });
     }
@@ -63243,7 +63306,7 @@ function dropEndingSlash(str) {
 /**
  * @fileoverview added by tsickle
  * Generated from: lib/route-service/scully-routes.service.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -63251,12 +63314,19 @@ function dropEndingSlash(str) {
 function ScullyRoute() { }
 if (false) {}
 class ScullyRoutesService {
-    constructor() {
+    /**
+     * @param {?} router
+     */
+    constructor(router) {
+        this.router = router;
         this.refresh = new rxjs__WEBPACK_IMPORTED_MODULE_3__["ReplaySubject"](1);
+        /**
+         * An observable with all routes, published and unpublished alike
+         */
         this.allRoutes$ = this.refresh.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])((/**
          * @return {?}
          */
-        () => fetchHttp('/assets/scully-routes.json'))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])((/**
+        () => fetchHttp('assets/scully-routes.json'))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])((/**
          * @return {?}
          */
         () => {
@@ -63268,30 +63338,40 @@ class ScullyRoutesService {
          * @param {?} routes
          * @return {?}
          */
-        routes => Array.isArray(routes))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(this.cleanDups), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["shareReplay"])({ refCount: false, bufferSize: 1 }));
+        (routes) => Array.isArray(routes))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(this.cleanDups), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["shareReplay"])({ refCount: false, bufferSize: 1 }));
+        /**
+         * An observable with available routes (all published routes)
+         */
         this.available$ = this.allRoutes$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
          * @param {?} list
          * @return {?}
          */
-        list => list.filter((/**
+        (list) => list.filter((/**
          * @param {?} r
          * @return {?}
          */
-        r => r.hasOwnProperty('published') ? r.published !== false : true)))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["shareReplay"])({ refCount: false, bufferSize: 1 }));
+        (r) => r.hasOwnProperty('published') ? r.published !== false : true)))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["shareReplay"])({ refCount: false, bufferSize: 1 }));
+        /**
+         * an observable with all unpublished routes
+         */
         this.unPublished$ = this.allRoutes$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
          * @param {?} list
          * @return {?}
          */
-        list => list.filter((/**
+        (list) => list.filter((/**
          * @param {?} r
          * @return {?}
          */
-        r => r.hasOwnProperty('published') ? r.published === false : false)))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["shareReplay"])({ refCount: false, bufferSize: 1 }));
+        (r) => r.hasOwnProperty('published') ? r.published === false : false)))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["shareReplay"])({ refCount: false, bufferSize: 1 }));
+        /**
+         * An observable with the top-level off all published routes.
+         * (in an urls it would be `http://www.sample.org/__thisPart__/subroutes`)
+         */
         this.topLevel$ = this.available$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
          * @param {?} routes
          * @return {?}
          */
-        routes => routes.filter((/**
+        (routes) => routes.filter((/**
          * @param {?} r
          * @return {?}
          */
@@ -63300,6 +63380,8 @@ class ScullyRoutesService {
         this.reload();
     }
     /**
+     * returns an observable that returns the route information for the
+     * route currently selected. subscribes to route-events to update when needed
      * @return {?}
      */
     getCurrent() {
@@ -63307,26 +63389,38 @@ class ScullyRoutesService {
             /** probably not in a browser, no current location available */
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])();
         }
-        /** @type {?} */
-        const curLocation = decodeURI(location.pathname).trim();
-        return this.available$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
+        /** fire off at start, and when navigation is done. */
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["merge"])(Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(new _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"](0, '', '')), this.router.events).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @param {?} e
+         * @return {?}
+         */
+        (e) => e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"])), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])((/**
+         * @return {?}
+         */
+        () => this.available$)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
          * @param {?} list
          * @return {?}
          */
-        list => list.find((/**
-         * @param {?} r
-         * @return {?}
-         */
-        r => curLocation === r.route.trim() ||
-            (r.slugs &&
-                Array.isArray(r.slugs) &&
-                r.slugs.find((/**
-                 * @param {?} slug
-                 * @return {?}
-                 */
-                slug => curLocation.endsWith(slug.trim())))))))));
+        (list) => {
+            /** @type {?} */
+            const curLocation = basePathOnly(encodeURI(location.pathname).trim());
+            return list.find((/**
+             * @param {?} r
+             * @return {?}
+             */
+            (r) => curLocation === basePathOnly(r.route.trim()) ||
+                (r.slugs &&
+                    Array.isArray(r.slugs) &&
+                    r.slugs.find((/**
+                     * @param {?} slug
+                     * @return {?}
+                     */
+                    (slug) => curLocation.endsWith(basePathOnly(slug.trim())))))));
+        })));
     }
     /**
+     * internal, as routes can have multiple slugs, and so occur multiple times
+     * this util function collapses all slugs back into 1 route.
      * @private
      * @param {?} routes
      * @return {?}
@@ -63334,36 +63428,55 @@ class ScullyRoutesService {
     cleanDups(routes) {
         /** @type {?} */
         const m = new Map();
+        /** check for duplicates by comparing all, include route in comparison if its the only thing, or the only thing with only the tile  */
         routes.forEach((/**
          * @param {?} r
          * @return {?}
          */
-        r => m.set(r.sourceFile || r.route, r)));
+        (r) => m.set(JSON.stringify(Object.assign(Object.assign({}, r), { route: hasOtherprops(r) ? '' : r.route })), r)));
         return [...m.values()];
     }
     /**
+     * an utility that will force a reload of the `scully-routes.json` file
      * @return {?}
      */
     reload() {
         this.refresh.next();
     }
 }
-ScullyRoutesService.ɵfac = function ScullyRoutesService_Factory(t) { return new (t || ScullyRoutesService)(); };
+ScullyRoutesService.ɵfac = function ScullyRoutesService_Factory(t) { return new (t || ScullyRoutesService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
 /** @nocollapse */
-ScullyRoutesService.ctorParameters = () => [];
-/** @nocollapse */ ScullyRoutesService.ɵprov = Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"])({ factory: function ScullyRoutesService_Factory() { return new ScullyRoutesService(); }, token: ScullyRoutesService, providedIn: "root" });
+ScullyRoutesService.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+/** @nocollapse */ ScullyRoutesService.ɵprov = Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"])({ factory: function ScullyRoutesService_Factory() { return new ScullyRoutesService(Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"])(_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); }, token: ScullyRoutesService, providedIn: "root" });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](ScullyRoutesService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return []; }, null); })();
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
 if (false) {}
+/**
+ * @param {?} obj
+ * @return {?}
+ */
+function hasOtherprops(obj) {
+    /** @type {?} */
+    const keys = Object.keys(obj);
+    if (keys.length === 1 && keys.includes('route')) {
+        return false;
+    }
+    if (keys.length === 2 && keys.includes('route') && keys.includes('title')) {
+        return false;
+    }
+    return true;
+}
 
 /**
  * @fileoverview added by tsickle
  * Generated from: lib/utils/findComments.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * Returns an array of nodes coninting all the html comments in the element.
@@ -63408,7 +63521,7 @@ function findComments(rootElem, searchText) {
 /**
  * @fileoverview added by tsickle
  * Generated from: lib/scully-content/scully-content.component.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -63422,16 +63535,26 @@ if (false) {}
 const scullyBegin = '<!--scullyContent-begin-->';
 /** @type {?} */
 const scullyEnd = '<!--scullyContent-end-->';
+/**
+ * use the module's closure to keep a system-wide check for the last handled URL.
+ * @type {?}
+ */
+let lastHandled;
 class ScullyContentComponent {
     /**
      * @param {?} elmRef
      * @param {?} srs
      * @param {?} router
+     * @param {?} location
+     * @param {?} conf
      */
-    constructor(elmRef, srs, router) {
+    constructor(elmRef, srs, router, location, conf) {
         this.elmRef = elmRef;
         this.srs = srs;
         this.router = router;
+        this.location = location;
+        this.conf = conf;
+        this.baseUrl = this.conf.useTransferState || ScullyDefaultSettings.useTransferState;
         this.elm = (/** @type {?} */ (this.elmRef.nativeElement));
         /**
          * pull in all  available routes into an eager promise
@@ -63444,17 +63567,17 @@ class ScullyContentComponent {
          * @param {?} ev
          * @return {?}
          */
-        ev => ev instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"])), 
+        (ev) => ev instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"])), 
         /** don't replace if we are already there */
         Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
          * @param {?} ev
          * @return {?}
          */
-        (ev) => this.lastHandled && !this.lastHandled.endsWith(ev.urlAfterRedirects))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])((/**
+        (ev) => lastHandled && !lastHandled.endsWith(ev.urlAfterRedirects))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])((/**
          * @param {?} r
          * @return {?}
          */
-        r => this.replaceContent())));
+        (r) => this.replaceContent())));
         this.routeSub = this.routeUpdates$.subscribe();
         /** do this from constructor, so it runs ASAP */
     }
@@ -63477,7 +63600,7 @@ class ScullyContentComponent {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             /** @type {?} */
             const curPage = basePathOnly(location.href);
-            if (this.lastHandled === curPage) {
+            if (lastHandled === curPage) {
                 /**
                  * Due to the fix we needed for #311
                  * it might happen that this routine is called
@@ -63486,7 +63609,7 @@ class ScullyContentComponent {
                  */
                 return;
             }
-            this.lastHandled = curPage;
+            lastHandled = curPage;
             /** @type {?} */
             const template = document.createElement('template');
             /** @type {?} */
@@ -63499,9 +63622,7 @@ class ScullyContentComponent {
                 const htmlString = window.scullyContent.html;
                 if (currentCssId !== window.scullyContent.cssId) {
                     /** replace the angular cssId */
-                    template.innerHTML = htmlString
-                        .split(window.scullyContent.cssId)
-                        .join(currentCssId);
+                    template.innerHTML = htmlString.split(window.scullyContent.cssId).join(currentCssId);
                 }
                 else {
                     template.innerHTML = htmlString;
@@ -63520,16 +63641,19 @@ class ScullyContentComponent {
                  * @param {?} e
                  * @return {?}
                  */
-                e => {
+                (e) => {
                     if (Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["isDevMode"])()) {
-                        /** @type {?} */
+                        /**
+                         * in devmode (usually in `ng serve`) check the scully server for the content too
+                         * @type {?}
+                         */
                         const uri = new URL(location.href);
                         /** @type {?} */
-                        const url = `http://localhost:1668/${basePathOnly(uri.pathname)}/index.html`;
+                        const url = `${this.conf.baseURIForScullyContent}/${basePathOnly(uri.pathname)}/index.html`;
                         return fetchHttp(url, 'text');
                     }
                     else {
-                        throw new Error(e);
+                        return Promise.reject(e);
                     }
                 }))
                     .then((/**
@@ -63548,6 +63672,9 @@ class ScullyContentComponent {
                             const atr = '_ngcontent' + htmlString.split('_ngcontent')[1].split('=')[0];
                             template.innerHTML = htmlString.split(atr).join(currentCssId);
                         }
+                        else {
+                            template.innerHTML = htmlString;
+                        }
                     }
                     catch (e) {
                         template.innerHTML = `<h2 id="___scully-parsing-error___">Sorry, could not parse static page content</h2>
@@ -63558,9 +63685,8 @@ class ScullyContentComponent {
                  * @param {?} e
                  * @return {?}
                  */
-                e => {
-                    template.innerHTML =
-                        '<h2 id="___scully-parsing-error___">Sorry, could not load static page content</h2>';
+                (e) => {
+                    template.innerHTML = '<h2 id="___scully-parsing-error___">Sorry, could not load static page content</h2>';
                     console.error('problem during loading static scully content', e);
                 }));
             }
@@ -63580,9 +63706,7 @@ class ScullyContentComponent {
             setTimeout((/**
              * @return {?}
              */
-            () => document
-                .querySelectorAll('[href]')
-                .forEach(this.upgradeToRoutelink.bind(this))), 10);
+            () => document.querySelectorAll('[href]').forEach(this.upgradeToRoutelink.bind(this))), 10);
             // document.querySelectorAll('[href]').forEach(this.upgradeToRoutelink.bind(this));
         });
     }
@@ -63595,16 +63719,44 @@ class ScullyContentComponent {
      */
     upgradeToRoutelink(elm) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            if (!['A', 'BUTTON'].includes(elm.tagName)) {
+                return;
+            }
+            /** @type {?} */
+            const hash = elm.dataset.hash;
+            if (hash) {
+                elm.setAttribute('href', '#' + hash);
+                elm.setAttribute('onclick', '');
+                elm.onclick = (/**
+                 * @param {?} ev
+                 * @return {?}
+                 */
+                (ev) => {
+                    ev.preventDefault();
+                    /** @type {?} */
+                    const destination = document.getElementById(hash);
+                    if (destination) {
+                        /** @type {?} */
+                        const url = new URL(window.location.href);
+                        url.hash = hash;
+                        history.replaceState('', '', url.toString());
+                        destination.scrollIntoView();
+                    }
+                });
+                return;
+            }
             /** @type {?} */
             const routes = yield this.routes;
             /** @type {?} */
-            const lnk = basePathOnly(elm.getAttribute('href').toLowerCase());
+            const href = elm.getAttribute('href');
+            /** @type {?} */
+            const lnk = basePathOnly(href.toLowerCase());
             /** @type {?} */
             const route = routes.find((/**
              * @param {?} r
              * @return {?}
              */
-            r => basePathOnly(r.route.toLowerCase()) === lnk));
+            (r) => basePathOnly(r.route.toLowerCase()) === lnk));
             /** only upgrade routes known by scully. */
             if (lnk && route && !lnk.startsWith('#')) {
                 elm.onclick = (/**
@@ -63624,21 +63776,20 @@ class ScullyContentComponent {
                      * @param {?} e
                      * @return {?}
                      */
-                    e => {
+                    (e) => {
                         console.error('routing error', e);
                         return false;
                     }));
                     if (!routed) {
                         return;
                     }
-                    /** check for the same route with different "data", and NOT a 1 level higher (length) */
+                    /** check for the same route with different "data", and NOT a 1 level higher (length), and is not a fragment of th same page */
                     if (curSplit.every((/**
                      * @param {?} part
                      * @param {?} i
                      * @return {?}
                      */
-                    (part, i) => splitRoute[i] === part)) &&
-                        splitRoute.length !== curSplit.length + 1) {
+                    (part, i) => splitRoute[i] === part)) && splitRoute.length !== curSplit.length + 1) {
                         setTimeout((/**
                          * @return {?}
                          */
@@ -63677,21 +63828,22 @@ class ScullyContentComponent {
      * @return {?}
      */
     getCSSId(elm) {
-        return (elm.getAttributeNames().find((/**
+        return elm.getAttributeNames().find((/**
          * @param {?} a
          * @return {?}
          */
-        a => a.startsWith('_ngcontent'))) ||
-            'none_found');
+        (a) => a.startsWith('_ngcontent'))) || '';
     }
     /**
      * @return {?}
      */
     ngOnDestroy() {
         this.routeSub.unsubscribe();
+        /** reset the lastused */
+        lastHandled = '//';
     }
 }
-ScullyContentComponent.ɵfac = function ScullyContentComponent_Factory(t) { return new (t || ScullyContentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](ScullyRoutesService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
+ScullyContentComponent.ɵfac = function ScullyContentComponent_Factory(t) { return new (t || ScullyContentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](ScullyRoutesService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_5__["Location"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](SCULLY_LIB_CONFIG)); };
 ScullyContentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ScullyContentComponent, selectors: [["scully-content"]], ngContentSelectors: _c0, decls: 1, vars: 0, template: function ScullyContentComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](0);
@@ -63700,7 +63852,9 @@ ScullyContentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵd
 ScullyContentComponent.ctorParameters = () => [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] },
     { type: ScullyRoutesService },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_5__["Location"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [SCULLY_LIB_CONFIG,] }] }
 ];
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](ScullyContentComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
@@ -63720,13 +63874,16 @@ ScullyContentComponent.ctorParameters = () => [
       }
     `]
             }]
-    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }, { type: ScullyRoutesService }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }, { type: ScullyRoutesService }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: _angular_common__WEBPACK_IMPORTED_MODULE_5__["Location"] }, { type: undefined, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [SCULLY_LIB_CONFIG]
+            }] }]; }, null); })();
 if (false) {}
 
 /**
  * @fileoverview added by tsickle
  * Generated from: lib/scully-content/scully-content.module.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class ScullyContentModule {
 }
@@ -63744,7 +63901,7 @@ ScullyContentModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefi
 /**
  * @fileoverview added by tsickle
  * Generated from: lib/scully-lib.module.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class ScullyLibModule {
     /**
@@ -63763,9 +63920,10 @@ class ScullyLibModule {
      * @return {?}
      */
     static forRoot(config = ScullyDefaultSettings) {
+        config = Object.assign({}, ScullyDefaultSettings, config);
         return {
             ngModule: ScullyLibModule,
-            providers: [{ provide: SCULLY_LIB_CONFIG, useValue: config }]
+            providers: [{ provide: SCULLY_LIB_CONFIG, useValue: config }],
         };
     }
 }
@@ -63789,18 +63947,294 @@ if (false) {}
 /**
  * @fileoverview added by tsickle
  * Generated from: public-api.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
  * Generated from: scullyio-ng-lib.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 
 
 //# sourceMappingURL=scullyio-ng-lib.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@scullyio/ng-lib/node_modules/tslib/tslib.es6.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@scullyio/ng-lib/node_modules/tslib/tslib.es6.js ***!
+  \***********************************************************************/
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __spreadArray, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__createBinding", function() { return __createBinding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArray", function() { return __spreadArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    if (typeof b !== "function" && b !== null)
+        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    }
+    return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+var __createBinding = Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+});
+
+function __exportStar(m, o) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+}
+
+function __values(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+/** @deprecated */
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+/** @deprecated */
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+}
+
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+}
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+var __setModuleDefault = Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+}
+
 
 /***/ }),
 
@@ -76112,260 +76546,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "./node_modules/tslib/tslib.es6.js":
-/*!*****************************************!*\
-  !*** ./node_modules/tslib/tslib.es6.js ***!
-  \*****************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__createBinding", function() { return __createBinding; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
-/* global Reflect, Promise */
-
-var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-    extendStatics(d, b);
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign = function() {
-    __assign = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    }
-    return __assign.apply(this, arguments);
-}
-
-function __rest(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-}
-
-function __decorate(decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-
-function __param(paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-}
-
-function __metadata(metadataKey, metadataValue) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-
-function __awaiter(thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-}
-
-function __generator(thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-}
-
-function __createBinding(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}
-
-function __exportStar(m, exports) {
-    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-
-function __values(o) {
-    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-    if (m) return m.call(o);
-    if (o && typeof o.length === "number") return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-}
-
-function __read(o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-}
-
-function __spread() {
-    for (var ar = [], i = 0; i < arguments.length; i++)
-        ar = ar.concat(__read(arguments[i]));
-    return ar;
-}
-
-function __spreadArrays() {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-
-function __await(v) {
-    return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-
-function __asyncGenerator(thisArg, _arguments, generator) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var g = generator.apply(thisArg, _arguments || []), i, q = [];
-    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
-    function fulfill(value) { resume("next", value); }
-    function reject(value) { resume("throw", value); }
-    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
-}
-
-function __asyncDelegator(o) {
-    var i, p;
-    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
-}
-
-function __asyncValues(o) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var m = o[Symbol.asyncIterator], i;
-    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
-    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
-}
-
-function __makeTemplateObject(cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-
-function __importStar(mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result.default = mod;
-    return result;
-}
-
-function __importDefault(mod) {
-    return (mod && mod.__esModule) ? mod : { default: mod };
-}
-
-function __classPrivateFieldGet(receiver, privateMap) {
-    if (!privateMap.has(receiver)) {
-        throw new TypeError("attempted to get private field on non-instance");
-    }
-    return privateMap.get(receiver);
-}
-
-function __classPrivateFieldSet(receiver, privateMap, value) {
-    if (!privateMap.has(receiver)) {
-        throw new TypeError("attempted to set private field on non-instance");
-    }
-    privateMap.set(receiver, value);
-    return value;
-}
-
 
 /***/ }),
 
