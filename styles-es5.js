@@ -111,11 +111,11 @@
 
     exports.push([module.i, "/* You can add global styles to this file, and also import other style files */", "", {
       "version": 3,
-      "sources": ["C:\\dev\\gabrielmadeira-website/src\\styles.scss"],
+      "sources": ["/home/gabriel/dev/gabrielmadeira-website/src/styles.scss"],
       "names": [],
       "mappings": "AAAA,8EAAA",
       "file": "styles.scss",
-      "sourcesContent": ["/* You can add global styles to this file, and also import other style files */\r\n"]
+      "sourcesContent": ["/* You can add global styles to this file, and also import other style files */\n"]
     }]); // Exports
 
     module.exports = exports;
@@ -590,15 +590,15 @@
   /***/
   function _(module, exports, __webpack_require__) {
     __webpack_require__(
-    /*! C:\dev\gabrielmadeira-website\src\styles.scss */
+    /*! /home/gabriel/dev/gabrielmadeira-website/src/styles.scss */
     "./src/styles.scss");
 
     __webpack_require__(
-    /*! C:\dev\gabrielmadeira-website\node_modules\bootstrap\dist\css\bootstrap.min.css */
+    /*! /home/gabriel/dev/gabrielmadeira-website/node_modules/bootstrap/dist/css/bootstrap.min.css */
     "./node_modules/bootstrap/dist/css/bootstrap.min.css");
 
     module.exports = __webpack_require__(
-    /*! C:\dev\gabrielmadeira-website\node_modules\font-awesome\css\font-awesome.min.css */
+    /*! /home/gabriel/dev/gabrielmadeira-website/node_modules/font-awesome/css/font-awesome.min.css */
     "./node_modules/font-awesome/css/font-awesome.min.css");
     /***/
   }
