@@ -109,13 +109,13 @@
 
     exports = ___CSS_LOADER_API_IMPORT___(true); // Module
 
-    exports.push([module.i, "/* You can add global styles to this file, and also import other style files */", "", {
+    exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nhtml {\n  scroll-padding-top: 56px !important;\n}", "", {
       "version": 3,
-      "sources": ["/home/gabrielm/dev/gabrielmadeira-website/src/styles.scss"],
+      "sources": ["/home/gabrielm/dev/gabrielmadeira-website/src/styles.scss", "styles.scss"],
       "names": [],
-      "mappings": "AAAA,8EAAA",
+      "mappings": "AAAA,8EAAA;AACA;EACE,mCAAA;ACCF",
       "file": "styles.scss",
-      "sourcesContent": ["/* You can add global styles to this file, and also import other style files */\n"]
+      "sourcesContent": ["/* You can add global styles to this file, and also import other style files */\nhtml {\n  scroll-padding-top: 56px !important;\n}", "/* You can add global styles to this file, and also import other style files */\nhtml {\n  scroll-padding-top: 56px !important;\n}"]
     }]); // Exports
 
     module.exports = exports;

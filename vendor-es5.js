@@ -2,29 +2,29 @@ function _get(target, property, receiver) { if (typeof Reflect !== "undefined" &
 
 function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _toArray(arr) { return _arrayWithHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableRest(); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+function _toArray(arr) { return _arrayWithHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray2(arr) || _nonIterableRest(); }
 
 function _construct(Parent, args, Class) { if (_isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray2(arr) || _nonIterableSpread(); }
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray2(arr); }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray2(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray2(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray2(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray2(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray2(o, minLen); }
 
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function _arrayLikeToArray2(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
@@ -4903,12 +4903,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     function parseCookieValue(cookieStr, name) {
       name = encodeURIComponent(name);
 
-      var _iterator = _createForOfIteratorHelper(cookieStr.split(';')),
-          _step;
+      var _iterator5 = _createForOfIteratorHelper(cookieStr.split(';')),
+          _step5;
 
       try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var cookie = _step.value;
+        for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+          var cookie = _step5.value;
 
           /** @type {?} */
           var eqIndex = cookie.indexOf('=');
@@ -4923,9 +4923,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         }
       } catch (err) {
-        _iterator.e(err);
+        _iterator5.e(err);
       } finally {
-        _iterator.f();
+        _iterator5.f();
       }
 
       return null;
@@ -7400,21 +7400,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var currCtxKeys = Object.keys(ctxChange.currentValue || {});
 
           if (prevCtxKeys.length === currCtxKeys.length) {
-            var _iterator2 = _createForOfIteratorHelper(currCtxKeys),
-                _step2;
+            var _iterator6 = _createForOfIteratorHelper(currCtxKeys),
+                _step6;
 
             try {
-              for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-                var propName = _step2.value;
+              for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+                var propName = _step6.value;
 
                 if (prevCtxKeys.indexOf(propName) === -1) {
                   return true;
                 }
               }
             } catch (err) {
-              _iterator2.e(err);
+              _iterator6.e(err);
             } finally {
-              _iterator2.f();
+              _iterator6.f();
             }
 
             return false;
@@ -9738,6 +9738,4051 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * Generated bundle index. Do not edit.
      */
     //# sourceMappingURL=common.js.map
+
+    /***/
+
+  },
+
+  /***/
+  "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js":
+  /*!********************************************************************!*\
+    !*** ./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js ***!
+    \********************************************************************/
+
+  /*! exports provided: HTTP_INTERCEPTORS, HttpBackend, HttpClient, HttpClientJsonpModule, HttpClientModule, HttpClientXsrfModule, HttpErrorResponse, HttpEventType, HttpHandler, HttpHeaderResponse, HttpHeaders, HttpParams, HttpRequest, HttpResponse, HttpResponseBase, HttpUrlEncodingCodec, HttpXhrBackend, HttpXsrfTokenExtractor, JsonpClientBackend, JsonpInterceptor, XhrFactory, ɵHttpInterceptingHandler, ɵangular_packages_common_http_http_a, ɵangular_packages_common_http_http_b, ɵangular_packages_common_http_http_c, ɵangular_packages_common_http_http_d, ɵangular_packages_common_http_http_e, ɵangular_packages_common_http_http_f, ɵangular_packages_common_http_http_g, ɵangular_packages_common_http_http_h */
+
+  /***/
+  function node_modulesAngularCommon__ivy_ngcc__Fesm2015HttpJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HTTP_INTERCEPTORS", function () {
+      return HTTP_INTERCEPTORS;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpBackend", function () {
+      return HttpBackend;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpClient", function () {
+      return HttpClient;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpClientJsonpModule", function () {
+      return HttpClientJsonpModule;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpClientModule", function () {
+      return HttpClientModule;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpClientXsrfModule", function () {
+      return HttpClientXsrfModule;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpErrorResponse", function () {
+      return HttpErrorResponse;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpEventType", function () {
+      return HttpEventType;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpHandler", function () {
+      return HttpHandler;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpHeaderResponse", function () {
+      return HttpHeaderResponse;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpHeaders", function () {
+      return HttpHeaders;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpParams", function () {
+      return HttpParams;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpRequest", function () {
+      return HttpRequest;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpResponse", function () {
+      return HttpResponse;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpResponseBase", function () {
+      return HttpResponseBase;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpUrlEncodingCodec", function () {
+      return HttpUrlEncodingCodec;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpXhrBackend", function () {
+      return HttpXhrBackend;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpXsrfTokenExtractor", function () {
+      return HttpXsrfTokenExtractor;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "JsonpClientBackend", function () {
+      return JsonpClientBackend;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "JsonpInterceptor", function () {
+      return JsonpInterceptor;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "XhrFactory", function () {
+      return XhrFactory;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵHttpInterceptingHandler", function () {
+      return HttpInterceptingHandler;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_common_http_http_a", function () {
+      return NoopInterceptor;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_common_http_http_b", function () {
+      return JsonpCallbackContext;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_common_http_http_c", function () {
+      return jsonpCallbackContext;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_common_http_http_d", function () {
+      return BrowserXhr;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_common_http_http_e", function () {
+      return XSRF_COOKIE_NAME;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_common_http_http_f", function () {
+      return XSRF_HEADER_NAME;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_common_http_http_g", function () {
+      return HttpXsrfCookieExtractor;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_common_http_http_h", function () {
+      return HttpXsrfInterceptor;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /**
+     * @license Angular v9.1.11
+     * (c) 2010-2020 Google LLC. https://angular.io/
+     * License: MIT
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/src/backend.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @license
+     * Copyright Google Inc. All Rights Reserved.
+     *
+     * Use of this source code is governed by an MIT-style license that can be
+     * found in the LICENSE file at https://angular.io/license
+     */
+
+    /**
+     * Transforms an `HttpRequest` into a stream of `HttpEvent`s, one of which will likely be a
+     * `HttpResponse`.
+     *
+     * `HttpHandler` is injectable. When injected, the handler instance dispatches requests to the
+     * first interceptor in the chain, which dispatches to the second, etc, eventually reaching the
+     * `HttpBackend`.
+     *
+     * In an `HttpInterceptor`, the `HttpHandler` parameter is the next interceptor in the chain.
+     *
+     * \@publicApi
+     * @abstract
+     */
+
+
+    var HttpHandler = function HttpHandler() {
+      _classCallCheck(this, HttpHandler);
+    };
+
+    if (false) {}
+    /**
+     * A final `HttpHandler` which will dispatch the request via browser HTTP APIs to a backend.
+     *
+     * Interceptors sit between the `HttpClient` interface and the `HttpBackend`.
+     *
+     * When injected, `HttpBackend` dispatches requests directly to the backend, without going
+     * through the interceptor chain.
+     *
+     * \@publicApi
+     * @abstract
+     */
+
+
+    var HttpBackend = function HttpBackend() {
+      _classCallCheck(this, HttpBackend);
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/src/headers.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @license
+     * Copyright Google Inc. All Rights Reserved.
+     *
+     * Use of this source code is governed by an MIT-style license that can be
+     * found in the LICENSE file at https://angular.io/license
+     */
+
+    /**
+     * @record
+     */
+
+
+    function Update() {}
+
+    if (false) {}
+    /**
+     * Represents the header configuration options for an HTTP request.
+     * Instances are immutable. Modifying methods return a cloned
+     * instance with the change. The original object is never changed.
+     *
+     * \@publicApi
+     */
+
+
+    var HttpHeaders = /*#__PURE__*/function () {
+      /**
+       * Constructs a new HTTP header object with the given values.
+       * @param {?=} headers
+       */
+      function HttpHeaders(headers) {
+        var _this16 = this;
+
+        _classCallCheck(this, HttpHeaders);
+
+        /**
+         * Internal map of lowercased header names to the normalized
+         * form of the name (the form seen first).
+         */
+        this.normalizedNames = new Map();
+        /**
+         * Queued updates to be materialized the next initialization.
+         */
+
+        this.lazyUpdate = null;
+
+        if (!headers) {
+          this.headers = new Map();
+        } else if (typeof headers === 'string') {
+          this.lazyInit =
+          /**
+          * @return {?}
+          */
+          function () {
+            _this16.headers = new Map();
+            headers.split('\n').forEach(
+            /**
+            * @param {?} line
+            * @return {?}
+            */
+            function (line) {
+              /** @type {?} */
+              var index = line.indexOf(':');
+
+              if (index > 0) {
+                /** @type {?} */
+                var name = line.slice(0, index);
+                /** @type {?} */
+
+                var key = name.toLowerCase();
+                /** @type {?} */
+
+                var value = line.slice(index + 1).trim();
+
+                _this16.maybeSetNormalizedName(name, key);
+
+                if (_this16.headers.has(key)) {
+                  /** @type {?} */
+                  _this16.headers.get(key).push(value);
+                } else {
+                  _this16.headers.set(key, [value]);
+                }
+              }
+            });
+          };
+        } else {
+          this.lazyInit =
+          /**
+          * @return {?}
+          */
+          function () {
+            _this16.headers = new Map();
+            Object.keys(headers).forEach(
+            /**
+            * @param {?} name
+            * @return {?}
+            */
+            function (name) {
+              /** @type {?} */
+              var values = headers[name];
+              /** @type {?} */
+
+              var key = name.toLowerCase();
+
+              if (typeof values === 'string') {
+                values = [values];
+              }
+
+              if (values.length > 0) {
+                _this16.headers.set(key, values);
+
+                _this16.maybeSetNormalizedName(name, key);
+              }
+            });
+          };
+        }
+      }
+      /**
+       * Checks for existence of a given header.
+       *
+       * @param {?} name The header name to check for existence.
+       *
+       * @return {?} True if the header exists, false otherwise.
+       */
+
+
+      _createClass2(HttpHeaders, [{
+        key: "has",
+        value: function has(name) {
+          this.init();
+          return this.headers.has(name.toLowerCase());
+        }
+        /**
+         * Retrieves the first value of a given header.
+         *
+         * @param {?} name The header name.
+         *
+         * @return {?} The value string if the header exists, null otherwise
+         */
+
+      }, {
+        key: "get",
+        value: function get(name) {
+          this.init();
+          /** @type {?} */
+
+          var values = this.headers.get(name.toLowerCase());
+          return values && values.length > 0 ? values[0] : null;
+        }
+        /**
+         * Retrieves the names of the headers.
+         *
+         * @return {?} A list of header names.
+         */
+
+      }, {
+        key: "keys",
+        value: function keys() {
+          this.init();
+          return Array.from(this.normalizedNames.values());
+        }
+        /**
+         * Retrieves a list of values for a given header.
+         *
+         * @param {?} name The header name from which to retrieve values.
+         *
+         * @return {?} A string of values if the header exists, null otherwise.
+         */
+
+      }, {
+        key: "getAll",
+        value: function getAll(name) {
+          this.init();
+          return this.headers.get(name.toLowerCase()) || null;
+        }
+        /**
+         * Appends a new value to the existing set of values for a header
+         * and returns them in a clone of the original instance.
+         *
+         * @param {?} name The header name for which to append the values.
+         * @param {?} value The value to append.
+         *
+         * @return {?} A clone of the HTTP headers object with the value appended to the given header.
+         */
+
+      }, {
+        key: "append",
+        value: function append(name, value) {
+          return this.clone({
+            name: name,
+            value: value,
+            op: 'a'
+          });
+        }
+        /**
+         * Sets or modifies a value for a given header in a clone of the original instance.
+         * If the header already exists, its value is replaced with the given value
+         * in the returned object.
+         *
+         * @param {?} name The header name.
+         * @param {?} value The value or values to set or overide for the given header.
+         *
+         * @return {?} A clone of the HTTP headers object with the newly set header value.
+         */
+
+      }, {
+        key: "set",
+        value: function set(name, value) {
+          return this.clone({
+            name: name,
+            value: value,
+            op: 's'
+          });
+        }
+        /**
+         * Deletes values for a given header in a clone of the original instance.
+         *
+         * @param {?} name The header name.
+         * @param {?=} value The value or values to delete for the given header.
+         *
+         * @return {?} A clone of the HTTP headers object with the given value deleted.
+         */
+
+      }, {
+        key: "delete",
+        value: function _delete(name, value) {
+          return this.clone({
+            name: name,
+            value: value,
+            op: 'd'
+          });
+        }
+        /**
+         * @private
+         * @param {?} name
+         * @param {?} lcName
+         * @return {?}
+         */
+
+      }, {
+        key: "maybeSetNormalizedName",
+        value: function maybeSetNormalizedName(name, lcName) {
+          if (!this.normalizedNames.has(lcName)) {
+            this.normalizedNames.set(lcName, name);
+          }
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "init",
+        value: function init() {
+          var _this17 = this;
+
+          if (!!this.lazyInit) {
+            if (this.lazyInit instanceof HttpHeaders) {
+              this.copyFrom(this.lazyInit);
+            } else {
+              this.lazyInit();
+            }
+
+            this.lazyInit = null;
+
+            if (!!this.lazyUpdate) {
+              this.lazyUpdate.forEach(
+              /**
+              * @param {?} update
+              * @return {?}
+              */
+              function (update) {
+                return _this17.applyUpdate(update);
+              });
+              this.lazyUpdate = null;
+            }
+          }
+        }
+        /**
+         * @private
+         * @param {?} other
+         * @return {?}
+         */
+
+      }, {
+        key: "copyFrom",
+        value: function copyFrom(other) {
+          var _this18 = this;
+
+          other.init();
+          Array.from(other.headers.keys()).forEach(
+          /**
+          * @param {?} key
+          * @return {?}
+          */
+          function (key) {
+            _this18.headers.set(key,
+            /** @type {?} */
+            other.headers.get(key));
+
+            _this18.normalizedNames.set(key,
+            /** @type {?} */
+            other.normalizedNames.get(key));
+          });
+        }
+        /**
+         * @private
+         * @param {?} update
+         * @return {?}
+         */
+
+      }, {
+        key: "clone",
+        value: function clone(update) {
+          /** @type {?} */
+          var clone = new HttpHeaders();
+          clone.lazyInit = !!this.lazyInit && this.lazyInit instanceof HttpHeaders ? this.lazyInit : this;
+          clone.lazyUpdate = (this.lazyUpdate || []).concat([update]);
+          return clone;
+        }
+        /**
+         * @private
+         * @param {?} update
+         * @return {?}
+         */
+
+      }, {
+        key: "applyUpdate",
+        value: function applyUpdate(update) {
+          /** @type {?} */
+          var key = update.name.toLowerCase();
+
+          switch (update.op) {
+            case 'a':
+            case 's':
+              /** @type {?} */
+              var value =
+              /** @type {?} */
+              update.value;
+
+              if (typeof value === 'string') {
+                value = [value];
+              }
+
+              if (value.length === 0) {
+                return;
+              }
+
+              this.maybeSetNormalizedName(update.name, key);
+              /** @type {?} */
+
+              var base = (update.op === 'a' ? this.headers.get(key) : undefined) || [];
+              base.push.apply(base, _toConsumableArray(value));
+              this.headers.set(key, base);
+              break;
+
+            case 'd':
+              /** @type {?} */
+              var toDelete =
+              /** @type {?} */
+              update.value;
+
+              if (!toDelete) {
+                this.headers["delete"](key);
+                this.normalizedNames["delete"](key);
+              } else {
+                /** @type {?} */
+                var existing = this.headers.get(key);
+
+                if (!existing) {
+                  return;
+                }
+
+                existing = existing.filter(
+                /**
+                * @param {?} value
+                * @return {?}
+                */
+                function (value) {
+                  return toDelete.indexOf(value) === -1;
+                });
+
+                if (existing.length === 0) {
+                  this.headers["delete"](key);
+                  this.normalizedNames["delete"](key);
+                } else {
+                  this.headers.set(key, existing);
+                }
+              }
+
+              break;
+          }
+        }
+        /**
+         * \@internal
+         * @param {?} fn
+         * @return {?}
+         */
+
+      }, {
+        key: "forEach",
+        value: function forEach(fn) {
+          var _this19 = this;
+
+          this.init();
+          Array.from(this.normalizedNames.keys()).forEach(
+          /**
+          * @param {?} key
+          * @return {?}
+          */
+          function (key) {
+            return fn(
+            /** @type {?} */
+            _this19.normalizedNames.get(key),
+            /** @type {?} */
+            _this19.headers.get(key));
+          });
+        }
+      }]);
+
+      return HttpHeaders;
+    }();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/src/params.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @license
+     * Copyright Google Inc. All Rights Reserved.
+     *
+     * Use of this source code is governed by an MIT-style license that can be
+     * found in the LICENSE file at https://angular.io/license
+     */
+
+    /**
+     * A codec for encoding and decoding parameters in URLs.
+     *
+     * Used by `HttpParams`.
+     *
+     * \@publicApi
+     *
+     * @record
+     */
+
+
+    function HttpParameterCodec() {}
+
+    if (false) {}
+    /**
+     * Provides encoding and decoding of URL parameter and query-string values.
+     *
+     * Serializes and parses URL parameter keys and values to encode and decode them.
+     * If you pass URL query parameters without encoding,
+     * the query parameters can be misinterpreted at the receiving end.
+     *
+     *
+     * \@publicApi
+     */
+
+
+    var HttpUrlEncodingCodec = /*#__PURE__*/function () {
+      function HttpUrlEncodingCodec() {
+        _classCallCheck(this, HttpUrlEncodingCodec);
+      }
+
+      _createClass2(HttpUrlEncodingCodec, [{
+        key: "encodeKey",
+
+        /**
+         * Encodes a key name for a URL parameter or query-string.
+         * @param {?} key The key name.
+         * @return {?} The encoded key name.
+         */
+        value: function encodeKey(key) {
+          return standardEncoding(key);
+        }
+        /**
+         * Encodes the value of a URL parameter or query-string.
+         * @param {?} value The value.
+         * @return {?} The encoded value.
+         */
+
+      }, {
+        key: "encodeValue",
+        value: function encodeValue(value) {
+          return standardEncoding(value);
+        }
+        /**
+         * Decodes an encoded URL parameter or query-string key.
+         * @param {?} key The encoded key name.
+         * @return {?} The decoded key name.
+         */
+
+      }, {
+        key: "decodeKey",
+        value: function decodeKey(key) {
+          return decodeURIComponent(key);
+        }
+        /**
+         * Decodes an encoded URL parameter or query-string value.
+         * @param {?} value The encoded value.
+         * @return {?} The decoded value.
+         */
+
+      }, {
+        key: "decodeValue",
+        value: function decodeValue(value) {
+          return decodeURIComponent(value);
+        }
+      }]);
+
+      return HttpUrlEncodingCodec;
+    }();
+    /**
+     * @param {?} rawParams
+     * @param {?} codec
+     * @return {?}
+     */
+
+
+    function paramParser(rawParams, codec) {
+      /** @type {?} */
+      var map = new Map();
+
+      if (rawParams.length > 0) {
+        /** @type {?} */
+        var params = rawParams.split('&');
+        params.forEach(
+        /**
+        * @param {?} param
+        * @return {?}
+        */
+        function (param) {
+          /** @type {?} */
+          var eqIdx = param.indexOf('=');
+
+          var _ref4 = eqIdx == -1 ? [codec.decodeKey(param), ''] : [codec.decodeKey(param.slice(0, eqIdx)), codec.decodeValue(param.slice(eqIdx + 1))],
+              _ref5 = _slicedToArray(_ref4, 2),
+              key = _ref5[0],
+              val = _ref5[1];
+          /** @type {?} */
+
+
+          var list = map.get(key) || [];
+          list.push(val);
+          map.set(key, list);
+        });
+      }
+
+      return map;
+    }
+    /**
+     * @param {?} v
+     * @return {?}
+     */
+
+
+    function standardEncoding(v) {
+      return encodeURIComponent(v).replace(/%40/gi, '@').replace(/%3A/gi, ':').replace(/%24/gi, '$').replace(/%2C/gi, ',').replace(/%3B/gi, ';').replace(/%2B/gi, '+').replace(/%3D/gi, '=').replace(/%3F/gi, '?').replace(/%2F/gi, '/');
+    }
+    /**
+     * @record
+     */
+
+
+    function Update$1() {}
+
+    if (false) {}
+    /**
+     * Options used to construct an `HttpParams` instance.
+     *
+     * \@publicApi
+     * @record
+     */
+
+
+    function HttpParamsOptions() {}
+
+    if (false) {}
+    /**
+     * An HTTP request/response body that represents serialized parameters,
+     * per the MIME type `application/x-www-form-urlencoded`.
+     *
+     * This class is immutable; all mutation operations return a new instance.
+     *
+     * \@publicApi
+     */
+
+
+    var HttpParams = /*#__PURE__*/function () {
+      /**
+       * @param {?=} options
+       */
+      function HttpParams() {
+        var _this20 = this;
+
+        var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] :
+        /** @type {?} */
+        {};
+
+        _classCallCheck(this, HttpParams);
+
+        this.updates = null;
+        this.cloneFrom = null;
+        this.encoder = options.encoder || new HttpUrlEncodingCodec();
+
+        if (!!options.fromString) {
+          if (!!options.fromObject) {
+            throw new Error("Cannot specify both fromString and fromObject.");
+          }
+
+          this.map = paramParser(options.fromString, this.encoder);
+        } else if (!!options.fromObject) {
+          this.map = new Map();
+          Object.keys(options.fromObject).forEach(
+          /**
+          * @param {?} key
+          * @return {?}
+          */
+          function (key) {
+            /** @type {?} */
+            var value =
+            /** @type {?} */
+            options.fromObject[key];
+
+            /** @type {?} */
+            _this20.map.set(key, Array.isArray(value) ? value : [value]);
+          });
+        } else {
+          this.map = null;
+        }
+      }
+      /**
+       * Reports whether the body includes one or more values for a given parameter.
+       * @param {?} param The parameter name.
+       * @return {?} True if the parameter has one or more values,
+       * false if it has no value or is not present.
+       */
+
+
+      _createClass2(HttpParams, [{
+        key: "has",
+        value: function has(param) {
+          this.init();
+          return (
+            /** @type {?} */
+            this.map.has(param)
+          );
+        }
+        /**
+         * Retrieves the first value for a parameter.
+         * @param {?} param The parameter name.
+         * @return {?} The first value of the given parameter,
+         * or `null` if the parameter is not present.
+         */
+
+      }, {
+        key: "get",
+        value: function get(param) {
+          this.init();
+          /** @type {?} */
+
+          var res =
+          /** @type {?} */
+          this.map.get(param);
+          return !!res ? res[0] : null;
+        }
+        /**
+         * Retrieves all values for a  parameter.
+         * @param {?} param The parameter name.
+         * @return {?} All values in a string array,
+         * or `null` if the parameter not present.
+         */
+
+      }, {
+        key: "getAll",
+        value: function getAll(param) {
+          this.init();
+          return (
+            /** @type {?} */
+            this.map.get(param) || null
+          );
+        }
+        /**
+         * Retrieves all the parameters for this body.
+         * @return {?} The parameter names in a string array.
+         */
+
+      }, {
+        key: "keys",
+        value: function keys() {
+          this.init();
+          return Array.from(
+          /** @type {?} */
+          this.map.keys());
+        }
+        /**
+         * Appends a new value to existing values for a parameter.
+         * @param {?} param The parameter name.
+         * @param {?} value The new value to add.
+         * @return {?} A new body with the appended value.
+         */
+
+      }, {
+        key: "append",
+        value: function append(param, value) {
+          return this.clone({
+            param: param,
+            value: value,
+            op: 'a'
+          });
+        }
+        /**
+         * Replaces the value for a parameter.
+         * @param {?} param The parameter name.
+         * @param {?} value The new value.
+         * @return {?} A new body with the new value.
+         */
+
+      }, {
+        key: "set",
+        value: function set(param, value) {
+          return this.clone({
+            param: param,
+            value: value,
+            op: 's'
+          });
+        }
+        /**
+         * Removes a given value or all values from a parameter.
+         * @param {?} param The parameter name.
+         * @param {?=} value The value to remove, if provided.
+         * @return {?} A new body with the given value removed, or with all values
+         * removed if no value is specified.
+         */
+
+      }, {
+        key: "delete",
+        value: function _delete(param, value) {
+          return this.clone({
+            param: param,
+            value: value,
+            op: 'd'
+          });
+        }
+        /**
+         * Serializes the body to an encoded string, where key-value pairs (separated by `=`) are
+         * separated by `&`s.
+         * @return {?}
+         */
+
+      }, {
+        key: "toString",
+        value: function toString() {
+          var _this21 = this;
+
+          this.init();
+          return this.keys().map(
+          /**
+          * @param {?} key
+          * @return {?}
+          */
+          function (key) {
+            /** @type {?} */
+            var eKey = _this21.encoder.encodeKey(key); // `a: ['1']` produces `'a=1'`
+            // `b: []` produces `''`
+            // `c: ['1', '2']` produces `'c=1&c=2'`
+
+
+            return (
+              /** @type {?} */
+
+              /** @type {?} */
+              _this21.map.get(key).map(
+              /**
+              * @param {?} value
+              * @return {?}
+              */
+              function (value) {
+                return eKey + '=' + _this21.encoder.encodeValue(value);
+              }).join('&')
+            );
+          }) // filter out empty values because `b: []` produces `''`
+          // which results in `a=1&&c=1&c=2` instead of `a=1&c=1&c=2` if we don't
+          .filter(
+          /**
+          * @param {?} param
+          * @return {?}
+          */
+          function (param) {
+            return param !== '';
+          }).join('&');
+        }
+        /**
+         * @private
+         * @param {?} update
+         * @return {?}
+         */
+
+      }, {
+        key: "clone",
+        value: function clone(update) {
+          /** @type {?} */
+          var clone = new HttpParams(
+          /** @type {?} */
+          {
+            encoder: this.encoder
+          });
+          clone.cloneFrom = this.cloneFrom || this;
+          clone.updates = (this.updates || []).concat([update]);
+          return clone;
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "init",
+        value: function init() {
+          var _this22 = this;
+
+          if (this.map === null) {
+            this.map = new Map();
+          }
+
+          if (this.cloneFrom !== null) {
+            this.cloneFrom.init();
+            this.cloneFrom.keys().forEach(
+            /**
+            * @param {?} key
+            * @return {?}
+            */
+            function (key) {
+              return (
+                /** @type {?} */
+                _this22.map.set(key,
+                /** @type {?} */
+
+                /** @type {?} */
+
+                /** @type {?} */
+                _this22.cloneFrom.map.get(key))
+              );
+            });
+
+            /** @type {?} */
+            this.updates.forEach(
+            /**
+            * @param {?} update
+            * @return {?}
+            */
+            function (update) {
+              switch (update.op) {
+                case 'a':
+                case 's':
+                  /** @type {?} */
+                  var base = (update.op === 'a' ?
+                  /** @type {?} */
+                  _this22.map.get(update.param) : undefined) || [];
+                  base.push(
+                  /** @type {?} */
+                  update.value);
+
+                  /** @type {?} */
+                  _this22.map.set(update.param, base);
+
+                  break;
+
+                case 'd':
+                  if (update.value !== undefined) {
+                    /** @type {?} */
+                    var _base =
+                    /** @type {?} */
+                    _this22.map.get(update.param) || [];
+                    /** @type {?} */
+
+
+                    var idx = _base.indexOf(update.value);
+
+                    if (idx !== -1) {
+                      _base.splice(idx, 1);
+                    }
+
+                    if (_base.length > 0) {
+                      /** @type {?} */
+                      _this22.map.set(update.param, _base);
+                    } else {
+                      /** @type {?} */
+                      _this22.map["delete"](update.param);
+                    }
+                  } else {
+                    /** @type {?} */
+                    _this22.map["delete"](update.param);
+
+                    break;
+                  }
+
+              }
+            });
+            this.cloneFrom = this.updates = null;
+          }
+        }
+      }]);
+
+      return HttpParams;
+    }();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/src/request.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Construction interface for `HttpRequest`s.
+     *
+     * All values are optional and will override default values if provided.
+     * @record
+     */
+
+
+    function HttpRequestInit() {}
+
+    if (false) {}
+    /**
+     * Determine whether the given HTTP method may include a body.
+     * @param {?} method
+     * @return {?}
+     */
+
+
+    function mightHaveBody(method) {
+      switch (method) {
+        case 'DELETE':
+        case 'GET':
+        case 'HEAD':
+        case 'OPTIONS':
+        case 'JSONP':
+          return false;
+
+        default:
+          return true;
+      }
+    }
+    /**
+     * Safely assert whether the given value is an ArrayBuffer.
+     *
+     * In some execution environments ArrayBuffer is not defined.
+     * @param {?} value
+     * @return {?}
+     */
+
+
+    function isArrayBuffer(value) {
+      return typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer;
+    }
+    /**
+     * Safely assert whether the given value is a Blob.
+     *
+     * In some execution environments Blob is not defined.
+     * @param {?} value
+     * @return {?}
+     */
+
+
+    function isBlob(value) {
+      return typeof Blob !== 'undefined' && value instanceof Blob;
+    }
+    /**
+     * Safely assert whether the given value is a FormData instance.
+     *
+     * In some execution environments FormData is not defined.
+     * @param {?} value
+     * @return {?}
+     */
+
+
+    function isFormData(value) {
+      return typeof FormData !== 'undefined' && value instanceof FormData;
+    }
+    /**
+     * An outgoing HTTP request with an optional typed body.
+     *
+     * `HttpRequest` represents an outgoing request, including URL, method,
+     * headers, body, and other request configuration options. Instances should be
+     * assumed to be immutable. To modify a `HttpRequest`, the `clone`
+     * method should be used.
+     *
+     * \@publicApi
+     * @template T
+     */
+
+
+    var HttpRequest = /*#__PURE__*/function () {
+      /**
+       * @param {?} method
+       * @param {?} url
+       * @param {?=} third
+       * @param {?=} fourth
+       */
+      function HttpRequest(method, url, third, fourth) {
+        _classCallCheck(this, HttpRequest);
+
+        this.url = url;
+        /**
+         * The request body, or `null` if one isn't set.
+         *
+         * Bodies are not enforced to be immutable, as they can include a reference to any
+         * user-defined data type. However, interceptors should take care to preserve
+         * idempotence by treating them as such.
+         */
+
+        this.body = null;
+        /**
+         * Whether this request should be made in a way that exposes progress events.
+         *
+         * Progress events are expensive (change detection runs on each event) and so
+         * they should only be requested if the consumer intends to monitor them.
+         */
+
+        this.reportProgress = false;
+        /**
+         * Whether this request should be sent with outgoing credentials (cookies).
+         */
+
+        this.withCredentials = false;
+        /**
+         * The expected response type of the server.
+         *
+         * This is used to parse the response appropriately before returning it to
+         * the requestee.
+         */
+
+        this.responseType = 'json';
+        this.method = method.toUpperCase(); // Next, need to figure out which argument holds the HttpRequestInit
+        // options, if any.
+
+        /** @type {?} */
+
+        var options; // Check whether a body argument is expected. The only valid way to omit
+        // the body argument is to use a known no-body method like GET.
+
+        if (mightHaveBody(this.method) || !!fourth) {
+          // Body is the third argument, options are the fourth.
+          this.body = third !== undefined ?
+          /** @type {?} */
+          third : null;
+          options = fourth;
+        } else {
+          // No body required, options are the third argument. The body stays null.
+          options =
+          /** @type {?} */
+          third;
+        } // If options have been passed, interpret them.
+
+
+        if (options) {
+          // Normalize reportProgress and withCredentials.
+          this.reportProgress = !!options.reportProgress;
+          this.withCredentials = !!options.withCredentials; // Override default response type of 'json' if one is provided.
+
+          if (!!options.responseType) {
+            this.responseType = options.responseType;
+          } // Override headers if they're provided.
+
+
+          if (!!options.headers) {
+            this.headers = options.headers;
+          }
+
+          if (!!options.params) {
+            this.params = options.params;
+          }
+        } // If no headers have been passed in, construct a new HttpHeaders instance.
+
+
+        if (!this.headers) {
+          this.headers = new HttpHeaders();
+        } // If no parameters have been passed in, construct a new HttpUrlEncodedParams instance.
+
+
+        if (!this.params) {
+          this.params = new HttpParams();
+          this.urlWithParams = url;
+        } else {
+          // Encode the parameters to a string in preparation for inclusion in the URL.
+
+          /** @type {?} */
+          var params = this.params.toString();
+
+          if (params.length === 0) {
+            // No parameters, the visible URL is just the URL given at creation time.
+            this.urlWithParams = url;
+          } else {
+            // Does the URL already have query parameters? Look for '?'.
+
+            /** @type {?} */
+            var qIdx = url.indexOf('?'); // There are 3 cases to handle:
+            // 1) No existing parameters -> append '?' followed by params.
+            // 2) '?' exists and is followed by existing query string ->
+            //    append '&' followed by params.
+            // 3) '?' exists at the end of the url -> append params directly.
+            // This basically amounts to determining the character, if any, with
+            // which to join the URL and parameters.
+
+            /** @type {?} */
+
+            var sep = qIdx === -1 ? '?' : qIdx < url.length - 1 ? '&' : '';
+            this.urlWithParams = url + sep + params;
+          }
+        }
+      }
+      /**
+       * Transform the free-form body into a serialized format suitable for
+       * transmission to the server.
+       * @return {?}
+       */
+
+
+      _createClass2(HttpRequest, [{
+        key: "serializeBody",
+        value: function serializeBody() {
+          // If no body is present, no need to serialize it.
+          if (this.body === null) {
+            return null;
+          } // Check whether the body is already in a serialized form. If so,
+          // it can just be returned directly.
+
+
+          if (isArrayBuffer(this.body) || isBlob(this.body) || isFormData(this.body) || typeof this.body === 'string') {
+            return this.body;
+          } // Check whether the body is an instance of HttpUrlEncodedParams.
+
+
+          if (this.body instanceof HttpParams) {
+            return this.body.toString();
+          } // Check whether the body is an object or array, and serialize with JSON if so.
+
+
+          if (typeof this.body === 'object' || typeof this.body === 'boolean' || Array.isArray(this.body)) {
+            return JSON.stringify(this.body);
+          } // Fall back on toString() for everything else.
+
+
+          return (
+            /** @type {?} */
+            this.body.toString()
+          );
+        }
+        /**
+         * Examine the body and attempt to infer an appropriate MIME type
+         * for it.
+         *
+         * If no such type can be inferred, this method will return `null`.
+         * @return {?}
+         */
+
+      }, {
+        key: "detectContentTypeHeader",
+        value: function detectContentTypeHeader() {
+          // An empty body has no content type.
+          if (this.body === null) {
+            return null;
+          } // FormData bodies rely on the browser's content type assignment.
+
+
+          if (isFormData(this.body)) {
+            return null;
+          } // Blobs usually have their own content type. If it doesn't, then
+          // no type can be inferred.
+
+
+          if (isBlob(this.body)) {
+            return this.body.type || null;
+          } // Array buffers have unknown contents and thus no type can be inferred.
+
+
+          if (isArrayBuffer(this.body)) {
+            return null;
+          } // Technically, strings could be a form of JSON data, but it's safe enough
+          // to assume they're plain strings.
+
+
+          if (typeof this.body === 'string') {
+            return 'text/plain';
+          } // `HttpUrlEncodedParams` has its own content-type.
+
+
+          if (this.body instanceof HttpParams) {
+            return 'application/x-www-form-urlencoded;charset=UTF-8';
+          } // Arrays, objects, and numbers will be encoded as JSON.
+
+
+          if (typeof this.body === 'object' || typeof this.body === 'number' || Array.isArray(this.body)) {
+            return 'application/json';
+          } // No type could be inferred.
+
+
+          return null;
+        }
+        /**
+         * @param {?=} update
+         * @return {?}
+         */
+
+      }, {
+        key: "clone",
+        value: function clone() {
+          var update = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+          // For method, url, and responseType, take the current value unless
+          // it is overridden in the update hash.
+
+          /** @type {?} */
+          var method = update.method || this.method;
+          /** @type {?} */
+
+          var url = update.url || this.url;
+          /** @type {?} */
+
+          var responseType = update.responseType || this.responseType; // The body is somewhat special - a `null` value in update.body means
+          // whatever current body is present is being overridden with an empty
+          // body, whereas an `undefined` value in update.body implies no
+          // override.
+
+          /** @type {?} */
+
+          var body = update.body !== undefined ? update.body : this.body; // Carefully handle the boolean options to differentiate between
+          // `false` and `undefined` in the update args.
+
+          /** @type {?} */
+
+          var withCredentials = update.withCredentials !== undefined ? update.withCredentials : this.withCredentials;
+          /** @type {?} */
+
+          var reportProgress = update.reportProgress !== undefined ? update.reportProgress : this.reportProgress; // Headers and params may be appended to if `setHeaders` or
+          // `setParams` are used.
+
+          /** @type {?} */
+
+          var headers = update.headers || this.headers;
+          /** @type {?} */
+
+          var params = update.params || this.params; // Check whether the caller has asked to add headers.
+
+          if (update.setHeaders !== undefined) {
+            // Set every requested header.
+            headers = Object.keys(update.setHeaders).reduce(
+            /**
+            * @param {?} headers
+            * @param {?} name
+            * @return {?}
+            */
+            function (headers, name) {
+              return headers.set(name,
+              /** @type {?} */
+              update.setHeaders[name]);
+            }, headers);
+          } // Check whether the caller has asked to set params.
+
+
+          if (update.setParams) {
+            // Set every requested param.
+            params = Object.keys(update.setParams).reduce(
+            /**
+            * @param {?} params
+            * @param {?} param
+            * @return {?}
+            */
+            function (params, param) {
+              return params.set(param,
+              /** @type {?} */
+              update.setParams[param]);
+            }, params);
+          } // Finally, construct the new HttpRequest using the pieces from above.
+
+
+          return new HttpRequest(method, url, body, {
+            params: params,
+            headers: headers,
+            reportProgress: reportProgress,
+            responseType: responseType,
+            withCredentials: withCredentials
+          });
+        }
+      }]);
+
+      return HttpRequest;
+    }();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/src/response.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @enum {number} */
+
+
+    var HttpEventType = {
+      /**
+       * The request was sent out over the wire.
+       */
+      Sent: 0,
+
+      /**
+       * An upload progress event was received.
+       */
+      UploadProgress: 1,
+
+      /**
+       * The response status code and headers were received.
+       */
+      ResponseHeader: 2,
+
+      /**
+       * A download progress event was received.
+       */
+      DownloadProgress: 3,
+
+      /**
+       * The full response including the body was received.
+       */
+      Response: 4,
+
+      /**
+       * A custom event from an interceptor or a backend.
+       */
+      User: 5
+    };
+    HttpEventType[HttpEventType.Sent] = 'Sent';
+    HttpEventType[HttpEventType.UploadProgress] = 'UploadProgress';
+    HttpEventType[HttpEventType.ResponseHeader] = 'ResponseHeader';
+    HttpEventType[HttpEventType.DownloadProgress] = 'DownloadProgress';
+    HttpEventType[HttpEventType.Response] = 'Response';
+    HttpEventType[HttpEventType.User] = 'User';
+    /**
+     * Base interface for progress events.
+     *
+     * \@publicApi
+     * @record
+     */
+
+    function HttpProgressEvent() {}
+
+    if (false) {}
+    /**
+     * A download progress event.
+     *
+     * \@publicApi
+     * @record
+     */
+
+
+    function HttpDownloadProgressEvent() {}
+
+    if (false) {}
+    /**
+     * An upload progress event.
+     *
+     * \@publicApi
+     * @record
+     */
+
+
+    function HttpUploadProgressEvent() {}
+
+    if (false) {}
+    /**
+     * An event indicating that the request was sent to the server. Useful
+     * when a request may be retried multiple times, to distinguish between
+     * retries on the final event stream.
+     *
+     * \@publicApi
+     * @record
+     */
+
+
+    function HttpSentEvent() {}
+
+    if (false) {}
+    /**
+     * A user-defined event.
+     *
+     * Grouping all custom events under this type ensures they will be handled
+     * and forwarded by all implementations of interceptors.
+     *
+     * \@publicApi
+     * @record
+     * @template T
+     */
+
+
+    function HttpUserEvent() {}
+
+    if (false) {}
+    /**
+     * An error that represents a failed attempt to JSON.parse text coming back
+     * from the server.
+     *
+     * It bundles the Error object with the actual response body that failed to parse.
+     *
+     *
+     * @record
+     */
+
+
+    function HttpJsonParseError() {}
+
+    if (false) {}
+    /**
+     * Base class for both `HttpResponse` and `HttpHeaderResponse`.
+     *
+     * \@publicApi
+     * @abstract
+     */
+
+
+    var HttpResponseBase =
+    /**
+     * Super-constructor for all responses.
+     *
+     * The single parameter accepted is an initialization hash. Any properties
+     * of the response passed there will override the default values.
+     * @param {?} init
+     * @param {?=} defaultStatus
+     * @param {?=} defaultStatusText
+     */
+    function HttpResponseBase(init) {
+      var defaultStatus = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 200;
+      var defaultStatusText = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'OK';
+
+      _classCallCheck(this, HttpResponseBase);
+
+      // If the hash has values passed, use them to initialize the response.
+      // Otherwise use the default values.
+      this.headers = init.headers || new HttpHeaders();
+      this.status = init.status !== undefined ? init.status : defaultStatus;
+      this.statusText = init.statusText || defaultStatusText;
+      this.url = init.url || null; // Cache the ok value to avoid defining a getter.
+
+      this.ok = this.status >= 200 && this.status < 300;
+    };
+
+    if (false) {}
+    /**
+     * A partial HTTP response which only includes the status and header data,
+     * but no response body.
+     *
+     * `HttpHeaderResponse` is a `HttpEvent` available on the response
+     * event stream, only when progress events are requested.
+     *
+     * \@publicApi
+     */
+
+
+    var HttpHeaderResponse = /*#__PURE__*/function (_HttpResponseBase) {
+      _inherits(HttpHeaderResponse, _HttpResponseBase);
+
+      var _super5 = _createSuper(HttpHeaderResponse);
+
+      /**
+       * Create a new `HttpHeaderResponse` with the given parameters.
+       * @param {?=} init
+       */
+      function HttpHeaderResponse() {
+        var _this23;
+
+        var init = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+        _classCallCheck(this, HttpHeaderResponse);
+
+        _this23 = _super5.call(this, init);
+        _this23.type = HttpEventType.ResponseHeader;
+        return _this23;
+      }
+      /**
+       * Copy this `HttpHeaderResponse`, overriding its contents with the
+       * given parameter hash.
+       * @param {?=} update
+       * @return {?}
+       */
+
+
+      _createClass2(HttpHeaderResponse, [{
+        key: "clone",
+        value: function clone() {
+          var update = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+          // Perform a straightforward initialization of the new HttpHeaderResponse,
+          // overriding the current parameters with new ones if given.
+          return new HttpHeaderResponse({
+            headers: update.headers || this.headers,
+            status: update.status !== undefined ? update.status : this.status,
+            statusText: update.statusText || this.statusText,
+            url: update.url || this.url || undefined
+          });
+        }
+      }]);
+
+      return HttpHeaderResponse;
+    }(HttpResponseBase);
+
+    if (false) {}
+    /**
+     * A full HTTP response, including a typed response body (which may be `null`
+     * if one was not returned).
+     *
+     * `HttpResponse` is a `HttpEvent` available on the response event
+     * stream.
+     *
+     * \@publicApi
+     * @template T
+     */
+
+
+    var HttpResponse = /*#__PURE__*/function (_HttpResponseBase2) {
+      _inherits(HttpResponse, _HttpResponseBase2);
+
+      var _super6 = _createSuper(HttpResponse);
+
+      /**
+       * Construct a new `HttpResponse`.
+       * @param {?=} init
+       */
+      function HttpResponse() {
+        var _this24;
+
+        var init = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+        _classCallCheck(this, HttpResponse);
+
+        _this24 = _super6.call(this, init);
+        _this24.type = HttpEventType.Response;
+        _this24.body = init.body !== undefined ? init.body : null;
+        return _this24;
+      }
+      /**
+       * @param {?=} update
+       * @return {?}
+       */
+
+
+      _createClass2(HttpResponse, [{
+        key: "clone",
+        value: function clone() {
+          var update = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+          return new HttpResponse({
+            body: update.body !== undefined ? update.body : this.body,
+            headers: update.headers || this.headers,
+            status: update.status !== undefined ? update.status : this.status,
+            statusText: update.statusText || this.statusText,
+            url: update.url || this.url || undefined
+          });
+        }
+      }]);
+
+      return HttpResponse;
+    }(HttpResponseBase);
+
+    if (false) {}
+    /**
+     * A response that represents an error or failure, either from a
+     * non-successful HTTP status, an error while executing the request,
+     * or some other failure which occurred during the parsing of the response.
+     *
+     * Any error returned on the `Observable` response stream will be
+     * wrapped in an `HttpErrorResponse` to provide additional context about
+     * the state of the HTTP layer when the error occurred. The error property
+     * will contain either a wrapped Error object or the error response returned
+     * from the server.
+     *
+     * \@publicApi
+     */
+
+
+    var HttpErrorResponse = /*#__PURE__*/function (_HttpResponseBase3) {
+      _inherits(HttpErrorResponse, _HttpResponseBase3);
+
+      var _super7 = _createSuper(HttpErrorResponse);
+
+      /**
+       * @param {?} init
+       */
+      function HttpErrorResponse(init) {
+        var _this25;
+
+        _classCallCheck(this, HttpErrorResponse);
+
+        // Initialize with a default status of 0 / Unknown Error.
+        _this25 = _super7.call(this, init, 0, 'Unknown Error');
+        _this25.name = 'HttpErrorResponse';
+        /**
+         * Errors are never okay, even when the status code is in the 2xx success range.
+         */
+
+        _this25.ok = false; // If the response was successful, then this was a parse error. Otherwise, it was
+        // a protocol-level failure of some sort. Either the request failed in transit
+        // or the server returned an unsuccessful status code.
+
+        if (_this25.status >= 200 && _this25.status < 300) {
+          _this25.message = "Http failure during parsing for ".concat(init.url || '(unknown url)');
+        } else {
+          _this25.message = "Http failure response for ".concat(init.url || '(unknown url)', ": ").concat(init.status, " ").concat(init.statusText);
+        }
+
+        _this25.error = init.error || null;
+        return _this25;
+      }
+
+      return HttpErrorResponse;
+    }(HttpResponseBase);
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/src/client.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Constructs an instance of `HttpRequestOptions<T>` from a source `HttpMethodOptions` and
+     * the given `body`. This function clones the object and adds the body.
+     *
+     * Note that the `responseType` *options* value is a String that identifies the
+     * single data type of the response.
+     * A single overload version of the method handles each response type.
+     * The value of `responseType` cannot be a union, as the combined signature could imply.
+     *
+     * @template T
+     * @param {?} options
+     * @param {?} body
+     * @return {?}
+     */
+
+
+    function addBody(options, body) {
+      return {
+        body: body,
+        headers: options.headers,
+        observe: options.observe,
+        params: options.params,
+        reportProgress: options.reportProgress,
+        responseType: options.responseType,
+        withCredentials: options.withCredentials
+      };
+    }
+    /**
+     * Performs HTTP requests.
+     * This service is available as an injectable class, with methods to perform HTTP requests.
+     * Each request method has multiple signatures, and the return type varies based on
+     * the signature that is called (mainly the values of `observe` and `responseType`).
+     *
+     * Note that the `responseType` *options* value is a String that identifies the
+     * single data type of the response.
+     * A single overload version of the method handles each response type.
+     * The value of `responseType` cannot be a union, as the combined signature could imply.
+     *
+     * \@usageNotes
+     * Sample HTTP requests for the [Tour of Heroes](/tutorial/toh-pt0) application.
+     *
+     * ### HTTP Request Example
+     *
+     * ```
+     *  // GET heroes whose name contains search term
+     * searchHeroes(term: string): observable<Hero[]>{
+     *
+     *  const params = new HttpParams({fromString: 'name=term'});
+     *    return this.httpClient.request('GET', this.heroesUrl, {responseType:'json', params});
+     * }
+     * ```
+     * ### JSONP Example
+     * ```
+     * requestJsonp(url, callback = 'callback') {
+     *  return this.httpClient.jsonp(this.heroesURL, callback);
+     * }
+     * ```
+     *
+     * ### PATCH Example
+     * ```
+     * // PATCH one of the heroes' name
+     * patchHero (id: number, heroName: string): Observable<{}> {
+     * const url = `${this.heroesUrl}/${id}`;   // PATCH api/heroes/42
+     *  return this.httpClient.patch(url, {name: heroName}, httpOptions)
+     *    .pipe(catchError(this.handleError('patchHero')));
+     * }
+     * ```
+     *
+     * @see [HTTP Guide](guide/http)
+     *
+     * \@publicApi
+     */
+
+
+    var HttpClient = /*#__PURE__*/function () {
+      /**
+       * @param {?} handler
+       */
+      function HttpClient(handler) {
+        _classCallCheck(this, HttpClient);
+
+        this.handler = handler;
+      }
+      /**
+       * Constructs an observable for a generic HTTP request that, when subscribed,
+       * fires the request through the chain of registered interceptors and on to the
+       * server.
+       *
+       * You can pass an `HttpRequest` directly as the only parameter. In this case,
+       * the call returns an observable of the raw `HttpEvent` stream.
+       *
+       * Alternatively you can pass an HTTP method as the first parameter,
+       * a URL string as the second, and an options hash containing the request body as the third.
+       * See `addBody()`. In this case, the specified `responseType` and `observe` options determine the
+       * type of returned observable.
+       *   * The `responseType` value determines how a successful response body is parsed.
+       *   * If `responseType` is the default `json`, you can pass a type interface for the resulting
+       * object as a type parameter to the call.
+       *
+       * The `observe` value determines the return type, according to what you are interested in
+       * observing.
+       *   * An `observe` value of events returns an observable of the raw `HttpEvent` stream, including
+       * progress events by default.
+       *   * An `observe` value of response returns an observable of `HttpResponse<T>`,
+       * where the `T` parameter depends on the `responseType` and any optionally provided type
+       * parameter.
+       *   * An `observe` value of body returns an observable of `<T>` with the same `T` body type.
+       *
+       * @param {?} first
+       * @param {?=} url
+       * @param {?=} options
+       * @return {?}
+       */
+
+
+      _createClass2(HttpClient, [{
+        key: "request",
+        value: function request(first, url) {
+          var _this26 = this;
+
+          var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+          /** @type {?} */
+          var req; // First, check whether the primary argument is an instance of `HttpRequest`.
+
+          if (first instanceof HttpRequest) {
+            // It is. The other arguments must be undefined (per the signatures) and can be
+            // ignored.
+            req = first;
+          } else {
+            // It's a string, so it represents a URL. Construct a request based on it,
+            // and incorporate the remaining arguments (assuming `GET` unless a method is
+            // provided.
+            // Figure out the headers.
+
+            /** @type {?} */
+            var headers = undefined;
+
+            if (options.headers instanceof HttpHeaders) {
+              headers = options.headers;
+            } else {
+              headers = new HttpHeaders(options.headers);
+            } // Sort out parameters.
+
+            /** @type {?} */
+
+
+            var params = undefined;
+
+            if (!!options.params) {
+              if (options.params instanceof HttpParams) {
+                params = options.params;
+              } else {
+                params = new HttpParams(
+                /** @type {?} */
+                {
+                  fromObject: options.params
+                });
+              }
+            } // Construct the request.
+
+
+            req = new HttpRequest(first,
+            /** @type {?} */
+            url, options.body !== undefined ? options.body : null, {
+              headers: headers,
+              params: params,
+              reportProgress: options.reportProgress,
+              // By default, JSON is assumed to be returned for all calls.
+              responseType: options.responseType || 'json',
+              withCredentials: options.withCredentials
+            });
+          } // Start with an Observable.of() the initial request, and run the handler (which
+          // includes all interceptors) inside a concatMap(). This way, the handler runs
+          // inside an Observable chain, which causes interceptors to be re-run on every
+          // subscription (this also makes retries re-run the handler, including interceptors).
+
+          /** @type {?} */
+
+
+          var events$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(req).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["concatMap"])(
+          /**
+          * @param {?} req
+          * @return {?}
+          */
+          function (req) {
+            return _this26.handler.handle(req);
+          })); // If coming via the API signature which accepts a previously constructed HttpRequest,
+          // the only option is to get the event stream. Otherwise, return the event stream if
+          // that is what was requested.
+
+          if (first instanceof HttpRequest || options.observe === 'events') {
+            return events$;
+          } // The requested stream contains either the full response or the body. In either
+          // case, the first step is to filter the event stream to extract a stream of
+          // responses(s).
+
+          /** @type {?} */
+
+
+          var res$ =
+          /** @type {?} */
+          events$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["filter"])(
+          /**
+          * @param {?} event
+          * @return {?}
+          */
+          function (event) {
+            return event instanceof HttpResponse;
+          })); // Decide which stream to return.
+
+          switch (options.observe || 'body') {
+            case 'body':
+              // The requested stream is the body. Map the response stream to the response
+              // body. This could be done more simply, but a misbehaving interceptor might
+              // transform the response body into a different format and ignore the requested
+              // responseType. Guard against this by validating that the response is of the
+              // requested type.
+              switch (req.responseType) {
+                case 'arraybuffer':
+                  return res$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(
+                  /**
+                  * @param {?} res
+                  * @return {?}
+                  */
+                  function (res) {
+                    // Validate that the body is an ArrayBuffer.
+                    if (res.body !== null && !(res.body instanceof ArrayBuffer)) {
+                      throw new Error('Response is not an ArrayBuffer.');
+                    }
+
+                    return res.body;
+                  }));
+
+                case 'blob':
+                  return res$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(
+                  /**
+                  * @param {?} res
+                  * @return {?}
+                  */
+                  function (res) {
+                    // Validate that the body is a Blob.
+                    if (res.body !== null && !(res.body instanceof Blob)) {
+                      throw new Error('Response is not a Blob.');
+                    }
+
+                    return res.body;
+                  }));
+
+                case 'text':
+                  return res$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(
+                  /**
+                  * @param {?} res
+                  * @return {?}
+                  */
+                  function (res) {
+                    // Validate that the body is a string.
+                    if (res.body !== null && typeof res.body !== 'string') {
+                      throw new Error('Response is not a string.');
+                    }
+
+                    return res.body;
+                  }));
+
+                case 'json':
+                default:
+                  // No validation needed for JSON responses, as they can be of any type.
+                  return res$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(
+                  /**
+                  * @param {?} res
+                  * @return {?}
+                  */
+                  function (res) {
+                    return res.body;
+                  }));
+              }
+
+            case 'response':
+              // The response stream was requested directly, so return it.
+              return res$;
+
+            default:
+              // Guard against new future observe types being added.
+              throw new Error("Unreachable: unhandled observe type ".concat(options.observe, "}"));
+          }
+        }
+        /**
+         * Constructs an observable that, when subscribed, causes the configured
+         * `DELETE` request to execute on the server. See the individual overloads for
+         * details on the return type.
+         *
+         * @param {?} url     The endpoint URL.
+         * @param {?=} options The HTTP options to send with the request.
+         *
+         * @return {?}
+         */
+
+      }, {
+        key: "delete",
+        value: function _delete(url) {
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          return this.request('DELETE', url,
+          /** @type {?} */
+          options);
+        }
+        /**
+         * Constructs an observable that, when subscribed, causes the configured
+         * `GET` request to execute on the server. See the individual overloads for
+         * details on the return type.
+         * @param {?} url
+         * @param {?=} options
+         * @return {?}
+         */
+
+      }, {
+        key: "get",
+        value: function get(url) {
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          return this.request('GET', url,
+          /** @type {?} */
+          options);
+        }
+        /**
+         * Constructs an observable that, when subscribed, causes the configured
+         * `HEAD` request to execute on the server. The `HEAD` method returns
+         * meta information about the resource without transferring the
+         * resource itself. See the individual overloads for
+         * details on the return type.
+         * @param {?} url
+         * @param {?=} options
+         * @return {?}
+         */
+
+      }, {
+        key: "head",
+        value: function head(url) {
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          return this.request('HEAD', url,
+          /** @type {?} */
+          options);
+        }
+        /**
+         * Constructs an `Observable` that, when subscribed, causes a request with the special method
+         * `JSONP` to be dispatched via the interceptor pipeline.
+         * The [JSONP pattern](https://en.wikipedia.org/wiki/JSONP) works around limitations of certain
+         * API endpoints that don't support newer,
+         * and preferable [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) protocol.
+         * JSONP treats the endpoint API as a JavaScript file and tricks the browser to process the
+         * requests even if the API endpoint is not located on the same domain (origin) as the client-side
+         * application making the request.
+         * The endpoint API must support JSONP callback for JSONP requests to work.
+         * The resource API returns the JSON response wrapped in a callback function.
+         * You can pass the callback function name as one of the query parameters.
+         * Note that JSONP requests can only be used with `GET` requests.
+         *
+         * @template T
+         * @param {?} url The resource URL.
+         * @param {?} callbackParam The callback function name.
+         *
+         * @return {?}
+         */
+
+      }, {
+        key: "jsonp",
+        value: function jsonp(url, callbackParam) {
+          return this.request('JSONP', url, {
+            params: new HttpParams().append(callbackParam, 'JSONP_CALLBACK'),
+            observe: 'body',
+            responseType: 'json'
+          });
+        }
+        /**
+         * Constructs an `Observable` that, when subscribed, causes the configured
+         * `OPTIONS` request to execute on the server. This method allows the client
+         * to determine the supported HTTP methods and other capabilites of an endpoint,
+         * without implying a resource action. See the individual overloads for
+         * details on the return type.
+         * @param {?} url
+         * @param {?=} options
+         * @return {?}
+         */
+
+      }, {
+        key: "options",
+        value: function options(url) {
+          var _options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+          return this.request('OPTIONS', url,
+          /** @type {?} */
+          _options);
+        }
+        /**
+         * Constructs an observable that, when subscribed, causes the configured
+         * `PATCH` request to execute on the server. See the individual overloads for
+         * details on the return type.
+         * @param {?} url
+         * @param {?} body
+         * @param {?=} options
+         * @return {?}
+         */
+
+      }, {
+        key: "patch",
+        value: function patch(url, body) {
+          var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+          return this.request('PATCH', url, addBody(options, body));
+        }
+        /**
+         * Constructs an observable that, when subscribed, causes the configured
+         * `POST` request to execute on the server. The server responds with the location of
+         * the replaced resource. See the individual overloads for
+         * details on the return type.
+         * @param {?} url
+         * @param {?} body
+         * @param {?=} options
+         * @return {?}
+         */
+
+      }, {
+        key: "post",
+        value: function post(url, body) {
+          var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+          return this.request('POST', url, addBody(options, body));
+        }
+        /**
+         * Constructs an observable that, when subscribed, causes the configured
+         * `PUT` request to execute on the server. The `PUT` method replaces an existing resource
+         * with a new set of values.
+         * See the individual overloads for details on the return type.
+         * @param {?} url
+         * @param {?} body
+         * @param {?=} options
+         * @return {?}
+         */
+
+      }, {
+        key: "put",
+        value: function put(url, body) {
+          var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+          return this.request('PUT', url, addBody(options, body));
+        }
+      }]);
+
+      return HttpClient;
+    }();
+
+    HttpClient.ɵfac = function HttpClient_Factory(t) {
+      return new (t || HttpClient)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](HttpHandler));
+    };
+
+    HttpClient.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: HttpClient,
+      factory: HttpClient.ɵfac
+    });
+    /** @nocollapse */
+
+    HttpClient.ctorParameters = function () {
+      return [{
+        type: HttpHandler
+      }];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HttpClient, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: HttpHandler
+        }];
+      }, null);
+    })();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/src/interceptor.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Intercepts and handles an `HttpRequest` or `HttpResponse`.
+     *
+     * Most interceptors transform the outgoing request before passing it to the
+     * next interceptor in the chain, by calling `next.handle(transformedReq)`.
+     * An interceptor may transform the
+     * response event stream as well, by applying additional RxJS operators on the stream
+     * returned by `next.handle()`.
+     *
+     * More rarely, an interceptor may handle the request entirely,
+     * and compose a new event stream instead of invoking `next.handle()`. This is an
+     * acceptable behavior, but keep in mind that further interceptors will be skipped entirely.
+     *
+     * It is also rare but valid for an interceptor to return multiple responses on the
+     * event stream for a single request.
+     *
+     * \@publicApi
+     *
+     * @see [HTTP Guide](guide/http#intercepting-requests-and-responses)
+     *
+     * \@usageNotes
+     *
+     * To use the same instance of `HttpInterceptors` for the entire app, import the `HttpClientModule`
+     * only in your `AppModule`, and add the interceptors to the root application injector .
+     * If you import `HttpClientModule` multiple times across different modules (for example, in lazy
+     * loading modules), each import creates a new copy of the `HttpClientModule`, which overwrites the
+     * interceptors provided in the root module.
+     *
+     * @record
+     */
+
+
+    function HttpInterceptor() {}
+
+    if (false) {}
+    /**
+     * `HttpHandler` which applies an `HttpInterceptor` to an `HttpRequest`.
+     *
+     *
+     */
+
+
+    var HttpInterceptorHandler = /*#__PURE__*/function () {
+      /**
+       * @param {?} next
+       * @param {?} interceptor
+       */
+      function HttpInterceptorHandler(next, interceptor) {
+        _classCallCheck(this, HttpInterceptorHandler);
+
+        this.next = next;
+        this.interceptor = interceptor;
+      }
+      /**
+       * @param {?} req
+       * @return {?}
+       */
+
+
+      _createClass2(HttpInterceptorHandler, [{
+        key: "handle",
+        value: function handle(req) {
+          return this.interceptor.intercept(req, this.next);
+        }
+      }]);
+
+      return HttpInterceptorHandler;
+    }();
+
+    if (false) {}
+    /**
+     * A multi-provider token that represents the array of registered
+     * `HttpInterceptor` objects.
+     *
+     * \@publicApi
+     * @type {?}
+     */
+
+
+    var HTTP_INTERCEPTORS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('HTTP_INTERCEPTORS');
+
+    var NoopInterceptor = /*#__PURE__*/function () {
+      function NoopInterceptor() {
+        _classCallCheck(this, NoopInterceptor);
+      }
+
+      _createClass2(NoopInterceptor, [{
+        key: "intercept",
+
+        /**
+         * @param {?} req
+         * @param {?} next
+         * @return {?}
+         */
+        value: function intercept(req, next) {
+          return next.handle(req);
+        }
+      }]);
+
+      return NoopInterceptor;
+    }();
+
+    NoopInterceptor.ɵfac = function NoopInterceptor_Factory(t) {
+      return new (t || NoopInterceptor)();
+    };
+
+    NoopInterceptor.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: NoopInterceptor,
+      factory: NoopInterceptor.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NoopInterceptor, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], null, null);
+    })();
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/src/jsonp.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    // Every request made through JSONP needs a callback name that's unique across the
+    // whole page. Each request is assigned an id and the callback name is constructed
+    // from that. The next id to be assigned is tracked in a global variable here that
+    // is shared among all applications on the page.
+
+    /** @type {?} */
+
+
+    var nextRequestId = 0; // Error text given when a JSONP script is injected, but doesn't invoke the callback
+    // passed in its URL.
+
+    /** @type {?} */
+
+    var JSONP_ERR_NO_CALLBACK = 'JSONP injected script did not invoke callback.'; // Error text given when a request is passed to the JsonpClientBackend that doesn't
+    // have a request method JSONP.
+
+    /** @type {?} */
+
+    var JSONP_ERR_WRONG_METHOD = 'JSONP requests must use JSONP request method.';
+    /** @type {?} */
+
+    var JSONP_ERR_WRONG_RESPONSE_TYPE = 'JSONP requests must use Json response type.';
+    /**
+     * DI token/abstract type representing a map of JSONP callbacks.
+     *
+     * In the browser, this should always be the `window` object.
+     *
+     *
+     * @abstract
+     */
+
+    var JsonpCallbackContext = function JsonpCallbackContext() {
+      _classCallCheck(this, JsonpCallbackContext);
+    };
+    /**
+     * Processes an `HttpRequest` with the JSONP method,
+     * by performing JSONP style requests.
+     * @see `HttpHandler`
+     * @see `HttpXhrBackend`
+     *
+     * \@publicApi
+     */
+
+
+    var JsonpClientBackend = /*#__PURE__*/function () {
+      /**
+       * @param {?} callbackMap
+       * @param {?} document
+       */
+      function JsonpClientBackend(callbackMap, document) {
+        _classCallCheck(this, JsonpClientBackend);
+
+        this.callbackMap = callbackMap;
+        this.document = document;
+      }
+      /**
+       * Get the name of the next callback method, by incrementing the global `nextRequestId`.
+       * @private
+       * @return {?}
+       */
+
+
+      _createClass2(JsonpClientBackend, [{
+        key: "nextCallback",
+        value: function nextCallback() {
+          return "ng_jsonp_callback_".concat(nextRequestId++);
+        }
+        /**
+         * Processes a JSONP request and returns an event stream of the results.
+         * @param {?} req The request object.
+         * @return {?} An observable of the response events.
+         *
+         */
+
+      }, {
+        key: "handle",
+        value: function handle(req) {
+          var _this27 = this;
+
+          // Firstly, check both the method and response type. If either doesn't match
+          // then the request was improperly routed here and cannot be handled.
+          if (req.method !== 'JSONP') {
+            throw new Error(JSONP_ERR_WRONG_METHOD);
+          } else if (req.responseType !== 'json') {
+            throw new Error(JSONP_ERR_WRONG_RESPONSE_TYPE);
+          } // Everything else happens inside the Observable boundary.
+
+
+          return new rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"](
+          /**
+          * @param {?} observer
+          * @return {?}
+          */
+          function (observer) {
+            // The first step to make a request is to generate the callback name, and replace the
+            // callback placeholder in the URL with the name. Care has to be taken here to ensure
+            // a trailing &, if matched, gets inserted back into the URL in the correct place.
+
+            /** @type {?} */
+            var callback = _this27.nextCallback();
+            /** @type {?} */
+
+
+            var url = req.urlWithParams.replace(/=JSONP_CALLBACK(&|$)/, "=".concat(callback, "$1")); // Construct the <script> tag and point it at the URL.
+
+            /** @type {?} */
+
+            var node = _this27.document.createElement('script');
+
+            node.src = url; // A JSONP request requires waiting for multiple callbacks. These variables
+            // are closed over and track state across those callbacks.
+            // The response object, if one has been received, or null otherwise.
+
+            /** @type {?} */
+
+            var body = null; // Whether the response callback has been called.
+
+            /** @type {?} */
+
+            var finished = false; // Whether the request has been cancelled (and thus any other callbacks)
+            // should be ignored.
+
+            /** @type {?} */
+
+            var cancelled = false; // Set the response callback in this.callbackMap (which will be the window
+            // object in the browser. The script being loaded via the <script> tag will
+            // eventually call this callback.
+
+            _this27.callbackMap[callback] =
+            /**
+            * @param {?=} data
+            * @return {?}
+            */
+            function (data) {
+              // Data has been received from the JSONP script. Firstly, delete this callback.
+              delete _this27.callbackMap[callback]; // Next, make sure the request wasn't cancelled in the meantime.
+
+              if (cancelled) {
+                return;
+              } // Set state to indicate data was received.
+
+
+              body = data;
+              finished = true;
+            }; // cleanup() is a utility closure that removes the <script> from the page and
+            // the response callback from the window. This logic is used in both the
+            // success, error, and cancellation paths, so it's extracted out for convenience.
+
+            /** @type {?} */
+
+
+            var cleanup =
+            /**
+            * @return {?}
+            */
+            function cleanup() {
+              // Remove the <script> tag if it's still on the page.
+              if (node.parentNode) {
+                node.parentNode.removeChild(node);
+              } // Remove the response callback from the callbackMap (window object in the
+              // browser).
+
+
+              delete _this27.callbackMap[callback];
+            }; // onLoad() is the success callback which runs after the response callback
+            // if the JSONP script loads successfully. The event itself is unimportant.
+            // If something went wrong, onLoad() may run without the response callback
+            // having been invoked.
+
+            /** @type {?} */
+
+
+            var onLoad =
+            /**
+            * @param {?} event
+            * @return {?}
+            */
+            function onLoad(event) {
+              // Do nothing if the request has been cancelled.
+              if (cancelled) {
+                return;
+              } // Cleanup the page.
+
+
+              cleanup(); // Check whether the response callback has run.
+
+              if (!finished) {
+                // It hasn't, something went wrong with the request. Return an error via
+                // the Observable error path. All JSONP errors have status 0.
+                observer.error(new HttpErrorResponse({
+                  url: url,
+                  status: 0,
+                  statusText: 'JSONP Error',
+                  error: new Error(JSONP_ERR_NO_CALLBACK)
+                }));
+                return;
+              } // Success. body either contains the response body or null if none was
+              // returned.
+
+
+              observer.next(new HttpResponse({
+                body: body,
+                status: 200,
+                statusText: 'OK',
+                url: url
+              })); // Complete the stream, the response is over.
+
+              observer.complete();
+            }; // onError() is the error callback, which runs if the script returned generates
+            // a Javascript error. It emits the error via the Observable error channel as
+            // a HttpErrorResponse.
+
+            /** @type {?} */
+
+
+            var onError =
+            /**
+            * @param {?} error
+            * @return {?}
+            */
+            function onError(error) {
+              // If the request was already cancelled, no need to emit anything.
+              if (cancelled) {
+                return;
+              }
+
+              cleanup(); // Wrap the error in a HttpErrorResponse.
+
+              observer.error(new HttpErrorResponse({
+                error: error,
+                status: 0,
+                statusText: 'JSONP Error',
+                url: url
+              }));
+            }; // Subscribe to both the success (load) and error events on the <script> tag,
+            // and add it to the page.
+
+
+            node.addEventListener('load', onLoad);
+            node.addEventListener('error', onError);
+
+            _this27.document.body.appendChild(node); // The request has now been successfully sent.
+
+
+            observer.next({
+              type: HttpEventType.Sent
+            }); // Cancellation handler.
+
+            return (
+              /**
+              * @return {?}
+              */
+              function () {
+                // Track the cancellation so event listeners won't do anything even if already scheduled.
+                cancelled = true; // Remove the event listeners so they won't run if the events later fire.
+
+                node.removeEventListener('load', onLoad);
+                node.removeEventListener('error', onError); // And finally, clean up the page.
+
+                cleanup();
+              }
+            );
+          });
+        }
+      }]);
+
+      return JsonpClientBackend;
+    }();
+
+    JsonpClientBackend.ɵfac = function JsonpClientBackend_Factory(t) {
+      return new (t || JsonpClientBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](JsonpCallbackContext), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT"]));
+    };
+
+    JsonpClientBackend.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: JsonpClientBackend,
+      factory: JsonpClientBackend.ɵfac
+    });
+    /** @nocollapse */
+
+    JsonpClientBackend.ctorParameters = function () {
+      return [{
+        type: JsonpCallbackContext
+      }, {
+        type: undefined,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT"]]
+        }]
+      }];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](JsonpClientBackend, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: JsonpCallbackContext
+        }, {
+          type: undefined,
+          decorators: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+            args: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT"]]
+          }]
+        }];
+      }, null);
+    })();
+
+    if (false) {}
+    /**
+     * Identifies requests with the method JSONP and
+     * shifts them to the `JsonpClientBackend`.
+     *
+     * @see `HttpInterceptor`
+     *
+     * \@publicApi
+     */
+
+
+    var JsonpInterceptor = /*#__PURE__*/function () {
+      /**
+       * @param {?} jsonp
+       */
+      function JsonpInterceptor(jsonp) {
+        _classCallCheck(this, JsonpInterceptor);
+
+        this.jsonp = jsonp;
+      }
+      /**
+       * Identifies and handles a given JSONP request.
+       * @param {?} req The outgoing request object to handle.
+       * @param {?} next The next interceptor in the chain, or the backend
+       * if no interceptors remain in the chain.
+       * @return {?} An observable of the event stream.
+       */
+
+
+      _createClass2(JsonpInterceptor, [{
+        key: "intercept",
+        value: function intercept(req, next) {
+          if (req.method === 'JSONP') {
+            return this.jsonp.handle(
+            /** @type {?} */
+            req);
+          } // Fall through for normal HTTP requests.
+
+
+          return next.handle(req);
+        }
+      }]);
+
+      return JsonpInterceptor;
+    }();
+
+    JsonpInterceptor.ɵfac = function JsonpInterceptor_Factory(t) {
+      return new (t || JsonpInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](JsonpClientBackend));
+    };
+
+    JsonpInterceptor.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: JsonpInterceptor,
+      factory: JsonpInterceptor.ɵfac
+    });
+    /** @nocollapse */
+
+    JsonpInterceptor.ctorParameters = function () {
+      return [{
+        type: JsonpClientBackend
+      }];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](JsonpInterceptor, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: JsonpClientBackend
+        }];
+      }, null);
+    })();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/src/xhr.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var XSSI_PREFIX = /^\)\]\}',?\n/;
+    /**
+     * Determine an appropriate URL for the response, by checking either
+     * XMLHttpRequest.responseURL or the X-Request-URL header.
+     * @param {?} xhr
+     * @return {?}
+     */
+
+    function getResponseUrl(xhr) {
+      if ('responseURL' in xhr && xhr.responseURL) {
+        return xhr.responseURL;
+      }
+
+      if (/^X-Request-URL:/m.test(xhr.getAllResponseHeaders())) {
+        return xhr.getResponseHeader('X-Request-URL');
+      }
+
+      return null;
+    }
+    /**
+     * A wrapper around the `XMLHttpRequest` constructor.
+     *
+     * \@publicApi
+     * @abstract
+     */
+
+
+    var XhrFactory = function XhrFactory() {
+      _classCallCheck(this, XhrFactory);
+    };
+
+    if (false) {}
+    /**
+     * A factory for `HttpXhrBackend` that uses the `XMLHttpRequest` browser API.
+     *
+     */
+
+
+    var BrowserXhr = /*#__PURE__*/function () {
+      function BrowserXhr() {
+        _classCallCheck(this, BrowserXhr);
+      }
+      /**
+       * @return {?}
+       */
+
+
+      _createClass2(BrowserXhr, [{
+        key: "build",
+        value: function build() {
+          return (
+            /** @type {?} */
+            new XMLHttpRequest()
+          );
+        }
+      }]);
+
+      return BrowserXhr;
+    }();
+
+    BrowserXhr.ɵfac = function BrowserXhr_Factory(t) {
+      return new (t || BrowserXhr)();
+    };
+
+    BrowserXhr.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: BrowserXhr,
+      factory: BrowserXhr.ɵfac
+    });
+    /** @nocollapse */
+
+    BrowserXhr.ctorParameters = function () {
+      return [];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](BrowserXhr, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [];
+      }, null);
+    })();
+    /**
+     * Tracks a response from the server that does not yet have a body.
+     * @record
+     */
+
+
+    function PartialResponse() {}
+
+    if (false) {}
+    /**
+     * Uses `XMLHttpRequest` to send requests to a backend server.
+     * @see `HttpHandler`
+     * @see `JsonpClientBackend`
+     *
+     * \@publicApi
+     */
+
+
+    var HttpXhrBackend = /*#__PURE__*/function () {
+      /**
+       * @param {?} xhrFactory
+       */
+      function HttpXhrBackend(xhrFactory) {
+        _classCallCheck(this, HttpXhrBackend);
+
+        this.xhrFactory = xhrFactory;
+      }
+      /**
+       * Processes a request and returns a stream of response events.
+       * @param {?} req The request object.
+       * @return {?} An observable of the response events.
+       */
+
+
+      _createClass2(HttpXhrBackend, [{
+        key: "handle",
+        value: function handle(req) {
+          var _this28 = this;
+
+          // Quick check to give a better error message when a user attempts to use
+          // HttpClient.jsonp() without installing the JsonpClientModule
+          if (req.method === 'JSONP') {
+            throw new Error("Attempted to construct Jsonp request without JsonpClientModule installed.");
+          } // Everything happens on Observable subscription.
+
+
+          return new rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"](
+          /**
+          * @param {?} observer
+          * @return {?}
+          */
+          function (observer) {
+            // Start by setting up the XHR object with request method, URL, and withCredentials flag.
+
+            /** @type {?} */
+            var xhr = _this28.xhrFactory.build();
+
+            xhr.open(req.method, req.urlWithParams);
+
+            if (!!req.withCredentials) {
+              xhr.withCredentials = true;
+            } // Add all the requested headers.
+
+
+            req.headers.forEach(
+            /**
+            * @param {?} name
+            * @param {?} values
+            * @return {?}
+            */
+            function (name, values) {
+              return xhr.setRequestHeader(name, values.join(','));
+            }); // Add an Accept header if one isn't present already.
+
+            if (!req.headers.has('Accept')) {
+              xhr.setRequestHeader('Accept', 'application/json, text/plain, */*');
+            } // Auto-detect the Content-Type header if one isn't present already.
+
+
+            if (!req.headers.has('Content-Type')) {
+              /** @type {?} */
+              var detectedType = req.detectContentTypeHeader(); // Sometimes Content-Type detection fails.
+
+              if (detectedType !== null) {
+                xhr.setRequestHeader('Content-Type', detectedType);
+              }
+            } // Set the responseType if one was requested.
+
+
+            if (req.responseType) {
+              /** @type {?} */
+              var responseType = req.responseType.toLowerCase(); // JSON responses need to be processed as text. This is because if the server
+              // returns an XSSI-prefixed JSON response, the browser will fail to parse it,
+              // xhr.response will be null, and xhr.responseText cannot be accessed to
+              // retrieve the prefixed JSON data in order to strip the prefix. Thus, all JSON
+              // is parsed by first requesting text and then applying JSON.parse.
+
+              xhr.responseType =
+              /** @type {?} */
+              responseType !== 'json' ? responseType : 'text';
+            } // Serialize the request body if one is present. If not, this will be set to null.
+
+            /** @type {?} */
+
+
+            var reqBody = req.serializeBody(); // If progress events are enabled, response headers will be delivered
+            // in two events - the HttpHeaderResponse event and the full HttpResponse
+            // event. However, since response headers don't change in between these
+            // two events, it doesn't make sense to parse them twice. So headerResponse
+            // caches the data extracted from the response whenever it's first parsed,
+            // to ensure parsing isn't duplicated.
+
+            /** @type {?} */
+
+            var headerResponse = null; // partialFromXhr extracts the HttpHeaderResponse from the current XMLHttpRequest
+            // state, and memoizes it into headerResponse.
+
+            /** @type {?} */
+
+            var partialFromXhr =
+            /**
+            * @return {?}
+            */
+            function partialFromXhr() {
+              if (headerResponse !== null) {
+                return headerResponse;
+              } // Read status and normalize an IE9 bug (http://bugs.jquery.com/ticket/1450).
+
+              /** @type {?} */
+
+
+              var status = xhr.status === 1223 ? 204 : xhr.status;
+              /** @type {?} */
+
+              var statusText = xhr.statusText || 'OK'; // Parse headers from XMLHttpRequest - this step is lazy.
+
+              /** @type {?} */
+
+              var headers = new HttpHeaders(xhr.getAllResponseHeaders()); // Read the response URL from the XMLHttpResponse instance and fall back on the
+              // request URL.
+
+              /** @type {?} */
+
+              var url = getResponseUrl(xhr) || req.url; // Construct the HttpHeaderResponse and memoize it.
+
+              headerResponse = new HttpHeaderResponse({
+                headers: headers,
+                status: status,
+                statusText: statusText,
+                url: url
+              });
+              return headerResponse;
+            }; // Next, a few closures are defined for the various events which XMLHttpRequest can
+            // emit. This allows them to be unregistered as event listeners later.
+            // First up is the load event, which represents a response being fully available.
+
+            /** @type {?} */
+
+
+            var onLoad =
+            /**
+            * @return {?}
+            */
+            function onLoad() {
+              // Read response state from the memoized partial data.
+              var _partialFromXhr = partialFromXhr(),
+                  headers = _partialFromXhr.headers,
+                  status = _partialFromXhr.status,
+                  statusText = _partialFromXhr.statusText,
+                  url = _partialFromXhr.url; // The body will be read out if present.
+
+              /** @type {?} */
+
+
+              var body = null;
+
+              if (status !== 204) {
+                // Use XMLHttpRequest.response if set, responseText otherwise.
+                body = typeof xhr.response === 'undefined' ? xhr.responseText : xhr.response;
+              } // Normalize another potential bug (this one comes from CORS).
+
+
+              if (status === 0) {
+                status = !!body ? 200 : 0;
+              } // ok determines whether the response will be transmitted on the event or
+              // error channel. Unsuccessful status codes (not 2xx) will always be errors,
+              // but a successful status code can still result in an error if the user
+              // asked for JSON data and the body cannot be parsed as such.
+
+              /** @type {?} */
+
+
+              var ok = status >= 200 && status < 300; // Check whether the body needs to be parsed as JSON (in many cases the browser
+              // will have done that already).
+
+              if (req.responseType === 'json' && typeof body === 'string') {
+                // Save the original body, before attempting XSSI prefix stripping.
+
+                /** @type {?} */
+                var originalBody = body;
+                body = body.replace(XSSI_PREFIX, '');
+
+                try {
+                  // Attempt the parse. If it fails, a parse error should be delivered to the user.
+                  body = body !== '' ? JSON.parse(body) : null;
+                } catch (error) {
+                  // Since the JSON.parse failed, it's reasonable to assume this might not have been a
+                  // JSON response. Restore the original body (including any XSSI prefix) to deliver
+                  // a better error response.
+                  body = originalBody; // If this was an error request to begin with, leave it as a string, it probably
+                  // just isn't JSON. Otherwise, deliver the parsing error to the user.
+
+                  if (ok) {
+                    // Even though the response status was 2xx, this is still an error.
+                    ok = false; // The parse error contains the text of the body that failed to parse.
+
+                    body =
+                    /** @type {?} */
+                    {
+                      error: error,
+                      text: body
+                    };
+                  }
+                }
+              }
+
+              if (ok) {
+                // A successful response is delivered on the event stream.
+                observer.next(new HttpResponse({
+                  body: body,
+                  headers: headers,
+                  status: status,
+                  statusText: statusText,
+                  url: url || undefined
+                })); // The full body has been received and delivered, no further events
+                // are possible. This request is complete.
+
+                observer.complete();
+              } else {
+                // An unsuccessful request is delivered on the error channel.
+                observer.error(new HttpErrorResponse({
+                  // The error in this case is the response body (error from the server).
+                  error: body,
+                  headers: headers,
+                  status: status,
+                  statusText: statusText,
+                  url: url || undefined
+                }));
+              }
+            }; // The onError callback is called when something goes wrong at the network level.
+            // Connection timeout, DNS error, offline, etc. These are actual errors, and are
+            // transmitted on the error channel.
+
+            /** @type {?} */
+
+
+            var onError =
+            /**
+            * @param {?} error
+            * @return {?}
+            */
+            function onError(error) {
+              var _partialFromXhr2 = partialFromXhr(),
+                  url = _partialFromXhr2.url;
+              /** @type {?} */
+
+
+              var res = new HttpErrorResponse({
+                error: error,
+                status: xhr.status || 0,
+                statusText: xhr.statusText || 'Unknown Error',
+                url: url || undefined
+              });
+              observer.error(res);
+            }; // The sentHeaders flag tracks whether the HttpResponseHeaders event
+            // has been sent on the stream. This is necessary to track if progress
+            // is enabled since the event will be sent on only the first download
+            // progerss event.
+
+            /** @type {?} */
+
+
+            var sentHeaders = false; // The download progress event handler, which is only registered if
+            // progress events are enabled.
+
+            /** @type {?} */
+
+            var onDownProgress =
+            /**
+            * @param {?} event
+            * @return {?}
+            */
+            function onDownProgress(event) {
+              // Send the HttpResponseHeaders event if it hasn't been sent already.
+              if (!sentHeaders) {
+                observer.next(partialFromXhr());
+                sentHeaders = true;
+              } // Start building the download progress event to deliver on the response
+              // event stream.
+
+              /** @type {?} */
+
+
+              var progressEvent = {
+                type: HttpEventType.DownloadProgress,
+                loaded: event.loaded
+              }; // Set the total number of bytes in the event if it's available.
+
+              if (event.lengthComputable) {
+                progressEvent.total = event.total;
+              } // If the request was for text content and a partial response is
+              // available on XMLHttpRequest, include it in the progress event
+              // to allow for streaming reads.
+
+
+              if (req.responseType === 'text' && !!xhr.responseText) {
+                progressEvent.partialText = xhr.responseText;
+              } // Finally, fire the event.
+
+
+              observer.next(progressEvent);
+            }; // The upload progress event handler, which is only registered if
+            // progress events are enabled.
+
+            /** @type {?} */
+
+
+            var onUpProgress =
+            /**
+            * @param {?} event
+            * @return {?}
+            */
+            function onUpProgress(event) {
+              // Upload progress events are simpler. Begin building the progress
+              // event.
+
+              /** @type {?} */
+              var progress = {
+                type: HttpEventType.UploadProgress,
+                loaded: event.loaded
+              }; // If the total number of bytes being uploaded is available, include
+              // it.
+
+              if (event.lengthComputable) {
+                progress.total = event.total;
+              } // Send the event.
+
+
+              observer.next(progress);
+            }; // By default, register for load and error events.
+
+
+            xhr.addEventListener('load', onLoad);
+            xhr.addEventListener('error', onError); // Progress events are only enabled if requested.
+
+            if (req.reportProgress) {
+              // Download progress is always enabled if requested.
+              xhr.addEventListener('progress', onDownProgress); // Upload progress depends on whether there is a body to upload.
+
+              if (reqBody !== null && xhr.upload) {
+                xhr.upload.addEventListener('progress', onUpProgress);
+              }
+            } // Fire the request, and notify the event stream that it was fired.
+
+
+            xhr.send(
+            /** @type {?} */
+            reqBody);
+            observer.next({
+              type: HttpEventType.Sent
+            }); // This is the return from the Observable function, which is the
+            // request cancellation handler.
+
+            return (
+              /**
+              * @return {?}
+              */
+              function () {
+                // On a cancellation, remove all registered event listeners.
+                xhr.removeEventListener('error', onError);
+                xhr.removeEventListener('load', onLoad);
+
+                if (req.reportProgress) {
+                  xhr.removeEventListener('progress', onDownProgress);
+
+                  if (reqBody !== null && xhr.upload) {
+                    xhr.upload.removeEventListener('progress', onUpProgress);
+                  }
+                } // Finally, abort the in-flight request.
+
+
+                xhr.abort();
+              }
+            );
+          });
+        }
+      }]);
+
+      return HttpXhrBackend;
+    }();
+
+    HttpXhrBackend.ɵfac = function HttpXhrBackend_Factory(t) {
+      return new (t || HttpXhrBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](XhrFactory));
+    };
+
+    HttpXhrBackend.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: HttpXhrBackend,
+      factory: HttpXhrBackend.ɵfac
+    });
+    /** @nocollapse */
+
+    HttpXhrBackend.ctorParameters = function () {
+      return [{
+        type: XhrFactory
+      }];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HttpXhrBackend, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: XhrFactory
+        }];
+      }, null);
+    })();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/src/xsrf.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var XSRF_COOKIE_NAME = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('XSRF_COOKIE_NAME');
+    /** @type {?} */
+
+    var XSRF_HEADER_NAME = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('XSRF_HEADER_NAME');
+    /**
+     * Retrieves the current XSRF token to use with the next outgoing request.
+     *
+     * \@publicApi
+     * @abstract
+     */
+
+    var HttpXsrfTokenExtractor = function HttpXsrfTokenExtractor() {
+      _classCallCheck(this, HttpXsrfTokenExtractor);
+    };
+
+    if (false) {}
+    /**
+     * `HttpXsrfTokenExtractor` which retrieves the token from a cookie.
+     */
+
+
+    var HttpXsrfCookieExtractor = /*#__PURE__*/function () {
+      /**
+       * @param {?} doc
+       * @param {?} platform
+       * @param {?} cookieName
+       */
+      function HttpXsrfCookieExtractor(doc, platform, cookieName) {
+        _classCallCheck(this, HttpXsrfCookieExtractor);
+
+        this.doc = doc;
+        this.platform = platform;
+        this.cookieName = cookieName;
+        this.lastCookieString = '';
+        this.lastToken = null;
+        /**
+         * \@internal for testing
+         */
+
+        this.parseCount = 0;
+      }
+      /**
+       * @return {?}
+       */
+
+
+      _createClass2(HttpXsrfCookieExtractor, [{
+        key: "getToken",
+        value: function getToken() {
+          if (this.platform === 'server') {
+            return null;
+          }
+          /** @type {?} */
+
+
+          var cookieString = this.doc.cookie || '';
+
+          if (cookieString !== this.lastCookieString) {
+            this.parseCount++;
+            this.lastToken = Object(_angular_common__WEBPACK_IMPORTED_MODULE_3__["ɵparseCookieValue"])(cookieString, this.cookieName);
+            this.lastCookieString = cookieString;
+          }
+
+          return this.lastToken;
+        }
+      }]);
+
+      return HttpXsrfCookieExtractor;
+    }();
+
+    HttpXsrfCookieExtractor.ɵfac = function HttpXsrfCookieExtractor_Factory(t) {
+      return new (t || HttpXsrfCookieExtractor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](XSRF_COOKIE_NAME));
+    };
+
+    HttpXsrfCookieExtractor.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: HttpXsrfCookieExtractor,
+      factory: HttpXsrfCookieExtractor.ɵfac
+    });
+    /** @nocollapse */
+
+    HttpXsrfCookieExtractor.ctorParameters = function () {
+      return [{
+        type: undefined,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT"]]
+        }]
+      }, {
+        type: String,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"]]
+        }]
+      }, {
+        type: String,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [XSRF_COOKIE_NAME]
+        }]
+      }];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HttpXsrfCookieExtractor, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: undefined,
+          decorators: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+            args: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT"]]
+          }]
+        }, {
+          type: String,
+          decorators: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+            args: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"]]
+          }]
+        }, {
+          type: String,
+          decorators: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+            args: [XSRF_COOKIE_NAME]
+          }]
+        }];
+      }, null);
+    })();
+
+    if (false) {}
+    /**
+     * `HttpInterceptor` which adds an XSRF token to eligible outgoing requests.
+     */
+
+
+    var HttpXsrfInterceptor = /*#__PURE__*/function () {
+      /**
+       * @param {?} tokenService
+       * @param {?} headerName
+       */
+      function HttpXsrfInterceptor(tokenService, headerName) {
+        _classCallCheck(this, HttpXsrfInterceptor);
+
+        this.tokenService = tokenService;
+        this.headerName = headerName;
+      }
+      /**
+       * @param {?} req
+       * @param {?} next
+       * @return {?}
+       */
+
+
+      _createClass2(HttpXsrfInterceptor, [{
+        key: "intercept",
+        value: function intercept(req, next) {
+          /** @type {?} */
+          var lcUrl = req.url.toLowerCase(); // Skip both non-mutating requests and absolute URLs.
+          // Non-mutating requests don't require a token, and absolute URLs require special handling
+          // anyway as the cookie set
+          // on our origin is not the same as the token expected by another origin.
+
+          if (req.method === 'GET' || req.method === 'HEAD' || lcUrl.startsWith('http://') || lcUrl.startsWith('https://')) {
+            return next.handle(req);
+          }
+          /** @type {?} */
+
+
+          var token = this.tokenService.getToken(); // Be careful not to overwrite an existing header of the same name.
+
+          if (token !== null && !req.headers.has(this.headerName)) {
+            req = req.clone({
+              headers: req.headers.set(this.headerName, token)
+            });
+          }
+
+          return next.handle(req);
+        }
+      }]);
+
+      return HttpXsrfInterceptor;
+    }();
+
+    HttpXsrfInterceptor.ɵfac = function HttpXsrfInterceptor_Factory(t) {
+      return new (t || HttpXsrfInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](HttpXsrfTokenExtractor), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](XSRF_HEADER_NAME));
+    };
+
+    HttpXsrfInterceptor.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: HttpXsrfInterceptor,
+      factory: HttpXsrfInterceptor.ɵfac
+    });
+    /** @nocollapse */
+
+    HttpXsrfInterceptor.ctorParameters = function () {
+      return [{
+        type: HttpXsrfTokenExtractor
+      }, {
+        type: String,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [XSRF_HEADER_NAME]
+        }]
+      }];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HttpXsrfInterceptor, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: HttpXsrfTokenExtractor
+        }, {
+          type: String,
+          decorators: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+            args: [XSRF_HEADER_NAME]
+          }]
+        }];
+      }, null);
+    })();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/src/module.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * An injectable `HttpHandler` that applies multiple interceptors
+     * to a request before passing it to the given `HttpBackend`.
+     *
+     * The interceptors are loaded lazily from the injector, to allow
+     * interceptors to themselves inject classes depending indirectly
+     * on `HttpInterceptingHandler` itself.
+     * @see `HttpInterceptor`
+     */
+
+
+    var HttpInterceptingHandler = /*#__PURE__*/function () {
+      /**
+       * @param {?} backend
+       * @param {?} injector
+       */
+      function HttpInterceptingHandler(backend, injector) {
+        _classCallCheck(this, HttpInterceptingHandler);
+
+        this.backend = backend;
+        this.injector = injector;
+        this.chain = null;
+      }
+      /**
+       * @param {?} req
+       * @return {?}
+       */
+
+
+      _createClass2(HttpInterceptingHandler, [{
+        key: "handle",
+        value: function handle(req) {
+          if (this.chain === null) {
+            /** @type {?} */
+            var interceptors = this.injector.get(HTTP_INTERCEPTORS, []);
+            this.chain = interceptors.reduceRight(
+            /**
+            * @param {?} next
+            * @param {?} interceptor
+            * @return {?}
+            */
+            function (next, interceptor) {
+              return new HttpInterceptorHandler(next, interceptor);
+            }, this.backend);
+          }
+
+          return this.chain.handle(req);
+        }
+      }]);
+
+      return HttpInterceptingHandler;
+    }();
+
+    HttpInterceptingHandler.ɵfac = function HttpInterceptingHandler_Factory(t) {
+      return new (t || HttpInterceptingHandler)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](HttpBackend), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]));
+    };
+
+    HttpInterceptingHandler.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: HttpInterceptingHandler,
+      factory: HttpInterceptingHandler.ɵfac
+    });
+    /** @nocollapse */
+
+    HttpInterceptingHandler.ctorParameters = function () {
+      return [{
+        type: HttpBackend
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]
+      }];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HttpInterceptingHandler, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: HttpBackend
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]
+        }];
+      }, null);
+    })();
+
+    if (false) {}
+    /**
+     * Constructs an `HttpHandler` that applies interceptors
+     * to a request before passing it to the given `HttpBackend`.
+     *
+     * Use as a factory function within `HttpClientModule`.
+     *
+     *
+     * @param {?} backend
+     * @param {?=} interceptors
+     * @return {?}
+     */
+
+
+    function interceptingHandler(backend) {
+      var interceptors = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+
+      if (!interceptors) {
+        return backend;
+      }
+
+      return interceptors.reduceRight(
+      /**
+      * @param {?} next
+      * @param {?} interceptor
+      * @return {?}
+      */
+      function (next, interceptor) {
+        return new HttpInterceptorHandler(next, interceptor);
+      }, backend);
+    }
+    /**
+     * Factory function that determines where to store JSONP callbacks.
+     *
+     * Ordinarily JSONP callbacks are stored on the `window` object, but this may not exist
+     * in test environments. In that case, callbacks are stored on an anonymous object instead.
+     *
+     *
+     * @return {?}
+     */
+
+
+    function jsonpCallbackContext() {
+      if (typeof window === 'object') {
+        return window;
+      }
+
+      return {};
+    }
+    /**
+     * Configures XSRF protection support for outgoing requests.
+     *
+     * For a server that supports a cookie-based XSRF protection system,
+     * use directly to configure XSRF protection with the correct
+     * cookie and header names.
+     *
+     * If no names are supplied, the default cookie name is `XSRF-TOKEN`
+     * and the default header name is `X-XSRF-TOKEN`.
+     *
+     * \@publicApi
+     */
+
+
+    var HttpClientXsrfModule = /*#__PURE__*/function () {
+      function HttpClientXsrfModule() {
+        _classCallCheck(this, HttpClientXsrfModule);
+      }
+
+      _createClass2(HttpClientXsrfModule, null, [{
+        key: "disable",
+
+        /**
+         * Disable the default XSRF protection.
+         * @return {?}
+         */
+        value: function disable() {
+          return {
+            ngModule: HttpClientXsrfModule,
+            providers: [{
+              provide: HttpXsrfInterceptor,
+              useClass: NoopInterceptor
+            }]
+          };
+        }
+        /**
+         * Configure XSRF protection.
+         * @param {?=} options An object that can specify either or both
+         * cookie name or header name.
+         * - Cookie name default is `XSRF-TOKEN`.
+         * - Header name default is `X-XSRF-TOKEN`.
+         *
+         * @return {?}
+         */
+
+      }, {
+        key: "withOptions",
+        value: function withOptions() {
+          var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+          return {
+            ngModule: HttpClientXsrfModule,
+            providers: [options.cookieName ? {
+              provide: XSRF_COOKIE_NAME,
+              useValue: options.cookieName
+            } : [], options.headerName ? {
+              provide: XSRF_HEADER_NAME,
+              useValue: options.headerName
+            } : []]
+          };
+        }
+      }]);
+
+      return HttpClientXsrfModule;
+    }();
+
+    HttpClientXsrfModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+      type: HttpClientXsrfModule
+    });
+    HttpClientXsrfModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+      factory: function HttpClientXsrfModule_Factory(t) {
+        return new (t || HttpClientXsrfModule)();
+      },
+      providers: [HttpXsrfInterceptor, {
+        provide: HTTP_INTERCEPTORS,
+        useExisting: HttpXsrfInterceptor,
+        multi: true
+      }, {
+        provide: HttpXsrfTokenExtractor,
+        useClass: HttpXsrfCookieExtractor
+      }, {
+        provide: XSRF_COOKIE_NAME,
+        useValue: 'XSRF-TOKEN'
+      }, {
+        provide: XSRF_HEADER_NAME,
+        useValue: 'X-XSRF-TOKEN'
+      }]
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HttpClientXsrfModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+          providers: [HttpXsrfInterceptor, {
+            provide: HTTP_INTERCEPTORS,
+            useExisting: HttpXsrfInterceptor,
+            multi: true
+          }, {
+            provide: HttpXsrfTokenExtractor,
+            useClass: HttpXsrfCookieExtractor
+          }, {
+            provide: XSRF_COOKIE_NAME,
+            useValue: 'XSRF-TOKEN'
+          }, {
+            provide: XSRF_HEADER_NAME,
+            useValue: 'X-XSRF-TOKEN'
+          }]
+        }]
+      }], null, null);
+    })();
+    /**
+     * Configures the [dependency injector](guide/glossary#injector) for `HttpClient`
+     * with supporting services for XSRF. Automatically imported by `HttpClientModule`.
+     *
+     * You can add interceptors to the chain behind `HttpClient` by binding them to the
+     * multiprovider for built-in [DI token](guide/glossary#di-token) `HTTP_INTERCEPTORS`.
+     *
+     * \@publicApi
+     */
+
+
+    var HttpClientModule = function HttpClientModule() {
+      _classCallCheck(this, HttpClientModule);
+    };
+
+    HttpClientModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+      type: HttpClientModule
+    });
+    HttpClientModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+      factory: function HttpClientModule_Factory(t) {
+        return new (t || HttpClientModule)();
+      },
+      providers: [HttpClient, {
+        provide: HttpHandler,
+        useClass: HttpInterceptingHandler
+      }, HttpXhrBackend, {
+        provide: HttpBackend,
+        useExisting: HttpXhrBackend
+      }, BrowserXhr, {
+        provide: XhrFactory,
+        useExisting: BrowserXhr
+      }],
+      imports: [[HttpClientXsrfModule.withOptions({
+        cookieName: 'XSRF-TOKEN',
+        headerName: 'X-XSRF-TOKEN'
+      })]]
+    });
+
+    (function () {
+      (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](HttpClientModule, {
+        imports: [HttpClientXsrfModule]
+      });
+    })();
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HttpClientModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+          /**
+           * Optional configuration for XSRF protection.
+           */
+          imports: [HttpClientXsrfModule.withOptions({
+            cookieName: 'XSRF-TOKEN',
+            headerName: 'X-XSRF-TOKEN'
+          })],
+
+          /**
+           * Configures the [dependency injector](guide/glossary#injector) where it is imported
+           * with supporting services for HTTP communications.
+           */
+          providers: [HttpClient, {
+            provide: HttpHandler,
+            useClass: HttpInterceptingHandler
+          }, HttpXhrBackend, {
+            provide: HttpBackend,
+            useExisting: HttpXhrBackend
+          }, BrowserXhr, {
+            provide: XhrFactory,
+            useExisting: BrowserXhr
+          }]
+        }]
+      }], null, null);
+    })();
+    /**
+     * Configures the [dependency injector](guide/glossary#injector) for `HttpClient`
+     * with supporting services for JSONP.
+     * Without this module, Jsonp requests reach the backend
+     * with method JSONP, where they are rejected.
+     *
+     * You can add interceptors to the chain behind `HttpClient` by binding them to the
+     * multiprovider for built-in [DI token](guide/glossary#di-token) `HTTP_INTERCEPTORS`.
+     *
+     * \@publicApi
+     */
+
+
+    var HttpClientJsonpModule = function HttpClientJsonpModule() {
+      _classCallCheck(this, HttpClientJsonpModule);
+    };
+
+    HttpClientJsonpModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+      type: HttpClientJsonpModule
+    });
+    HttpClientJsonpModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+      factory: function HttpClientJsonpModule_Factory(t) {
+        return new (t || HttpClientJsonpModule)();
+      },
+      providers: [JsonpClientBackend, {
+        provide: JsonpCallbackContext,
+        useFactory: jsonpCallbackContext
+      }, {
+        provide: HTTP_INTERCEPTORS,
+        useClass: JsonpInterceptor,
+        multi: true
+      }]
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HttpClientJsonpModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+          providers: [JsonpClientBackend, {
+            provide: JsonpCallbackContext,
+            useFactory: jsonpCallbackContext
+          }, {
+            provide: HTTP_INTERCEPTORS,
+            useClass: JsonpInterceptor,
+            multi: true
+          }]
+        }]
+      }], null, null);
+    })();
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/public_api.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: packages/common/http/index.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Generated bundle index. Do not edit.
+     */
+    //# sourceMappingURL=http.js.map
 
     /***/
 
@@ -12319,7 +16364,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! rxjs/operators */
     "./node_modules/rxjs/_esm2015/operators/index.js");
     /**
-     * @license Angular v9.1.11
+     * @license Angular v9.1.13
      * (c) 2010-2020 Google LLC. https://angular.io/
      * License: MIT
      */
@@ -12369,8 +16414,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var metaCtor = makeMetadataCtor(props);
 
         function DecoratorFactory() {
-          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
+          for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+            args[_key3] = arguments[_key3];
           }
 
           if (this instanceof DecoratorFactory) {
@@ -12420,8 +16465,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var metaCtor = makeMetadataCtor(props);
 
         function ParamDecoratorFactory() {
-          for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-            args[_key2] = arguments[_key2];
+          for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+            args[_key4] = arguments[_key4];
           }
 
           if (this instanceof ParamDecoratorFactory) {
@@ -12466,8 +16511,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var metaCtor = makeMetadataCtor(props);
 
         function PropDecoratorFactory() {
-          for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-            args[_key3] = arguments[_key3];
+          for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+            args[_key5] = arguments[_key5];
           }
 
           if (this instanceof PropDecoratorFactory) {
@@ -17324,8 +21369,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       assertDefined(tNode, 'should be called with a TNode');
       /** @type {?} */
 
-      for (var _len4 = arguments.length, types = new Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) {
-        types[_key4 - 1] = arguments[_key4];
+      for (var _len6 = arguments.length, types = new Array(_len6 > 1 ? _len6 - 1 : 0), _key6 = 1; _key6 < _len6; _key6++) {
+        types[_key6 - 1] = arguments[_key6];
       }
 
       var found = types.some(
@@ -18753,32 +22798,45 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       */
       function () {
         /** @type {?} */
-        var proto =
-        /** @type {?} */
-        Object.getPrototypeOf(type.prototype).constructor;
+        var ownConstructor = type.prototype.constructor;
         /** @type {?} */
 
-        var factory =
+        var ownFactory = ownConstructor[NG_FACTORY_DEF] || ɵɵgetFactoryOf(ownConstructor);
         /** @type {?} */
-        proto[NG_FACTORY_DEF] || ɵɵgetFactoryOf(proto);
 
-        if (factory !== null) {
-          return factory;
-        } else {
-          // There is no factory defined. Either this was improper usage of inheritance
-          // (no Angular decorator on the superclass) or there is no constructor at all
-          // in the inheritance chain. Since the two cases cannot be distinguished, the
-          // latter has to be assumed.
-          return (
-            /**
-            * @param {?} t
-            * @return {?}
-            */
-            function (t) {
-              return new t();
-            }
-          );
-        }
+        var objectPrototype = Object.prototype;
+        /** @type {?} */
+
+        var parent = Object.getPrototypeOf(type.prototype).constructor; // Go up the prototype until we hit `Object`.
+
+        while (parent && parent !== objectPrototype) {
+          /** @type {?} */
+          var factory = parent[NG_FACTORY_DEF] || ɵɵgetFactoryOf(parent); // If we hit something that has a factory and the factory isn't the same as the type,
+          // we've found the inherited factory. Note the check that the factory isn't the type's
+          // own factory is redundant in most cases, but if the user has custom decorators on the
+          // class, this lookup will start one level down in the prototype chain, causing us to
+          // find the own factory first and potentially triggering an infinite loop downstream.
+
+          if (factory && factory !== ownFactory) {
+            return factory;
+          }
+
+          parent = Object.getPrototypeOf(parent);
+        } // There is no factory defined. Either this was improper usage of inheritance
+        // (no Angular decorator on the superclass) or there is no constructor at all
+        // in the inheritance chain. Since the two cases cannot be distinguished, the
+        // latter has to be assumed.
+
+
+        return (
+          /**
+          * @param {?} t
+          * @return {?}
+          */
+          function (t) {
+            return new t();
+          }
+        );
       });
     }
     /**
@@ -18863,8 +22921,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     function defaultErrorLogger(console) {
-      for (var _len5 = arguments.length, values = new Array(_len5 > 1 ? _len5 - 1 : 0), _key5 = 1; _key5 < _len5; _key5++) {
-        values[_key5 - 1] = arguments[_key5];
+      for (var _len7 = arguments.length, values = new Array(_len7 > 1 ? _len7 - 1 : 0), _key7 = 1; _key7 < _len7; _key7++) {
+        values[_key7 - 1] = arguments[_key7];
       }
 
       /** @type {?} */
@@ -19145,12 +23203,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SafeHtmlImpl = /*#__PURE__*/function (_SafeValueImpl) {
       _inherits(SafeHtmlImpl, _SafeValueImpl);
 
-      var _super5 = _createSuper(SafeHtmlImpl);
+      var _super8 = _createSuper(SafeHtmlImpl);
 
       function SafeHtmlImpl() {
         _classCallCheck(this, SafeHtmlImpl);
 
-        return _super5.apply(this, arguments);
+        return _super8.apply(this, arguments);
       }
 
       _createClass2(SafeHtmlImpl, [{
@@ -19172,12 +23230,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SafeStyleImpl = /*#__PURE__*/function (_SafeValueImpl2) {
       _inherits(SafeStyleImpl, _SafeValueImpl2);
 
-      var _super6 = _createSuper(SafeStyleImpl);
+      var _super9 = _createSuper(SafeStyleImpl);
 
       function SafeStyleImpl() {
         _classCallCheck(this, SafeStyleImpl);
 
-        return _super6.apply(this, arguments);
+        return _super9.apply(this, arguments);
       }
 
       _createClass2(SafeStyleImpl, [{
@@ -19199,12 +23257,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SafeScriptImpl = /*#__PURE__*/function (_SafeValueImpl3) {
       _inherits(SafeScriptImpl, _SafeValueImpl3);
 
-      var _super7 = _createSuper(SafeScriptImpl);
+      var _super10 = _createSuper(SafeScriptImpl);
 
       function SafeScriptImpl() {
         _classCallCheck(this, SafeScriptImpl);
 
-        return _super7.apply(this, arguments);
+        return _super10.apply(this, arguments);
       }
 
       _createClass2(SafeScriptImpl, [{
@@ -19226,12 +23284,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SafeUrlImpl = /*#__PURE__*/function (_SafeValueImpl4) {
       _inherits(SafeUrlImpl, _SafeValueImpl4);
 
-      var _super8 = _createSuper(SafeUrlImpl);
+      var _super11 = _createSuper(SafeUrlImpl);
 
       function SafeUrlImpl() {
         _classCallCheck(this, SafeUrlImpl);
 
-        return _super8.apply(this, arguments);
+        return _super11.apply(this, arguments);
       }
 
       _createClass2(SafeUrlImpl, [{
@@ -19253,12 +23311,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SafeResourceUrlImpl = /*#__PURE__*/function (_SafeValueImpl5) {
       _inherits(SafeResourceUrlImpl, _SafeValueImpl5);
 
-      var _super9 = _createSuper(SafeResourceUrlImpl);
+      var _super12 = _createSuper(SafeResourceUrlImpl);
 
       function SafeResourceUrlImpl() {
         _classCallCheck(this, SafeResourceUrlImpl);
 
-        return _super9.apply(this, arguments);
+        return _super12.apply(this, arguments);
       }
 
       _createClass2(SafeResourceUrlImpl, [{
@@ -19444,6 +23502,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     function enableProdMode() {
       if (_runModeLocked) {
         throw new Error('Cannot enable prod mode after platform setup.');
+      } // The below check is there so when ngDevMode is set via terser
+      // `global['ngDevMode'] = false;` is also dropped.
+
+
+      if (typeof ngDevMode === undefined || !!ngDevMode) {
+        _global['ngDevMode'] = false;
       }
 
       _devMode = false;
@@ -19800,18 +23864,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /** @type {?} */
       var res = {};
 
-      var _iterator3 = _createForOfIteratorHelper(tags.split(',')),
-          _step3;
+      var _iterator7 = _createForOfIteratorHelper(tags.split(',')),
+          _step7;
 
       try {
-        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-          var t = _step3.value;
+        for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
+          var t = _step7.value;
           res[t] = true;
         }
       } catch (err) {
-        _iterator3.e(err);
+        _iterator7.e(err);
       } finally {
-        _iterator3.f();
+        _iterator7.f();
       }
 
       return res;
@@ -19826,8 +23890,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /** @type {?} */
       var res = {};
 
-      for (var _len6 = arguments.length, sets = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
-        sets[_key6] = arguments[_key6];
+      for (var _len8 = arguments.length, sets = new Array(_len8), _key8 = 0; _key8 < _len8; _key8++) {
+        sets[_key8] = arguments[_key8];
       }
 
       for (var _i4 = 0, _sets = sets; _i4 < _sets.length; _i4++) {
@@ -20707,6 +24771,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * found in the LICENSE file at https://angular.io/license
      */
 
+
+    var END_COMMENT = /-->/g;
+    var END_COMMENT_ESCAPED = "-\u200B-\u200B>";
+    /**
+     * Escape the content of the strings so that it can be safely inserted into a comment node.
+     *
+     * The issue is that HTML does not specify any way to escape comment end text inside the comment.
+     * `<!-- The way you close a comment is with "-->". -->`. Above the `"-->"` is meant to be text not
+     * an end to the comment. This can be created programmatically through DOM APIs.
+     *
+     * ```
+     * div.innerHTML = div.innerHTML
+     * ```
+     *
+     * One would expect that the above code would be safe to do, but it turns out that because comment
+     * text is not escaped, the comment may contain text which will prematurely close the comment
+     * opening up the application for XSS attack. (In SSR we programmatically create comment nodes which
+     * may contain such text and expect them to be safe.)
+     *
+     * This function escapes the comment text by looking for the closing char sequence `-->` and replace
+     * it with `-_-_>` where the `_` is a zero width space `\u200B`. The result is that if a comment
+     * contains `-->` text it will render normally but it will not cause the HTML parser to close the
+     * comment.
+     *
+     * @param value text to make safe for comment node by escaping the comment close character sequence
+     */
+
+    function escapeCommentText(value) {
+      return value.replace(END_COMMENT, END_COMMENT_ESCAPED);
+    }
+    /**
+     * @license
+     * Copyright Google Inc. All Rights Reserved.
+     *
+     * Use of this source code is governed by an MIT-style license that can be
+     * found in the LICENSE file at https://angular.io/license
+     */
+
     /**
      * THIS FILE CONTAINS CODE WHICH SHOULD BE TREE SHAKEN AND NEVER CALLED FROM PRODUCTION CODE!!!
      */
@@ -20756,8 +24858,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function camelCaseToDashCase(input) {
       return input.replace(CAMEL_CASE_REGEXP, function () {
-        for (var _len7 = arguments.length, m = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
-          m[_key7] = arguments[_key7];
+        for (var _len9 = arguments.length, m = new Array(_len9), _key9 = 0; _key9 < _len9; _key9++) {
+          m[_key9] = arguments[_key9];
         }
 
         return '-' + m[1].toLowerCase();
@@ -26345,7 +30447,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         } else {
         /** @type {?} */
-        var textContent = "bindings=".concat(JSON.stringify(_defineProperty({}, attrName, debugValue), null, 2));
+        var textContent = escapeCommentText("bindings=".concat(JSON.stringify(_defineProperty({}, attrName, debugValue), null, 2)));
 
         if (isProceduralRenderer(renderer)) {
           renderer.setValue(
@@ -27688,8 +31790,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var bindingMetadata = propertyName;
 
-          for (var _len8 = arguments.length, interpolationParts = new Array(_len8 > 4 ? _len8 - 4 : 0), _key8 = 4; _key8 < _len8; _key8++) {
-            interpolationParts[_key8 - 4] = arguments[_key8];
+          for (var _len10 = arguments.length, interpolationParts = new Array(_len10 > 4 ? _len10 - 4 : 0), _key10 = 4; _key10 < _len10; _key10++) {
+            interpolationParts[_key10 - 4] = arguments[_key10];
           }
 
           if (interpolationParts.length > 0) {
@@ -29763,19 +33865,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RootViewRef = /*#__PURE__*/function (_ViewRef) {
       _inherits(RootViewRef, _ViewRef);
 
-      var _super10 = _createSuper(RootViewRef);
+      var _super13 = _createSuper(RootViewRef);
 
       /**
        * @param {?} _view
        */
       function RootViewRef(_view) {
-        var _this16;
+        var _this29;
 
         _classCallCheck(this, RootViewRef);
 
-        _this16 = _super10.call(this, _view);
-        _this16._view = _view;
-        return _this16;
+        _this29 = _super13.call(this, _view);
+        _this29._view = _view;
+        return _this29;
       }
       /**
        * @return {?}
@@ -29948,12 +34050,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         R3ElementRef = /*#__PURE__*/function (_ElementRefToken) {
           _inherits(ElementRef, _ElementRefToken);
 
-          var _super11 = _createSuper(ElementRef);
+          var _super14 = _createSuper(ElementRef);
 
           function ElementRef() {
             _classCallCheck(this, ElementRef);
 
-            return _super11.apply(this, arguments);
+            return _super14.apply(this, arguments);
           }
 
           return ElementRef;
@@ -29997,7 +34099,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         R3TemplateRef = /*#__PURE__*/function (_TemplateRefToken) {
           _inherits(TemplateRef, _TemplateRefToken);
 
-          var _super12 = _createSuper(TemplateRef);
+          var _super15 = _createSuper(TemplateRef);
 
           /**
            * @param {?} _declarationView
@@ -30005,15 +34107,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
            * @param {?} elementRef
            */
           function TemplateRef(_declarationView, _declarationTContainer, elementRef) {
-            var _this17;
+            var _this30;
 
             _classCallCheck(this, TemplateRef);
 
-            _this17 = _super12.call(this);
-            _this17._declarationView = _declarationView;
-            _this17._declarationTContainer = _declarationTContainer;
-            _this17.elementRef = elementRef;
-            return _this17;
+            _this30 = _super15.call(this);
+            _this30._declarationView = _declarationView;
+            _this30._declarationTContainer = _declarationTContainer;
+            _this30.elementRef = elementRef;
+            return _this30;
           }
           /**
            * @param {?} context
@@ -30102,7 +34204,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         R3ViewContainerRef = /*#__PURE__*/function (_ViewContainerRefToke) {
           _inherits(ViewContainerRef, _ViewContainerRefToke);
 
-          var _super13 = _createSuper(ViewContainerRef);
+          var _super16 = _createSuper(ViewContainerRef);
 
           /**
            * @param {?} _lContainer
@@ -30110,15 +34212,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
            * @param {?} _hostView
            */
           function ViewContainerRef(_lContainer, _hostTNode, _hostView) {
-            var _this18;
+            var _this31;
 
             _classCallCheck(this, ViewContainerRef);
 
-            _this18 = _super13.call(this);
-            _this18._lContainer = _lContainer;
-            _this18._hostTNode = _hostTNode;
-            _this18._hostView = _hostView;
-            return _this18;
+            _this31 = _super16.call(this);
+            _this31._lContainer = _lContainer;
+            _this31._hostTNode = _hostTNode;
+            _this31._hostView = _hostView;
+            return _this31;
           }
           /**
            * @return {?}
@@ -30742,8 +34844,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "factory",
         value: function factory(t) {
           return function () {
-            for (var _len9 = arguments.length, args = new Array(_len9), _key9 = 0; _key9 < _len9; _key9++) {
-              args[_key9] = arguments[_key9];
+            for (var _len11 = arguments.length, args = new Array(_len11), _key11 = 0; _key11 < _len11; _key11++) {
+              args[_key11] = arguments[_key11];
             }
 
             return _construct(t, args);
@@ -31670,7 +35772,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} source
        */
       function R3Injector(def, additionalProviders, parent) {
-        var _this19 = this;
+        var _this32 = this;
 
         var source = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
@@ -31707,7 +35809,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function (provider) {
-          return _this19.processProvider(provider, def, additionalProviders);
+          return _this32.processProvider(provider, def, additionalProviders);
         });
         deepForEach([def],
         /**
@@ -31715,7 +35817,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function (injectorDef) {
-          return _this19.processInjectorType(injectorDef, [], dedupStack);
+          return _this32.processInjectorType(injectorDef, [], dedupStack);
         }); // Make sure the INJECTOR token provides this injector.
 
         this.records.set(INJECTOR, makeRecord(undefined, this)); // Detect whether this injector has the APP_ROOT_SCOPE token and thus should provide
@@ -31857,7 +35959,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_resolveInjectorDefTypes",
         value: function _resolveInjectorDefTypes() {
-          var _this20 = this;
+          var _this33 = this;
 
           this.injectorDefTypes.forEach(
           /**
@@ -31865,7 +35967,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (defType) {
-            return _this20.get(defType);
+            return _this33.get(defType);
           });
         }
         /**
@@ -31923,7 +36025,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "processInjectorType",
         value: function processInjectorType(defOrWrappedDef, parents, dedupStack) {
-          var _this21 = this;
+          var _this34 = this;
 
           defOrWrappedDef = resolveForwardRef(defOrWrappedDef);
           if (!defOrWrappedDef) return false; // Either the defOrWrappedDef is an InjectorType (with injector def) or an
@@ -31996,7 +36098,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function (imported) {
-                if (_this21.processInjectorType(imported, parents, dedupStack)) {
+                if (_this34.processInjectorType(imported, parents, dedupStack)) {
                   if (importTypesWithProviders === undefined) importTypesWithProviders = []; // If the processed import is an injector type with providers, we store it in the
                   // list of import types with providers, so that we can process those afterwards.
 
@@ -32012,7 +36114,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
             if (importTypesWithProviders !== undefined) {
-              var _loop = function _loop(i) {
+              var _loop3 = function _loop3(i) {
                 var _importTypesWithProvi = importTypesWithProviders[i],
                     ngModule = _importTypesWithProvi.ngModule,
                     providers = _importTypesWithProvi.providers;
@@ -32024,12 +36126,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 * @return {?}
                 */
                 function (provider) {
-                  return _this21.processProvider(provider, ngModule, providers || EMPTY_ARRAY$2);
+                  return _this34.processProvider(provider, ngModule, providers || EMPTY_ARRAY$2);
                 });
               };
 
               for (var i = 0; i < importTypesWithProviders.length; i++) {
-                _loop(i);
+                _loop3(i);
               }
             }
           } // Track the InjectorType and add a provider for it. It's important that this is done after the
@@ -32054,7 +36156,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (provider) {
-              return _this21.processProvider(provider, injectorType, defProviders);
+              return _this34.processProvider(provider, injectorType, defProviders);
             });
           }
 
@@ -34388,7 +38490,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_instantiate",
         value: function _instantiate(provider, ResolvedReflectiveFactory) {
-          var _this22 = this;
+          var _this35 = this;
 
           /** @type {?} */
           var factory = ResolvedReflectiveFactory.factory;
@@ -34403,7 +38505,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (dep) {
-              return _this22._getByReflectiveDependency(dep);
+              return _this35._getByReflectiveDependency(dep);
             });
           } catch (e) {
             if (e.addKey) {
@@ -43328,34 +47430,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /** @type {?} */
       definition; // Copy over any fields that apply to either directives or components.
 
-      var _iterator4 = _createForOfIteratorHelper(COPY_DIRECTIVE_FIELDS),
-          _step4;
+      var _iterator8 = _createForOfIteratorHelper(COPY_DIRECTIVE_FIELDS),
+          _step8;
 
       try {
-        for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-          var _field = _step4.value;
+        for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
+          var _field = _step8.value;
           defAny[_field] = superDef[_field];
         }
       } catch (err) {
-        _iterator4.e(err);
+        _iterator8.e(err);
       } finally {
-        _iterator4.f();
+        _iterator8.f();
       }
 
       if (isComponentDef(superDef)) {
         // Copy over any component-specific fields.
-        var _iterator5 = _createForOfIteratorHelper(COPY_COMPONENT_FIELDS),
-            _step5;
+        var _iterator9 = _createForOfIteratorHelper(COPY_COMPONENT_FIELDS),
+            _step9;
 
         try {
-          for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-            var field = _step5.value;
+          for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
+            var field = _step9.value;
             defAny[field] = superDef[field];
           }
         } catch (err) {
-          _iterator5.e(err);
+          _iterator9.e(err);
         } finally {
-          _iterator5.f();
+          _iterator9.f();
         }
       }
     }
@@ -44194,26 +48296,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ComponentFactoryBoundToModule = /*#__PURE__*/function (_ComponentFactory) {
       _inherits(ComponentFactoryBoundToModule, _ComponentFactory);
 
-      var _super14 = _createSuper(ComponentFactoryBoundToModule);
+      var _super17 = _createSuper(ComponentFactoryBoundToModule);
 
       /**
        * @param {?} factory
        * @param {?} ngModule
        */
       function ComponentFactoryBoundToModule(factory, ngModule) {
-        var _this23;
+        var _this36;
 
         _classCallCheck(this, ComponentFactoryBoundToModule);
 
-        _this23 = _super14.call(this);
-        _this23.factory = factory;
-        _this23.ngModule = ngModule;
-        _this23.selector = factory.selector;
-        _this23.componentType = factory.componentType;
-        _this23.ngContentSelectors = factory.ngContentSelectors;
-        _this23.inputs = factory.inputs;
-        _this23.outputs = factory.outputs;
-        return _this23;
+        _this36 = _super17.call(this);
+        _this36.factory = factory;
+        _this36.ngModule = ngModule;
+        _this36.selector = factory.selector;
+        _this36.componentType = factory.componentType;
+        _this36.ngContentSelectors = factory.ngContentSelectors;
+        _this36.inputs = factory.inputs;
+        _this36.outputs = factory.outputs;
+        return _this36;
       }
       /**
        * @param {?} injector
@@ -44474,7 +48576,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      */
 
 
-    var VERSION = new Version('9.1.11');
+    var VERSION = new Version('9.1.13');
     /**
      * @fileoverview added by tsickle
      * Generated from: packages/core/src/change_detection/differs/default_iterable_differ.ts
@@ -44768,7 +48870,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "check",
         value: function check(collection) {
-          var _this24 = this;
+          var _this37 = this;
 
           this._reset();
           /** @type {?} */
@@ -44818,18 +48920,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (item) {
-              itemTrackBy = _this24._trackByFn(index, item);
+              itemTrackBy = _this37._trackByFn(index, item);
 
               if (record === null || !looseIdentical(record.trackById, itemTrackBy)) {
-                record = _this24._mismatch(record, item, itemTrackBy, index);
+                record = _this37._mismatch(record, item, itemTrackBy, index);
                 mayBeDirty = true;
               } else {
                 if (mayBeDirty) {
                   // TODO(misko): can we limit this to duplicates only?
-                  record = _this24._verifyReinsertion(record, item, itemTrackBy, index);
+                  record = _this37._verifyReinsertion(record, item, itemTrackBy, index);
                 }
 
-                if (!looseIdentical(record.item, item)) _this24._addIdentityChange(record, item);
+                if (!looseIdentical(record.item, item)) _this37._addIdentityChange(record, item);
               }
 
               record = record._next;
@@ -45820,7 +49922,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "check",
         value: function check(map) {
-          var _this25 = this;
+          var _this38 = this;
 
           this._reset();
           /** @type {?} */
@@ -45837,15 +49939,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (value, key) {
             if (insertBefore && insertBefore.key === key) {
-              _this25._maybeAddToChanges(insertBefore, value);
+              _this38._maybeAddToChanges(insertBefore, value);
 
-              _this25._appendAfter = insertBefore;
+              _this38._appendAfter = insertBefore;
               insertBefore = insertBefore._next;
             } else {
               /** @type {?} */
-              var record = _this25._getOrCreateRecordForKey(key, value);
+              var record = _this38._getOrCreateRecordForKey(key, value);
 
-              insertBefore = _this25._insertBeforeOrAppend(insertBefore, record);
+              insertBefore = _this38._insertBeforeOrAppend(insertBefore, record);
             }
           }); // Items remaining at the end of the list have been deleted
 
@@ -47747,10 +51849,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @param {?} __0
         * @return {?}
         */
-        function (_ref4) {
-          var _ref5 = _slicedToArray(_ref4, 2),
-              queryId = _ref5[0],
-              valueType = _ref5[1];
+        function (_ref6) {
+          var _ref7 = _slicedToArray(_ref6, 2),
+              queryId = _ref7[0],
+              valueType = _ref7[1];
 
           if (typeof queryId === 'number') {
             matchedQueries[queryId] = valueType;
@@ -48931,7 +53033,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ComponentFactory_ = /*#__PURE__*/function (_ComponentFactory2) {
       _inherits(ComponentFactory_, _ComponentFactory2);
 
-      var _super15 = _createSuper(ComponentFactory_);
+      var _super18 = _createSuper(ComponentFactory_);
 
       /**
        * @param {?} selector
@@ -48942,20 +53044,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} ngContentSelectors
        */
       function ComponentFactory_(selector, componentType, viewDefFactory, _inputs, _outputs, ngContentSelectors) {
-        var _this26;
+        var _this39;
 
         _classCallCheck(this, ComponentFactory_);
 
         // Attention: this ctor is called as top level function.
         // Putting any logic in here will destroy closure tree shaking!
-        _this26 = _super15.call(this);
-        _this26.selector = selector;
-        _this26.componentType = componentType;
-        _this26._inputs = _inputs;
-        _this26._outputs = _outputs;
-        _this26.ngContentSelectors = ngContentSelectors;
-        _this26.viewDefFactory = viewDefFactory;
-        return _this26;
+        _this39 = _super18.call(this);
+        _this39.selector = selector;
+        _this39.componentType = componentType;
+        _this39._inputs = _inputs;
+        _this39._outputs = _outputs;
+        _this39.ngContentSelectors = ngContentSelectors;
+        _this39.viewDefFactory = viewDefFactory;
+        return _this39;
       }
       /**
        * @return {?}
@@ -49054,7 +53156,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ComponentRef_ = /*#__PURE__*/function (_ComponentRef) {
       _inherits(ComponentRef_, _ComponentRef);
 
-      var _super16 = _createSuper(ComponentRef_);
+      var _super19 = _createSuper(ComponentRef_);
 
       /**
        * @param {?} _view
@@ -49062,19 +53164,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _component
        */
       function ComponentRef_(_view, _viewRef, _component) {
-        var _this27;
+        var _this40;
 
         _classCallCheck(this, ComponentRef_);
 
-        _this27 = _super16.call(this);
-        _this27._view = _view;
-        _this27._viewRef = _viewRef;
-        _this27._component = _component;
-        _this27._elDef = _this27._view.def.nodes[0];
-        _this27.hostView = _viewRef;
-        _this27.changeDetectorRef = _viewRef;
-        _this27.instance = _component;
-        return _this27;
+        _this40 = _super19.call(this);
+        _this40._view = _view;
+        _this40._viewRef = _viewRef;
+        _this40._component = _component;
+        _this40._elDef = _this40._view.def.nodes[0];
+        _this40.hostView = _viewRef;
+        _this40.changeDetectorRef = _viewRef;
+        _this40.instance = _component;
+        return _this40;
       }
       /**
        * @return {?}
@@ -49588,21 +53690,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var TemplateRef_ = /*#__PURE__*/function (_TemplateRef) {
       _inherits(TemplateRef_, _TemplateRef);
 
-      var _super17 = _createSuper(TemplateRef_);
+      var _super20 = _createSuper(TemplateRef_);
 
       /**
        * @param {?} _parentView
        * @param {?} _def
        */
       function TemplateRef_(_parentView, _def) {
-        var _this28;
+        var _this41;
 
         _classCallCheck(this, TemplateRef_);
 
-        _this28 = _super17.call(this);
-        _this28._parentView = _parentView;
-        _this28._def = _def;
-        return _this28;
+        _this41 = _super20.call(this);
+        _this41._parentView = _parentView;
+        _this41._def = _def;
+        return _this41;
       }
       /**
        * @param {?} context
@@ -50872,19 +54974,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ComponentFactoryResolver$1 = /*#__PURE__*/function (_ComponentFactoryReso) {
       _inherits(ComponentFactoryResolver$1, _ComponentFactoryReso);
 
-      var _super18 = _createSuper(ComponentFactoryResolver$1);
+      var _super21 = _createSuper(ComponentFactoryResolver$1);
 
       /**
        * @param {?=} ngModule The NgModuleRef to which all resolved factories are bound.
        */
       function ComponentFactoryResolver$1(ngModule) {
-        var _this29;
+        var _this42;
 
         _classCallCheck(this, ComponentFactoryResolver$1);
 
-        _this29 = _super18.call(this);
-        _this29.ngModule = ngModule;
-        return _this29;
+        _this42 = _super21.call(this);
+        _this42.ngModule = ngModule;
+        return _this42;
       }
       /**
        * @template T
@@ -51005,25 +55107,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ComponentFactory$1 = /*#__PURE__*/function (_ComponentFactory3) {
       _inherits(ComponentFactory$1, _ComponentFactory3);
 
-      var _super19 = _createSuper(ComponentFactory$1);
+      var _super22 = _createSuper(ComponentFactory$1);
 
       /**
        * @param {?} componentDef The component definition.
        * @param {?=} ngModule The NgModuleRef to which the factory is bound.
        */
       function ComponentFactory$1(componentDef, ngModule) {
-        var _this30;
+        var _this43;
 
         _classCallCheck(this, ComponentFactory$1);
 
-        _this30 = _super19.call(this);
-        _this30.componentDef = componentDef;
-        _this30.ngModule = ngModule;
-        _this30.componentType = componentDef.type;
-        _this30.selector = stringifyCSSSelectorList(componentDef.selectors);
-        _this30.ngContentSelectors = componentDef.ngContentSelectors ? componentDef.ngContentSelectors : [];
-        _this30.isBoundToModule = !!ngModule;
-        return _this30;
+        _this43 = _super22.call(this);
+        _this43.componentDef = componentDef;
+        _this43.ngModule = ngModule;
+        _this43.componentType = componentDef.type;
+        _this43.selector = stringifyCSSSelectorList(componentDef.selectors);
+        _this43.ngContentSelectors = componentDef.ngContentSelectors ? componentDef.ngContentSelectors : [];
+        _this43.isBoundToModule = !!ngModule;
+        return _this43;
       }
       /**
        * @return {?}
@@ -51229,7 +55331,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ComponentRef$1 = /*#__PURE__*/function (_ComponentRef2) {
       _inherits(ComponentRef$1, _ComponentRef2);
 
-      var _super20 = _createSuper(ComponentRef$1);
+      var _super23 = _createSuper(ComponentRef$1);
 
       /**
        * @param {?} componentType
@@ -51239,20 +55341,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _tNode
        */
       function ComponentRef$1(componentType, instance, location, _rootLView, _tNode) {
-        var _this31;
+        var _this44;
 
         _classCallCheck(this, ComponentRef$1);
 
-        _this31 = _super20.call(this);
-        _this31.location = location;
-        _this31._rootLView = _rootLView;
-        _this31._tNode = _tNode;
-        _this31.destroyCbs = [];
-        _this31.instance = instance;
-        _this31.hostView = _this31.changeDetectorRef = new RootViewRef(_rootLView);
+        _this44 = _super23.call(this);
+        _this44.location = location;
+        _this44._rootLView = _rootLView;
+        _this44._tNode = _tNode;
+        _this44.destroyCbs = [];
+        _this44.instance = instance;
+        _this44.hostView = _this44.changeDetectorRef = new RootViewRef(_rootLView);
         assignTViewNodeToLView(_rootLView[TVIEW], null, -1, _rootLView);
-        _this31.componentType = componentType;
-        return _this31;
+        _this44.componentType = componentType;
+        return _this44;
       }
       /**
        * @return {?}
@@ -53966,30 +58068,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var NgModuleRef$1 = /*#__PURE__*/function (_NgModuleRef) {
       _inherits(NgModuleRef$1, _NgModuleRef);
 
-      var _super21 = _createSuper(NgModuleRef$1);
+      var _super24 = _createSuper(NgModuleRef$1);
 
       /**
        * @param {?} ngModuleType
        * @param {?} _parent
        */
       function NgModuleRef$1(ngModuleType, _parent) {
-        var _this32;
+        var _this45;
 
         _classCallCheck(this, NgModuleRef$1);
 
-        _this32 = _super21.call(this);
-        _this32._parent = _parent; // tslint:disable-next-line:require-internal-with-underscore
+        _this45 = _super24.call(this);
+        _this45._parent = _parent; // tslint:disable-next-line:require-internal-with-underscore
 
-        _this32._bootstrapComponents = [];
-        _this32.injector = _assertThisInitialized(_this32);
-        _this32.destroyCbs = []; // When bootstrapping a module we have a dependency graph that looks like this:
+        _this45._bootstrapComponents = [];
+        _this45.injector = _assertThisInitialized(_this45);
+        _this45.destroyCbs = []; // When bootstrapping a module we have a dependency graph that looks like this:
         // ApplicationRef -> ComponentFactoryResolver -> NgModuleRef. The problem is that if the
         // module being resolved tries to inject the ComponentFactoryResolver, it'll create a
         // circular dependency which will result in a runtime error, because the injector doesn't
         // exist yet. We work around the issue by creating the ComponentFactoryResolver ourselves
         // and providing it, rather than letting the injector resolve it.
 
-        _this32.componentFactoryResolver = new ComponentFactoryResolver$1(_assertThisInitialized(_this32));
+        _this45.componentFactoryResolver = new ComponentFactoryResolver$1(_assertThisInitialized(_this45));
         /** @type {?} */
 
         var ngModuleDef = getNgModuleDef(ngModuleType);
@@ -53998,25 +58100,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         var ngLocaleIdDef = getNgLocaleIdDef(ngModuleType);
         ngLocaleIdDef && setLocaleId(ngLocaleIdDef);
-        _this32._bootstrapComponents = maybeUnwrapFn(
+        _this45._bootstrapComponents = maybeUnwrapFn(
         /** @type {?} */
         ngModuleDef.bootstrap);
-        _this32._r3Injector =
+        _this45._r3Injector =
         /** @type {?} */
         createInjectorWithoutInjectorInstances(ngModuleType, _parent, [{
           provide: NgModuleRef,
-          useValue: _assertThisInitialized(_this32)
+          useValue: _assertThisInitialized(_this45)
         }, {
           provide: ComponentFactoryResolver,
-          useValue: _this32.componentFactoryResolver
+          useValue: _this45.componentFactoryResolver
         }], stringify(ngModuleType)); // We need to resolve the injector types separately from the injector creation, because
         // the module might be trying to use this ref in its contructor for DI which will cause a
         // circular error that will eventually error out, because the injector isn't created yet.
 
-        _this32._r3Injector._resolveInjectorDefTypes();
+        _this45._r3Injector._resolveInjectorDefTypes();
 
-        _this32.instance = _this32.get(ngModuleType);
-        return _this32;
+        _this45.instance = _this45.get(ngModuleType);
+        return _this45;
       }
       /**
        * @param {?} token
@@ -54089,18 +58191,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var NgModuleFactory$1 = /*#__PURE__*/function (_NgModuleFactory) {
       _inherits(NgModuleFactory$1, _NgModuleFactory);
 
-      var _super22 = _createSuper(NgModuleFactory$1);
+      var _super25 = _createSuper(NgModuleFactory$1);
 
       /**
        * @param {?} moduleType
        */
       function NgModuleFactory$1(moduleType) {
-        var _this33;
+        var _this46;
 
         _classCallCheck(this, NgModuleFactory$1);
 
-        _this33 = _super22.call(this);
-        _this33.moduleType = moduleType;
+        _this46 = _super25.call(this);
+        _this46.moduleType = moduleType;
         /** @type {?} */
 
         var ngModuleDef = getNgModuleDef(moduleType);
@@ -54134,7 +58236,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           moduleType);
         }
 
-        return _this33;
+        return _this46;
       }
       /**
        * @param {?} parentInjector
@@ -54851,7 +58953,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var EventEmitter = /*#__PURE__*/function (_rxjs__WEBPACK_IMPORT) {
       _inherits(EventEmitter, _rxjs__WEBPACK_IMPORT);
 
-      var _super23 = _createSuper(EventEmitter);
+      var _super26 = _createSuper(EventEmitter);
 
       // tslint:disable-line
 
@@ -54863,15 +58965,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        *
        */
       function EventEmitter() {
-        var _this34;
+        var _this47;
 
         var isAsync = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
         _classCallCheck(this, EventEmitter);
 
-        _this34 = _super23.call(this);
-        _this34.__isAsync = isAsync;
-        return _this34;
+        _this47 = _super26.call(this);
+        _this47.__isAsync = isAsync;
+        return _this47;
       }
       /**
        * Emits an event containing a given value.
@@ -57239,9 +61341,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             decorator;
           } else if (decorator.type) {
             /** @type {?} */
-            var _proto = Object.getPrototypeOf(decorator.type);
+            var _proto2 = Object.getPrototypeOf(decorator.type);
 
-            if (_proto.ngMetadataName == name) {
+            if (_proto2.ngMetadataName == name) {
               annotation = decorator.args[0];
             }
           }
@@ -57954,7 +62056,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /** @type {?} */
       var queriesMeta = [];
 
-      var _loop2 = function _loop2(field) {
+      var _loop4 = function _loop4(field) {
         if (propMetadata.hasOwnProperty(field)) {
           /** @type {?} */
           var annotations = propMetadata[field];
@@ -57980,7 +62082,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       };
 
       for (var field in propMetadata) {
-        _loop2(field);
+        _loop4(field);
       }
 
       return queriesMeta;
@@ -58682,7 +62784,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} appInits
        */
       function ApplicationInitStatus(appInits) {
-        var _this35 = this;
+        var _this48 = this;
 
         _classCallCheck(this, ApplicationInitStatus);
 
@@ -58696,8 +62798,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function (res, rej) {
-          _this35.resolve = res;
-          _this35.reject = rej;
+          _this48.resolve = res;
+          _this48.reject = rej;
         });
       }
       /**
@@ -58709,7 +62811,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(ApplicationInitStatus, [{
         key: "runInitializers",
         value: function runInitializers() {
-          var _this36 = this;
+          var _this49 = this;
 
           if (this.initialized) {
             return;
@@ -58726,9 +62828,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function complete() {
             /** @type {?} */
-            _this36.done = true;
+            _this49.done = true;
 
-            _this36.resolve();
+            _this49.resolve();
           };
 
           if (this.appInits) {
@@ -58754,7 +62856,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (e) {
-            _this36.reject(e);
+            _this49.reject(e);
           });
 
           if (asyncInitPromises.length === 0) {
@@ -59493,11 +63595,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /**
        * @param {?} __0
        */
-      function NgZone(_ref6) {
-        var _ref6$enableLongStack = _ref6.enableLongStackTrace,
-            enableLongStackTrace = _ref6$enableLongStack === void 0 ? false : _ref6$enableLongStack,
-            _ref6$shouldCoalesceE = _ref6.shouldCoalesceEventChangeDetection,
-            shouldCoalesceEventChangeDetection = _ref6$shouldCoalesceE === void 0 ? false : _ref6$shouldCoalesceE;
+      function NgZone(_ref8) {
+        var _ref8$enableLongStack = _ref8.enableLongStackTrace,
+            enableLongStackTrace = _ref8$enableLongStack === void 0 ? false : _ref8$enableLongStack,
+            _ref8$shouldCoalesceE = _ref8.shouldCoalesceEventChangeDetection,
+            shouldCoalesceEventChangeDetection = _ref8$shouldCoalesceE === void 0 ? false : _ref8$shouldCoalesceE;
 
         _classCallCheck(this, NgZone);
 
@@ -60072,7 +64174,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _ngZone
        */
       function Testability(_ngZone) {
-        var _this37 = this;
+        var _this50 = this;
 
         _classCallCheck(this, Testability);
 
@@ -60097,7 +64199,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function () {
-          _this37.taskTrackingZone = typeof Zone == 'undefined' ? null : Zone.current.get('TaskTrackingZone');
+          _this50.taskTrackingZone = typeof Zone == 'undefined' ? null : Zone.current.get('TaskTrackingZone');
         });
       }
       /**
@@ -60109,7 +64211,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(Testability, [{
         key: "_watchAngularEvents",
         value: function _watchAngularEvents() {
-          var _this38 = this;
+          var _this51 = this;
 
           this._ngZone.onUnstable.subscribe({
             next:
@@ -60117,8 +64219,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function next() {
-              _this38._didWork = true;
-              _this38._isZoneStable = false;
+              _this51._didWork = true;
+              _this51._isZoneStable = false;
             }
           });
 
@@ -60127,7 +64229,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function () {
-            _this38._ngZone.onStable.subscribe({
+            _this51._ngZone.onStable.subscribe({
               next:
               /**
               * @return {?}
@@ -60139,9 +64241,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 * @return {?}
                 */
                 function () {
-                  _this38._isZoneStable = true;
+                  _this51._isZoneStable = true;
 
-                  _this38._runCallbacksIfReady();
+                  _this51._runCallbacksIfReady();
                 });
               }
             });
@@ -60197,7 +64299,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_runCallbacksIfReady",
         value: function _runCallbacksIfReady() {
-          var _this39 = this;
+          var _this52 = this;
 
           if (this.isStable()) {
             // Schedules the call backs in a new frame so that it is always async.
@@ -60206,17 +64308,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function () {
-              while (_this39._callbacks.length !== 0) {
+              while (_this52._callbacks.length !== 0) {
                 /** @type {?} */
                 var cb =
                 /** @type {?} */
-                _this39._callbacks.pop();
+                _this52._callbacks.pop();
 
                 clearTimeout(cb.timeoutId);
-                cb.doneCb(_this39._didWork);
+                cb.doneCb(_this52._didWork);
               }
 
-              _this39._didWork = false;
+              _this52._didWork = false;
             });
           } else {
             // Still not stable, send updates.
@@ -60282,7 +64384,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addCallback",
         value: function addCallback(cb, timeout, updateCb) {
-          var _this40 = this;
+          var _this53 = this;
 
           /** @type {?} */
           var timeoutId = -1;
@@ -60293,7 +64395,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function () {
-              _this40._callbacks = _this40._callbacks.filter(
+              _this53._callbacks = _this53._callbacks.filter(
               /**
               * @param {?} cb
               * @return {?}
@@ -60301,7 +64403,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               function (cb) {
                 return cb.timeoutId !== timeoutId;
               });
-              cb(_this40._didWork, _this40.getPendingTasks());
+              cb(_this53._didWork, _this53.getPendingTasks());
             }, timeout);
           }
 
@@ -60981,7 +65083,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(PlatformRef, [{
         key: "bootstrapModuleFactory",
         value: function bootstrapModuleFactory(moduleFactory, options) {
-          var _this41 = this;
+          var _this54 = this;
 
           // Note: We need to create the NgZone _before_ we instantiate the module,
           // as instantiating the module creates some providers eagerly.
@@ -61012,7 +65114,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /** @type {?} */
             var ngZoneInjector = Injector.create({
               providers: providers,
-              parent: _this41.injector,
+              parent: _this54.injector,
               name: moduleFactory.moduleType.name
             });
             /** @type {?} */
@@ -61033,7 +65135,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function () {
-              return remove(_this41._modules, moduleRef);
+              return remove(_this54._modules, moduleRef);
             });
 
             /** @type {?} */
@@ -61079,7 +65181,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   setLocaleId(localeId || DEFAULT_LOCALE_ID);
                 }
 
-                _this41._moduleDoBootstrap(moduleRef);
+                _this54._moduleDoBootstrap(moduleRef);
 
                 return moduleRef;
               });
@@ -61110,7 +65212,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "bootstrapModule",
         value: function bootstrapModule(moduleType) {
-          var _this42 = this;
+          var _this55 = this;
 
           var compilerOptions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
 
@@ -61122,7 +65224,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (moduleFactory) {
-            return _this42.bootstrapModuleFactory(moduleFactory, options);
+            return _this55.bootstrapModuleFactory(moduleFactory, options);
           });
         }
         /**
@@ -61445,7 +65547,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _initStatus
        */
       function ApplicationRef(_zone, _console, _injector, _exceptionHandler, _componentFactoryResolver, _initStatus) {
-        var _this43 = this;
+        var _this56 = this;
 
         _classCallCheck(this, ApplicationRef);
 
@@ -61483,12 +65585,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function next() {
-            _this43._zone.run(
+            _this56._zone.run(
             /**
             * @return {?}
             */
             function () {
-              _this43.tick();
+              _this56.tick();
             });
           }
         });
@@ -61501,14 +65603,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function (observer) {
-          _this43._stable = _this43._zone.isStable && !_this43._zone.hasPendingMacrotasks && !_this43._zone.hasPendingMicrotasks;
+          _this56._stable = _this56._zone.isStable && !_this56._zone.hasPendingMacrotasks && !_this56._zone.hasPendingMicrotasks;
 
-          _this43._zone.runOutsideAngular(
+          _this56._zone.runOutsideAngular(
           /**
           * @return {?}
           */
           function () {
-            observer.next(_this43._stable);
+            observer.next(_this56._stable);
             observer.complete();
           });
         });
@@ -61526,12 +65628,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           /** @type {?} */
           var stableSub;
 
-          _this43._zone.runOutsideAngular(
+          _this56._zone.runOutsideAngular(
           /**
           * @return {?}
           */
           function () {
-            stableSub = _this43._zone.onStable.subscribe(
+            stableSub = _this56._zone.onStable.subscribe(
             /**
             * @return {?}
             */
@@ -61544,8 +65646,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function () {
-                if (!_this43._stable && !_this43._zone.hasPendingMacrotasks && !_this43._zone.hasPendingMicrotasks) {
-                  _this43._stable = true;
+                if (!_this56._stable && !_this56._zone.hasPendingMacrotasks && !_this56._zone.hasPendingMicrotasks) {
+                  _this56._stable = true;
                   observer.next(true);
                 }
               });
@@ -61554,17 +65656,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           /** @type {?} */
 
 
-          var unstableSub = _this43._zone.onUnstable.subscribe(
+          var unstableSub = _this56._zone.onUnstable.subscribe(
           /**
           * @return {?}
           */
           function () {
             NgZone.assertInAngularZone();
 
-            if (_this43._stable) {
-              _this43._stable = false;
+            if (_this56._stable) {
+              _this56._stable = false;
 
-              _this43._zone.runOutsideAngular(
+              _this56._zone.runOutsideAngular(
               /**
               * @return {?}
               */
@@ -61613,7 +65715,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(ApplicationRef, [{
         key: "bootstrap",
         value: function bootstrap(componentOrFactory, rootSelectorOrNode) {
-          var _this44 = this;
+          var _this57 = this;
 
           if (!this._initStatus.done) {
             throw new Error('Cannot bootstrap as there are still asynchronous initializers running. Bootstrap components in the `ngDoBootstrap` method of the root module.');
@@ -61647,7 +65749,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function () {
-            _this44._unloadComponent(compRef);
+            _this57._unloadComponent(compRef);
           });
           /** @type {?} */
 
@@ -61680,7 +65782,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "tick",
         value: function tick() {
-          var _this45 = this;
+          var _this58 = this;
 
           if (this._runningTick) {
             throw new Error('ApplicationRef.tick is called recursively');
@@ -61689,34 +65791,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           try {
             this._runningTick = true;
 
-            var _iterator6 = _createForOfIteratorHelper(this._views),
-                _step6;
+            var _iterator10 = _createForOfIteratorHelper(this._views),
+                _step10;
 
             try {
-              for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
-                var _view3 = _step6.value;
+              for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
+                var _view3 = _step10.value;
 
                 _view3.detectChanges();
               }
             } catch (err) {
-              _iterator6.e(err);
+              _iterator10.e(err);
             } finally {
-              _iterator6.f();
+              _iterator10.f();
             }
 
             if (this._enforceNoNewChanges) {
-              var _iterator7 = _createForOfIteratorHelper(this._views),
-                  _step7;
+              var _iterator11 = _createForOfIteratorHelper(this._views),
+                  _step11;
 
               try {
-                for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
-                  var view = _step7.value;
+                for (_iterator11.s(); !(_step11 = _iterator11.n()).done;) {
+                  var view = _step11.value;
                   view.checkNoChanges();
                 }
               } catch (err) {
-                _iterator7.e(err);
+                _iterator11.e(err);
               } finally {
-                _iterator7.f();
+                _iterator11.f();
               }
             }
           } catch (e) {
@@ -61726,7 +65828,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function () {
-              return _this45._exceptionHandler.handleError(e);
+              return _this58._exceptionHandler.handleError(e);
             });
           } finally {
             this._runningTick = false;
@@ -62093,7 +66195,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "loadAndCompile",
         value: function loadAndCompile(path) {
-          var _this46 = this;
+          var _this59 = this;
 
           var _path$split = path.split(_SEPARATOR),
               _path$split2 = _slicedToArray(_path$split, 2),
@@ -62124,7 +66226,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (type) {
-            return _this46._compiler.compileModuleAsync(type);
+            return _this59._compiler.compileModuleAsync(type);
           });
         }
         /**
@@ -62247,12 +66349,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ViewRef$1 = /*#__PURE__*/function (_ChangeDetectorRef) {
       _inherits(ViewRef$1, _ChangeDetectorRef);
 
-      var _super24 = _createSuper(ViewRef$1);
+      var _super27 = _createSuper(ViewRef$1);
 
       function ViewRef$1() {
         _classCallCheck(this, ViewRef$1);
 
-        return _super24.apply(this, arguments);
+        return _super27.apply(this, arguments);
       }
 
       return ViewRef$1;
@@ -62319,12 +66421,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var EmbeddedViewRef = /*#__PURE__*/function (_ViewRef$) {
       _inherits(EmbeddedViewRef, _ViewRef$);
 
-      var _super25 = _createSuper(EmbeddedViewRef);
+      var _super28 = _createSuper(EmbeddedViewRef);
 
       function EmbeddedViewRef() {
         _classCallCheck(this, EmbeddedViewRef);
 
-        return _super25.apply(this, arguments);
+        return _super28.apply(this, arguments);
       }
 
       return EmbeddedViewRef;
@@ -62446,7 +66548,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DebugElement__PRE_R3__ = /*#__PURE__*/function (_DebugNode__PRE_R3__) {
       _inherits(DebugElement__PRE_R3__, _DebugNode__PRE_R3__);
 
-      var _super26 = _createSuper(DebugElement__PRE_R3__);
+      var _super29 = _createSuper(DebugElement__PRE_R3__);
 
       /**
        * @param {?} nativeNode
@@ -62454,18 +66556,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _debugContext
        */
       function DebugElement__PRE_R3__(nativeNode, parent, _debugContext) {
-        var _this47;
+        var _this60;
 
         _classCallCheck(this, DebugElement__PRE_R3__);
 
-        _this47 = _super26.call(this, nativeNode, parent, _debugContext);
-        _this47.properties = {};
-        _this47.attributes = {};
-        _this47.classes = {};
-        _this47.styles = {};
-        _this47.childNodes = [];
-        _this47.nativeElement = nativeNode;
-        return _this47;
+        _this60 = _super29.call(this, nativeNode, parent, _debugContext);
+        _this60.properties = {};
+        _this60.attributes = {};
+        _this60.classes = {};
+        _this60.styles = {};
+        _this60.childNodes = [];
+        _this60.nativeElement = nativeNode;
+        return _this60;
       }
       /**
        * @param {?} child
@@ -62509,7 +66611,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "insertChildrenAfter",
         value: function insertChildrenAfter(child, newChildren) {
-          var _this48 = this;
+          var _this61 = this;
 
           /** @type {?} */
           var siblingIndex = this.childNodes.indexOf(child);
@@ -62531,7 +66633,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
 
               /** @type {?} */
-              child.parent = _this48;
+              child.parent = _this61;
             });
           }
         }
@@ -62822,7 +66924,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DebugElement__POST_R3__ = /*#__PURE__*/function (_DebugNode__POST_R3__) {
       _inherits(DebugElement__POST_R3__, _DebugNode__POST_R3__);
 
-      var _super27 = _createSuper(DebugElement__POST_R3__);
+      var _super30 = _createSuper(DebugElement__POST_R3__);
 
       /**
        * @param {?} nativeNode
@@ -62831,7 +66933,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, DebugElement__POST_R3__);
 
         ngDevMode && assertDomNode(nativeNode);
-        return _super27.call(this, nativeNode);
+        return _super30.call(this, nativeNode);
       }
       /**
        * @return {?}
@@ -63384,19 +67486,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           tNode.projection];
 
           if (Array.isArray(head)) {
-            var _iterator8 = _createForOfIteratorHelper(head),
-                _step8;
+            var _iterator12 = _createForOfIteratorHelper(head),
+                _step12;
 
             try {
-              for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
-                var _nativeNode2 = _step8.value;
+              for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
+                var _nativeNode2 = _step12.value;
 
                 _addQueryMatchR3(_nativeNode2, predicate, matches, elementsOnly, rootNativeNode);
               }
             } catch (err) {
-              _iterator8.e(err);
+              _iterator12.e(err);
             } finally {
-              _iterator8.f();
+              _iterator12.f();
             }
           } else if (head) {
             /** @type {?} */
@@ -64137,10 +68239,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       * @param {?} __0
       * @return {?}
       */
-      function (_ref7) {
-        var _ref8 = _slicedToArray(_ref7, 2),
-            namespaceAndName = _ref8[0],
-            value = _ref8[1];
+      function (_ref9) {
+        var _ref10 = _slicedToArray(_ref9, 2),
+            namespaceAndName = _ref10[0],
+            value = _ref10[1];
 
         var _splitNamespace5 = splitNamespace(namespaceAndName),
             _splitNamespace6 = _slicedToArray(_splitNamespace5, 2),
@@ -67615,8 +71717,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /** @type {?} */
         var nodeDef = view.def.nodes[nodeIndex];
 
-        for (var _len10 = arguments.length, values = new Array(_len10 > 3 ? _len10 - 3 : 0), _key10 = 3; _key10 < _len10; _key10++) {
-          values[_key10 - 3] = arguments[_key10];
+        for (var _len12 = arguments.length, values = new Array(_len12 > 3 ? _len12 - 3 : 0), _key12 = 3; _key12 < _len12; _key12++) {
+          values[_key12 - 3] = arguments[_key12];
         }
 
         if (checkType === 0
@@ -67666,8 +71768,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /** @type {?} */
         var nodeDef = view.def.nodes[nodeIndex];
 
-        for (var _len11 = arguments.length, values = new Array(_len11 > 3 ? _len11 - 3 : 0), _key11 = 3; _key11 < _len11; _key11++) {
-          values[_key11 - 3] = arguments[_key11];
+        for (var _len13 = arguments.length, values = new Array(_len13 > 3 ? _len13 - 3 : 0), _key13 = 3; _key13 < _len13; _key13++) {
+          values[_key13 - 3] = arguments[_key13];
         }
 
         if (checkType === 0
@@ -67745,7 +71847,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /** @type {?} */
             elDef.element.name) {
               // a comment.
-              view.renderer.setValue(el, "bindings=".concat(JSON.stringify(bindingValues, null, 2)));
+              view.renderer.setValue(el, escapeCommentText("bindings=".concat(JSON.stringify(bindingValues, null, 2))));
             } else {
               // a regular element.
               for (var attr in bindingValues) {
@@ -67878,8 +71980,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
          * @return {?}
          */
         value: function logError(console) {
-          for (var _len12 = arguments.length, values = new Array(_len12 > 1 ? _len12 - 1 : 0), _key12 = 1; _key12 < _len12; _key12++) {
-            values[_key12 - 1] = arguments[_key12];
+          for (var _len14 = arguments.length, values = new Array(_len14 > 1 ? _len14 - 1 : 0), _key14 = 1; _key14 < _len14; _key14++) {
+            values[_key14 - 1] = arguments[_key14];
           }
 
           /** @type {?} */
@@ -68319,7 +72421,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "createComment",
         value: function createComment(value) {
           /** @type {?} */
-          var comment = this.delegate.createComment(value);
+          var comment = this.delegate.createComment(escapeCommentText(value));
           /** @type {?} */
 
           var debugCtx = this.createDebugContext(comment);
@@ -68716,7 +72818,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var NgModuleFactory_ = /*#__PURE__*/function (_NgModuleFactory2) {
       _inherits(NgModuleFactory_, _NgModuleFactory2);
 
-      var _super28 = _createSuper(NgModuleFactory_);
+      var _super31 = _createSuper(NgModuleFactory_);
 
       /**
        * @param {?} moduleType
@@ -68724,17 +72826,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _ngModuleDefFactory
        */
       function NgModuleFactory_(moduleType, _bootstrapComponents, _ngModuleDefFactory) {
-        var _this49;
+        var _this62;
 
         _classCallCheck(this, NgModuleFactory_);
 
         // Attention: this ctor is called as top level function.
         // Putting any logic in here will destroy closure tree shaking!
-        _this49 = _super28.call(this);
-        _this49.moduleType = moduleType;
-        _this49._bootstrapComponents = _bootstrapComponents;
-        _this49._ngModuleDefFactory = _ngModuleDefFactory;
-        return _this49;
+        _this62 = _super31.call(this);
+        _this62.moduleType = moduleType;
+        _this62._bootstrapComponents = _bootstrapComponents;
+        _this62._ngModuleDefFactory = _ngModuleDefFactory;
+        return _this62;
       }
       /**
        * @param {?} parentInjector
@@ -69209,12 +73311,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var GenericBrowserDomAdapter = /*#__PURE__*/function (_angular_common__WEBP) {
       _inherits(GenericBrowserDomAdapter, _angular_common__WEBP);
 
-      var _super29 = _createSuper(GenericBrowserDomAdapter);
+      var _super32 = _createSuper(GenericBrowserDomAdapter);
 
       function GenericBrowserDomAdapter() {
         _classCallCheck(this, GenericBrowserDomAdapter);
 
-        return _super29.call(this);
+        return _super32.call(this);
       }
       /**
        * @return {?}
@@ -69275,12 +73377,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var BrowserDomAdapter = /*#__PURE__*/function (_GenericBrowserDomAda) {
       _inherits(BrowserDomAdapter, _GenericBrowserDomAda);
 
-      var _super30 = _createSuper(BrowserDomAdapter);
+      var _super33 = _createSuper(BrowserDomAdapter);
 
       function BrowserDomAdapter() {
         _classCallCheck(this, BrowserDomAdapter);
 
-        return _super30.apply(this, arguments);
+        return _super33.apply(this, arguments);
       }
 
       _createClass2(BrowserDomAdapter, [{
@@ -69838,8 +73940,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       * @return {?}
       */
       function () {
-        for (var _len13 = arguments.length, m = new Array(_len13), _key13 = 0; _key13 < _len13; _key13++) {
-          m[_key13] = arguments[_key13];
+        for (var _len15 = arguments.length, m = new Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
+          m[_key15] = arguments[_key15];
         }
 
         return '-' + m[1].toLowerCase();
@@ -69858,8 +73960,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       * @return {?}
       */
       function () {
-        for (var _len14 = arguments.length, m = new Array(_len14), _key14 = 0; _key14 < _len14; _key14++) {
-          m[_key14] = arguments[_key14];
+        for (var _len16 = arguments.length, m = new Array(_len16), _key16 = 0; _key16 < _len16; _key16++) {
+          m[_key16] = arguments[_key16];
         }
 
         return m[1].toUpperCase();
@@ -70015,7 +74117,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _zone
        */
       function EventManager(plugins, _zone) {
-        var _this50 = this;
+        var _this63 = this;
 
         _classCallCheck(this, EventManager);
 
@@ -70029,7 +74131,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {THIS}
         */
         function (p) {
-          return p.manager = _this50;
+          return p.manager = _this63;
         });
         this._plugins = plugins.slice().reverse();
       }
@@ -70224,7 +74326,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(SharedStylesHost, [{
         key: "addStyles",
         value: function addStyles(styles) {
-          var _this51 = this;
+          var _this64 = this;
 
           /** @type {?} */
           var additions = new Set();
@@ -70234,8 +74336,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (style) {
-            if (!_this51._stylesSet.has(style)) {
-              _this51._stylesSet.add(style);
+            if (!_this64._stylesSet.has(style)) {
+              _this64._stylesSet.add(style);
 
               additions.add(style);
             }
@@ -70287,24 +74389,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DomSharedStylesHost = /*#__PURE__*/function (_SharedStylesHost) {
       _inherits(DomSharedStylesHost, _SharedStylesHost);
 
-      var _super31 = _createSuper(DomSharedStylesHost);
+      var _super34 = _createSuper(DomSharedStylesHost);
 
       /**
        * @param {?} _doc
        */
       function DomSharedStylesHost(_doc) {
-        var _this52;
+        var _this65;
 
         _classCallCheck(this, DomSharedStylesHost);
 
-        _this52 = _super31.call(this);
-        _this52._doc = _doc;
-        _this52._hostNodes = new Set();
-        _this52._styleNodes = new Set();
+        _this65 = _super34.call(this);
+        _this65._doc = _doc;
+        _this65._hostNodes = new Set();
+        _this65._styleNodes = new Set();
 
-        _this52._hostNodes.add(_doc.head);
+        _this65._hostNodes.add(_doc.head);
 
-        return _this52;
+        return _this65;
       }
       /**
        * @private
@@ -70317,7 +74419,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(DomSharedStylesHost, [{
         key: "_addStylesToHost",
         value: function _addStylesToHost(styles, host) {
-          var _this53 = this;
+          var _this66 = this;
 
           styles.forEach(
           /**
@@ -70326,11 +74428,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (style) {
             /** @type {?} */
-            var styleEl = _this53._doc.createElement('style');
+            var styleEl = _this66._doc.createElement('style');
 
             styleEl.textContent = style;
 
-            _this53._styleNodes.add(host.appendChild(styleEl));
+            _this66._styleNodes.add(host.appendChild(styleEl));
           });
         }
         /**
@@ -70363,7 +74465,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onStylesAdded",
         value: function onStylesAdded(additions) {
-          var _this54 = this;
+          var _this67 = this;
 
           this._hostNodes.forEach(
           /**
@@ -70371,7 +74473,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (hostNode) {
-            return _this54._addStylesToHost(additions, hostNode);
+            return _this67._addStylesToHost(additions, hostNode);
           });
         }
         /**
@@ -71002,7 +75104,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var EmulatedEncapsulationDomRenderer2 = /*#__PURE__*/function (_DefaultDomRenderer) {
       _inherits(EmulatedEncapsulationDomRenderer2, _DefaultDomRenderer);
 
-      var _super32 = _createSuper(EmulatedEncapsulationDomRenderer2);
+      var _super35 = _createSuper(EmulatedEncapsulationDomRenderer2);
 
       /**
        * @param {?} eventManager
@@ -71011,19 +75113,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} appId
        */
       function EmulatedEncapsulationDomRenderer2(eventManager, sharedStylesHost, component, appId) {
-        var _this55;
+        var _this68;
 
         _classCallCheck(this, EmulatedEncapsulationDomRenderer2);
 
-        _this55 = _super32.call(this, eventManager);
-        _this55.component = component;
+        _this68 = _super35.call(this, eventManager);
+        _this68.component = component;
         /** @type {?} */
 
         var styles = flattenStyles(appId + '-' + component.id, component.styles, []);
         sharedStylesHost.addStyles(styles);
-        _this55.contentAttr = shimContentAttribute(appId + '-' + component.id);
-        _this55.hostAttr = shimHostAttribute(appId + '-' + component.id);
-        return _this55;
+        _this68.contentAttr = shimContentAttribute(appId + '-' + component.id);
+        _this68.hostAttr = shimHostAttribute(appId + '-' + component.id);
+        return _this68;
       }
       /**
        * @param {?} element
@@ -71062,7 +75164,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ShadowDomRenderer = /*#__PURE__*/function (_DefaultDomRenderer2) {
       _inherits(ShadowDomRenderer, _DefaultDomRenderer2);
 
-      var _super33 = _createSuper(ShadowDomRenderer);
+      var _super36 = _createSuper(ShadowDomRenderer);
 
       /**
        * @param {?} eventManager
@@ -71071,28 +75173,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} component
        */
       function ShadowDomRenderer(eventManager, sharedStylesHost, hostEl, component) {
-        var _this56;
+        var _this69;
 
         _classCallCheck(this, ShadowDomRenderer);
 
-        _this56 = _super33.call(this, eventManager);
-        _this56.sharedStylesHost = sharedStylesHost;
-        _this56.hostEl = hostEl;
-        _this56.component = component;
+        _this69 = _super36.call(this, eventManager);
+        _this69.sharedStylesHost = sharedStylesHost;
+        _this69.hostEl = hostEl;
+        _this69.component = component;
 
         if (component.encapsulation === _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].ShadowDom) {
-          _this56.shadowRoot =
+          _this69.shadowRoot =
           /** @type {?} */
           hostEl.attachShadow({
             mode: 'open'
           });
         } else {
-          _this56.shadowRoot =
+          _this69.shadowRoot =
           /** @type {?} */
           hostEl.createShadowRoot();
         }
 
-        _this56.sharedStylesHost.addHost(_this56.shadowRoot);
+        _this69.sharedStylesHost.addHost(_this69.shadowRoot);
         /** @type {?} */
 
 
@@ -71103,10 +75205,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var styleEl = document.createElement('style');
           styleEl.textContent = styles[i];
 
-          _this56.shadowRoot.appendChild(styleEl);
+          _this69.shadowRoot.appendChild(styleEl);
         }
 
-        return _this56;
+        return _this69;
       }
       /**
        * @private
@@ -71189,7 +75291,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DomEventsPlugin = /*#__PURE__*/function (_EventManagerPlugin) {
       _inherits(DomEventsPlugin, _EventManagerPlugin);
 
-      var _super34 = _createSuper(DomEventsPlugin);
+      var _super37 = _createSuper(DomEventsPlugin);
 
       /**
        * @param {?} doc
@@ -71197,7 +75299,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       function DomEventsPlugin(doc) {
         _classCallCheck(this, DomEventsPlugin);
 
-        return _super34.call(this, doc);
+        return _super37.call(this, doc);
       } // This plugin should come last in the list of plugins, because it accepts all
       // events.
 
@@ -71222,7 +75324,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addEventListener",
         value: function addEventListener(element, eventName, handler) {
-          var _this57 = this;
+          var _this70 = this;
 
           element.addEventListener(eventName,
           /** @type {?} */
@@ -71232,7 +75334,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function () {
-              return _this57.removeEventListener(element, eventName,
+              return _this70.removeEventListener(element, eventName,
               /** @type {?} */
               handler);
             }
@@ -71464,7 +75566,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var HammerGesturesPlugin = /*#__PURE__*/function (_EventManagerPlugin2) {
       _inherits(HammerGesturesPlugin, _EventManagerPlugin2);
 
-      var _super35 = _createSuper(HammerGesturesPlugin);
+      var _super38 = _createSuper(HammerGesturesPlugin);
 
       /**
        * @param {?} doc
@@ -71473,15 +75575,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} loader
        */
       function HammerGesturesPlugin(doc, _config, console, loader) {
-        var _this58;
+        var _this71;
 
         _classCallCheck(this, HammerGesturesPlugin);
 
-        _this58 = _super35.call(this, doc);
-        _this58._config = _config;
-        _this58.console = console;
-        _this58.loader = loader;
-        return _this58;
+        _this71 = _super38.call(this, doc);
+        _this71._config = _config;
+        _this71.console = console;
+        _this71.loader = loader;
+        return _this71;
       }
       /**
        * @param {?} eventName
@@ -71515,7 +75617,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addEventListener",
         value: function addEventListener(element, eventName, handler) {
-          var _this59 = this;
+          var _this72 = this;
 
           /** @type {?} */
           var zone = this.manager.getZone();
@@ -71550,7 +75652,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               if (!
               /** @type {?} */
               window.Hammer) {
-                _this59.console.warn("The custom HAMMER_LOADER completed, but Hammer.JS is not present.");
+                _this72.console.warn("The custom HAMMER_LOADER completed, but Hammer.JS is not present.");
 
                 deregister =
                 /**
@@ -71564,14 +75666,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               if (!cancelRegistration) {
                 // Now that Hammer is loaded and the listener is being loaded for real,
                 // the deregistration function changes from canceling registration to removal.
-                deregister = _this59.addEventListener(element, eventName, handler);
+                deregister = _this72.addEventListener(element, eventName, handler);
               }
             })["catch"](
             /**
             * @return {?}
             */
             function () {
-              _this59.console.warn("The \"".concat(eventName, "\" event cannot be bound because the custom ") + "Hammer.JS loader failed.");
+              _this72.console.warn("The \"".concat(eventName, "\" event cannot be bound because the custom ") + "Hammer.JS loader failed.");
 
               deregister =
               /**
@@ -71600,7 +75702,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             // Creating the manager bind events, must be done outside of angular
 
             /** @type {?} */
-            var mc = _this59._config.buildHammer(element);
+            var mc = _this72._config.buildHammer(element);
             /** @type {?} */
 
 
@@ -71892,7 +75994,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var KeyEventsPlugin = /*#__PURE__*/function (_EventManagerPlugin3) {
       _inherits(KeyEventsPlugin, _EventManagerPlugin3);
 
-      var _super36 = _createSuper(KeyEventsPlugin);
+      var _super39 = _createSuper(KeyEventsPlugin);
 
       /**
        * Initializes an instance of the browser plug-in.
@@ -71901,7 +76003,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       function KeyEventsPlugin(doc) {
         _classCallCheck(this, KeyEventsPlugin);
 
-        return _super36.call(this, doc);
+        return _super39.call(this, doc);
       }
       /**
        * Reports whether a named key event is supported.
@@ -72303,19 +76405,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DomSanitizerImpl = /*#__PURE__*/function (_DomSanitizer) {
       _inherits(DomSanitizerImpl, _DomSanitizer);
 
-      var _super37 = _createSuper(DomSanitizerImpl);
+      var _super40 = _createSuper(DomSanitizerImpl);
 
       /**
        * @param {?} _doc
        */
       function DomSanitizerImpl(_doc) {
-        var _this60;
+        var _this73;
 
         _classCallCheck(this, DomSanitizerImpl);
 
-        _this60 = _super37.call(this);
-        _this60._doc = _doc;
-        return _this60;
+        _this73 = _super40.call(this);
+        _this73._doc = _doc;
+        return _this73;
       }
       /**
        * @param {?} ctx
@@ -72773,7 +76875,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addTags",
         value: function addTags(tags) {
-          var _this61 = this;
+          var _this74 = this;
 
           var forceCreation = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
           if (!tags) return [];
@@ -72785,7 +76887,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (result, tag) {
             if (tag) {
-              result.push(_this61._getOrCreateElement(tag, forceCreation));
+              result.push(_this74._getOrCreateElement(tag, forceCreation));
             }
 
             return result;
@@ -74224,7 +78326,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var NavigationStart = /*#__PURE__*/function (_RouterEvent) {
       _inherits(NavigationStart, _RouterEvent);
 
-      var _super38 = _createSuper(NavigationStart);
+      var _super41 = _createSuper(NavigationStart);
 
       /**
        * @param {?} id
@@ -74237,17 +78339,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url) {
-        var _this62;
+        var _this75;
 
         var navigationTrigger = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'imperative';
         var restoredState = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
         _classCallCheck(this, NavigationStart);
 
-        _this62 = _super38.call(this, id, url);
-        _this62.navigationTrigger = navigationTrigger;
-        _this62.restoredState = restoredState;
-        return _this62;
+        _this75 = _super41.call(this, id, url);
+        _this75.navigationTrigger = navigationTrigger;
+        _this75.restoredState = restoredState;
+        return _this75;
       }
       /**
        * \@docsNotRequired
@@ -74276,7 +78378,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var NavigationEnd = /*#__PURE__*/function (_RouterEvent2) {
       _inherits(NavigationEnd, _RouterEvent2);
 
-      var _super39 = _createSuper(NavigationEnd);
+      var _super42 = _createSuper(NavigationEnd);
 
       /**
        * @param {?} id
@@ -74288,13 +78390,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, urlAfterRedirects) {
-        var _this63;
+        var _this76;
 
         _classCallCheck(this, NavigationEnd);
 
-        _this63 = _super39.call(this, id, url);
-        _this63.urlAfterRedirects = urlAfterRedirects;
-        return _this63;
+        _this76 = _super42.call(this, id, url);
+        _this76.urlAfterRedirects = urlAfterRedirects;
+        return _this76;
       }
       /**
        * \@docsNotRequired
@@ -74326,7 +78428,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var NavigationCancel = /*#__PURE__*/function (_RouterEvent3) {
       _inherits(NavigationCancel, _RouterEvent3);
 
-      var _super40 = _createSuper(NavigationCancel);
+      var _super43 = _createSuper(NavigationCancel);
 
       /**
        * @param {?} id
@@ -74338,13 +78440,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, reason) {
-        var _this64;
+        var _this77;
 
         _classCallCheck(this, NavigationCancel);
 
-        _this64 = _super40.call(this, id, url);
-        _this64.reason = reason;
-        return _this64;
+        _this77 = _super43.call(this, id, url);
+        _this77.reason = reason;
+        return _this77;
       }
       /**
        * \@docsNotRequired
@@ -74373,7 +78475,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var NavigationError = /*#__PURE__*/function (_RouterEvent4) {
       _inherits(NavigationError, _RouterEvent4);
 
-      var _super41 = _createSuper(NavigationError);
+      var _super44 = _createSuper(NavigationError);
 
       /**
        * @param {?} id
@@ -74385,13 +78487,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, error) {
-        var _this65;
+        var _this78;
 
         _classCallCheck(this, NavigationError);
 
-        _this65 = _super41.call(this, id, url);
-        _this65.error = error;
-        return _this65;
+        _this78 = _super44.call(this, id, url);
+        _this78.error = error;
+        return _this78;
       }
       /**
        * \@docsNotRequired
@@ -74420,7 +78522,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RoutesRecognized = /*#__PURE__*/function (_RouterEvent5) {
       _inherits(RoutesRecognized, _RouterEvent5);
 
-      var _super42 = _createSuper(RoutesRecognized);
+      var _super45 = _createSuper(RoutesRecognized);
 
       /**
        * @param {?} id
@@ -74433,14 +78535,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, urlAfterRedirects, state) {
-        var _this66;
+        var _this79;
 
         _classCallCheck(this, RoutesRecognized);
 
-        _this66 = _super42.call(this, id, url);
-        _this66.urlAfterRedirects = urlAfterRedirects;
-        _this66.state = state;
-        return _this66;
+        _this79 = _super45.call(this, id, url);
+        _this79.urlAfterRedirects = urlAfterRedirects;
+        _this79.state = state;
+        return _this79;
       }
       /**
        * \@docsNotRequired
@@ -74469,7 +78571,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var GuardsCheckStart = /*#__PURE__*/function (_RouterEvent6) {
       _inherits(GuardsCheckStart, _RouterEvent6);
 
-      var _super43 = _createSuper(GuardsCheckStart);
+      var _super46 = _createSuper(GuardsCheckStart);
 
       /**
        * @param {?} id
@@ -74482,14 +78584,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, urlAfterRedirects, state) {
-        var _this67;
+        var _this80;
 
         _classCallCheck(this, GuardsCheckStart);
 
-        _this67 = _super43.call(this, id, url);
-        _this67.urlAfterRedirects = urlAfterRedirects;
-        _this67.state = state;
-        return _this67;
+        _this80 = _super46.call(this, id, url);
+        _this80.urlAfterRedirects = urlAfterRedirects;
+        _this80.state = state;
+        return _this80;
       }
       /**
        * @return {?}
@@ -74517,7 +78619,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var GuardsCheckEnd = /*#__PURE__*/function (_RouterEvent7) {
       _inherits(GuardsCheckEnd, _RouterEvent7);
 
-      var _super44 = _createSuper(GuardsCheckEnd);
+      var _super47 = _createSuper(GuardsCheckEnd);
 
       /**
        * @param {?} id
@@ -74531,15 +78633,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, urlAfterRedirects, state, shouldActivate) {
-        var _this68;
+        var _this81;
 
         _classCallCheck(this, GuardsCheckEnd);
 
-        _this68 = _super44.call(this, id, url);
-        _this68.urlAfterRedirects = urlAfterRedirects;
-        _this68.state = state;
-        _this68.shouldActivate = shouldActivate;
-        return _this68;
+        _this81 = _super47.call(this, id, url);
+        _this81.urlAfterRedirects = urlAfterRedirects;
+        _this81.state = state;
+        _this81.shouldActivate = shouldActivate;
+        return _this81;
       }
       /**
        * @return {?}
@@ -74570,7 +78672,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ResolveStart = /*#__PURE__*/function (_RouterEvent8) {
       _inherits(ResolveStart, _RouterEvent8);
 
-      var _super45 = _createSuper(ResolveStart);
+      var _super48 = _createSuper(ResolveStart);
 
       /**
        * @param {?} id
@@ -74583,14 +78685,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, urlAfterRedirects, state) {
-        var _this69;
+        var _this82;
 
         _classCallCheck(this, ResolveStart);
 
-        _this69 = _super45.call(this, id, url);
-        _this69.urlAfterRedirects = urlAfterRedirects;
-        _this69.state = state;
-        return _this69;
+        _this82 = _super48.call(this, id, url);
+        _this82.urlAfterRedirects = urlAfterRedirects;
+        _this82.state = state;
+        return _this82;
       }
       /**
        * @return {?}
@@ -74619,7 +78721,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ResolveEnd = /*#__PURE__*/function (_RouterEvent9) {
       _inherits(ResolveEnd, _RouterEvent9);
 
-      var _super46 = _createSuper(ResolveEnd);
+      var _super49 = _createSuper(ResolveEnd);
 
       /**
        * @param {?} id
@@ -74632,14 +78734,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, urlAfterRedirects, state) {
-        var _this70;
+        var _this83;
 
         _classCallCheck(this, ResolveEnd);
 
-        _this70 = _super46.call(this, id, url);
-        _this70.urlAfterRedirects = urlAfterRedirects;
-        _this70.state = state;
-        return _this70;
+        _this83 = _super49.call(this, id, url);
+        _this83.urlAfterRedirects = urlAfterRedirects;
+        _this83.state = state;
+        return _this83;
       }
       /**
        * @return {?}
@@ -75968,7 +80070,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} children
        */
       function UrlSegmentGroup(segments, children) {
-        var _this71 = this;
+        var _this84 = this;
 
         _classCallCheck(this, UrlSegmentGroup);
 
@@ -75988,7 +80090,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {THIS}
         */
         function (v, k) {
-          return v.parent = _this71;
+          return v.parent = _this84;
         });
       }
       /**
@@ -76966,12 +81068,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     function findNode(value, node) {
       if (value === node.value) return node;
 
-      var _iterator9 = _createForOfIteratorHelper(node.children),
-          _step9;
+      var _iterator13 = _createForOfIteratorHelper(node.children),
+          _step13;
 
       try {
-        for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
-          var child = _step9.value;
+        for (_iterator13.s(); !(_step13 = _iterator13.n()).done;) {
+          var child = _step13.value;
 
           /** @type {?} */
           var _node = findNode(value, child);
@@ -76979,9 +81081,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if (_node) return _node;
         }
       } catch (err) {
-        _iterator9.e(err);
+        _iterator13.e(err);
       } finally {
-        _iterator9.f();
+        _iterator13.f();
       }
 
       return null;
@@ -76998,12 +81100,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     function findPath(value, node) {
       if (value === node.value) return [node];
 
-      var _iterator10 = _createForOfIteratorHelper(node.children),
-          _step10;
+      var _iterator14 = _createForOfIteratorHelper(node.children),
+          _step14;
 
       try {
-        for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
-          var child = _step10.value;
+        for (_iterator14.s(); !(_step14 = _iterator14.n()).done;) {
+          var child = _step14.value;
 
           /** @type {?} */
           var path = findPath(value, child);
@@ -77014,9 +81116,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         }
       } catch (err) {
-        _iterator10.e(err);
+        _iterator14.e(err);
       } finally {
-        _iterator10.f();
+        _iterator14.f();
       }
 
       return [];
@@ -77118,7 +81220,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RouterState = /*#__PURE__*/function (_Tree) {
       _inherits(RouterState, _Tree);
 
-      var _super47 = _createSuper(RouterState);
+      var _super50 = _createSuper(RouterState);
 
       /**
        * \@internal
@@ -77126,16 +81228,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} snapshot
        */
       function RouterState(root, snapshot) {
-        var _this72;
+        var _this85;
 
         _classCallCheck(this, RouterState);
 
-        _this72 = _super47.call(this, root);
-        _this72.snapshot = snapshot;
+        _this85 = _super50.call(this, root);
+        _this85.snapshot = snapshot;
         setRouterState(
         /** @type {?} */
-        _assertThisInitialized(_this72), root);
-        return _this72;
+        _assertThisInitialized(_this85), root);
+        return _this85;
       }
       /**
        * @return {?}
@@ -77630,7 +81732,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RouterStateSnapshot = /*#__PURE__*/function (_Tree2) {
       _inherits(RouterStateSnapshot, _Tree2);
 
-      var _super48 = _createSuper(RouterStateSnapshot);
+      var _super51 = _createSuper(RouterStateSnapshot);
 
       /**
        * \@internal
@@ -77638,16 +81740,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} root
        */
       function RouterStateSnapshot(url, root) {
-        var _this73;
+        var _this86;
 
         _classCallCheck(this, RouterStateSnapshot);
 
-        _this73 = _super48.call(this, root);
-        _this73.url = url;
+        _this86 = _super51.call(this, root);
+        _this86.url = url;
         setRouterState(
         /** @type {?} */
-        _assertThisInitialized(_this73), root);
-        return _this73;
+        _assertThisInitialized(_this86), root);
+        return _this86;
       }
       /**
        * @return {?}
@@ -77865,21 +81967,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       * @return {?}
       */
       function (child) {
-        var _iterator11 = _createForOfIteratorHelper(prevState.children),
-            _step11;
+        var _iterator15 = _createForOfIteratorHelper(prevState.children),
+            _step15;
 
         try {
-          for (_iterator11.s(); !(_step11 = _iterator11.n()).done;) {
-            var p = _step11.value;
+          for (_iterator15.s(); !(_step15 = _iterator15.n()).done;) {
+            var p = _step15.value;
 
             if (routeReuseStrategy.shouldReuseRoute(p.value.snapshot, child.value)) {
               return createNode(routeReuseStrategy, child, p);
             }
           }
         } catch (err) {
-          _iterator11.e(err);
+          _iterator15.e(err);
         } finally {
-          _iterator11.f();
+          _iterator15.f();
         }
 
         return createNode(routeReuseStrategy, child);
@@ -78543,7 +82645,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deactivateChildRoutes",
         value: function deactivateChildRoutes(futureNode, currNode, contexts) {
-          var _this74 = this;
+          var _this87 = this;
 
           /** @type {?} */
           var children = nodeChildrenAsMap(currNode); // Recurse on the routes active in the future state to de-activate deeper children
@@ -78557,7 +82659,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /** @type {?} */
             var childOutletName = futureChild.value.outlet;
 
-            _this74.deactivateRoutes(futureChild, children[childOutletName], contexts);
+            _this87.deactivateRoutes(futureChild, children[childOutletName], contexts);
 
             delete children[childOutletName];
           }); // De-activate the routes that will not be re-used
@@ -78569,7 +82671,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (v, childName) {
-            _this74.deactivateRouteAndItsChildren(v, contexts);
+            _this87.deactivateRouteAndItsChildren(v, contexts);
           });
         }
         /**
@@ -78663,7 +82765,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deactivateRouteAndOutlet",
         value: function deactivateRouteAndOutlet(route, parentContexts) {
-          var _this75 = this;
+          var _this88 = this;
 
           /** @type {?} */
           var context = parentContexts.getContext(route.value.outlet);
@@ -78681,7 +82783,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (v, k) {
-              return _this75.deactivateRouteAndItsChildren(v, contexts);
+              return _this88.deactivateRouteAndItsChildren(v, contexts);
             });
 
             if (context.outlet) {
@@ -78703,7 +82805,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "activateChildRoutes",
         value: function activateChildRoutes(futureNode, currNode, contexts) {
-          var _this76 = this;
+          var _this89 = this;
 
           /** @type {?} */
           var children = nodeChildrenAsMap(currNode);
@@ -78713,9 +82815,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (c) {
-            _this76.activateRoutes(c, children[c.value.outlet], contexts);
+            _this89.activateRoutes(c, children[c.value.outlet], contexts);
 
-            _this76.forwardEvent(new ActivationEnd(c.value.snapshot));
+            _this89.forwardEvent(new ActivationEnd(c.value.snapshot));
           });
 
           if (futureNode.children.length) {
@@ -79052,7 +83154,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(ApplyRedirects, [{
         key: "apply",
         value: function apply() {
-          var _this77 = this;
+          var _this90 = this;
 
           /** @type {?} */
           var expanded$ = this.expandSegmentGroup(this.ngModule, this.config, this.urlTree.root, PRIMARY_OUTLET);
@@ -79064,9 +83166,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (rootSegmentGroup) {
-            return _this77.createUrlTree(rootSegmentGroup, _this77.urlTree.queryParams,
+            return _this90.createUrlTree(rootSegmentGroup, _this90.urlTree.queryParams,
             /** @type {?} */
-            _this77.urlTree.fragment);
+            _this90.urlTree.fragment);
           }));
           return urlTrees$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(
           /**
@@ -79076,13 +83178,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           function (e) {
             if (e instanceof AbsoluteRedirect) {
               // after an absolute redirect we do not apply any more redirects!
-              _this77.allowRedirects = false; // we need to run matching, so we can fetch all lazy-loaded modules
+              _this90.allowRedirects = false; // we need to run matching, so we can fetch all lazy-loaded modules
 
-              return _this77.match(e.urlTree);
+              return _this90.match(e.urlTree);
             }
 
             if (e instanceof NoMatch) {
-              throw _this77.noMatchError(e);
+              throw _this90.noMatchError(e);
             }
 
             throw e;
@@ -79097,7 +83199,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "match",
         value: function match(tree) {
-          var _this78 = this;
+          var _this91 = this;
 
           /** @type {?} */
           var expanded$ = this.expandSegmentGroup(this.ngModule, this.config, tree.root, PRIMARY_OUTLET);
@@ -79109,7 +83211,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (rootSegmentGroup) {
-            return _this78.createUrlTree(rootSegmentGroup, tree.queryParams,
+            return _this91.createUrlTree(rootSegmentGroup, tree.queryParams,
             /** @type {?} */
             tree.fragment);
           }));
@@ -79120,7 +83222,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (e) {
             if (e instanceof NoMatch) {
-              throw _this78.noMatchError(e);
+              throw _this91.noMatchError(e);
             }
 
             throw e;
@@ -79189,7 +83291,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "expandChildren",
         value: function expandChildren(ngModule, routes, segmentGroup) {
-          var _this79 = this;
+          var _this92 = this;
 
           return waitForMap(segmentGroup.children,
           /**
@@ -79198,7 +83300,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (childOutlet, child) {
-            return _this79.expandSegmentGroup(ngModule, routes, child, childOutlet);
+            return _this92.expandSegmentGroup(ngModule, routes, child, childOutlet);
           });
         }
         /**
@@ -79215,7 +83317,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "expandSegment",
         value: function expandSegment(ngModule, segmentGroup, routes, segments, outlet, allowRedirects) {
-          var _this80 = this;
+          var _this93 = this;
 
           return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"]).apply(void 0, _toConsumableArray(routes)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
           /**
@@ -79224,7 +83326,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (r) {
             /** @type {?} */
-            var expanded$ = _this80.expandSegmentAgainstRoute(ngModule, segmentGroup, routes, r, segments, outlet, allowRedirects);
+            var expanded$ = _this93.expandSegmentAgainstRoute(ngModule, segmentGroup, routes, r, segments, outlet, allowRedirects);
 
             return expanded$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(
             /**
@@ -79258,7 +83360,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (e, _) {
             if (e instanceof rxjs__WEBPACK_IMPORTED_MODULE_2__["EmptyError"] || e.name === 'EmptyError') {
-              if (_this80.noLeftoversInUrl(segmentGroup, segments, outlet)) {
+              if (_this93.noLeftoversInUrl(segmentGroup, segments, outlet)) {
                 return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(new UrlSegmentGroup([], {}));
               }
 
@@ -79342,7 +83444,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "expandWildCardWithParamsAgainstRouteUsingRedirect",
         value: function expandWildCardWithParamsAgainstRouteUsingRedirect(ngModule, routes, route, outlet) {
-          var _this81 = this;
+          var _this94 = this;
 
           /** @type {?} */
           var newTree = this.applyRedirectCommands([],
@@ -79363,7 +83465,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           function (newSegments) {
             /** @type {?} */
             var group = new UrlSegmentGroup(newSegments, {});
-            return _this81.expandSegment(ngModule, group, routes, newSegments, outlet, false);
+            return _this94.expandSegment(ngModule, group, routes, newSegments, outlet, false);
           }));
         }
         /**
@@ -79380,7 +83482,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "expandRegularSegmentAgainstRouteUsingRedirect",
         value: function expandRegularSegmentAgainstRouteUsingRedirect(ngModule, segmentGroup, routes, route, segments, outlet) {
-          var _this82 = this;
+          var _this95 = this;
 
           var _match = match(segmentGroup, route, segments),
               matched = _match.matched,
@@ -79409,7 +83511,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (newSegments) {
-            return _this82.expandSegment(ngModule, segmentGroup, routes, newSegments.concat(segments.slice(lastChild)), outlet, false);
+            return _this95.expandSegment(ngModule, segmentGroup, routes, newSegments.concat(segments.slice(lastChild)), outlet, false);
           }));
         }
         /**
@@ -79424,7 +83526,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "matchSegmentAgainstRoute",
         value: function matchSegmentAgainstRoute(ngModule, rawSegmentGroup, route, segments) {
-          var _this83 = this;
+          var _this96 = this;
 
           if (route.path === '**') {
             if (route.loadChildren) {
@@ -79472,7 +83574,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             if (slicedSegments.length === 0 && segmentGroup.hasChildren()) {
               /** @type {?} */
-              var _expanded$ = _this83.expandChildren(childModule, childConfig, segmentGroup);
+              var _expanded$ = _this96.expandChildren(childModule, childConfig, segmentGroup);
 
               return _expanded$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
               /**
@@ -79490,7 +83592,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /** @type {?} */
 
 
-            var expanded$ = _this83.expandSegment(childModule, segmentGroup, childConfig, slicedSegments, PRIMARY_OUTLET, true);
+            var expanded$ = _this96.expandSegment(childModule, segmentGroup, childConfig, slicedSegments, PRIMARY_OUTLET, true);
 
             return expanded$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
             /**
@@ -79513,7 +83615,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getChildConfig",
         value: function getChildConfig(ngModule, route, segments) {
-          var _this84 = this;
+          var _this97 = this;
 
           if (route.children) {
             // The children belong to the same module
@@ -79533,7 +83635,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             */
             function (shouldLoad) {
               if (shouldLoad) {
-                return _this84.configLoader.load(ngModule.injector, route).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
+                return _this97.configLoader.load(ngModule.injector, route).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
                 /**
                 * @param {?} cfg
                 * @return {?}
@@ -79655,7 +83757,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createSegmentGroup",
         value: function createSegmentGroup(redirectTo, group, segments, posParams) {
-          var _this85 = this;
+          var _this98 = this;
 
           /** @type {?} */
           var updatedSegments = this.createSegments(redirectTo, group.segments, segments, posParams);
@@ -79669,7 +83771,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (child, name) {
-            children[name] = _this85.createSegmentGroup(redirectTo, child, segments, posParams);
+            children[name] = _this98.createSegmentGroup(redirectTo, child, segments, posParams);
           });
           return new UrlSegmentGroup(updatedSegments, children);
         }
@@ -79685,7 +83787,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createSegments",
         value: function createSegments(redirectTo, redirectToSegments, actualSegments, posParams) {
-          var _this86 = this;
+          var _this99 = this;
 
           return redirectToSegments.map(
           /**
@@ -79693,7 +83795,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (s) {
-            return s.path.startsWith(':') ? _this86.findPosParam(redirectTo, s, posParams) : _this86.findOrReturn(s, actualSegments);
+            return s.path.startsWith(':') ? _this99.findPosParam(redirectTo, s, posParams) : _this99.findOrReturn(s, actualSegments);
           });
         }
         /**
@@ -79725,12 +83827,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           /** @type {?} */
           var idx = 0;
 
-          var _iterator12 = _createForOfIteratorHelper(actualSegments),
-              _step12;
+          var _iterator16 = _createForOfIteratorHelper(actualSegments),
+              _step16;
 
           try {
-            for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
-              var s = _step12.value;
+            for (_iterator16.s(); !(_step16 = _iterator16.n()).done;) {
+              var s = _step16.value;
 
               if (s.path === redirectToUrlSegment.path) {
                 actualSegments.splice(idx);
@@ -79740,9 +83842,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               idx++;
             }
           } catch (err) {
-            _iterator12.e(err);
+            _iterator16.e(err);
           } finally {
-            _iterator12.f();
+            _iterator16.f();
           }
 
           return redirectToUrlSegment;
@@ -79918,21 +84020,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /** @type {?} */
       var res = {};
 
-      var _iterator13 = _createForOfIteratorHelper(routes),
-          _step13;
+      var _iterator17 = _createForOfIteratorHelper(routes),
+          _step17;
 
       try {
-        for (_iterator13.s(); !(_step13 = _iterator13.n()).done;) {
-          var r = _step13.value;
+        for (_iterator17.s(); !(_step17 = _iterator17.n()).done;) {
+          var r = _step17.value;
 
           if (isEmptyPathRedirect(segmentGroup, slicedSegments, r) && !children[getOutlet(r)]) {
             res[getOutlet(r)] = new UrlSegmentGroup([], {});
           }
         }
       } catch (err) {
-        _iterator13.e(err);
+        _iterator17.e(err);
       } finally {
-        _iterator13.f();
+        _iterator17.f();
       }
 
       return Object.assign(Object.assign({}, children), res);
@@ -79949,21 +84051,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var res = {};
       res[PRIMARY_OUTLET] = primarySegmentGroup;
 
-      var _iterator14 = _createForOfIteratorHelper(routes),
-          _step14;
+      var _iterator18 = _createForOfIteratorHelper(routes),
+          _step18;
 
       try {
-        for (_iterator14.s(); !(_step14 = _iterator14.n()).done;) {
-          var r = _step14.value;
+        for (_iterator18.s(); !(_step18 = _iterator18.n()).done;) {
+          var r = _step18.value;
 
           if (r.path === '' && getOutlet(r) !== PRIMARY_OUTLET) {
             res[getOutlet(r)] = new UrlSegmentGroup([], {});
           }
         }
       } catch (err) {
-        _iterator14.e(err);
+        _iterator18.e(err);
       } finally {
-        _iterator14.f();
+        _iterator18.f();
       }
 
       return res;
@@ -80847,7 +84949,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "inheritParamsAndData",
         value: function inheritParamsAndData(routeNode) {
-          var _this87 = this;
+          var _this100 = this;
 
           /** @type {?} */
           var route = routeNode.value;
@@ -80862,7 +84964,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (n) {
-            return _this87.inheritParamsAndData(n);
+            return _this100.inheritParamsAndData(n);
           });
         }
         /**
@@ -80890,7 +84992,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "processChildren",
         value: function processChildren(config, segmentGroup) {
-          var _this88 = this;
+          var _this101 = this;
 
           /** @type {?} */
           var children = mapChildrenIntoArray(segmentGroup,
@@ -80900,7 +85002,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (child, childOutlet) {
-            return _this88.processSegmentGroup(config, child, childOutlet);
+            return _this101.processSegmentGroup(config, child, childOutlet);
           });
           checkOutletNameUniqueness(children);
           sortActivatedRouteSnapshots(children);
@@ -80917,12 +85019,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "processSegment",
         value: function processSegment(config, segmentGroup, segments, outlet) {
-          var _iterator15 = _createForOfIteratorHelper(config),
-              _step15;
+          var _iterator19 = _createForOfIteratorHelper(config),
+              _step19;
 
           try {
-            for (_iterator15.s(); !(_step15 = _iterator15.n()).done;) {
-              var r = _step15.value;
+            for (_iterator19.s(); !(_step19 = _iterator19.n()).done;) {
+              var r = _step19.value;
 
               try {
                 return this.processSegmentAgainstRoute(r, segmentGroup, segments, outlet);
@@ -80931,9 +85033,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             }
           } catch (err) {
-            _iterator15.e(err);
+            _iterator19.e(err);
           } finally {
-            _iterator15.f();
+            _iterator19.f();
           }
 
           if (this.noLeftoversInUrl(segmentGroup, segments, outlet)) {
@@ -81268,12 +85370,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /** @type {?} */
       var res = {};
 
-      var _iterator16 = _createForOfIteratorHelper(routes),
-          _step16;
+      var _iterator20 = _createForOfIteratorHelper(routes),
+          _step20;
 
       try {
-        for (_iterator16.s(); !(_step16 = _iterator16.n()).done;) {
-          var r = _step16.value;
+        for (_iterator20.s(); !(_step20 = _iterator20.n()).done;) {
+          var r = _step20.value;
 
           if (emptyPathMatch(segmentGroup, slicedSegments, r) && !children[getOutlet$1(r)]) {
             /** @type {?} */
@@ -81290,9 +85392,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         }
       } catch (err) {
-        _iterator16.e(err);
+        _iterator20.e(err);
       } finally {
-        _iterator16.f();
+        _iterator20.f();
       }
 
       return Object.assign(Object.assign({}, children), res);
@@ -81313,12 +85415,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       primarySegment._sourceSegment = segmentGroup;
       primarySegment._segmentIndexShift = consumedSegments.length;
 
-      var _iterator17 = _createForOfIteratorHelper(routes),
-          _step17;
+      var _iterator21 = _createForOfIteratorHelper(routes),
+          _step21;
 
       try {
-        for (_iterator17.s(); !(_step17 = _iterator17.n()).done;) {
-          var r = _step17.value;
+        for (_iterator21.s(); !(_step21 = _iterator21.n()).done;) {
+          var r = _step21.value;
 
           if (r.path === '' && getOutlet$1(r) !== PRIMARY_OUTLET) {
             /** @type {?} */
@@ -81329,9 +85431,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         }
       } catch (err) {
-        _iterator17.e(err);
+        _iterator21.e(err);
       } finally {
-        _iterator17.f();
+        _iterator21.f();
       }
 
       return res;
@@ -81797,7 +85899,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(RouterConfigLoader, [{
         key: "load",
         value: function load(parentInjector, route) {
-          var _this89 = this;
+          var _this102 = this;
 
           if (this.onLoadStartListener) {
             this.onLoadStartListener(route);
@@ -81814,8 +85916,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (factory) {
-            if (_this89.onLoadEndListener) {
-              _this89.onLoadEndListener(route);
+            if (_this102.onLoadEndListener) {
+              _this102.onLoadEndListener(route);
             }
             /** @type {?} */
 
@@ -81833,7 +85935,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "loadModuleFactory",
         value: function loadModuleFactory(loadChildren) {
-          var _this90 = this;
+          var _this103 = this;
 
           if (typeof loadChildren === 'string') {
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(this.loader.load(loadChildren));
@@ -81847,7 +85949,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               if (t instanceof _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModuleFactory"]) {
                 return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(t);
               } else {
-                return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(_this90.compiler.compileModuleAsync(t));
+                return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(_this103.compiler.compileModuleAsync(t));
               }
             }));
           }
@@ -82013,7 +86115,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        */
       // TODO: vsavkin make internal after the final is out.
       function Router(rootComponentType, urlSerializer, rootContexts, location, injector, loader, compiler, config) {
-        var _this91 = this;
+        var _this104 = this;
 
         _classCallCheck(this, Router);
 
@@ -82115,7 +86217,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function onLoadStart(r) {
-          return _this91.triggerEvent(new RouteConfigLoadStart(r));
+          return _this104.triggerEvent(new RouteConfigLoadStart(r));
         };
         /** @type {?} */
 
@@ -82126,7 +86228,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function onLoadEnd(r) {
-          return _this91.triggerEvent(new RouteConfigLoadEnd(r));
+          return _this104.triggerEvent(new RouteConfigLoadEnd(r));
         };
 
         this.ngModule = injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModuleRef"]);
@@ -82177,7 +86279,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(Router, [{
         key: "setupNavigations",
         value: function setupNavigations(transitions) {
-          var _this92 = this;
+          var _this105 = this;
 
           /** @type {?} */
           var eventsSubject =
@@ -82204,7 +86306,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               return (
                 /** @type {?} */
                 Object.assign(Object.assign({}, t), {
-                  extractedUrl: _this92.urlHandlingStrategy.extract(t.rawUrl)
+                  extractedUrl: _this105.urlHandlingStrategy.extract(t.rawUrl)
                 })
               );
             }), // Using switchMap so we cancel executing navigations when a new one comes in
@@ -82226,13 +86328,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function (t) {
-                _this92.currentNavigation = {
+                _this105.currentNavigation = {
                   id: t.id,
                   initialUrl: t.currentRawUrl,
                   extractedUrl: t.extractedUrl,
                   trigger: t.source,
                   extras: t.extras,
-                  previousNavigation: _this92.lastSuccessfulNavigation ? Object.assign(Object.assign({}, _this92.lastSuccessfulNavigation), {
+                  previousNavigation: _this105.lastSuccessfulNavigation ? Object.assign(Object.assign({}, _this105.lastSuccessfulNavigation), {
                     previousNavigation: null
                   }) : null
                 };
@@ -82243,11 +86345,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               */
               function (t) {
                 /** @type {?} */
-                var urlTransition = !_this92.navigated || t.extractedUrl.toString() !== _this92.browserUrlTree.toString();
+                var urlTransition = !_this105.navigated || t.extractedUrl.toString() !== _this105.browserUrlTree.toString();
                 /** @type {?} */
 
 
-                var processCurrentUrl = (_this92.onSameUrlNavigation === 'reload' ? true : urlTransition) && _this92.urlHandlingStrategy.shouldProcessUrl(t.rawUrl);
+                var processCurrentUrl = (_this105.onSameUrlNavigation === 'reload' ? true : urlTransition) && _this105.urlHandlingStrategy.shouldProcessUrl(t.rawUrl);
 
                 if (processCurrentUrl) {
                   return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(t).pipe( // Fire NavigationStart event
@@ -82258,11 +86360,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   */
                   function (t) {
                     /** @type {?} */
-                    var transition = _this92.transitions.getValue();
+                    var transition = _this105.transitions.getValue();
 
-                    eventsSubject.next(new NavigationStart(t.id, _this92.serializeUrl(t.extractedUrl), t.source, t.restoredState));
+                    eventsSubject.next(new NavigationStart(t.id, _this105.serializeUrl(t.extractedUrl), t.source, t.restoredState));
 
-                    if (transition !== _this92.transitions.getValue()) {
+                    if (transition !== _this105.transitions.getValue()) {
                       return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
                     }
 
@@ -82277,39 +86379,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   function (t) {
                     return Promise.resolve(t);
                   }), // ApplyRedirects
-                  applyRedirects$1(_this92.ngModule.injector, _this92.configLoader, _this92.urlSerializer, _this92.config), // Update the currentNavigation
+                  applyRedirects$1(_this105.ngModule.injector, _this105.configLoader, _this105.urlSerializer, _this105.config), // Update the currentNavigation
                   Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(
                   /**
                   * @param {?} t
                   * @return {?}
                   */
                   function (t) {
-                    _this92.currentNavigation = Object.assign(Object.assign({},
+                    _this105.currentNavigation = Object.assign(Object.assign({},
                     /** @type {?} */
-                    _this92.currentNavigation), {
+                    _this105.currentNavigation), {
                       finalUrl: t.urlAfterRedirects
                     });
                   }), // Recognize
-                  recognize$1(_this92.rootComponentType, _this92.config,
+                  recognize$1(_this105.rootComponentType, _this105.config,
                   /**
                   * @param {?} url
                   * @return {?}
                   */
                   function (url) {
-                    return _this92.serializeUrl(url);
-                  }, _this92.paramsInheritanceStrategy, _this92.relativeLinkResolution), // Update URL if in `eager` update mode
+                    return _this105.serializeUrl(url);
+                  }, _this105.paramsInheritanceStrategy, _this105.relativeLinkResolution), // Update URL if in `eager` update mode
                   Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(
                   /**
                   * @param {?} t
                   * @return {?}
                   */
                   function (t) {
-                    if (_this92.urlUpdateStrategy === 'eager') {
+                    if (_this105.urlUpdateStrategy === 'eager') {
                       if (!t.extras.skipLocationChange) {
-                        _this92.setBrowserUrl(t.urlAfterRedirects, !!t.extras.replaceUrl, t.id, t.extras.state);
+                        _this105.setBrowserUrl(t.urlAfterRedirects, !!t.extras.replaceUrl, t.id, t.extras.state);
                       }
 
-                      _this92.browserUrlTree = t.urlAfterRedirects;
+                      _this105.browserUrlTree = t.urlAfterRedirects;
                     }
                   }), // Fire RoutesRecognized
                   Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(
@@ -82319,14 +86421,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   */
                   function (t) {
                     /** @type {?} */
-                    var routesRecognized = new RoutesRecognized(t.id, _this92.serializeUrl(t.extractedUrl), _this92.serializeUrl(t.urlAfterRedirects),
+                    var routesRecognized = new RoutesRecognized(t.id, _this105.serializeUrl(t.extractedUrl), _this105.serializeUrl(t.urlAfterRedirects),
                     /** @type {?} */
                     t.targetSnapshot);
                     eventsSubject.next(routesRecognized);
                   }));
                 } else {
                   /** @type {?} */
-                  var processPreviousUrl = urlTransition && _this92.rawUrlTree && _this92.urlHandlingStrategy.shouldProcessUrl(_this92.rawUrlTree);
+                  var processPreviousUrl = urlTransition && _this105.rawUrlTree && _this105.urlHandlingStrategy.shouldProcessUrl(_this105.rawUrlTree);
                   /* When the current URL shouldn't be processed, but the previous one was,
                    * we handle this "error condition" by navigating to the previously
                    * successful URL, but leaving the URL intact.*/
@@ -82340,11 +86442,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         extras = t.extras;
                     /** @type {?} */
 
-                    var navStart = new NavigationStart(id, _this92.serializeUrl(extractedUrl), source, restoredState);
+                    var navStart = new NavigationStart(id, _this105.serializeUrl(extractedUrl), source, restoredState);
                     eventsSubject.next(navStart);
                     /** @type {?} */
 
-                    var targetSnapshot = createEmptyState(extractedUrl, _this92.rootComponentType).snapshot;
+                    var targetSnapshot = createEmptyState(extractedUrl, _this105.rootComponentType).snapshot;
                     return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(Object.assign(Object.assign({}, t), {
                       targetSnapshot: targetSnapshot,
                       urlAfterRedirects: extractedUrl,
@@ -82359,8 +86461,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                      * URL. This way the next navigation will be coming from the current URL
                      * in the browser.
                      */
-                    _this92.rawUrlTree = t.rawUrl;
-                    _this92.browserUrlTree = t.urlAfterRedirects;
+                    _this105.rawUrlTree = t.rawUrl;
+                    _this105.browserUrlTree = t.urlAfterRedirects;
                     t.resolve(null);
                     return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
                   }
@@ -82379,7 +86481,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     _t$extras = t.extras,
                     skipLocationChange = _t$extras.skipLocationChange,
                     replaceUrl = _t$extras.replaceUrl;
-                return _this92.hooks.beforePreactivation(
+                return _this105.hooks.beforePreactivation(
                 /** @type {?} */
                 targetSnapshot, {
                   navigationId: navigationId,
@@ -82396,11 +86498,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               */
               function (t) {
                 /** @type {?} */
-                var guardsStart = new GuardsCheckStart(t.id, _this92.serializeUrl(t.extractedUrl), _this92.serializeUrl(t.urlAfterRedirects),
+                var guardsStart = new GuardsCheckStart(t.id, _this105.serializeUrl(t.extractedUrl), _this105.serializeUrl(t.urlAfterRedirects),
                 /** @type {?} */
                 t.targetSnapshot);
 
-                _this92.triggerEvent(guardsStart);
+                _this105.triggerEvent(guardsStart);
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
               /**
               * @param {?} t
@@ -82410,15 +86512,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 return Object.assign(Object.assign({}, t), {
                   guards: getAllRouteGuards(
                   /** @type {?} */
-                  t.targetSnapshot, t.currentSnapshot, _this92.rootContexts)
+                  t.targetSnapshot, t.currentSnapshot, _this105.rootContexts)
                 });
-              }), checkGuards(_this92.ngModule.injector,
+              }), checkGuards(_this105.ngModule.injector,
               /**
               * @param {?} evt
               * @return {?}
               */
               function (evt) {
-                return _this92.triggerEvent(evt);
+                return _this105.triggerEvent(evt);
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(
               /**
               * @param {?} t
@@ -82427,7 +86529,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               function (t) {
                 if (isUrlTree(t.guardsResult)) {
                   /** @type {?} */
-                  var error = navigationCancelingError("Redirecting to \"".concat(_this92.serializeUrl(t.guardsResult), "\""));
+                  var error = navigationCancelingError("Redirecting to \"".concat(_this105.serializeUrl(t.guardsResult), "\""));
                   error.url = t.guardsResult;
                   throw error;
                 }
@@ -82438,11 +86540,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               */
               function (t) {
                 /** @type {?} */
-                var guardsEnd = new GuardsCheckEnd(t.id, _this92.serializeUrl(t.extractedUrl), _this92.serializeUrl(t.urlAfterRedirects),
+                var guardsEnd = new GuardsCheckEnd(t.id, _this105.serializeUrl(t.extractedUrl), _this105.serializeUrl(t.urlAfterRedirects),
                 /** @type {?} */
                 t.targetSnapshot, !!t.guardsResult);
 
-                _this92.triggerEvent(guardsEnd);
+                _this105.triggerEvent(guardsEnd);
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(
               /**
               * @param {?} t
@@ -82450,11 +86552,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               */
               function (t) {
                 if (!t.guardsResult) {
-                  _this92.resetUrlToCurrentUrlTree();
+                  _this105.resetUrlToCurrentUrlTree();
                   /** @type {?} */
 
 
-                  var navCancel = new NavigationCancel(t.id, _this92.serializeUrl(t.extractedUrl), '');
+                  var navCancel = new NavigationCancel(t.id, _this105.serializeUrl(t.extractedUrl), '');
                   eventsSubject.next(navCancel);
                   t.resolve(false);
                   return false;
@@ -82476,12 +86578,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   */
                   function (t) {
                     /** @type {?} */
-                    var resolveStart = new ResolveStart(t.id, _this92.serializeUrl(t.extractedUrl), _this92.serializeUrl(t.urlAfterRedirects),
+                    var resolveStart = new ResolveStart(t.id, _this105.serializeUrl(t.extractedUrl), _this105.serializeUrl(t.urlAfterRedirects),
                     /** @type {?} */
                     t.targetSnapshot);
 
-                    _this92.triggerEvent(resolveStart);
-                  }), resolveData(_this92.paramsInheritanceStrategy, _this92.ngModule.injector), //
+                    _this105.triggerEvent(resolveStart);
+                  }), resolveData(_this105.paramsInheritanceStrategy, _this105.ngModule.injector), //
                   Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(
                   /**
                   * @param {?} t
@@ -82489,11 +86591,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   */
                   function (t) {
                     /** @type {?} */
-                    var resolveEnd = new ResolveEnd(t.id, _this92.serializeUrl(t.extractedUrl), _this92.serializeUrl(t.urlAfterRedirects),
+                    var resolveEnd = new ResolveEnd(t.id, _this105.serializeUrl(t.extractedUrl), _this105.serializeUrl(t.urlAfterRedirects),
                     /** @type {?} */
                     t.targetSnapshot);
 
-                    _this92.triggerEvent(resolveEnd);
+                    _this105.triggerEvent(resolveEnd);
                   }));
                 }
 
@@ -82512,7 +86614,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     _t$extras2 = t.extras,
                     skipLocationChange = _t$extras2.skipLocationChange,
                     replaceUrl = _t$extras2.replaceUrl;
-                return _this92.hooks.afterPreactivation(
+                return _this105.hooks.afterPreactivation(
                 /** @type {?} */
                 targetSnapshot, {
                   navigationId: navigationId,
@@ -82528,7 +86630,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               */
               function (t) {
                 /** @type {?} */
-                var targetRouterState = createRouterState(_this92.routeReuseStrategy,
+                var targetRouterState = createRouterState(_this105.routeReuseStrategy,
                 /** @type {?} */
                 t.targetSnapshot, t.currentRouterState);
                 return Object.assign(Object.assign({}, t), {
@@ -82546,28 +86648,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function (t) {
-                _this92.currentUrlTree = t.urlAfterRedirects;
-                _this92.rawUrlTree = _this92.urlHandlingStrategy.merge(_this92.currentUrlTree, t.rawUrl);
+                _this105.currentUrlTree = t.urlAfterRedirects;
+                _this105.rawUrlTree = _this105.urlHandlingStrategy.merge(_this105.currentUrlTree, t.rawUrl);
 
                 /** @type {?} */
-                _this92.routerState =
+                _this105.routerState =
                 /** @type {?} */
                 t.targetRouterState;
 
-                if (_this92.urlUpdateStrategy === 'deferred') {
+                if (_this105.urlUpdateStrategy === 'deferred') {
                   if (!t.extras.skipLocationChange) {
-                    _this92.setBrowserUrl(_this92.rawUrlTree, !!t.extras.replaceUrl, t.id, t.extras.state);
+                    _this105.setBrowserUrl(_this105.rawUrlTree, !!t.extras.replaceUrl, t.id, t.extras.state);
                   }
 
-                  _this92.browserUrlTree = t.urlAfterRedirects;
+                  _this105.browserUrlTree = t.urlAfterRedirects;
                 }
-              }), activateRoutes(_this92.rootContexts, _this92.routeReuseStrategy,
+              }), activateRoutes(_this105.rootContexts, _this105.routeReuseStrategy,
               /**
               * @param {?} evt
               * @return {?}
               */
               function (evt) {
-                return _this92.triggerEvent(evt);
+                return _this105.triggerEvent(evt);
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])({
                 /**
                  * @return {?}
@@ -82602,11 +86704,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   // sync code which looks for a value here in order to determine whether or
                   // not to handle a given popstate event or to leave it to the Angualr
                   // router.
-                  _this92.resetUrlToCurrentUrlTree();
+                  _this105.resetUrlToCurrentUrlTree();
                   /** @type {?} */
 
 
-                  var navCancel = new NavigationCancel(t.id, _this92.serializeUrl(t.extractedUrl), "Navigation ID ".concat(t.id, " is not equal to the current navigation id ").concat(_this92.navigationId));
+                  var navCancel = new NavigationCancel(t.id, _this105.serializeUrl(t.extractedUrl), "Navigation ID ".concat(t.id, " is not equal to the current navigation id ").concat(_this105.navigationId));
                   eventsSubject.next(navCancel);
                   t.resolve(false);
                 } // currentNavigation should always be reset to null here. If navigation was
@@ -82614,7 +86716,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 // we can safely set currentNavigation to null here.
 
 
-                _this92.currentNavigation = null;
+                _this105.currentNavigation = null;
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(
               /**
               * @param {?} e
@@ -82635,14 +86737,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     // isn't a change from the default currentUrlTree and won't navigate.
                     // This is only applicable with initial navigation, so setting
                     // `navigated` only when not redirecting resolves this scenario.
-                    _this92.navigated = true;
+                    _this105.navigated = true;
 
-                    _this92.resetStateAndUrl(t.currentRouterState, t.currentUrlTree, t.rawUrl);
+                    _this105.resetStateAndUrl(t.currentRouterState, t.currentUrlTree, t.rawUrl);
                   }
                   /** @type {?} */
 
 
-                  var navCancel = new NavigationCancel(t.id, _this92.serializeUrl(t.extractedUrl), e.message);
+                  var navCancel = new NavigationCancel(t.id, _this105.serializeUrl(t.extractedUrl), e.message);
                   eventsSubject.next(navCancel); // When redirecting, we need to delay resolving the navigation
                   // promise and push it to the redirect navigation
 
@@ -82659,15 +86761,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     */
                     function () {
                       /** @type {?} */
-                      var mergedTree = _this92.urlHandlingStrategy.merge(e.url, _this92.rawUrlTree);
+                      var mergedTree = _this105.urlHandlingStrategy.merge(e.url, _this105.rawUrlTree);
                       /** @type {?} */
 
 
                       var extras = {
                         skipLocationChange: t.extras.skipLocationChange,
-                        replaceUrl: _this92.urlUpdateStrategy === 'eager'
+                        replaceUrl: _this105.urlUpdateStrategy === 'eager'
                       };
-                      return _this92.scheduleNavigation(mergedTree, 'imperative', null, extras, {
+                      return _this105.scheduleNavigation(mergedTree, 'imperative', null, extras, {
                         resolve: t.resolve,
                         reject: t.reject,
                         promise: t.promise
@@ -82678,15 +86780,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                    * the pre-error state. */
 
                 } else {
-                  _this92.resetStateAndUrl(t.currentRouterState, t.currentUrlTree, t.rawUrl);
+                  _this105.resetStateAndUrl(t.currentRouterState, t.currentUrlTree, t.rawUrl);
                   /** @type {?} */
 
 
-                  var navError = new NavigationError(t.id, _this92.serializeUrl(t.extractedUrl), e);
+                  var navError = new NavigationError(t.id, _this105.serializeUrl(t.extractedUrl), e);
                   eventsSubject.next(navError);
 
                   try {
-                    t.resolve(_this92.errorHandler(e));
+                    t.resolve(_this105.errorHandler(e));
                   } catch (ee) {
                     t.reject(ee);
                   }
@@ -82763,7 +86865,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "setUpLocationChangeListener",
         value: function setUpLocationChangeListener() {
-          var _this93 = this;
+          var _this106 = this;
 
           // Don't need to use Zone.wrap any more, because zone.js
           // already patch onPopState, so location change callback will
@@ -82778,7 +86880,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             */
             function (change) {
               /** @type {?} */
-              var rawUrlTree = _this93.parseUrl(change['url']);
+              var rawUrlTree = _this106.parseUrl(change['url']);
               /** @type {?} */
 
 
@@ -82793,7 +86895,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function () {
-                _this93.scheduleNavigation(rawUrlTree, source, state, {
+                _this106.scheduleNavigation(rawUrlTree, source, state, {
                   replaceUrl: true
                 });
               }, 0);
@@ -83145,7 +87247,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "processNavigations",
         value: function processNavigations() {
-          var _this94 = this;
+          var _this107 = this;
 
           this.navigations.subscribe(
           /**
@@ -83153,14 +87255,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (t) {
-            _this94.navigated = true;
-            _this94.lastSuccessfulId = t.id;
+            _this107.navigated = true;
+            _this107.lastSuccessfulId = t.id;
 
             /** @type {?} */
-            _this94.events.next(new NavigationEnd(t.id, _this94.serializeUrl(t.extractedUrl), _this94.serializeUrl(_this94.currentUrlTree)));
+            _this107.events.next(new NavigationEnd(t.id, _this107.serializeUrl(t.extractedUrl), _this107.serializeUrl(_this107.currentUrlTree)));
 
-            _this94.lastSuccessfulNavigation = _this94.currentNavigation;
-            _this94.currentNavigation = null;
+            _this107.lastSuccessfulNavigation = _this107.currentNavigation;
+            _this107.currentNavigation = null;
             t.resolve(true);
           },
           /**
@@ -83168,7 +87270,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (e) {
-            _this94.console.warn("Unhandled Navigation Error: ");
+            _this107.console.warn("Unhandled Navigation Error: ");
           });
         }
         /**
@@ -83709,7 +87811,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} locationStrategy
        */
       function RouterLinkWithHref(router, route, locationStrategy) {
-        var _this95 = this;
+        var _this108 = this;
 
         _classCallCheck(this, RouterLinkWithHref);
 
@@ -83724,7 +87826,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         */
         function (s) {
           if (s instanceof NavigationEnd) {
-            _this95.updateTargetUrlAndHref();
+            _this108.updateTargetUrlAndHref();
           }
         });
       }
@@ -84079,7 +88181,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} linkWithHref
        */
       function RouterLinkActive(router, element, renderer, link, linkWithHref) {
-        var _this96 = this;
+        var _this109 = this;
 
         _classCallCheck(this, RouterLinkActive);
 
@@ -84100,7 +88202,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         */
         function (s) {
           if (s instanceof NavigationEnd) {
-            _this96.update();
+            _this109.update();
           }
         });
       }
@@ -84112,7 +88214,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(RouterLinkActive, [{
         key: "ngAfterContentInit",
         value: function ngAfterContentInit() {
-          var _this97 = this;
+          var _this110 = this;
 
           this.links.changes.subscribe(
           /**
@@ -84120,7 +88222,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (_) {
-            return _this97.update();
+            return _this110.update();
           });
           this.linksWithHrefs.changes.subscribe(
           /**
@@ -84128,7 +88230,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (_) {
-            return _this97.update();
+            return _this110.update();
           });
           this.update();
         }
@@ -84164,7 +88266,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "update",
         value: function update() {
-          var _this98 = this;
+          var _this111 = this;
 
           if (!this.links || !this.linksWithHrefs || !this.router.navigated) return;
           Promise.resolve().then(
@@ -84173,22 +88275,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function () {
             /** @type {?} */
-            var hasActiveLinks = _this98.hasActiveLinks();
+            var hasActiveLinks = _this111.hasActiveLinks();
 
-            if (_this98.isActive !== hasActiveLinks) {
+            if (_this111.isActive !== hasActiveLinks) {
               /** @type {?} */
-              _this98.isActive = hasActiveLinks;
+              _this111.isActive = hasActiveLinks;
 
-              _this98.classes.forEach(
+              _this111.classes.forEach(
               /**
               * @param {?} c
               * @return {?}
               */
               function (c) {
                 if (hasActiveLinks) {
-                  _this98.renderer.addClass(_this98.element.nativeElement, c);
+                  _this111.renderer.addClass(_this111.element.nativeElement, c);
                 } else {
-                  _this98.renderer.removeClass(_this98.element.nativeElement, c);
+                  _this111.renderer.removeClass(_this111.element.nativeElement, c);
                 }
               });
             }
@@ -84203,7 +88305,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "isLinkActive",
         value: function isLinkActive(router) {
-          var _this99 = this;
+          var _this112 = this;
 
           return (
             /**
@@ -84211,7 +88313,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (link) {
-              return router.isActive(link.urlTree, _this99.routerLinkActiveOptions.exact);
+              return router.isActive(link.urlTree, _this112.routerLinkActiveOptions.exact);
             }
           );
         }
@@ -85004,7 +89106,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(RouterPreloader, [{
         key: "setUpPreloading",
         value: function setUpPreloading() {
-          var _this100 = this;
+          var _this113 = this;
 
           this.subscription = this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(
           /**
@@ -85018,7 +89120,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function () {
-            return _this100.preload();
+            return _this113.preload();
           })).subscribe(
           /**
           * @return {?}
@@ -85061,12 +89163,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           /** @type {?} */
           var res = [];
 
-          var _iterator18 = _createForOfIteratorHelper(routes),
-              _step18;
+          var _iterator22 = _createForOfIteratorHelper(routes),
+              _step22;
 
           try {
-            for (_iterator18.s(); !(_step18 = _iterator18.n()).done;) {
-              var route = _step18.value;
+            for (_iterator22.s(); !(_step22 = _iterator22.n()).done;) {
+              var route = _step22.value;
 
               // we already have the config loaded, just recurse
               if (route.loadChildren && !route.canLoad && route._loadedConfig) {
@@ -85080,9 +89182,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             }
           } catch (err) {
-            _iterator18.e(err);
+            _iterator22.e(err);
           } finally {
-            _iterator18.f();
+            _iterator22.f();
           }
 
           return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(res).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["mergeAll"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
@@ -85104,7 +89206,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "preloadConfig",
         value: function preloadConfig(ngModule, route) {
-          var _this101 = this;
+          var _this114 = this;
 
           return this.preloadingStrategy.preload(route,
           /**
@@ -85112,7 +89214,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function () {
             /** @type {?} */
-            var loaded$ = _this101.loader.load(ngModule.injector, route);
+            var loaded$ = _this114.loader.load(ngModule.injector, route);
 
             return loaded$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["mergeMap"])(
             /**
@@ -85121,7 +89223,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             */
             function (config) {
               route._loadedConfig = config;
-              return _this101.processRoutes(config.module, config.routes);
+              return _this114.processRoutes(config.module, config.routes);
             }));
           });
         }
@@ -85230,7 +89332,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createScrollEvents",
         value: function createScrollEvents() {
-          var _this102 = this;
+          var _this115 = this;
 
           return this.router.events.subscribe(
           /**
@@ -85240,13 +89342,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           function (e) {
             if (e instanceof NavigationStart) {
               // store the scroll position of the current stable navigations.
-              _this102.store[_this102.lastId] = _this102.viewportScroller.getScrollPosition();
-              _this102.lastSource = e.navigationTrigger;
-              _this102.restoredId = e.restoredState ? e.restoredState.navigationId : 0;
+              _this115.store[_this115.lastId] = _this115.viewportScroller.getScrollPosition();
+              _this115.lastSource = e.navigationTrigger;
+              _this115.restoredId = e.restoredState ? e.restoredState.navigationId : 0;
             } else if (e instanceof NavigationEnd) {
-              _this102.lastId = e.id;
+              _this115.lastId = e.id;
 
-              _this102.scheduleScrollEvent(e, _this102.router.parseUrl(e.urlAfterRedirects).fragment);
+              _this115.scheduleScrollEvent(e, _this115.router.parseUrl(e.urlAfterRedirects).fragment);
             }
           });
         }
@@ -85258,7 +89360,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "consumeScrollEvents",
         value: function consumeScrollEvents() {
-          var _this103 = this;
+          var _this116 = this;
 
           return this.router.events.subscribe(
           /**
@@ -85269,17 +89371,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (!(e instanceof Scroll)) return; // a popstate event. The pop state event will always ignore anchor scrolling.
 
             if (e.position) {
-              if (_this103.options.scrollPositionRestoration === 'top') {
-                _this103.viewportScroller.scrollToPosition([0, 0]);
-              } else if (_this103.options.scrollPositionRestoration === 'enabled') {
-                _this103.viewportScroller.scrollToPosition(e.position);
+              if (_this116.options.scrollPositionRestoration === 'top') {
+                _this116.viewportScroller.scrollToPosition([0, 0]);
+              } else if (_this116.options.scrollPositionRestoration === 'enabled') {
+                _this116.viewportScroller.scrollToPosition(e.position);
               } // imperative navigation "forward"
 
             } else {
-              if (e.anchor && _this103.options.anchorScrolling === 'enabled') {
-                _this103.viewportScroller.scrollToAnchor(e.anchor);
-              } else if (_this103.options.scrollPositionRestoration !== 'disabled') {
-                _this103.viewportScroller.scrollToPosition([0, 0]);
+              if (e.anchor && _this116.options.anchorScrolling === 'enabled') {
+                _this116.viewportScroller.scrollToAnchor(e.anchor);
+              } else if (_this116.options.scrollPositionRestoration !== 'disabled') {
+                _this116.viewportScroller.scrollToPosition([0, 0]);
               }
             }
           });
@@ -85763,7 +89865,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(RouterInitializer, [{
         key: "appInitializer",
         value: function appInitializer() {
-          var _this104 = this;
+          var _this117 = this;
 
           /** @type {?} */
           var p = this.injector.get(_angular_common__WEBPACK_IMPORTED_MODULE_0__["LOCATION_INITIALIZED"], Promise.resolve(null));
@@ -85788,13 +89890,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             /** @type {?} */
 
-            var router = _this104.injector.get(Router);
+            var router = _this117.injector.get(Router);
             /** @type {?} */
 
 
-            var opts = _this104.injector.get(ROUTER_CONFIGURATION);
+            var opts = _this117.injector.get(ROUTER_CONFIGURATION);
 
-            if (_this104.isLegacyDisabled(opts) || _this104.isLegacyEnabled(opts)) {
+            if (_this117.isLegacyDisabled(opts) || _this117.isLegacyEnabled(opts)) {
               resolve(true);
             } else if (opts.initialNavigation === 'disabled') {
               router.setUpLocationChangeListener();
@@ -85806,10 +89908,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               */
               function () {
                 // only the initial navigation should be delayed
-                if (!_this104.initNavigation) {
-                  _this104.initNavigation = true;
+                if (!_this117.initNavigation) {
+                  _this117.initNavigation = true;
                   resolve(true);
-                  return _this104.resultOfPreactivationDone; // subsequent navigations should not be delayed
+                  return _this117.resultOfPreactivationDone; // subsequent navigations should not be delayed
                 } else {
                   return (
                     /** @type {?} */
@@ -86128,8 +90230,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             self.pureOptions.speed = self.$item.getAttribute('data-jarallax-element') || self.pureOptions.speed;
           }
 
-          for (var _len15 = arguments.length, args = new Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
-            args[_key15] = arguments[_key15];
+          for (var _len17 = arguments.length, args = new Array(_len17), _key17 = 0; _key17 < _len17; _key17++) {
+            args[_key17] = arguments[_key17];
           }
 
           if ('element' !== self.options.type) {
@@ -86791,8 +90893,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "extend",
         value: function extend(out) {
-          for (var _len16 = arguments.length, args = new Array(_len16 > 1 ? _len16 - 1 : 0), _key16 = 1; _key16 < _len16; _key16++) {
-            args[_key16 - 1] = arguments[_key16];
+          for (var _len18 = arguments.length, args = new Array(_len18 > 1 ? _len18 - 1 : 0), _key18 = 1; _key18 < _len18; _key18++) {
+            args[_key18 - 1] = arguments[_key18];
           }
 
           out = out || {};
@@ -87273,8 +91375,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var k = 0;
       var ret;
 
-      for (var _len17 = arguments.length, args = new Array(_len17 > 2 ? _len17 - 2 : 0), _key17 = 2; _key17 < _len17; _key17++) {
-        args[_key17 - 2] = arguments[_key17];
+      for (var _len19 = arguments.length, args = new Array(_len19 > 2 ? _len19 - 2 : 0), _key19 = 2; _key19 < _len19; _key19++) {
+        args[_key19 - 2] = arguments[_key19];
       }
 
       for (k; k < len; k += 1) {
@@ -87326,6 +91428,3643 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         document.addEventListener('DOMContentLoaded', callback);
       }
     };
+    /***/
+
+  },
+
+  /***/
+  "./node_modules/marked/lib/marked.js":
+  /*!*******************************************!*\
+    !*** ./node_modules/marked/lib/marked.js ***!
+    \*******************************************/
+
+  /*! no static exports found */
+
+  /***/
+  function node_modulesMarkedLibMarkedJs(module, exports, __webpack_require__) {
+    /**
+     * marked - a markdown parser
+     * Copyright (c) 2011-2021, Christopher Jeffrey. (MIT Licensed)
+     * https://github.com/markedjs/marked
+     */
+
+    /**
+     * DO NOT EDIT THIS FILE
+     * The code in this file is generated from files in ./src/
+     */
+    (function (global, factory) {
+      true ? module.exports = factory() : undefined;
+    })(this, function () {
+      'use strict';
+
+      function _defineProperties(target, props) {
+        for (var i = 0; i < props.length; i++) {
+          var descriptor = props[i];
+          descriptor.enumerable = descriptor.enumerable || false;
+          descriptor.configurable = true;
+          if ("value" in descriptor) descriptor.writable = true;
+          Object.defineProperty(target, descriptor.key, descriptor);
+        }
+      }
+
+      function _createClass(Constructor, protoProps, staticProps) {
+        if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) _defineProperties(Constructor, staticProps);
+        return Constructor;
+      }
+
+      function _unsupportedIterableToArray(o, minLen) {
+        if (!o) return;
+        if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+        var n = Object.prototype.toString.call(o).slice(8, -1);
+        if (n === "Object" && o.constructor) n = o.constructor.name;
+        if (n === "Map" || n === "Set") return Array.from(o);
+        if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+      }
+
+      function _arrayLikeToArray(arr, len) {
+        if (len == null || len > arr.length) len = arr.length;
+
+        for (var i = 0, arr2 = new Array(len); i < len; i++) {
+          arr2[i] = arr[i];
+        }
+
+        return arr2;
+      }
+
+      function _createForOfIteratorHelperLoose(o, allowArrayLike) {
+        var it;
+
+        if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+          if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+            if (it) o = it;
+            var i = 0;
+            return function () {
+              if (i >= o.length) return {
+                done: true
+              };
+              return {
+                done: false,
+                value: o[i++]
+              };
+            };
+          }
+
+          throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+        }
+
+        it = o[Symbol.iterator]();
+        return it.next.bind(it);
+      }
+
+      function createCommonjsModule(fn) {
+        var module = {
+          exports: {}
+        };
+        return fn(module, module.exports), module.exports;
+      }
+
+      var defaults = createCommonjsModule(function (module) {
+        function getDefaults() {
+          return {
+            baseUrl: null,
+            breaks: false,
+            gfm: true,
+            headerIds: true,
+            headerPrefix: '',
+            highlight: null,
+            langPrefix: 'language-',
+            mangle: true,
+            pedantic: false,
+            renderer: null,
+            sanitize: false,
+            sanitizer: null,
+            silent: false,
+            smartLists: false,
+            smartypants: false,
+            tokenizer: null,
+            walkTokens: null,
+            xhtml: false
+          };
+        }
+
+        function changeDefaults(newDefaults) {
+          module.exports.defaults = newDefaults;
+        }
+
+        module.exports = {
+          defaults: getDefaults(),
+          getDefaults: getDefaults,
+          changeDefaults: changeDefaults
+        };
+      });
+      /**
+       * Helpers
+       */
+
+      var escapeTest = /[&<>"']/;
+      var escapeReplace = /[&<>"']/g;
+      var escapeTestNoEncode = /[<>"']|&(?!#?\w+;)/;
+      var escapeReplaceNoEncode = /[<>"']|&(?!#?\w+;)/g;
+      var escapeReplacements = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      };
+
+      var getEscapeReplacement = function getEscapeReplacement(ch) {
+        return escapeReplacements[ch];
+      };
+
+      function escape(html, encode) {
+        if (encode) {
+          if (escapeTest.test(html)) {
+            return html.replace(escapeReplace, getEscapeReplacement);
+          }
+        } else {
+          if (escapeTestNoEncode.test(html)) {
+            return html.replace(escapeReplaceNoEncode, getEscapeReplacement);
+          }
+        }
+
+        return html;
+      }
+
+      var unescapeTest = /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/ig;
+
+      function unescape(html) {
+        // explicitly match decimal, hex, and named HTML entities
+        return html.replace(unescapeTest, function (_, n) {
+          n = n.toLowerCase();
+          if (n === 'colon') return ':';
+
+          if (n.charAt(0) === '#') {
+            return n.charAt(1) === 'x' ? String.fromCharCode(parseInt(n.substring(2), 16)) : String.fromCharCode(+n.substring(1));
+          }
+
+          return '';
+        });
+      }
+
+      var caret = /(^|[^\[])\^/g;
+
+      function edit(regex, opt) {
+        regex = regex.source || regex;
+        opt = opt || '';
+        var obj = {
+          replace: function replace(name, val) {
+            val = val.source || val;
+            val = val.replace(caret, '$1');
+            regex = regex.replace(name, val);
+            return obj;
+          },
+          getRegex: function getRegex() {
+            return new RegExp(regex, opt);
+          }
+        };
+        return obj;
+      }
+
+      var nonWordAndColonTest = /[^\w:]/g;
+      var originIndependentUrl = /^$|^[a-z][a-z0-9+.-]*:|^[?#]/i;
+
+      function cleanUrl(sanitize, base, href) {
+        if (sanitize) {
+          var prot;
+
+          try {
+            prot = decodeURIComponent(unescape(href)).replace(nonWordAndColonTest, '').toLowerCase();
+          } catch (e) {
+            return null;
+          }
+
+          if (prot.indexOf('javascript:') === 0 || prot.indexOf('vbscript:') === 0 || prot.indexOf('data:') === 0) {
+            return null;
+          }
+        }
+
+        if (base && !originIndependentUrl.test(href)) {
+          href = resolveUrl(base, href);
+        }
+
+        try {
+          href = encodeURI(href).replace(/%25/g, '%');
+        } catch (e) {
+          return null;
+        }
+
+        return href;
+      }
+
+      var baseUrls = {};
+      var justDomain = /^[^:]+:\/*[^/]*$/;
+      var protocol = /^([^:]+:)[\s\S]*$/;
+      var domain = /^([^:]+:\/*[^/]*)[\s\S]*$/;
+
+      function resolveUrl(base, href) {
+        if (!baseUrls[' ' + base]) {
+          // we can ignore everything in base after the last slash of its path component,
+          // but we might need to add _that_
+          // https://tools.ietf.org/html/rfc3986#section-3
+          if (justDomain.test(base)) {
+            baseUrls[' ' + base] = base + '/';
+          } else {
+            baseUrls[' ' + base] = rtrim(base, '/', true);
+          }
+        }
+
+        base = baseUrls[' ' + base];
+        var relativeBase = base.indexOf(':') === -1;
+
+        if (href.substring(0, 2) === '//') {
+          if (relativeBase) {
+            return href;
+          }
+
+          return base.replace(protocol, '$1') + href;
+        } else if (href.charAt(0) === '/') {
+          if (relativeBase) {
+            return href;
+          }
+
+          return base.replace(domain, '$1') + href;
+        } else {
+          return base + href;
+        }
+      }
+
+      var noopTest = {
+        exec: function noopTest() {}
+      };
+
+      function merge(obj) {
+        var i = 1,
+            target,
+            key;
+
+        for (; i < arguments.length; i++) {
+          target = arguments[i];
+
+          for (key in target) {
+            if (Object.prototype.hasOwnProperty.call(target, key)) {
+              obj[key] = target[key];
+            }
+          }
+        }
+
+        return obj;
+      }
+
+      function splitCells(tableRow, count) {
+        // ensure that every cell-delimiting pipe has a space
+        // before it to distinguish it from an escaped pipe
+        var row = tableRow.replace(/\|/g, function (match, offset, str) {
+          var escaped = false,
+              curr = offset;
+
+          while (--curr >= 0 && str[curr] === '\\') {
+            escaped = !escaped;
+          }
+
+          if (escaped) {
+            // odd number of slashes means | is escaped
+            // so we leave it alone
+            return '|';
+          } else {
+            // add space before unescaped |
+            return ' |';
+          }
+        }),
+            cells = row.split(/ \|/);
+        var i = 0;
+
+        if (cells.length > count) {
+          cells.splice(count);
+        } else {
+          while (cells.length < count) {
+            cells.push('');
+          }
+        }
+
+        for (; i < cells.length; i++) {
+          // leading or trailing whitespace is ignored per the gfm spec
+          cells[i] = cells[i].trim().replace(/\\\|/g, '|');
+        }
+
+        return cells;
+      } // Remove trailing 'c's. Equivalent to str.replace(/c*$/, '').
+      // /c*$/ is vulnerable to REDOS.
+      // invert: Remove suffix of non-c chars instead. Default falsey.
+
+
+      function rtrim(str, c, invert) {
+        var l = str.length;
+
+        if (l === 0) {
+          return '';
+        } // Length of suffix matching the invert condition.
+
+
+        var suffLen = 0; // Step left until we fail to match the invert condition.
+
+        while (suffLen < l) {
+          var currChar = str.charAt(l - suffLen - 1);
+
+          if (currChar === c && !invert) {
+            suffLen++;
+          } else if (currChar !== c && invert) {
+            suffLen++;
+          } else {
+            break;
+          }
+        }
+
+        return str.substr(0, l - suffLen);
+      }
+
+      function findClosingBracket(str, b) {
+        if (str.indexOf(b[1]) === -1) {
+          return -1;
+        }
+
+        var l = str.length;
+        var level = 0,
+            i = 0;
+
+        for (; i < l; i++) {
+          if (str[i] === '\\') {
+            i++;
+          } else if (str[i] === b[0]) {
+            level++;
+          } else if (str[i] === b[1]) {
+            level--;
+
+            if (level < 0) {
+              return i;
+            }
+          }
+        }
+
+        return -1;
+      }
+
+      function checkSanitizeDeprecation(opt) {
+        if (opt && opt.sanitize && !opt.silent) {
+          console.warn('marked(): sanitize and sanitizer parameters are deprecated since version 0.7.0, should not be used and will be removed in the future. Read more here: https://marked.js.org/#/USING_ADVANCED.md#options');
+        }
+      } // copied from https://stackoverflow.com/a/5450113/806777
+
+
+      function repeatString(pattern, count) {
+        if (count < 1) {
+          return '';
+        }
+
+        var result = '';
+
+        while (count > 1) {
+          if (count & 1) {
+            result += pattern;
+          }
+
+          count >>= 1;
+          pattern += pattern;
+        }
+
+        return result + pattern;
+      }
+
+      var helpers = {
+        escape: escape,
+        unescape: unescape,
+        edit: edit,
+        cleanUrl: cleanUrl,
+        resolveUrl: resolveUrl,
+        noopTest: noopTest,
+        merge: merge,
+        splitCells: splitCells,
+        rtrim: rtrim,
+        findClosingBracket: findClosingBracket,
+        checkSanitizeDeprecation: checkSanitizeDeprecation,
+        repeatString: repeatString
+      };
+      var defaults$1 = defaults.defaults;
+      var rtrim$1 = helpers.rtrim,
+          splitCells$1 = helpers.splitCells,
+          _escape = helpers.escape,
+          findClosingBracket$1 = helpers.findClosingBracket;
+
+      function outputLink(cap, link, raw) {
+        var href = link.href;
+        var title = link.title ? _escape(link.title) : null;
+        var text = cap[1].replace(/\\([\[\]])/g, '$1');
+
+        if (cap[0].charAt(0) !== '!') {
+          return {
+            type: 'link',
+            raw: raw,
+            href: href,
+            title: title,
+            text: text
+          };
+        } else {
+          return {
+            type: 'image',
+            raw: raw,
+            href: href,
+            title: title,
+            text: _escape(text)
+          };
+        }
+      }
+
+      function indentCodeCompensation(raw, text) {
+        var matchIndentToCode = raw.match(/^(\s+)(?:```)/);
+
+        if (matchIndentToCode === null) {
+          return text;
+        }
+
+        var indentToCode = matchIndentToCode[1];
+        return text.split('\n').map(function (node) {
+          var matchIndentInNode = node.match(/^\s+/);
+
+          if (matchIndentInNode === null) {
+            return node;
+          }
+
+          var indentInNode = matchIndentInNode[0];
+
+          if (indentInNode.length >= indentToCode.length) {
+            return node.slice(indentToCode.length);
+          }
+
+          return node;
+        }).join('\n');
+      }
+      /**
+       * Tokenizer
+       */
+
+
+      var Tokenizer_1 = /*#__PURE__*/function () {
+        function Tokenizer(options) {
+          this.options = options || defaults$1;
+        }
+
+        var _proto = Tokenizer.prototype;
+
+        _proto.space = function space(src) {
+          var cap = this.rules.block.newline.exec(src);
+
+          if (cap) {
+            if (cap[0].length > 1) {
+              return {
+                type: 'space',
+                raw: cap[0]
+              };
+            }
+
+            return {
+              raw: '\n'
+            };
+          }
+        };
+
+        _proto.code = function code(src, tokens) {
+          var cap = this.rules.block.code.exec(src);
+
+          if (cap) {
+            var lastToken = tokens[tokens.length - 1]; // An indented code block cannot interrupt a paragraph.
+
+            if (lastToken && lastToken.type === 'paragraph') {
+              return {
+                raw: cap[0],
+                text: cap[0].trimRight()
+              };
+            }
+
+            var text = cap[0].replace(/^ {1,4}/gm, '');
+            return {
+              type: 'code',
+              raw: cap[0],
+              codeBlockStyle: 'indented',
+              text: !this.options.pedantic ? rtrim$1(text, '\n') : text
+            };
+          }
+        };
+
+        _proto.fences = function fences(src) {
+          var cap = this.rules.block.fences.exec(src);
+
+          if (cap) {
+            var raw = cap[0];
+            var text = indentCodeCompensation(raw, cap[3] || '');
+            return {
+              type: 'code',
+              raw: raw,
+              lang: cap[2] ? cap[2].trim() : cap[2],
+              text: text
+            };
+          }
+        };
+
+        _proto.heading = function heading(src) {
+          var cap = this.rules.block.heading.exec(src);
+
+          if (cap) {
+            var text = cap[2].trim(); // remove trailing #s
+
+            if (/#$/.test(text)) {
+              var trimmed = rtrim$1(text, '#');
+
+              if (this.options.pedantic) {
+                text = trimmed.trim();
+              } else if (!trimmed || / $/.test(trimmed)) {
+                // CommonMark requires space before trailing #s
+                text = trimmed.trim();
+              }
+            }
+
+            return {
+              type: 'heading',
+              raw: cap[0],
+              depth: cap[1].length,
+              text: text
+            };
+          }
+        };
+
+        _proto.nptable = function nptable(src) {
+          var cap = this.rules.block.nptable.exec(src);
+
+          if (cap) {
+            var item = {
+              type: 'table',
+              header: splitCells$1(cap[1].replace(/^ *| *\| *$/g, '')),
+              align: cap[2].replace(/^ *|\| *$/g, '').split(/ *\| */),
+              cells: cap[3] ? cap[3].replace(/\n$/, '').split('\n') : [],
+              raw: cap[0]
+            };
+
+            if (item.header.length === item.align.length) {
+              var l = item.align.length;
+              var i;
+
+              for (i = 0; i < l; i++) {
+                if (/^ *-+: *$/.test(item.align[i])) {
+                  item.align[i] = 'right';
+                } else if (/^ *:-+: *$/.test(item.align[i])) {
+                  item.align[i] = 'center';
+                } else if (/^ *:-+ *$/.test(item.align[i])) {
+                  item.align[i] = 'left';
+                } else {
+                  item.align[i] = null;
+                }
+              }
+
+              l = item.cells.length;
+
+              for (i = 0; i < l; i++) {
+                item.cells[i] = splitCells$1(item.cells[i], item.header.length);
+              }
+
+              return item;
+            }
+          }
+        };
+
+        _proto.hr = function hr(src) {
+          var cap = this.rules.block.hr.exec(src);
+
+          if (cap) {
+            return {
+              type: 'hr',
+              raw: cap[0]
+            };
+          }
+        };
+
+        _proto.blockquote = function blockquote(src) {
+          var cap = this.rules.block.blockquote.exec(src);
+
+          if (cap) {
+            var text = cap[0].replace(/^ *> ?/gm, '');
+            return {
+              type: 'blockquote',
+              raw: cap[0],
+              text: text
+            };
+          }
+        };
+
+        _proto.list = function list(src) {
+          var cap = this.rules.block.list.exec(src);
+
+          if (cap) {
+            var raw = cap[0];
+            var bull = cap[2];
+            var isordered = bull.length > 1;
+            var list = {
+              type: 'list',
+              raw: raw,
+              ordered: isordered,
+              start: isordered ? +bull.slice(0, -1) : '',
+              loose: false,
+              items: []
+            }; // Get each top-level item.
+
+            var itemMatch = cap[0].match(this.rules.block.item);
+            var next = false,
+                item,
+                space,
+                bcurr,
+                bnext,
+                addBack,
+                loose,
+                istask,
+                ischecked;
+            var l = itemMatch.length;
+            bcurr = this.rules.block.listItemStart.exec(itemMatch[0]);
+
+            for (var i = 0; i < l; i++) {
+              item = itemMatch[i];
+              raw = item; // Determine whether the next list item belongs here.
+              // Backpedal if it does not belong in this list.
+
+              if (i !== l - 1) {
+                bnext = this.rules.block.listItemStart.exec(itemMatch[i + 1]);
+
+                if (!this.options.pedantic ? bnext[1].length > bcurr[0].length || bnext[1].length > 3 : bnext[1].length > bcurr[1].length) {
+                  // nested list
+                  itemMatch.splice(i, 2, itemMatch[i] + '\n' + itemMatch[i + 1]);
+                  i--;
+                  l--;
+                  continue;
+                } else {
+                  if ( // different bullet style
+                  !this.options.pedantic || this.options.smartLists ? bnext[2][bnext[2].length - 1] !== bull[bull.length - 1] : isordered === (bnext[2].length === 1)) {
+                    addBack = itemMatch.slice(i + 1).join('\n');
+                    list.raw = list.raw.substring(0, list.raw.length - addBack.length);
+                    i = l - 1;
+                  }
+                }
+
+                bcurr = bnext;
+              } // Remove the list item's bullet
+              // so it is seen as the next token.
+
+
+              space = item.length;
+              item = item.replace(/^ *([*+-]|\d+[.)]) ?/, ''); // Outdent whatever the
+              // list item contains. Hacky.
+
+              if (~item.indexOf('\n ')) {
+                space -= item.length;
+                item = !this.options.pedantic ? item.replace(new RegExp('^ {1,' + space + '}', 'gm'), '') : item.replace(/^ {1,4}/gm, '');
+              } // Determine whether item is loose or not.
+              // Use: /(^|\n)(?! )[^\n]+\n\n(?!\s*$)/
+              // for discount behavior.
+
+
+              loose = next || /\n\n(?!\s*$)/.test(item);
+
+              if (i !== l - 1) {
+                next = item.charAt(item.length - 1) === '\n';
+                if (!loose) loose = next;
+              }
+
+              if (loose) {
+                list.loose = true;
+              } // Check for task list items
+
+
+              if (this.options.gfm) {
+                istask = /^\[[ xX]\] /.test(item);
+                ischecked = undefined;
+
+                if (istask) {
+                  ischecked = item[1] !== ' ';
+                  item = item.replace(/^\[[ xX]\] +/, '');
+                }
+              }
+
+              list.items.push({
+                type: 'list_item',
+                raw: raw,
+                task: istask,
+                checked: ischecked,
+                loose: loose,
+                text: item
+              });
+            }
+
+            return list;
+          }
+        };
+
+        _proto.html = function html(src) {
+          var cap = this.rules.block.html.exec(src);
+
+          if (cap) {
+            return {
+              type: this.options.sanitize ? 'paragraph' : 'html',
+              raw: cap[0],
+              pre: !this.options.sanitizer && (cap[1] === 'pre' || cap[1] === 'script' || cap[1] === 'style'),
+              text: this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(cap[0]) : _escape(cap[0]) : cap[0]
+            };
+          }
+        };
+
+        _proto.def = function def(src) {
+          var cap = this.rules.block.def.exec(src);
+
+          if (cap) {
+            if (cap[3]) cap[3] = cap[3].substring(1, cap[3].length - 1);
+            var tag = cap[1].toLowerCase().replace(/\s+/g, ' ');
+            return {
+              tag: tag,
+              raw: cap[0],
+              href: cap[2],
+              title: cap[3]
+            };
+          }
+        };
+
+        _proto.table = function table(src) {
+          var cap = this.rules.block.table.exec(src);
+
+          if (cap) {
+            var item = {
+              type: 'table',
+              header: splitCells$1(cap[1].replace(/^ *| *\| *$/g, '')),
+              align: cap[2].replace(/^ *|\| *$/g, '').split(/ *\| */),
+              cells: cap[3] ? cap[3].replace(/\n$/, '').split('\n') : []
+            };
+
+            if (item.header.length === item.align.length) {
+              item.raw = cap[0];
+              var l = item.align.length;
+              var i;
+
+              for (i = 0; i < l; i++) {
+                if (/^ *-+: *$/.test(item.align[i])) {
+                  item.align[i] = 'right';
+                } else if (/^ *:-+: *$/.test(item.align[i])) {
+                  item.align[i] = 'center';
+                } else if (/^ *:-+ *$/.test(item.align[i])) {
+                  item.align[i] = 'left';
+                } else {
+                  item.align[i] = null;
+                }
+              }
+
+              l = item.cells.length;
+
+              for (i = 0; i < l; i++) {
+                item.cells[i] = splitCells$1(item.cells[i].replace(/^ *\| *| *\| *$/g, ''), item.header.length);
+              }
+
+              return item;
+            }
+          }
+        };
+
+        _proto.lheading = function lheading(src) {
+          var cap = this.rules.block.lheading.exec(src);
+
+          if (cap) {
+            return {
+              type: 'heading',
+              raw: cap[0],
+              depth: cap[2].charAt(0) === '=' ? 1 : 2,
+              text: cap[1]
+            };
+          }
+        };
+
+        _proto.paragraph = function paragraph(src) {
+          var cap = this.rules.block.paragraph.exec(src);
+
+          if (cap) {
+            return {
+              type: 'paragraph',
+              raw: cap[0],
+              text: cap[1].charAt(cap[1].length - 1) === '\n' ? cap[1].slice(0, -1) : cap[1]
+            };
+          }
+        };
+
+        _proto.text = function text(src, tokens) {
+          var cap = this.rules.block.text.exec(src);
+
+          if (cap) {
+            var lastToken = tokens[tokens.length - 1];
+
+            if (lastToken && lastToken.type === 'text') {
+              return {
+                raw: cap[0],
+                text: cap[0]
+              };
+            }
+
+            return {
+              type: 'text',
+              raw: cap[0],
+              text: cap[0]
+            };
+          }
+        };
+
+        _proto.escape = function escape(src) {
+          var cap = this.rules.inline.escape.exec(src);
+
+          if (cap) {
+            return {
+              type: 'escape',
+              raw: cap[0],
+              text: _escape(cap[1])
+            };
+          }
+        };
+
+        _proto.tag = function tag(src, inLink, inRawBlock) {
+          var cap = this.rules.inline.tag.exec(src);
+
+          if (cap) {
+            if (!inLink && /^<a /i.test(cap[0])) {
+              inLink = true;
+            } else if (inLink && /^<\/a>/i.test(cap[0])) {
+              inLink = false;
+            }
+
+            if (!inRawBlock && /^<(pre|code|kbd|script)(\s|>)/i.test(cap[0])) {
+              inRawBlock = true;
+            } else if (inRawBlock && /^<\/(pre|code|kbd|script)(\s|>)/i.test(cap[0])) {
+              inRawBlock = false;
+            }
+
+            return {
+              type: this.options.sanitize ? 'text' : 'html',
+              raw: cap[0],
+              inLink: inLink,
+              inRawBlock: inRawBlock,
+              text: this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(cap[0]) : _escape(cap[0]) : cap[0]
+            };
+          }
+        };
+
+        _proto.link = function link(src) {
+          var cap = this.rules.inline.link.exec(src);
+
+          if (cap) {
+            var trimmedUrl = cap[2].trim();
+
+            if (!this.options.pedantic && /^</.test(trimmedUrl)) {
+              // commonmark requires matching angle brackets
+              if (!/>$/.test(trimmedUrl)) {
+                return;
+              } // ending angle bracket cannot be escaped
+
+
+              var rtrimSlash = rtrim$1(trimmedUrl.slice(0, -1), '\\');
+
+              if ((trimmedUrl.length - rtrimSlash.length) % 2 === 0) {
+                return;
+              }
+            } else {
+              // find closing parenthesis
+              var lastParenIndex = findClosingBracket$1(cap[2], '()');
+
+              if (lastParenIndex > -1) {
+                var start = cap[0].indexOf('!') === 0 ? 5 : 4;
+                var linkLen = start + cap[1].length + lastParenIndex;
+                cap[2] = cap[2].substring(0, lastParenIndex);
+                cap[0] = cap[0].substring(0, linkLen).trim();
+                cap[3] = '';
+              }
+            }
+
+            var href = cap[2];
+            var title = '';
+
+            if (this.options.pedantic) {
+              // split pedantic href and title
+              var link = /^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(href);
+
+              if (link) {
+                href = link[1];
+                title = link[3];
+              }
+            } else {
+              title = cap[3] ? cap[3].slice(1, -1) : '';
+            }
+
+            href = href.trim();
+
+            if (/^</.test(href)) {
+              if (this.options.pedantic && !/>$/.test(trimmedUrl)) {
+                // pedantic allows starting angle bracket without ending angle bracket
+                href = href.slice(1);
+              } else {
+                href = href.slice(1, -1);
+              }
+            }
+
+            return outputLink(cap, {
+              href: href ? href.replace(this.rules.inline._escapes, '$1') : href,
+              title: title ? title.replace(this.rules.inline._escapes, '$1') : title
+            }, cap[0]);
+          }
+        };
+
+        _proto.reflink = function reflink(src, links) {
+          var cap;
+
+          if ((cap = this.rules.inline.reflink.exec(src)) || (cap = this.rules.inline.nolink.exec(src))) {
+            var link = (cap[2] || cap[1]).replace(/\s+/g, ' ');
+            link = links[link.toLowerCase()];
+
+            if (!link || !link.href) {
+              var text = cap[0].charAt(0);
+              return {
+                type: 'text',
+                raw: text,
+                text: text
+              };
+            }
+
+            return outputLink(cap, link, cap[0]);
+          }
+        };
+
+        _proto.strong = function strong(src, maskedSrc, prevChar) {
+          if (prevChar === void 0) {
+            prevChar = '';
+          }
+
+          var match = this.rules.inline.strong.start.exec(src);
+
+          if (match && (!match[1] || match[1] && (prevChar === '' || this.rules.inline.punctuation.exec(prevChar)))) {
+            maskedSrc = maskedSrc.slice(-1 * src.length);
+            var endReg = match[0] === '**' ? this.rules.inline.strong.endAst : this.rules.inline.strong.endUnd;
+            endReg.lastIndex = 0;
+            var cap;
+
+            while ((match = endReg.exec(maskedSrc)) != null) {
+              cap = this.rules.inline.strong.middle.exec(maskedSrc.slice(0, match.index + 3));
+
+              if (cap) {
+                return {
+                  type: 'strong',
+                  raw: src.slice(0, cap[0].length),
+                  text: src.slice(2, cap[0].length - 2)
+                };
+              }
+            }
+          }
+        };
+
+        _proto.em = function em(src, maskedSrc, prevChar) {
+          if (prevChar === void 0) {
+            prevChar = '';
+          }
+
+          var match = this.rules.inline.em.start.exec(src);
+
+          if (match && (!match[1] || match[1] && (prevChar === '' || this.rules.inline.punctuation.exec(prevChar)))) {
+            maskedSrc = maskedSrc.slice(-1 * src.length);
+            var endReg = match[0] === '*' ? this.rules.inline.em.endAst : this.rules.inline.em.endUnd;
+            endReg.lastIndex = 0;
+            var cap;
+
+            while ((match = endReg.exec(maskedSrc)) != null) {
+              cap = this.rules.inline.em.middle.exec(maskedSrc.slice(0, match.index + 2));
+
+              if (cap) {
+                return {
+                  type: 'em',
+                  raw: src.slice(0, cap[0].length),
+                  text: src.slice(1, cap[0].length - 1)
+                };
+              }
+            }
+          }
+        };
+
+        _proto.codespan = function codespan(src) {
+          var cap = this.rules.inline.code.exec(src);
+
+          if (cap) {
+            var text = cap[2].replace(/\n/g, ' ');
+            var hasNonSpaceChars = /[^ ]/.test(text);
+            var hasSpaceCharsOnBothEnds = /^ /.test(text) && / $/.test(text);
+
+            if (hasNonSpaceChars && hasSpaceCharsOnBothEnds) {
+              text = text.substring(1, text.length - 1);
+            }
+
+            text = _escape(text, true);
+            return {
+              type: 'codespan',
+              raw: cap[0],
+              text: text
+            };
+          }
+        };
+
+        _proto.br = function br(src) {
+          var cap = this.rules.inline.br.exec(src);
+
+          if (cap) {
+            return {
+              type: 'br',
+              raw: cap[0]
+            };
+          }
+        };
+
+        _proto.del = function del(src) {
+          var cap = this.rules.inline.del.exec(src);
+
+          if (cap) {
+            return {
+              type: 'del',
+              raw: cap[0],
+              text: cap[2]
+            };
+          }
+        };
+
+        _proto.autolink = function autolink(src, mangle) {
+          var cap = this.rules.inline.autolink.exec(src);
+
+          if (cap) {
+            var text, href;
+
+            if (cap[2] === '@') {
+              text = _escape(this.options.mangle ? mangle(cap[1]) : cap[1]);
+              href = 'mailto:' + text;
+            } else {
+              text = _escape(cap[1]);
+              href = text;
+            }
+
+            return {
+              type: 'link',
+              raw: cap[0],
+              text: text,
+              href: href,
+              tokens: [{
+                type: 'text',
+                raw: text,
+                text: text
+              }]
+            };
+          }
+        };
+
+        _proto.url = function url(src, mangle) {
+          var cap;
+
+          if (cap = this.rules.inline.url.exec(src)) {
+            var text, href;
+
+            if (cap[2] === '@') {
+              text = _escape(this.options.mangle ? mangle(cap[0]) : cap[0]);
+              href = 'mailto:' + text;
+            } else {
+              // do extended autolink path validation
+              var prevCapZero;
+
+              do {
+                prevCapZero = cap[0];
+                cap[0] = this.rules.inline._backpedal.exec(cap[0])[0];
+              } while (prevCapZero !== cap[0]);
+
+              text = _escape(cap[0]);
+
+              if (cap[1] === 'www.') {
+                href = 'http://' + text;
+              } else {
+                href = text;
+              }
+            }
+
+            return {
+              type: 'link',
+              raw: cap[0],
+              text: text,
+              href: href,
+              tokens: [{
+                type: 'text',
+                raw: text,
+                text: text
+              }]
+            };
+          }
+        };
+
+        _proto.inlineText = function inlineText(src, inRawBlock, smartypants) {
+          var cap = this.rules.inline.text.exec(src);
+
+          if (cap) {
+            var text;
+
+            if (inRawBlock) {
+              text = this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(cap[0]) : _escape(cap[0]) : cap[0];
+            } else {
+              text = _escape(this.options.smartypants ? smartypants(cap[0]) : cap[0]);
+            }
+
+            return {
+              type: 'text',
+              raw: cap[0],
+              text: text
+            };
+          }
+        };
+
+        return Tokenizer;
+      }();
+
+      var noopTest$1 = helpers.noopTest,
+          edit$1 = helpers.edit,
+          merge$1 = helpers.merge;
+      /**
+       * Block-Level Grammar
+       */
+
+      var block = {
+        newline: /^(?: *(?:\n|$))+/,
+        code: /^( {4}[^\n]+(?:\n(?: *(?:\n|$))*)?)+/,
+        fences: /^ {0,3}(`{3,}(?=[^`\n]*\n)|~{3,})([^\n]*)\n(?:|([\s\S]*?)\n)(?: {0,3}\1[~`]* *(?:\n+|$)|$)/,
+        hr: /^ {0,3}((?:- *){3,}|(?:_ *){3,}|(?:\* *){3,})(?:\n+|$)/,
+        heading: /^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/,
+        blockquote: /^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/,
+        list: /^( {0,3})(bull) [\s\S]+?(?:hr|def|\n{2,}(?! )(?! {0,3}bull )\n*|\s*$)/,
+        html: '^ {0,3}(?:' // optional indentation
+        + '<(script|pre|style)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)' // (1)
+        + '|comment[^\\n]*(\\n+|$)' // (2)
+        + '|<\\?[\\s\\S]*?(?:\\?>\\n*|$)' // (3)
+        + '|<![A-Z][\\s\\S]*?(?:>\\n*|$)' // (4)
+        + '|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)' // (5)
+        + '|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:\\n{2,}|$)' // (6)
+        + '|<(?!script|pre|style)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:\\n{2,}|$)' // (7) open tag
+        + '|</(?!script|pre|style)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:\\n{2,}|$)' // (7) closing tag
+        + ')',
+        def: /^ {0,3}\[(label)\]: *\n? *<?([^\s>]+)>?(?:(?: +\n? *| *\n *)(title))? *(?:\n+|$)/,
+        nptable: noopTest$1,
+        table: noopTest$1,
+        lheading: /^([^\n]+)\n {0,3}(=+|-+) *(?:\n+|$)/,
+        // regex template, placeholders will be replaced according to different paragraph
+        // interruption rules of commonmark and the original markdown spec:
+        _paragraph: /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html| +\n)[^\n]+)*)/,
+        text: /^[^\n]+/
+      };
+      block._label = /(?!\s*\])(?:\\[\[\]]|[^\[\]])+/;
+      block._title = /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/;
+      block.def = edit$1(block.def).replace('label', block._label).replace('title', block._title).getRegex();
+      block.bullet = /(?:[*+-]|\d{1,9}[.)])/;
+      block.item = /^( *)(bull) ?[^\n]*(?:\n(?! *bull ?)[^\n]*)*/;
+      block.item = edit$1(block.item, 'gm').replace(/bull/g, block.bullet).getRegex();
+      block.listItemStart = edit$1(/^( *)(bull)/).replace('bull', block.bullet).getRegex();
+      block.list = edit$1(block.list).replace(/bull/g, block.bullet).replace('hr', '\\n+(?=\\1?(?:(?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$))').replace('def', '\\n+(?=' + block.def.source + ')').getRegex();
+      block._tag = 'address|article|aside|base|basefont|blockquote|body|caption' + '|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption' + '|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe' + '|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option' + '|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr' + '|track|ul';
+      block._comment = /<!--(?!-?>)[\s\S]*?(?:-->|$)/;
+      block.html = edit$1(block.html, 'i').replace('comment', block._comment).replace('tag', block._tag).replace('attribute', / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex();
+      block.paragraph = edit$1(block._paragraph).replace('hr', block.hr).replace('heading', ' {0,3}#{1,6} ').replace('|lheading', '') // setex headings don't interrupt commonmark paragraphs
+      .replace('blockquote', ' {0,3}>').replace('fences', ' {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n').replace('list', ' {0,3}(?:[*+-]|1[.)]) ') // only lists starting from 1 can interrupt
+      .replace('html', '</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|!--)').replace('tag', block._tag) // pars can be interrupted by type (6) html blocks
+      .getRegex();
+      block.blockquote = edit$1(block.blockquote).replace('paragraph', block.paragraph).getRegex();
+      /**
+       * Normal Block Grammar
+       */
+
+      block.normal = merge$1({}, block);
+      /**
+       * GFM Block Grammar
+       */
+
+      block.gfm = merge$1({}, block.normal, {
+        nptable: '^ *([^|\\n ].*\\|.*)\\n' // Header
+        + ' {0,3}([-:]+ *\\|[-| :]*)' // Align
+        + '(?:\\n((?:(?!\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)',
+        // Cells
+        table: '^ *\\|(.+)\\n' // Header
+        + ' {0,3}\\|?( *[-:]+[-| :]*)' // Align
+        + '(?:\\n *((?:(?!\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)' // Cells
+
+      });
+      block.gfm.nptable = edit$1(block.gfm.nptable).replace('hr', block.hr).replace('heading', ' {0,3}#{1,6} ').replace('blockquote', ' {0,3}>').replace('code', ' {4}[^\\n]').replace('fences', ' {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n').replace('list', ' {0,3}(?:[*+-]|1[.)]) ') // only lists starting from 1 can interrupt
+      .replace('html', '</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|!--)').replace('tag', block._tag) // tables can be interrupted by type (6) html blocks
+      .getRegex();
+      block.gfm.table = edit$1(block.gfm.table).replace('hr', block.hr).replace('heading', ' {0,3}#{1,6} ').replace('blockquote', ' {0,3}>').replace('code', ' {4}[^\\n]').replace('fences', ' {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n').replace('list', ' {0,3}(?:[*+-]|1[.)]) ') // only lists starting from 1 can interrupt
+      .replace('html', '</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|!--)').replace('tag', block._tag) // tables can be interrupted by type (6) html blocks
+      .getRegex();
+      /**
+       * Pedantic grammar (original John Gruber's loose markdown specification)
+       */
+
+      block.pedantic = merge$1({}, block.normal, {
+        html: edit$1('^ *(?:comment *(?:\\n|\\s*$)' + '|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)' // closed tag
+        + '|<tag(?:"[^"]*"|\'[^\']*\'|\\s[^\'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))').replace('comment', block._comment).replace(/tag/g, '(?!(?:' + 'a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub' + '|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)' + '\\b)\\w+(?!:|[^\\w\\s@]*@)\\b').getRegex(),
+        def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
+        heading: /^(#{1,6})(.*)(?:\n+|$)/,
+        fences: noopTest$1,
+        // fences not supported
+        paragraph: edit$1(block.normal._paragraph).replace('hr', block.hr).replace('heading', ' *#{1,6} *[^\n]').replace('lheading', block.lheading).replace('blockquote', ' {0,3}>').replace('|fences', '').replace('|list', '').replace('|html', '').getRegex()
+      });
+      /**
+       * Inline-Level Grammar
+       */
+
+      var inline = {
+        escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
+        autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
+        url: noopTest$1,
+        tag: '^comment' + '|^</[a-zA-Z][\\w:-]*\\s*>' // self-closing tag
+        + '|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>' // open tag
+        + '|^<\\?[\\s\\S]*?\\?>' // processing instruction, e.g. <?php ?>
+        + '|^<![a-zA-Z]+\\s[\\s\\S]*?>' // declaration, e.g. <!DOCTYPE html>
+        + '|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>',
+        // CDATA section
+        link: /^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/,
+        reflink: /^!?\[(label)\]\[(?!\s*\])((?:\\[\[\]]?|[^\[\]\\])+)\]/,
+        nolink: /^!?\[(?!\s*\])((?:\[[^\[\]]*\]|\\[\[\]]|[^\[\]])*)\](?:\[\])?/,
+        reflinkSearch: 'reflink|nolink(?!\\()',
+        strong: {
+          start: /^(?:(\*\*(?=[*punctuation]))|\*\*)(?![\s])|__/,
+          // (1) returns if starts w/ punctuation
+          middle: /^\*\*(?:(?:(?!overlapSkip)(?:[^*]|\\\*)|overlapSkip)|\*(?:(?!overlapSkip)(?:[^*]|\\\*)|overlapSkip)*?\*)+?\*\*$|^__(?![\s])((?:(?:(?!overlapSkip)(?:[^_]|\\_)|overlapSkip)|_(?:(?!overlapSkip)(?:[^_]|\\_)|overlapSkip)*?_)+?)__$/,
+          endAst: /[^punctuation\s]\*\*(?!\*)|[punctuation]\*\*(?!\*)(?:(?=[punctuation_\s]|$))/,
+          // last char can't be punct, or final * must also be followed by punct (or endline)
+          endUnd: /[^\s]__(?!_)(?:(?=[punctuation*\s])|$)/ // last char can't be a space, and final _ must preceed punct or \s (or endline)
+
+        },
+        em: {
+          start: /^(?:(\*(?=[punctuation]))|\*)(?![*\s])|_/,
+          // (1) returns if starts w/ punctuation
+          middle: /^\*(?:(?:(?!overlapSkip)(?:[^*]|\\\*)|overlapSkip)|\*(?:(?!overlapSkip)(?:[^*]|\\\*)|overlapSkip)*?\*)+?\*$|^_(?![_\s])(?:(?:(?!overlapSkip)(?:[^_]|\\_)|overlapSkip)|_(?:(?!overlapSkip)(?:[^_]|\\_)|overlapSkip)*?_)+?_$/,
+          endAst: /[^punctuation\s]\*(?!\*)|[punctuation]\*(?!\*)(?:(?=[punctuation_\s]|$))/,
+          // last char can't be punct, or final * must also be followed by punct (or endline)
+          endUnd: /[^\s]_(?!_)(?:(?=[punctuation*\s])|$)/ // last char can't be a space, and final _ must preceed punct or \s (or endline)
+
+        },
+        code: /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,
+        br: /^( {2,}|\\)\n(?!\s*$)/,
+        del: noopTest$1,
+        text: /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*]|\b_|$)|[^ ](?= {2,}\n)))/,
+        punctuation: /^([\s*punctuation])/
+      }; // list of punctuation marks from common mark spec
+      // without * and _ to workaround cases with double emphasis
+
+      inline._punctuation = '!"#$%&\'()+\\-.,/:;<=>?@\\[\\]`^{|}~';
+      inline.punctuation = edit$1(inline.punctuation).replace(/punctuation/g, inline._punctuation).getRegex(); // sequences em should skip over [title](link), `code`, <html>
+
+      inline._blockSkip = '\\[[^\\]]*?\\]\\([^\\)]*?\\)|`[^`]*?`|<[^>]*?>';
+      inline._overlapSkip = '__[^_]*?__|\\*\\*\\[^\\*\\]*?\\*\\*';
+      inline._comment = edit$1(block._comment).replace('(?:-->|$)', '-->').getRegex();
+      inline.em.start = edit$1(inline.em.start).replace(/punctuation/g, inline._punctuation).getRegex();
+      inline.em.middle = edit$1(inline.em.middle).replace(/punctuation/g, inline._punctuation).replace(/overlapSkip/g, inline._overlapSkip).getRegex();
+      inline.em.endAst = edit$1(inline.em.endAst, 'g').replace(/punctuation/g, inline._punctuation).getRegex();
+      inline.em.endUnd = edit$1(inline.em.endUnd, 'g').replace(/punctuation/g, inline._punctuation).getRegex();
+      inline.strong.start = edit$1(inline.strong.start).replace(/punctuation/g, inline._punctuation).getRegex();
+      inline.strong.middle = edit$1(inline.strong.middle).replace(/punctuation/g, inline._punctuation).replace(/overlapSkip/g, inline._overlapSkip).getRegex();
+      inline.strong.endAst = edit$1(inline.strong.endAst, 'g').replace(/punctuation/g, inline._punctuation).getRegex();
+      inline.strong.endUnd = edit$1(inline.strong.endUnd, 'g').replace(/punctuation/g, inline._punctuation).getRegex();
+      inline.blockSkip = edit$1(inline._blockSkip, 'g').getRegex();
+      inline.overlapSkip = edit$1(inline._overlapSkip, 'g').getRegex();
+      inline._escapes = /\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/g;
+      inline._scheme = /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/;
+      inline._email = /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/;
+      inline.autolink = edit$1(inline.autolink).replace('scheme', inline._scheme).replace('email', inline._email).getRegex();
+      inline._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/;
+      inline.tag = edit$1(inline.tag).replace('comment', inline._comment).replace('attribute', inline._attribute).getRegex();
+      inline._label = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/;
+      inline._href = /<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/;
+      inline._title = /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/;
+      inline.link = edit$1(inline.link).replace('label', inline._label).replace('href', inline._href).replace('title', inline._title).getRegex();
+      inline.reflink = edit$1(inline.reflink).replace('label', inline._label).getRegex();
+      inline.reflinkSearch = edit$1(inline.reflinkSearch, 'g').replace('reflink', inline.reflink).replace('nolink', inline.nolink).getRegex();
+      /**
+       * Normal Inline Grammar
+       */
+
+      inline.normal = merge$1({}, inline);
+      /**
+       * Pedantic Inline Grammar
+       */
+
+      inline.pedantic = merge$1({}, inline.normal, {
+        strong: {
+          start: /^__|\*\*/,
+          middle: /^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/,
+          endAst: /\*\*(?!\*)/g,
+          endUnd: /__(?!_)/g
+        },
+        em: {
+          start: /^_|\*/,
+          middle: /^()\*(?=\S)([\s\S]*?\S)\*(?!\*)|^_(?=\S)([\s\S]*?\S)_(?!_)/,
+          endAst: /\*(?!\*)/g,
+          endUnd: /_(?!_)/g
+        },
+        link: edit$1(/^!?\[(label)\]\((.*?)\)/).replace('label', inline._label).getRegex(),
+        reflink: edit$1(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace('label', inline._label).getRegex()
+      });
+      /**
+       * GFM Inline Grammar
+       */
+
+      inline.gfm = merge$1({}, inline.normal, {
+        escape: edit$1(inline.escape).replace('])', '~|])').getRegex(),
+        _extended_email: /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/,
+        url: /^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/,
+        _backpedal: /(?:[^?!.,:;*_~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_~)]+(?!$))+/,
+        del: /^(~~?)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/,
+        text: /^([`~]+|[^`~])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*~]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@))|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@))/
+      });
+      inline.gfm.url = edit$1(inline.gfm.url, 'i').replace('email', inline.gfm._extended_email).getRegex();
+      /**
+       * GFM + Line Breaks Inline Grammar
+       */
+
+      inline.breaks = merge$1({}, inline.gfm, {
+        br: edit$1(inline.br).replace('{2,}', '*').getRegex(),
+        text: edit$1(inline.gfm.text).replace('\\b_', '\\b_| {2,}\\n').replace(/\{2,\}/g, '*').getRegex()
+      });
+      var rules = {
+        block: block,
+        inline: inline
+      };
+      var defaults$2 = defaults.defaults;
+      var block$1 = rules.block,
+          inline$1 = rules.inline;
+      var repeatString$1 = helpers.repeatString;
+      /**
+       * smartypants text replacement
+       */
+
+      function smartypants(text) {
+        return text // em-dashes
+        .replace(/---/g, "\u2014") // en-dashes
+        .replace(/--/g, "\u2013") // opening singles
+        .replace(/(^|[-\u2014/(\[{"\s])'/g, "$1\u2018") // closing singles & apostrophes
+        .replace(/'/g, "\u2019") // opening doubles
+        .replace(/(^|[-\u2014/(\[{\u2018\s])"/g, "$1\u201C") // closing doubles
+        .replace(/"/g, "\u201D") // ellipses
+        .replace(/\.{3}/g, "\u2026");
+      }
+      /**
+       * mangle email addresses
+       */
+
+
+      function mangle(text) {
+        var out = '',
+            i,
+            ch;
+        var l = text.length;
+
+        for (i = 0; i < l; i++) {
+          ch = text.charCodeAt(i);
+
+          if (Math.random() > 0.5) {
+            ch = 'x' + ch.toString(16);
+          }
+
+          out += '&#' + ch + ';';
+        }
+
+        return out;
+      }
+      /**
+       * Block Lexer
+       */
+
+
+      var Lexer_1 = /*#__PURE__*/function () {
+        function Lexer(options) {
+          this.tokens = [];
+          this.tokens.links = Object.create(null);
+          this.options = options || defaults$2;
+          this.options.tokenizer = this.options.tokenizer || new Tokenizer_1();
+          this.tokenizer = this.options.tokenizer;
+          this.tokenizer.options = this.options;
+          var rules = {
+            block: block$1.normal,
+            inline: inline$1.normal
+          };
+
+          if (this.options.pedantic) {
+            rules.block = block$1.pedantic;
+            rules.inline = inline$1.pedantic;
+          } else if (this.options.gfm) {
+            rules.block = block$1.gfm;
+
+            if (this.options.breaks) {
+              rules.inline = inline$1.breaks;
+            } else {
+              rules.inline = inline$1.gfm;
+            }
+          }
+
+          this.tokenizer.rules = rules;
+        }
+        /**
+         * Expose Rules
+         */
+
+        /**
+         * Static Lex Method
+         */
+
+
+        Lexer.lex = function lex(src, options) {
+          var lexer = new Lexer(options);
+          return lexer.lex(src);
+        }
+        /**
+         * Static Lex Inline Method
+         */
+        ;
+
+        Lexer.lexInline = function lexInline(src, options) {
+          var lexer = new Lexer(options);
+          return lexer.inlineTokens(src);
+        }
+        /**
+         * Preprocessing
+         */
+        ;
+
+        var _proto = Lexer.prototype;
+
+        _proto.lex = function lex(src) {
+          src = src.replace(/\r\n|\r/g, '\n').replace(/\t/g, '    ');
+          this.blockTokens(src, this.tokens, true);
+          this.inline(this.tokens);
+          return this.tokens;
+        }
+        /**
+         * Lexing
+         */
+        ;
+
+        _proto.blockTokens = function blockTokens(src, tokens, top) {
+          if (tokens === void 0) {
+            tokens = [];
+          }
+
+          if (top === void 0) {
+            top = true;
+          }
+
+          if (this.options.pedantic) {
+            src = src.replace(/^ +$/gm, '');
+          }
+
+          var token, i, l, lastToken;
+
+          while (src) {
+            // newline
+            if (token = this.tokenizer.space(src)) {
+              src = src.substring(token.raw.length);
+
+              if (token.type) {
+                tokens.push(token);
+              }
+
+              continue;
+            } // code
+
+
+            if (token = this.tokenizer.code(src, tokens)) {
+              src = src.substring(token.raw.length);
+
+              if (token.type) {
+                tokens.push(token);
+              } else {
+                lastToken = tokens[tokens.length - 1];
+                lastToken.raw += '\n' + token.raw;
+                lastToken.text += '\n' + token.text;
+              }
+
+              continue;
+            } // fences
+
+
+            if (token = this.tokenizer.fences(src)) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // heading
+
+
+            if (token = this.tokenizer.heading(src)) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // table no leading pipe (gfm)
+
+
+            if (token = this.tokenizer.nptable(src)) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // hr
+
+
+            if (token = this.tokenizer.hr(src)) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // blockquote
+
+
+            if (token = this.tokenizer.blockquote(src)) {
+              src = src.substring(token.raw.length);
+              token.tokens = this.blockTokens(token.text, [], top);
+              tokens.push(token);
+              continue;
+            } // list
+
+
+            if (token = this.tokenizer.list(src)) {
+              src = src.substring(token.raw.length);
+              l = token.items.length;
+
+              for (i = 0; i < l; i++) {
+                token.items[i].tokens = this.blockTokens(token.items[i].text, [], false);
+              }
+
+              tokens.push(token);
+              continue;
+            } // html
+
+
+            if (token = this.tokenizer.html(src)) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // def
+
+
+            if (top && (token = this.tokenizer.def(src))) {
+              src = src.substring(token.raw.length);
+
+              if (!this.tokens.links[token.tag]) {
+                this.tokens.links[token.tag] = {
+                  href: token.href,
+                  title: token.title
+                };
+              }
+
+              continue;
+            } // table (gfm)
+
+
+            if (token = this.tokenizer.table(src)) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // lheading
+
+
+            if (token = this.tokenizer.lheading(src)) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // top-level paragraph
+
+
+            if (top && (token = this.tokenizer.paragraph(src))) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // text
+
+
+            if (token = this.tokenizer.text(src, tokens)) {
+              src = src.substring(token.raw.length);
+
+              if (token.type) {
+                tokens.push(token);
+              } else {
+                lastToken = tokens[tokens.length - 1];
+                lastToken.raw += '\n' + token.raw;
+                lastToken.text += '\n' + token.text;
+              }
+
+              continue;
+            }
+
+            if (src) {
+              var errMsg = 'Infinite loop on byte: ' + src.charCodeAt(0);
+
+              if (this.options.silent) {
+                console.error(errMsg);
+                break;
+              } else {
+                throw new Error(errMsg);
+              }
+            }
+          }
+
+          return tokens;
+        };
+
+        _proto.inline = function inline(tokens) {
+          var i, j, k, l2, row, token;
+          var l = tokens.length;
+
+          for (i = 0; i < l; i++) {
+            token = tokens[i];
+
+            switch (token.type) {
+              case 'paragraph':
+              case 'text':
+              case 'heading':
+                {
+                  token.tokens = [];
+                  this.inlineTokens(token.text, token.tokens);
+                  break;
+                }
+
+              case 'table':
+                {
+                  token.tokens = {
+                    header: [],
+                    cells: []
+                  }; // header
+
+                  l2 = token.header.length;
+
+                  for (j = 0; j < l2; j++) {
+                    token.tokens.header[j] = [];
+                    this.inlineTokens(token.header[j], token.tokens.header[j]);
+                  } // cells
+
+
+                  l2 = token.cells.length;
+
+                  for (j = 0; j < l2; j++) {
+                    row = token.cells[j];
+                    token.tokens.cells[j] = [];
+
+                    for (k = 0; k < row.length; k++) {
+                      token.tokens.cells[j][k] = [];
+                      this.inlineTokens(row[k], token.tokens.cells[j][k]);
+                    }
+                  }
+
+                  break;
+                }
+
+              case 'blockquote':
+                {
+                  this.inline(token.tokens);
+                  break;
+                }
+
+              case 'list':
+                {
+                  l2 = token.items.length;
+
+                  for (j = 0; j < l2; j++) {
+                    this.inline(token.items[j].tokens);
+                  }
+
+                  break;
+                }
+            }
+          }
+
+          return tokens;
+        }
+        /**
+         * Lexing/Compiling
+         */
+        ;
+
+        _proto.inlineTokens = function inlineTokens(src, tokens, inLink, inRawBlock) {
+          if (tokens === void 0) {
+            tokens = [];
+          }
+
+          if (inLink === void 0) {
+            inLink = false;
+          }
+
+          if (inRawBlock === void 0) {
+            inRawBlock = false;
+          }
+
+          var token; // String with links masked to avoid interference with em and strong
+
+          var maskedSrc = src;
+          var match;
+          var keepPrevChar, prevChar; // Mask out reflinks
+
+          if (this.tokens.links) {
+            var links = Object.keys(this.tokens.links);
+
+            if (links.length > 0) {
+              while ((match = this.tokenizer.rules.inline.reflinkSearch.exec(maskedSrc)) != null) {
+                if (links.includes(match[0].slice(match[0].lastIndexOf('[') + 1, -1))) {
+                  maskedSrc = maskedSrc.slice(0, match.index) + '[' + repeatString$1('a', match[0].length - 2) + ']' + maskedSrc.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex);
+                }
+              }
+            }
+          } // Mask out other blocks
+
+
+          while ((match = this.tokenizer.rules.inline.blockSkip.exec(maskedSrc)) != null) {
+            maskedSrc = maskedSrc.slice(0, match.index) + '[' + repeatString$1('a', match[0].length - 2) + ']' + maskedSrc.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
+          }
+
+          while (src) {
+            if (!keepPrevChar) {
+              prevChar = '';
+            }
+
+            keepPrevChar = false; // escape
+
+            if (token = this.tokenizer.escape(src)) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // tag
+
+
+            if (token = this.tokenizer.tag(src, inLink, inRawBlock)) {
+              src = src.substring(token.raw.length);
+              inLink = token.inLink;
+              inRawBlock = token.inRawBlock;
+              tokens.push(token);
+              continue;
+            } // link
+
+
+            if (token = this.tokenizer.link(src)) {
+              src = src.substring(token.raw.length);
+
+              if (token.type === 'link') {
+                token.tokens = this.inlineTokens(token.text, [], true, inRawBlock);
+              }
+
+              tokens.push(token);
+              continue;
+            } // reflink, nolink
+
+
+            if (token = this.tokenizer.reflink(src, this.tokens.links)) {
+              src = src.substring(token.raw.length);
+
+              if (token.type === 'link') {
+                token.tokens = this.inlineTokens(token.text, [], true, inRawBlock);
+              }
+
+              tokens.push(token);
+              continue;
+            } // strong
+
+
+            if (token = this.tokenizer.strong(src, maskedSrc, prevChar)) {
+              src = src.substring(token.raw.length);
+              token.tokens = this.inlineTokens(token.text, [], inLink, inRawBlock);
+              tokens.push(token);
+              continue;
+            } // em
+
+
+            if (token = this.tokenizer.em(src, maskedSrc, prevChar)) {
+              src = src.substring(token.raw.length);
+              token.tokens = this.inlineTokens(token.text, [], inLink, inRawBlock);
+              tokens.push(token);
+              continue;
+            } // code
+
+
+            if (token = this.tokenizer.codespan(src)) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // br
+
+
+            if (token = this.tokenizer.br(src)) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // del (gfm)
+
+
+            if (token = this.tokenizer.del(src)) {
+              src = src.substring(token.raw.length);
+              token.tokens = this.inlineTokens(token.text, [], inLink, inRawBlock);
+              tokens.push(token);
+              continue;
+            } // autolink
+
+
+            if (token = this.tokenizer.autolink(src, mangle)) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // url (gfm)
+
+
+            if (!inLink && (token = this.tokenizer.url(src, mangle))) {
+              src = src.substring(token.raw.length);
+              tokens.push(token);
+              continue;
+            } // text
+
+
+            if (token = this.tokenizer.inlineText(src, inRawBlock, smartypants)) {
+              src = src.substring(token.raw.length);
+              prevChar = token.raw.slice(-1);
+              keepPrevChar = true;
+              tokens.push(token);
+              continue;
+            }
+
+            if (src) {
+              var errMsg = 'Infinite loop on byte: ' + src.charCodeAt(0);
+
+              if (this.options.silent) {
+                console.error(errMsg);
+                break;
+              } else {
+                throw new Error(errMsg);
+              }
+            }
+          }
+
+          return tokens;
+        };
+
+        _createClass(Lexer, null, [{
+          key: "rules",
+          get: function get() {
+            return {
+              block: block$1,
+              inline: inline$1
+            };
+          }
+        }]);
+
+        return Lexer;
+      }();
+
+      var defaults$3 = defaults.defaults;
+      var cleanUrl$1 = helpers.cleanUrl,
+          escape$1 = helpers.escape;
+      /**
+       * Renderer
+       */
+
+      var Renderer_1 = /*#__PURE__*/function () {
+        function Renderer(options) {
+          this.options = options || defaults$3;
+        }
+
+        var _proto = Renderer.prototype;
+
+        _proto.code = function code(_code, infostring, escaped) {
+          var lang = (infostring || '').match(/\S*/)[0];
+
+          if (this.options.highlight) {
+            var out = this.options.highlight(_code, lang);
+
+            if (out != null && out !== _code) {
+              escaped = true;
+              _code = out;
+            }
+          }
+
+          _code = _code.replace(/\n$/, '') + '\n';
+
+          if (!lang) {
+            return '<pre><code>' + (escaped ? _code : escape$1(_code, true)) + '</code></pre>\n';
+          }
+
+          return '<pre><code class="' + this.options.langPrefix + escape$1(lang, true) + '">' + (escaped ? _code : escape$1(_code, true)) + '</code></pre>\n';
+        };
+
+        _proto.blockquote = function blockquote(quote) {
+          return '<blockquote>\n' + quote + '</blockquote>\n';
+        };
+
+        _proto.html = function html(_html) {
+          return _html;
+        };
+
+        _proto.heading = function heading(text, level, raw, slugger) {
+          if (this.options.headerIds) {
+            return '<h' + level + ' id="' + this.options.headerPrefix + slugger.slug(raw) + '">' + text + '</h' + level + '>\n';
+          } // ignore IDs
+
+
+          return '<h' + level + '>' + text + '</h' + level + '>\n';
+        };
+
+        _proto.hr = function hr() {
+          return this.options.xhtml ? '<hr/>\n' : '<hr>\n';
+        };
+
+        _proto.list = function list(body, ordered, start) {
+          var type = ordered ? 'ol' : 'ul',
+              startatt = ordered && start !== 1 ? ' start="' + start + '"' : '';
+          return '<' + type + startatt + '>\n' + body + '</' + type + '>\n';
+        };
+
+        _proto.listitem = function listitem(text) {
+          return '<li>' + text + '</li>\n';
+        };
+
+        _proto.checkbox = function checkbox(checked) {
+          return '<input ' + (checked ? 'checked="" ' : '') + 'disabled="" type="checkbox"' + (this.options.xhtml ? ' /' : '') + '> ';
+        };
+
+        _proto.paragraph = function paragraph(text) {
+          return '<p>' + text + '</p>\n';
+        };
+
+        _proto.table = function table(header, body) {
+          if (body) body = '<tbody>' + body + '</tbody>';
+          return '<table>\n' + '<thead>\n' + header + '</thead>\n' + body + '</table>\n';
+        };
+
+        _proto.tablerow = function tablerow(content) {
+          return '<tr>\n' + content + '</tr>\n';
+        };
+
+        _proto.tablecell = function tablecell(content, flags) {
+          var type = flags.header ? 'th' : 'td';
+          var tag = flags.align ? '<' + type + ' align="' + flags.align + '">' : '<' + type + '>';
+          return tag + content + '</' + type + '>\n';
+        } // span level renderer
+        ;
+
+        _proto.strong = function strong(text) {
+          return '<strong>' + text + '</strong>';
+        };
+
+        _proto.em = function em(text) {
+          return '<em>' + text + '</em>';
+        };
+
+        _proto.codespan = function codespan(text) {
+          return '<code>' + text + '</code>';
+        };
+
+        _proto.br = function br() {
+          return this.options.xhtml ? '<br/>' : '<br>';
+        };
+
+        _proto.del = function del(text) {
+          return '<del>' + text + '</del>';
+        };
+
+        _proto.link = function link(href, title, text) {
+          href = cleanUrl$1(this.options.sanitize, this.options.baseUrl, href);
+
+          if (href === null) {
+            return text;
+          }
+
+          var out = '<a href="' + escape$1(href) + '"';
+
+          if (title) {
+            out += ' title="' + title + '"';
+          }
+
+          out += '>' + text + '</a>';
+          return out;
+        };
+
+        _proto.image = function image(href, title, text) {
+          href = cleanUrl$1(this.options.sanitize, this.options.baseUrl, href);
+
+          if (href === null) {
+            return text;
+          }
+
+          var out = '<img src="' + href + '" alt="' + text + '"';
+
+          if (title) {
+            out += ' title="' + title + '"';
+          }
+
+          out += this.options.xhtml ? '/>' : '>';
+          return out;
+        };
+
+        _proto.text = function text(_text) {
+          return _text;
+        };
+
+        return Renderer;
+      }();
+      /**
+       * TextRenderer
+       * returns only the textual part of the token
+       */
+
+
+      var TextRenderer_1 = /*#__PURE__*/function () {
+        function TextRenderer() {}
+
+        var _proto = TextRenderer.prototype; // no need for block level renderers
+
+        _proto.strong = function strong(text) {
+          return text;
+        };
+
+        _proto.em = function em(text) {
+          return text;
+        };
+
+        _proto.codespan = function codespan(text) {
+          return text;
+        };
+
+        _proto.del = function del(text) {
+          return text;
+        };
+
+        _proto.html = function html(text) {
+          return text;
+        };
+
+        _proto.text = function text(_text) {
+          return _text;
+        };
+
+        _proto.link = function link(href, title, text) {
+          return '' + text;
+        };
+
+        _proto.image = function image(href, title, text) {
+          return '' + text;
+        };
+
+        _proto.br = function br() {
+          return '';
+        };
+
+        return TextRenderer;
+      }();
+      /**
+       * Slugger generates header id
+       */
+
+
+      var Slugger_1 = /*#__PURE__*/function () {
+        function Slugger() {
+          this.seen = {};
+        }
+
+        var _proto = Slugger.prototype;
+
+        _proto.serialize = function serialize(value) {
+          return value.toLowerCase().trim() // remove html tags
+          .replace(/<[!\/a-z].*?>/ig, '') // remove unwanted chars
+          .replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, '').replace(/\s/g, '-');
+        }
+        /**
+         * Finds the next safe (unique) slug to use
+         */
+        ;
+
+        _proto.getNextSafeSlug = function getNextSafeSlug(originalSlug, isDryRun) {
+          var slug = originalSlug;
+          var occurenceAccumulator = 0;
+
+          if (this.seen.hasOwnProperty(slug)) {
+            occurenceAccumulator = this.seen[originalSlug];
+
+            do {
+              occurenceAccumulator++;
+              slug = originalSlug + '-' + occurenceAccumulator;
+            } while (this.seen.hasOwnProperty(slug));
+          }
+
+          if (!isDryRun) {
+            this.seen[originalSlug] = occurenceAccumulator;
+            this.seen[slug] = 0;
+          }
+
+          return slug;
+        }
+        /**
+         * Convert string to unique id
+         * @param {object} options
+         * @param {boolean} options.dryrun Generates the next unique slug without updating the internal accumulator.
+         */
+        ;
+
+        _proto.slug = function slug(value, options) {
+          if (options === void 0) {
+            options = {};
+          }
+
+          var slug = this.serialize(value);
+          return this.getNextSafeSlug(slug, options.dryrun);
+        };
+
+        return Slugger;
+      }();
+
+      var defaults$4 = defaults.defaults;
+      var unescape$1 = helpers.unescape;
+      /**
+       * Parsing & Compiling
+       */
+
+      var Parser_1 = /*#__PURE__*/function () {
+        function Parser(options) {
+          this.options = options || defaults$4;
+          this.options.renderer = this.options.renderer || new Renderer_1();
+          this.renderer = this.options.renderer;
+          this.renderer.options = this.options;
+          this.textRenderer = new TextRenderer_1();
+          this.slugger = new Slugger_1();
+        }
+        /**
+         * Static Parse Method
+         */
+
+
+        Parser.parse = function parse(tokens, options) {
+          var parser = new Parser(options);
+          return parser.parse(tokens);
+        }
+        /**
+         * Static Parse Inline Method
+         */
+        ;
+
+        Parser.parseInline = function parseInline(tokens, options) {
+          var parser = new Parser(options);
+          return parser.parseInline(tokens);
+        }
+        /**
+         * Parse Loop
+         */
+        ;
+
+        var _proto = Parser.prototype;
+
+        _proto.parse = function parse(tokens, top) {
+          if (top === void 0) {
+            top = true;
+          }
+
+          var out = '',
+              i,
+              j,
+              k,
+              l2,
+              l3,
+              row,
+              cell,
+              header,
+              body,
+              token,
+              ordered,
+              start,
+              loose,
+              itemBody,
+              item,
+              checked,
+              task,
+              checkbox;
+          var l = tokens.length;
+
+          for (i = 0; i < l; i++) {
+            token = tokens[i];
+
+            switch (token.type) {
+              case 'space':
+                {
+                  continue;
+                }
+
+              case 'hr':
+                {
+                  out += this.renderer.hr();
+                  continue;
+                }
+
+              case 'heading':
+                {
+                  out += this.renderer.heading(this.parseInline(token.tokens), token.depth, unescape$1(this.parseInline(token.tokens, this.textRenderer)), this.slugger);
+                  continue;
+                }
+
+              case 'code':
+                {
+                  out += this.renderer.code(token.text, token.lang, token.escaped);
+                  continue;
+                }
+
+              case 'table':
+                {
+                  header = ''; // header
+
+                  cell = '';
+                  l2 = token.header.length;
+
+                  for (j = 0; j < l2; j++) {
+                    cell += this.renderer.tablecell(this.parseInline(token.tokens.header[j]), {
+                      header: true,
+                      align: token.align[j]
+                    });
+                  }
+
+                  header += this.renderer.tablerow(cell);
+                  body = '';
+                  l2 = token.cells.length;
+
+                  for (j = 0; j < l2; j++) {
+                    row = token.tokens.cells[j];
+                    cell = '';
+                    l3 = row.length;
+
+                    for (k = 0; k < l3; k++) {
+                      cell += this.renderer.tablecell(this.parseInline(row[k]), {
+                        header: false,
+                        align: token.align[k]
+                      });
+                    }
+
+                    body += this.renderer.tablerow(cell);
+                  }
+
+                  out += this.renderer.table(header, body);
+                  continue;
+                }
+
+              case 'blockquote':
+                {
+                  body = this.parse(token.tokens);
+                  out += this.renderer.blockquote(body);
+                  continue;
+                }
+
+              case 'list':
+                {
+                  ordered = token.ordered;
+                  start = token.start;
+                  loose = token.loose;
+                  l2 = token.items.length;
+                  body = '';
+
+                  for (j = 0; j < l2; j++) {
+                    item = token.items[j];
+                    checked = item.checked;
+                    task = item.task;
+                    itemBody = '';
+
+                    if (item.task) {
+                      checkbox = this.renderer.checkbox(checked);
+
+                      if (loose) {
+                        if (item.tokens.length > 0 && item.tokens[0].type === 'text') {
+                          item.tokens[0].text = checkbox + ' ' + item.tokens[0].text;
+
+                          if (item.tokens[0].tokens && item.tokens[0].tokens.length > 0 && item.tokens[0].tokens[0].type === 'text') {
+                            item.tokens[0].tokens[0].text = checkbox + ' ' + item.tokens[0].tokens[0].text;
+                          }
+                        } else {
+                          item.tokens.unshift({
+                            type: 'text',
+                            text: checkbox
+                          });
+                        }
+                      } else {
+                        itemBody += checkbox;
+                      }
+                    }
+
+                    itemBody += this.parse(item.tokens, loose);
+                    body += this.renderer.listitem(itemBody, task, checked);
+                  }
+
+                  out += this.renderer.list(body, ordered, start);
+                  continue;
+                }
+
+              case 'html':
+                {
+                  // TODO parse inline content if parameter markdown=1
+                  out += this.renderer.html(token.text);
+                  continue;
+                }
+
+              case 'paragraph':
+                {
+                  out += this.renderer.paragraph(this.parseInline(token.tokens));
+                  continue;
+                }
+
+              case 'text':
+                {
+                  body = token.tokens ? this.parseInline(token.tokens) : token.text;
+
+                  while (i + 1 < l && tokens[i + 1].type === 'text') {
+                    token = tokens[++i];
+                    body += '\n' + (token.tokens ? this.parseInline(token.tokens) : token.text);
+                  }
+
+                  out += top ? this.renderer.paragraph(body) : body;
+                  continue;
+                }
+
+              default:
+                {
+                  var errMsg = 'Token with "' + token.type + '" type was not found.';
+
+                  if (this.options.silent) {
+                    console.error(errMsg);
+                    return;
+                  } else {
+                    throw new Error(errMsg);
+                  }
+                }
+            }
+          }
+
+          return out;
+        }
+        /**
+         * Parse Inline Tokens
+         */
+        ;
+
+        _proto.parseInline = function parseInline(tokens, renderer) {
+          renderer = renderer || this.renderer;
+          var out = '',
+              i,
+              token;
+          var l = tokens.length;
+
+          for (i = 0; i < l; i++) {
+            token = tokens[i];
+
+            switch (token.type) {
+              case 'escape':
+                {
+                  out += renderer.text(token.text);
+                  break;
+                }
+
+              case 'html':
+                {
+                  out += renderer.html(token.text);
+                  break;
+                }
+
+              case 'link':
+                {
+                  out += renderer.link(token.href, token.title, this.parseInline(token.tokens, renderer));
+                  break;
+                }
+
+              case 'image':
+                {
+                  out += renderer.image(token.href, token.title, token.text);
+                  break;
+                }
+
+              case 'strong':
+                {
+                  out += renderer.strong(this.parseInline(token.tokens, renderer));
+                  break;
+                }
+
+              case 'em':
+                {
+                  out += renderer.em(this.parseInline(token.tokens, renderer));
+                  break;
+                }
+
+              case 'codespan':
+                {
+                  out += renderer.codespan(token.text);
+                  break;
+                }
+
+              case 'br':
+                {
+                  out += renderer.br();
+                  break;
+                }
+
+              case 'del':
+                {
+                  out += renderer.del(this.parseInline(token.tokens, renderer));
+                  break;
+                }
+
+              case 'text':
+                {
+                  out += renderer.text(token.text);
+                  break;
+                }
+
+              default:
+                {
+                  var errMsg = 'Token with "' + token.type + '" type was not found.';
+
+                  if (this.options.silent) {
+                    console.error(errMsg);
+                    return;
+                  } else {
+                    throw new Error(errMsg);
+                  }
+                }
+            }
+          }
+
+          return out;
+        };
+
+        return Parser;
+      }();
+
+      var merge$2 = helpers.merge,
+          checkSanitizeDeprecation$1 = helpers.checkSanitizeDeprecation,
+          escape$2 = helpers.escape;
+      var getDefaults = defaults.getDefaults,
+          changeDefaults = defaults.changeDefaults,
+          defaults$5 = defaults.defaults;
+      /**
+       * Marked
+       */
+
+      function marked(src, opt, callback) {
+        // throw error in case of non string input
+        if (typeof src === 'undefined' || src === null) {
+          throw new Error('marked(): input parameter is undefined or null');
+        }
+
+        if (typeof src !== 'string') {
+          throw new Error('marked(): input parameter is of type ' + Object.prototype.toString.call(src) + ', string expected');
+        }
+
+        if (typeof opt === 'function') {
+          callback = opt;
+          opt = null;
+        }
+
+        opt = merge$2({}, marked.defaults, opt || {});
+        checkSanitizeDeprecation$1(opt);
+
+        if (callback) {
+          var highlight = opt.highlight;
+          var tokens;
+
+          try {
+            tokens = Lexer_1.lex(src, opt);
+          } catch (e) {
+            return callback(e);
+          }
+
+          var done = function done(err) {
+            var out;
+
+            if (!err) {
+              try {
+                out = Parser_1.parse(tokens, opt);
+              } catch (e) {
+                err = e;
+              }
+            }
+
+            opt.highlight = highlight;
+            return err ? callback(err) : callback(null, out);
+          };
+
+          if (!highlight || highlight.length < 3) {
+            return done();
+          }
+
+          delete opt.highlight;
+          if (!tokens.length) return done();
+          var pending = 0;
+          marked.walkTokens(tokens, function (token) {
+            if (token.type === 'code') {
+              pending++;
+              setTimeout(function () {
+                highlight(token.text, token.lang, function (err, code) {
+                  if (err) {
+                    return done(err);
+                  }
+
+                  if (code != null && code !== token.text) {
+                    token.text = code;
+                    token.escaped = true;
+                  }
+
+                  pending--;
+
+                  if (pending === 0) {
+                    done();
+                  }
+                });
+              }, 0);
+            }
+          });
+
+          if (pending === 0) {
+            done();
+          }
+
+          return;
+        }
+
+        try {
+          var _tokens = Lexer_1.lex(src, opt);
+
+          if (opt.walkTokens) {
+            marked.walkTokens(_tokens, opt.walkTokens);
+          }
+
+          return Parser_1.parse(_tokens, opt);
+        } catch (e) {
+          e.message += '\nPlease report this to https://github.com/markedjs/marked.';
+
+          if (opt.silent) {
+            return '<p>An error occurred:</p><pre>' + escape$2(e.message + '', true) + '</pre>';
+          }
+
+          throw e;
+        }
+      }
+      /**
+       * Options
+       */
+
+
+      marked.options = marked.setOptions = function (opt) {
+        merge$2(marked.defaults, opt);
+        changeDefaults(marked.defaults);
+        return marked;
+      };
+
+      marked.getDefaults = getDefaults;
+      marked.defaults = defaults$5;
+      /**
+       * Use Extension
+       */
+
+      marked.use = function (extension) {
+        var opts = merge$2({}, extension);
+
+        if (extension.renderer) {
+          (function () {
+            var renderer = marked.defaults.renderer || new Renderer_1();
+
+            var _loop = function _loop(prop) {
+              var prevRenderer = renderer[prop];
+
+              renderer[prop] = function () {
+                for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+                  args[_key] = arguments[_key];
+                }
+
+                var ret = extension.renderer[prop].apply(renderer, args);
+
+                if (ret === false) {
+                  ret = prevRenderer.apply(renderer, args);
+                }
+
+                return ret;
+              };
+            };
+
+            for (var prop in extension.renderer) {
+              _loop(prop);
+            }
+
+            opts.renderer = renderer;
+          })();
+        }
+
+        if (extension.tokenizer) {
+          (function () {
+            var tokenizer = marked.defaults.tokenizer || new Tokenizer_1();
+
+            var _loop2 = function _loop2(prop) {
+              var prevTokenizer = tokenizer[prop];
+
+              tokenizer[prop] = function () {
+                for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+                  args[_key2] = arguments[_key2];
+                }
+
+                var ret = extension.tokenizer[prop].apply(tokenizer, args);
+
+                if (ret === false) {
+                  ret = prevTokenizer.apply(tokenizer, args);
+                }
+
+                return ret;
+              };
+            };
+
+            for (var prop in extension.tokenizer) {
+              _loop2(prop);
+            }
+
+            opts.tokenizer = tokenizer;
+          })();
+        }
+
+        if (extension.walkTokens) {
+          var walkTokens = marked.defaults.walkTokens;
+
+          opts.walkTokens = function (token) {
+            extension.walkTokens(token);
+
+            if (walkTokens) {
+              walkTokens(token);
+            }
+          };
+        }
+
+        marked.setOptions(opts);
+      };
+      /**
+       * Run callback for every token
+       */
+
+
+      marked.walkTokens = function (tokens, callback) {
+        for (var _iterator = _createForOfIteratorHelperLoose(tokens), _step; !(_step = _iterator()).done;) {
+          var token = _step.value;
+          callback(token);
+
+          switch (token.type) {
+            case 'table':
+              {
+                for (var _iterator2 = _createForOfIteratorHelperLoose(token.tokens.header), _step2; !(_step2 = _iterator2()).done;) {
+                  var cell = _step2.value;
+                  marked.walkTokens(cell, callback);
+                }
+
+                for (var _iterator3 = _createForOfIteratorHelperLoose(token.tokens.cells), _step3; !(_step3 = _iterator3()).done;) {
+                  var row = _step3.value;
+
+                  for (var _iterator4 = _createForOfIteratorHelperLoose(row), _step4; !(_step4 = _iterator4()).done;) {
+                    var _cell = _step4.value;
+                    marked.walkTokens(_cell, callback);
+                  }
+                }
+
+                break;
+              }
+
+            case 'list':
+              {
+                marked.walkTokens(token.items, callback);
+                break;
+              }
+
+            default:
+              {
+                if (token.tokens) {
+                  marked.walkTokens(token.tokens, callback);
+                }
+              }
+          }
+        }
+      };
+      /**
+       * Parse Inline
+       */
+
+
+      marked.parseInline = function (src, opt) {
+        // throw error in case of non string input
+        if (typeof src === 'undefined' || src === null) {
+          throw new Error('marked.parseInline(): input parameter is undefined or null');
+        }
+
+        if (typeof src !== 'string') {
+          throw new Error('marked.parseInline(): input parameter is of type ' + Object.prototype.toString.call(src) + ', string expected');
+        }
+
+        opt = merge$2({}, marked.defaults, opt || {});
+        checkSanitizeDeprecation$1(opt);
+
+        try {
+          var tokens = Lexer_1.lexInline(src, opt);
+
+          if (opt.walkTokens) {
+            marked.walkTokens(tokens, opt.walkTokens);
+          }
+
+          return Parser_1.parseInline(tokens, opt);
+        } catch (e) {
+          e.message += '\nPlease report this to https://github.com/markedjs/marked.';
+
+          if (opt.silent) {
+            return '<p>An error occurred:</p><pre>' + escape$2(e.message + '', true) + '</pre>';
+          }
+
+          throw e;
+        }
+      };
+      /**
+       * Expose
+       */
+
+
+      marked.Parser = Parser_1;
+      marked.parser = Parser_1.parse;
+      marked.Renderer = Renderer_1;
+      marked.TextRenderer = TextRenderer_1;
+      marked.Lexer = Lexer_1;
+      marked.lexer = Lexer_1.lex;
+      marked.Tokenizer = Tokenizer_1;
+      marked.Slugger = Slugger_1;
+      marked.parse = marked;
+      var marked_1 = marked;
+      return marked_1;
+    });
+    /***/
+
+  },
+
+  /***/
+  "./node_modules/ngx-markdown/__ivy_ngcc__/fesm2015/ngx-markdown.js":
+  /*!*************************************************************************!*\
+    !*** ./node_modules/ngx-markdown/__ivy_ngcc__/fesm2015/ngx-markdown.js ***!
+    \*************************************************************************/
+
+  /*! exports provided: MarkedRenderer, KatexOptions, LanguagePipe, MarkdownComponent, MarkdownModule, MarkdownPipe, MarkdownService, MarkedOptions, PrismPlugin, SECURITY_CONTEXT, errorJoyPixelsNotLoaded, errorKatexNotLoaded, errorSrcWithoutHttpClient */
+
+  /***/
+  function node_modulesNgxMarkdown__ivy_ngcc__Fesm2015NgxMarkdownJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "KatexOptions", function () {
+      return KatexOptions;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "LanguagePipe", function () {
+      return LanguagePipe;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MarkdownComponent", function () {
+      return MarkdownComponent;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MarkdownModule", function () {
+      return MarkdownModule;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MarkdownPipe", function () {
+      return MarkdownPipe;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MarkdownService", function () {
+      return MarkdownService;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MarkedOptions", function () {
+      return MarkedOptions;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PrismPlugin", function () {
+      return PrismPlugin;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SECURITY_CONTEXT", function () {
+      return SECURITY_CONTEXT;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "errorJoyPixelsNotLoaded", function () {
+      return errorJoyPixelsNotLoaded;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "errorKatexNotLoaded", function () {
+      return errorKatexNotLoaded;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "errorSrcWithoutHttpClient", function () {
+      return errorSrcWithoutHttpClient;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/platform-browser */
+    "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
+    /* harmony import */
+
+
+    var marked__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! marked */
+    "./node_modules/marked/lib/marked.js");
+    /* harmony import */
+
+
+    var marked__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(marked__WEBPACK_IMPORTED_MODULE_5__);
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MarkedRenderer", function () {
+      return marked__WEBPACK_IMPORTED_MODULE_5__["Renderer"];
+    });
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+
+    var _c0 = ["*"]; // tslint:disable: no-redundant-jsdoc
+
+    var KatexOptions = function KatexOptions() {
+      _classCallCheck(this, KatexOptions);
+    };
+
+    var LanguagePipe = /*#__PURE__*/function () {
+      function LanguagePipe() {
+        _classCallCheck(this, LanguagePipe);
+      }
+
+      _createClass2(LanguagePipe, [{
+        key: "transform",
+        value: function transform(value, language) {
+          if (typeof value !== 'string') {
+            console.error("LanguagePipe has been invoked with an invalid value type [".concat(value, "]"));
+            return value;
+          }
+
+          if (typeof language !== 'string') {
+            console.error("LanguagePipe has been invoked with an invalid parameter [".concat(language, "]"));
+            return value;
+          }
+
+          return '```' + language + '\n' + value + '\n```';
+        }
+      }]);
+
+      return LanguagePipe;
+    }();
+
+    LanguagePipe.ɵfac = function LanguagePipe_Factory(t) {
+      return new (t || LanguagePipe)();
+    };
+
+    LanguagePipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefinePipe"]({
+      name: "language",
+      type: LanguagePipe,
+      pure: true
+    });
+
+    var MarkedOptions = function MarkedOptions() {
+      _classCallCheck(this, MarkedOptions);
+    }; // tslint:disable:max-line-length
+
+
+    var errorJoyPixelsNotLoaded = '[ngx-markdown] When using the `emoji` attribute you *have to* include Emoji-Toolkit files to `angular.json` or use imports. See README for more information';
+    var errorKatexNotLoaded = '[ngx-markdown] When using the `katex` attribute you *have to* include KaTeX files to `angular.json` or use imports. See README for more information';
+    var errorSrcWithoutHttpClient = '[ngx-markdown] When using the `src` attribute you *have to* pass the `HttpClient` as a parameter of the `forRoot` method. See README for more information'; // tslint:enable:max-line-length
+
+    var SECURITY_CONTEXT = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["InjectionToken"]('SECURITY_CONTEXT');
+
+    var MarkdownService = /*#__PURE__*/function () {
+      function MarkdownService(platform, securityContext, http, options, sanitizer) {
+        _classCallCheck(this, MarkdownService);
+
+        this.platform = platform;
+        this.securityContext = securityContext;
+        this.http = http;
+        this.sanitizer = sanitizer;
+        this.initialMarkedOptions = {
+          renderer: new marked__WEBPACK_IMPORTED_MODULE_5__["Renderer"]()
+        };
+        this.options = options;
+      }
+
+      _createClass2(MarkdownService, [{
+        key: "compile",
+        value: function compile(markdown) {
+          var decodeHtml = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+          var emojify = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+          var markedOptions = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : this.options;
+          var trimmed = this.trimIndentation(markdown);
+          var decoded = decodeHtml ? this.decodeHtml(trimmed) : trimmed;
+          var emojified = emojify ? this.renderEmoji(decoded) : decoded;
+          var compiled = Object(marked__WEBPACK_IMPORTED_MODULE_5__["parse"])(emojified, markedOptions);
+          return this.sanitizer.sanitize(this.securityContext, compiled);
+        }
+      }, {
+        key: "getSource",
+        value: function getSource(src) {
+          var _this118 = this;
+
+          if (!this.http) {
+            throw new Error(errorSrcWithoutHttpClient);
+          }
+
+          return this.http.get(src, {
+            responseType: 'text'
+          }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (markdown) {
+            return _this118.handleExtension(src, markdown);
+          }));
+        }
+      }, {
+        key: "highlight",
+        value: function highlight(element) {
+          if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_2__["isPlatformBrowser"])(this.platform) && typeof Prism !== 'undefined') {
+            if (!element) {
+              element = document;
+            }
+
+            var noLanguageElements = element.querySelectorAll('pre code:not([class*="language-"])');
+            Array.prototype.forEach.call(noLanguageElements, function (x) {
+              return x.classList.add('language-none');
+            });
+            Prism.highlightAllUnder(element);
+          }
+        }
+      }, {
+        key: "renderKatex",
+        value: function renderKatex(html, options) {
+          if (typeof katex === 'undefined' || typeof katex.renderToString === 'undefined') {
+            throw new Error(errorKatexNotLoaded);
+          }
+
+          return html.replace(/\$([^\s][^$]*?[^\s])\$/gm, function (_, tex) {
+            return katex.renderToString(tex, options);
+          });
+        }
+      }, {
+        key: "decodeHtml",
+        value: function decodeHtml(html) {
+          if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_2__["isPlatformBrowser"])(this.platform)) {
+            var textarea = document.createElement('textarea');
+            textarea.innerHTML = html;
+            return textarea.value;
+          }
+
+          return html;
+        }
+      }, {
+        key: "handleExtension",
+        value: function handleExtension(src, markdown) {
+          var extension = src ? src.split('?')[0].split('.').splice(-1).join() : null;
+          return extension !== 'md' ? '```' + extension + '\n' + markdown + '\n```' : markdown;
+        }
+      }, {
+        key: "renderEmoji",
+        value: function renderEmoji(html) {
+          if (typeof joypixels === 'undefined' || typeof joypixels.shortnameToUnicode === 'undefined') {
+            throw new Error(errorJoyPixelsNotLoaded);
+          }
+
+          return joypixels.shortnameToUnicode(html);
+        }
+      }, {
+        key: "trimIndentation",
+        value: function trimIndentation(markdown) {
+          if (!markdown) {
+            return '';
+          }
+
+          var indentStart;
+          return markdown.split('\n').map(function (line) {
+            var lineIdentStart = indentStart;
+
+            if (line.length > 0) {
+              lineIdentStart = isNaN(lineIdentStart) ? line.search(/\S|$/) : Math.min(line.search(/\S|$/), lineIdentStart);
+            }
+
+            if (isNaN(indentStart)) {
+              indentStart = lineIdentStart;
+            }
+
+            return !!lineIdentStart ? line.substring(lineIdentStart) : line;
+          }).join('\n');
+        }
+      }, {
+        key: "options",
+        get: function get() {
+          return this._options;
+        },
+        set: function set(value) {
+          this._options = Object.assign(Object.assign({}, this.initialMarkedOptions), value);
+        }
+      }, {
+        key: "renderer",
+        get: function get() {
+          return this.options.renderer;
+        },
+        set: function set(value) {
+          this.options.renderer = value;
+        }
+      }]);
+
+      return MarkdownService;
+    }();
+
+    MarkdownService.ɵfac = function MarkdownService_Factory(t) {
+      return new (t || MarkdownService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](SECURITY_CONTEXT), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](MarkedOptions, 8), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"]));
+    };
+
+    MarkdownService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      token: MarkdownService,
+      factory: MarkdownService.ɵfac
+    });
+
+    MarkdownService.ctorParameters = function () {
+      return [{
+        type: Object,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+          args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"]]
+        }]
+      }, {
+        type: undefined,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+          args: [SECURITY_CONTEXT]
+        }]
+      }, {
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"],
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"]
+        }]
+      }, {
+        type: MarkedOptions,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"]
+        }]
+      }, {
+        type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"]
+      }];
+    };
+
+    MarkdownService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"])), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(SECURITY_CONTEXT)), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"])()), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"])())], MarkdownService);
+    var PrismPlugin;
+
+    (function (PrismPlugin) {
+      PrismPlugin["LineHighlight"] = "line-highlight";
+      PrismPlugin["LineNumbers"] = "line-numbers";
+    })(PrismPlugin || (PrismPlugin = {}));
+
+    var MarkdownComponent = /*#__PURE__*/function () {
+      function MarkdownComponent(element, markdownService) {
+        _classCallCheck(this, MarkdownComponent);
+
+        this.element = element;
+        this.markdownService = markdownService; // Event emitters
+
+        this.error = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.load = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.ready = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this._emoji = false;
+        this._katex = false;
+        this._lineHighlight = false;
+        this._lineNumbers = false;
+      } // Plugin - emoji
+
+
+      _createClass2(MarkdownComponent, [{
+        key: "ngOnChanges",
+        value: function ngOnChanges() {
+          if (this.data != null) {
+            this.handleData();
+            return;
+          }
+
+          if (this.src != null) {
+            this.handleSrc();
+            return;
+          }
+        }
+      }, {
+        key: "ngAfterViewInit",
+        value: function ngAfterViewInit() {
+          if (!this.data && !this.src) {
+            this.handleTransclusion();
+          }
+        }
+      }, {
+        key: "render",
+        value: function render(markdown) {
+          var decodeHtml = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+          var compiled = this.markdownService.compile(markdown, decodeHtml, this.emoji);
+          compiled = this.katex ? this.markdownService.renderKatex(compiled, this.katexOptions) : compiled;
+          this.element.nativeElement.innerHTML = compiled;
+          this.handlePlugins();
+          this.markdownService.highlight(this.element.nativeElement);
+          this.ready.emit();
+        }
+      }, {
+        key: "coerceBooleanProperty",
+        value: function coerceBooleanProperty(value) {
+          return value != null && "".concat(value) !== 'false';
+        }
+      }, {
+        key: "handleData",
+        value: function handleData() {
+          this.render(this.data);
+        }
+      }, {
+        key: "handleSrc",
+        value: function handleSrc() {
+          var _this119 = this;
+
+          this.markdownService.getSource(this.src).subscribe(function (markdown) {
+            _this119.render(markdown);
+
+            _this119.load.emit(markdown);
+          }, function (error) {
+            return _this119.error.emit(error);
+          });
+        }
+      }, {
+        key: "handleTransclusion",
+        value: function handleTransclusion() {
+          this.render(this.element.nativeElement.innerHTML, true);
+        }
+      }, {
+        key: "handlePlugins",
+        value: function handlePlugins() {
+          if (this.lineHighlight) {
+            this.setPluginClass(this.element.nativeElement, PrismPlugin.LineHighlight);
+            this.setPluginOptions(this.element.nativeElement, {
+              dataLine: this.line,
+              dataLineOffset: this.lineOffset
+            });
+          }
+
+          if (this.lineNumbers) {
+            this.setPluginClass(this.element.nativeElement, PrismPlugin.LineNumbers);
+            this.setPluginOptions(this.element.nativeElement, {
+              dataStart: this.start
+            });
+          }
+        }
+      }, {
+        key: "setPluginClass",
+        value: function setPluginClass(element, plugin) {
+          var preElements = element.querySelectorAll('pre');
+
+          for (var i = 0; i < preElements.length; i++) {
+            var _preElements$item$cla;
+
+            var classes = plugin instanceof Array ? plugin : [plugin];
+
+            (_preElements$item$cla = preElements.item(i).classList).add.apply(_preElements$item$cla, _toConsumableArray(classes));
+          }
+        }
+      }, {
+        key: "setPluginOptions",
+        value: function setPluginOptions(element, options) {
+          var _this120 = this;
+
+          var preElements = element.querySelectorAll('pre');
+
+          var _loop5 = function _loop5(i) {
+            Object.keys(options).forEach(function (option) {
+              var attributeValue = options[option];
+
+              if (!!attributeValue) {
+                var attributeName = _this120.toLispCase(option);
+
+                preElements.item(i).setAttribute(attributeName, attributeValue.toString());
+              }
+            });
+          };
+
+          for (var i = 0; i < preElements.length; i++) {
+            _loop5(i);
+          }
+        }
+      }, {
+        key: "toLispCase",
+        value: function toLispCase(value) {
+          var upperChars = value.match(/([A-Z])/g);
+
+          if (!upperChars) {
+            return value;
+          }
+
+          var str = value.toString();
+
+          for (var i = 0, n = upperChars.length; i < n; i++) {
+            str = str.replace(new RegExp(upperChars[i]), '-' + upperChars[i].toLowerCase());
+          }
+
+          if (str.slice(0, 1) === '-') {
+            str = str.slice(1);
+          }
+
+          return str;
+        }
+      }, {
+        key: "emoji",
+        get: function get() {
+          return this._emoji;
+        },
+        set: function set(value) {
+          this._emoji = this.coerceBooleanProperty(value);
+        } // Plugin - katex
+
+      }, {
+        key: "katex",
+        get: function get() {
+          return this._katex;
+        },
+        set: function set(value) {
+          this._katex = this.coerceBooleanProperty(value);
+        } // Plugin - lineHighlight
+
+      }, {
+        key: "lineHighlight",
+        get: function get() {
+          return this._lineHighlight;
+        },
+        set: function set(value) {
+          this._lineHighlight = this.coerceBooleanProperty(value);
+        } // Plugin - lineNumbers
+
+      }, {
+        key: "lineNumbers",
+        get: function get() {
+          return this._lineNumbers;
+        },
+        set: function set(value) {
+          this._lineNumbers = this.coerceBooleanProperty(value);
+        }
+      }]);
+
+      return MarkdownComponent;
+    }();
+
+    MarkdownComponent.ɵfac = function MarkdownComponent_Factory(t) {
+      return new (t || MarkdownComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](MarkdownService));
+    };
+
+    MarkdownComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+      type: MarkdownComponent,
+      selectors: [["markdown"], ["", "markdown", ""]],
+      inputs: {
+        emoji: "emoji",
+        katex: "katex",
+        lineHighlight: "lineHighlight",
+        lineNumbers: "lineNumbers",
+        data: "data",
+        src: "src",
+        katexOptions: "katexOptions",
+        line: "line",
+        lineOffset: "lineOffset",
+        start: "start"
+      },
+      outputs: {
+        error: "error",
+        load: "load",
+        ready: "ready"
+      },
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]],
+      ngContentSelectors: _c0,
+      decls: 1,
+      vars: 0,
+      template: function MarkdownComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](0);
+        }
+      },
+      encapsulation: 2
+    });
+
+    MarkdownComponent.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
+      }, {
+        type: MarkdownService
+      }];
+    };
+
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], MarkdownComponent.prototype, "data", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], MarkdownComponent.prototype, "src", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], MarkdownComponent.prototype, "emoji", null);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], MarkdownComponent.prototype, "katex", null);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], MarkdownComponent.prototype, "katexOptions", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], MarkdownComponent.prototype, "lineHighlight", null);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], MarkdownComponent.prototype, "line", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], MarkdownComponent.prototype, "lineOffset", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], MarkdownComponent.prototype, "lineNumbers", null);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], MarkdownComponent.prototype, "start", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()], MarkdownComponent.prototype, "error", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()], MarkdownComponent.prototype, "load", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()], MarkdownComponent.prototype, "ready", void 0);
+
+    var MarkdownPipe = /*#__PURE__*/function () {
+      function MarkdownPipe(elementRef, markdownService, zone) {
+        _classCallCheck(this, MarkdownPipe);
+
+        this.elementRef = elementRef;
+        this.markdownService = markdownService;
+        this.zone = zone;
+      }
+
+      _createClass2(MarkdownPipe, [{
+        key: "transform",
+        value: function transform(value) {
+          var _this121 = this;
+
+          if (value == null) {
+            return '';
+          }
+
+          if (typeof value !== 'string') {
+            console.error("MarkdownPipe has been invoked with an invalid value type [".concat(value, "]"));
+            return value;
+          }
+
+          var markdown = this.markdownService.compile(value);
+          this.zone.onStable.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["first"])()).subscribe(function () {
+            return _this121.markdownService.highlight(_this121.elementRef.nativeElement);
+          });
+          return markdown;
+        }
+      }]);
+
+      return MarkdownPipe;
+    }();
+
+    MarkdownPipe.ɵfac = function MarkdownPipe_Factory(t) {
+      return new (t || MarkdownPipe)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](MarkdownService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]));
+    };
+
+    MarkdownPipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefinePipe"]({
+      name: "markdown",
+      type: MarkdownPipe,
+      pure: true
+    });
+
+    MarkdownPipe.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
+      }, {
+        type: MarkdownService
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]
+      }];
+    };
+
+    var MarkdownModule_1;
+    var sharedDeclarations = [LanguagePipe, MarkdownComponent, MarkdownPipe];
+
+    var MarkdownModule = MarkdownModule_1 = /*#__PURE__*/function () {
+      function MarkdownModule() {
+        _classCallCheck(this, MarkdownModule);
+      }
+
+      _createClass2(MarkdownModule, null, [{
+        key: "forRoot",
+        value: function forRoot(markdownModuleConfig) {
+          return {
+            ngModule: MarkdownModule_1,
+            providers: [MarkdownService, markdownModuleConfig && markdownModuleConfig.loader || [], markdownModuleConfig && markdownModuleConfig.markedOptions || [], {
+              provide: SECURITY_CONTEXT,
+              useValue: markdownModuleConfig && markdownModuleConfig.sanitize != null ? markdownModuleConfig.sanitize : _angular_core__WEBPACK_IMPORTED_MODULE_1__["SecurityContext"].HTML
+            }]
+          };
+        }
+      }, {
+        key: "forChild",
+        value: function forChild() {
+          return {
+            ngModule: MarkdownModule_1
+          };
+        }
+      }]);
+
+      return MarkdownModule;
+    }();
+
+    MarkdownModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+      type: MarkdownModule
+    });
+    MarkdownModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+      factory: function MarkdownModule_Factory(t) {
+        return new (t || MarkdownModule)();
+      }
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](LanguagePipe, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"],
+        args: [{
+          name: 'language'
+        }]
+      }], null, null);
+    })();
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](MarkdownService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"]
+      }], function () {
+        return [{
+          type: Object,
+          decorators: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+            args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"]]
+          }]
+        }, {
+          type: undefined,
+          decorators: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+            args: [SECURITY_CONTEXT]
+          }]
+        }, {
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"],
+          decorators: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"]
+          }]
+        }, {
+          type: MarkedOptions,
+          decorators: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"]
+          }]
+        }, {
+          type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"]
+        }];
+      }, null);
+    })();
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](MarkdownComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
+        args: [{
+          // tslint:disable-next-line:component-selector
+          selector: 'markdown, [markdown]',
+          template: '<ng-content></ng-content>'
+        }]
+      }], function () {
+        return [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
+        }, {
+          type: MarkdownService
+        }];
+      }, {
+        error: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"]
+        }],
+        load: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"]
+        }],
+        ready: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"]
+        }],
+        emoji: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }],
+        katex: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }],
+        lineHighlight: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }],
+        lineNumbers: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }],
+        data: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }],
+        src: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }],
+        katexOptions: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }],
+        line: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }],
+        lineOffset: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }],
+        start: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }]
+      });
+    })();
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](MarkdownPipe, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"],
+        args: [{
+          name: 'markdown'
+        }]
+      }], function () {
+        return [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
+        }, {
+          type: MarkdownService
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]
+        }];
+      }, null);
+    })();
+
+    (function () {
+      (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](MarkdownModule, {
+        declarations: [LanguagePipe, MarkdownComponent, MarkdownPipe],
+        exports: [LanguagePipe, MarkdownComponent, MarkdownPipe]
+      });
+    })();
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](MarkdownModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
+        args: [{
+          exports: sharedDeclarations,
+          declarations: sharedDeclarations
+        }]
+      }], null, null);
+    })();
+    /**
+     * Generated bundle index. Do not edit.
+     */
+    //# sourceMappingURL=ngx-markdown.js.map
+
     /***/
 
   },
@@ -88043,18 +95782,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AsyncSubject = /*#__PURE__*/function (_Subject__WEBPACK_IMP) {
       _inherits(AsyncSubject, _Subject__WEBPACK_IMP);
 
-      var _super49 = _createSuper(AsyncSubject);
+      var _super52 = _createSuper(AsyncSubject);
 
       function AsyncSubject() {
-        var _this105;
+        var _this122;
 
         _classCallCheck(this, AsyncSubject);
 
-        _this105 = _super49.apply(this, arguments);
-        _this105.value = null;
-        _this105.hasNext = false;
-        _this105.hasCompleted = false;
-        return _this105;
+        _this122 = _super52.apply(this, arguments);
+        _this122.value = null;
+        _this122.hasNext = false;
+        _this122.hasCompleted = false;
+        return _this122;
       }
 
       _createClass2(AsyncSubject, [{
@@ -88141,16 +95880,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var BehaviorSubject = /*#__PURE__*/function (_Subject__WEBPACK_IMP2) {
       _inherits(BehaviorSubject, _Subject__WEBPACK_IMP2);
 
-      var _super50 = _createSuper(BehaviorSubject);
+      var _super53 = _createSuper(BehaviorSubject);
 
       function BehaviorSubject(_value) {
-        var _this106;
+        var _this123;
 
         _classCallCheck(this, BehaviorSubject);
 
-        _this106 = _super50.call(this);
-        _this106._value = _value;
-        return _this106;
+        _this123 = _super53.call(this);
+        _this123._value = _value;
+        return _this123;
       }
 
       _createClass2(BehaviorSubject, [{
@@ -88223,19 +95962,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var InnerSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_) {
       _inherits(InnerSubscriber, _Subscriber__WEBPACK_);
 
-      var _super51 = _createSuper(InnerSubscriber);
+      var _super54 = _createSuper(InnerSubscriber);
 
       function InnerSubscriber(parent, outerValue, outerIndex) {
-        var _this107;
+        var _this124;
 
         _classCallCheck(this, InnerSubscriber);
 
-        _this107 = _super51.call(this);
-        _this107.parent = parent;
-        _this107.outerValue = outerValue;
-        _this107.outerIndex = outerIndex;
-        _this107.index = 0;
-        return _this107;
+        _this124 = _super54.call(this);
+        _this124.parent = parent;
+        _this124.outerValue = outerValue;
+        _this124.outerIndex = outerIndex;
+        _this124.index = 0;
+        return _this124;
       }
 
       _createClass2(InnerSubscriber, [{
@@ -88527,12 +96266,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "forEach",
         value: function forEach(next, promiseCtor) {
-          var _this108 = this;
+          var _this125 = this;
 
           promiseCtor = getPromiseCtor(promiseCtor);
           return new promiseCtor(function (resolve, reject) {
             var subscription;
-            subscription = _this108.subscribe(function (value) {
+            subscription = _this125.subscribe(function (value) {
               try {
                 next(value);
               } catch (err) {
@@ -88559,8 +96298,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "pipe",
         value: function pipe() {
-          for (var _len18 = arguments.length, operations = new Array(_len18), _key18 = 0; _key18 < _len18; _key18++) {
-            operations[_key18] = arguments[_key18];
+          for (var _len20 = arguments.length, operations = new Array(_len20), _key20 = 0; _key20 < _len20; _key20++) {
+            operations[_key20] = arguments[_key20];
           }
 
           if (operations.length === 0) {
@@ -88572,13 +96311,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toPromise",
         value: function toPromise(promiseCtor) {
-          var _this109 = this;
+          var _this126 = this;
 
           promiseCtor = getPromiseCtor(promiseCtor);
           return new promiseCtor(function (resolve, reject) {
             var value;
 
-            _this109.subscribe(function (x) {
+            _this126.subscribe(function (x) {
               return value = x;
             }, function (err) {
               return reject(err);
@@ -88689,12 +96428,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var OuterSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_2) {
       _inherits(OuterSubscriber, _Subscriber__WEBPACK_2);
 
-      var _super52 = _createSuper(OuterSubscriber);
+      var _super55 = _createSuper(OuterSubscriber);
 
       function OuterSubscriber() {
         _classCallCheck(this, OuterSubscriber);
 
-        return _super52.apply(this, arguments);
+        return _super55.apply(this, arguments);
       }
 
       _createClass2(OuterSubscriber, [{
@@ -88780,10 +96519,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ReplaySubject = /*#__PURE__*/function (_Subject__WEBPACK_IMP3) {
       _inherits(ReplaySubject, _Subject__WEBPACK_IMP3);
 
-      var _super53 = _createSuper(ReplaySubject);
+      var _super56 = _createSuper(ReplaySubject);
 
       function ReplaySubject() {
-        var _this110;
+        var _this127;
 
         var bufferSize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Number.POSITIVE_INFINITY;
         var windowTime = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Number.POSITIVE_INFINITY;
@@ -88791,21 +96530,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _classCallCheck(this, ReplaySubject);
 
-        _this110 = _super53.call(this);
-        _this110.scheduler = scheduler;
-        _this110._events = [];
-        _this110._infiniteTimeWindow = false;
-        _this110._bufferSize = bufferSize < 1 ? 1 : bufferSize;
-        _this110._windowTime = windowTime < 1 ? 1 : windowTime;
+        _this127 = _super56.call(this);
+        _this127.scheduler = scheduler;
+        _this127._events = [];
+        _this127._infiniteTimeWindow = false;
+        _this127._bufferSize = bufferSize < 1 ? 1 : bufferSize;
+        _this127._windowTime = windowTime < 1 ? 1 : windowTime;
 
         if (windowTime === Number.POSITIVE_INFINITY) {
-          _this110._infiniteTimeWindow = true;
-          _this110.next = _this110.nextInfiniteTimeWindow;
+          _this127._infiniteTimeWindow = true;
+          _this127.next = _this127.nextInfiniteTimeWindow;
         } else {
-          _this110.next = _this110.nextTimeWindow;
+          _this127.next = _this127.nextTimeWindow;
         }
 
-        return _this110;
+        return _this127;
       }
 
       _createClass2(ReplaySubject, [{
@@ -89043,16 +96782,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SubjectSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_3) {
       _inherits(SubjectSubscriber, _Subscriber__WEBPACK_3);
 
-      var _super54 = _createSuper(SubjectSubscriber);
+      var _super57 = _createSuper(SubjectSubscriber);
 
       function SubjectSubscriber(destination) {
-        var _this111;
+        var _this128;
 
         _classCallCheck(this, SubjectSubscriber);
 
-        _this111 = _super54.call(this, destination);
-        _this111.destination = destination;
-        return _this111;
+        _this128 = _super57.call(this, destination);
+        _this128.destination = destination;
+        return _this128;
       }
 
       return SubjectSubscriber;
@@ -89061,20 +96800,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var Subject = /*#__PURE__*/function (_Observable__WEBPACK_) {
       _inherits(Subject, _Observable__WEBPACK_);
 
-      var _super55 = _createSuper(Subject);
+      var _super58 = _createSuper(Subject);
 
       function Subject() {
-        var _this112;
+        var _this129;
 
         _classCallCheck(this, Subject);
 
-        _this112 = _super55.call(this);
-        _this112.observers = [];
-        _this112.closed = false;
-        _this112.isStopped = false;
-        _this112.hasError = false;
-        _this112.thrownError = null;
-        return _this112;
+        _this129 = _super58.call(this);
+        _this129.observers = [];
+        _this129.closed = false;
+        _this129.isStopped = false;
+        _this129.hasError = false;
+        _this129.thrownError = null;
+        return _this129;
       }
 
       _createClass2(Subject, [{
@@ -89098,10 +96837,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (!this.isStopped) {
             var observers = this.observers;
-            var _len19 = observers.length;
+            var _len21 = observers.length;
             var copy = observers.slice();
 
-            for (var i = 0; i < _len19; i++) {
+            for (var i = 0; i < _len21; i++) {
               copy[i].next(value);
             }
           }
@@ -89195,17 +96934,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AnonymousSubject = /*#__PURE__*/function (_Subject) {
       _inherits(AnonymousSubject, _Subject);
 
-      var _super56 = _createSuper(AnonymousSubject);
+      var _super59 = _createSuper(AnonymousSubject);
 
       function AnonymousSubject(destination, source) {
-        var _this113;
+        var _this130;
 
         _classCallCheck(this, AnonymousSubject);
 
-        _this113 = _super56.call(this);
-        _this113.destination = destination;
-        _this113.source = source;
-        return _this113;
+        _this130 = _super59.call(this);
+        _this130.destination = destination;
+        _this130.source = source;
+        return _this130;
       }
 
       _createClass2(AnonymousSubject, [{
@@ -89284,18 +97023,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SubjectSubscription = /*#__PURE__*/function (_Subscription__WEBPAC) {
       _inherits(SubjectSubscription, _Subscription__WEBPAC);
 
-      var _super57 = _createSuper(SubjectSubscription);
+      var _super60 = _createSuper(SubjectSubscription);
 
       function SubjectSubscription(subject, subscriber) {
-        var _this114;
+        var _this131;
 
         _classCallCheck(this, SubjectSubscription);
 
-        _this114 = _super57.call(this);
-        _this114.subject = subject;
-        _this114.subscriber = subscriber;
-        _this114.closed = false;
-        return _this114;
+        _this131 = _super60.call(this);
+        _this131.subject = subject;
+        _this131.subscriber = subscriber;
+        _this131.closed = false;
+        return _this131;
       }
 
       _createClass2(SubjectSubscription, [{
@@ -89394,50 +97133,50 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var Subscriber = /*#__PURE__*/function (_Subscription__WEBPAC2) {
       _inherits(Subscriber, _Subscription__WEBPAC2);
 
-      var _super58 = _createSuper(Subscriber);
+      var _super61 = _createSuper(Subscriber);
 
       function Subscriber(destinationOrNext, error, complete) {
-        var _this115;
+        var _this132;
 
         _classCallCheck(this, Subscriber);
 
-        _this115 = _super58.call(this);
-        _this115.syncErrorValue = null;
-        _this115.syncErrorThrown = false;
-        _this115.syncErrorThrowable = false;
-        _this115.isStopped = false;
+        _this132 = _super61.call(this);
+        _this132.syncErrorValue = null;
+        _this132.syncErrorThrown = false;
+        _this132.syncErrorThrowable = false;
+        _this132.isStopped = false;
 
         switch (arguments.length) {
           case 0:
-            _this115.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
+            _this132.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
             break;
 
           case 1:
             if (!destinationOrNext) {
-              _this115.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
+              _this132.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
               break;
             }
 
             if (typeof destinationOrNext === 'object') {
               if (destinationOrNext instanceof Subscriber) {
-                _this115.syncErrorThrowable = destinationOrNext.syncErrorThrowable;
-                _this115.destination = destinationOrNext;
-                destinationOrNext.add(_assertThisInitialized(_this115));
+                _this132.syncErrorThrowable = destinationOrNext.syncErrorThrowable;
+                _this132.destination = destinationOrNext;
+                destinationOrNext.add(_assertThisInitialized(_this132));
               } else {
-                _this115.syncErrorThrowable = true;
-                _this115.destination = new SafeSubscriber(_assertThisInitialized(_this115), destinationOrNext);
+                _this132.syncErrorThrowable = true;
+                _this132.destination = new SafeSubscriber(_assertThisInitialized(_this132), destinationOrNext);
               }
 
               break;
             }
 
           default:
-            _this115.syncErrorThrowable = true;
-            _this115.destination = new SafeSubscriber(_assertThisInitialized(_this115), destinationOrNext, error, complete);
+            _this132.syncErrorThrowable = true;
+            _this132.destination = new SafeSubscriber(_assertThisInitialized(_this132), destinationOrNext, error, complete);
             break;
         }
 
-        return _this115;
+        return _this132;
       }
 
       _createClass2(Subscriber, [{
@@ -89524,18 +97263,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SafeSubscriber = /*#__PURE__*/function (_Subscriber) {
       _inherits(SafeSubscriber, _Subscriber);
 
-      var _super59 = _createSuper(SafeSubscriber);
+      var _super62 = _createSuper(SafeSubscriber);
 
       function SafeSubscriber(_parentSubscriber, observerOrNext, error, complete) {
-        var _this116;
+        var _this133;
 
         _classCallCheck(this, SafeSubscriber);
 
-        _this116 = _super59.call(this);
-        _this116._parentSubscriber = _parentSubscriber;
+        _this133 = _super62.call(this);
+        _this133._parentSubscriber = _parentSubscriber;
         var next;
 
-        var context = _assertThisInitialized(_this116);
+        var context = _assertThisInitialized(_this133);
 
         if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_0__["isFunction"])(observerOrNext)) {
           next = observerOrNext;
@@ -89548,18 +97287,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             context = Object.create(observerOrNext);
 
             if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_0__["isFunction"])(context.unsubscribe)) {
-              _this116.add(context.unsubscribe.bind(context));
+              _this133.add(context.unsubscribe.bind(context));
             }
 
-            context.unsubscribe = _this116.unsubscribe.bind(_assertThisInitialized(_this116));
+            context.unsubscribe = _this133.unsubscribe.bind(_assertThisInitialized(_this133));
           }
         }
 
-        _this116._context = context;
-        _this116._next = next;
-        _this116._error = error;
-        _this116._complete = complete;
-        return _this116;
+        _this133._context = context;
+        _this133._next = next;
+        _this133._error = error;
+        _this133._complete = complete;
+        return _this133;
       }
 
       _createClass2(SafeSubscriber, [{
@@ -89615,14 +97354,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "complete",
         value: function complete() {
-          var _this117 = this;
+          var _this134 = this;
 
           if (!this.isStopped) {
             var _parentSubscriber = this._parentSubscriber;
 
             if (this._complete) {
               var wrappedComplete = function wrappedComplete() {
-                return _this117._complete.call(_this117._context);
+                return _this134._complete.call(_this134._context);
               };
 
               if (!_config__WEBPACK_IMPORTED_MODULE_4__["config"].useDeprecatedSynchronousErrorHandling || !_parentSubscriber.syncErrorThrowable) {
@@ -89787,9 +97526,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if (Object(_util_isArray__WEBPACK_IMPORTED_MODULE_0__["isArray"])(_subscriptions)) {
             var _index2 = -1;
 
-            var _len20 = _subscriptions.length;
+            var _len22 = _subscriptions.length;
 
-            while (++_index2 < _len20) {
+            while (++_index2 < _len22) {
               var sub = _subscriptions[_index2];
 
               if (Object(_util_isObject__WEBPACK_IMPORTED_MODULE_1__["isObject"])(sub)) {
@@ -90008,19 +97747,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ConnectableObservable = /*#__PURE__*/function (_Observable__WEBPACK_2) {
       _inherits(ConnectableObservable, _Observable__WEBPACK_2);
 
-      var _super60 = _createSuper(ConnectableObservable);
+      var _super63 = _createSuper(ConnectableObservable);
 
       function ConnectableObservable(source, subjectFactory) {
-        var _this118;
+        var _this135;
 
         _classCallCheck(this, ConnectableObservable);
 
-        _this118 = _super60.call(this);
-        _this118.source = source;
-        _this118.subjectFactory = subjectFactory;
-        _this118._refCount = 0;
-        _this118._isComplete = false;
-        return _this118;
+        _this135 = _super63.call(this);
+        _this135.source = source;
+        _this135.subjectFactory = subjectFactory;
+        _this135._refCount = 0;
+        _this135._isComplete = false;
+        return _this135;
       }
 
       _createClass2(ConnectableObservable, [{
@@ -90107,16 +97846,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ConnectableSubscriber = /*#__PURE__*/function (_Subject__WEBPACK_IMP4) {
       _inherits(ConnectableSubscriber, _Subject__WEBPACK_IMP4);
 
-      var _super61 = _createSuper(ConnectableSubscriber);
+      var _super64 = _createSuper(ConnectableSubscriber);
 
       function ConnectableSubscriber(destination, connectable) {
-        var _this119;
+        var _this136;
 
         _classCallCheck(this, ConnectableSubscriber);
 
-        _this119 = _super61.call(this, destination);
-        _this119.connectable = connectable;
-        return _this119;
+        _this136 = _super64.call(this, destination);
+        _this136.connectable = connectable;
+        return _this136;
       }
 
       _createClass2(ConnectableSubscriber, [{
@@ -90186,16 +97925,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RefCountSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_4) {
       _inherits(RefCountSubscriber, _Subscriber__WEBPACK_4);
 
-      var _super62 = _createSuper(RefCountSubscriber);
+      var _super65 = _createSuper(RefCountSubscriber);
 
       function RefCountSubscriber(destination, connectable) {
-        var _this120;
+        var _this137;
 
         _classCallCheck(this, RefCountSubscriber);
 
-        _this120 = _super62.call(this, destination);
-        _this120.connectable = connectable;
-        return _this120;
+        _this137 = _super65.call(this, destination);
+        _this137.connectable = connectable;
+        return _this137;
       }
 
       _createClass2(RefCountSubscriber, [{
@@ -90281,30 +98020,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SubscribeOnObservable = /*#__PURE__*/function (_Observable__WEBPACK_3) {
       _inherits(SubscribeOnObservable, _Observable__WEBPACK_3);
 
-      var _super63 = _createSuper(SubscribeOnObservable);
+      var _super66 = _createSuper(SubscribeOnObservable);
 
       function SubscribeOnObservable(source) {
-        var _this121;
+        var _this138;
 
         var delayTime = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
         var scheduler = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _scheduler_asap__WEBPACK_IMPORTED_MODULE_1__["asap"];
 
         _classCallCheck(this, SubscribeOnObservable);
 
-        _this121 = _super63.call(this);
-        _this121.source = source;
-        _this121.delayTime = delayTime;
-        _this121.scheduler = scheduler;
+        _this138 = _super66.call(this);
+        _this138.source = source;
+        _this138.delayTime = delayTime;
+        _this138.scheduler = scheduler;
 
         if (!Object(_util_isNumeric__WEBPACK_IMPORTED_MODULE_2__["isNumeric"])(delayTime) || delayTime < 0) {
-          _this121.delayTime = 0;
+          _this138.delayTime = 0;
         }
 
         if (!scheduler || typeof scheduler.schedule !== 'function') {
-          _this121.scheduler = _scheduler_asap__WEBPACK_IMPORTED_MODULE_1__["asap"];
+          _this138.scheduler = _scheduler_asap__WEBPACK_IMPORTED_MODULE_1__["asap"];
         }
 
-        return _this121;
+        return _this138;
       }
 
       _createClass2(SubscribeOnObservable, [{
@@ -90411,8 +98150,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       return function () {
-        for (var _len21 = arguments.length, args = new Array(_len21), _key19 = 0; _key19 < _len21; _key19++) {
-          args[_key19] = arguments[_key19];
+        for (var _len23 = arguments.length, args = new Array(_len23), _key21 = 0; _key21 < _len23; _key21++) {
+          args[_key21] = arguments[_key21];
         }
 
         var context = this;
@@ -90429,8 +98168,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               subject = new _AsyncSubject__WEBPACK_IMPORTED_MODULE_1__["AsyncSubject"]();
 
               var handler = function handler() {
-                for (var _len22 = arguments.length, innerArgs = new Array(_len22), _key20 = 0; _key20 < _len22; _key20++) {
-                  innerArgs[_key20] = arguments[_key20];
+                for (var _len24 = arguments.length, innerArgs = new Array(_len24), _key22 = 0; _key22 < _len24; _key22++) {
+                  innerArgs[_key22] = arguments[_key22];
                 }
 
                 subject.next(innerArgs.length <= 1 ? innerArgs[0] : innerArgs);
@@ -90462,7 +98201,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function dispatch(state) {
-      var _this122 = this;
+      var _this139 = this;
 
       var self = this;
       var args = state.args,
@@ -90477,13 +98216,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         subject = params.subject = new _AsyncSubject__WEBPACK_IMPORTED_MODULE_1__["AsyncSubject"]();
 
         var handler = function handler() {
-          for (var _len23 = arguments.length, innerArgs = new Array(_len23), _key21 = 0; _key21 < _len23; _key21++) {
-            innerArgs[_key21] = arguments[_key21];
+          for (var _len25 = arguments.length, innerArgs = new Array(_len25), _key23 = 0; _key23 < _len25; _key23++) {
+            innerArgs[_key23] = arguments[_key23];
           }
 
           var value = innerArgs.length <= 1 ? innerArgs[0] : innerArgs;
 
-          _this122.add(scheduler.schedule(dispatchNext, 0, {
+          _this139.add(scheduler.schedule(dispatchNext, 0, {
             value: value,
             subject: subject
           }));
@@ -90586,8 +98325,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       return function () {
-        for (var _len24 = arguments.length, args = new Array(_len24), _key22 = 0; _key22 < _len24; _key22++) {
-          args[_key22] = arguments[_key22];
+        for (var _len26 = arguments.length, args = new Array(_len26), _key24 = 0; _key24 < _len26; _key24++) {
+          args[_key24] = arguments[_key24];
         }
 
         var params = {
@@ -90606,8 +98345,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               subject = params.subject = new _AsyncSubject__WEBPACK_IMPORTED_MODULE_1__["AsyncSubject"]();
 
               var handler = function handler() {
-                for (var _len25 = arguments.length, innerArgs = new Array(_len25), _key23 = 0; _key23 < _len25; _key23++) {
-                  innerArgs[_key23] = arguments[_key23];
+                for (var _len27 = arguments.length, innerArgs = new Array(_len27), _key25 = 0; _key25 < _len27; _key25++) {
+                  innerArgs[_key25] = arguments[_key25];
                 }
 
                 var err = innerArgs.shift();
@@ -90645,7 +98384,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function dispatch(state) {
-      var _this123 = this;
+      var _this140 = this;
 
       var params = state.params,
           subscriber = state.subscriber,
@@ -90659,21 +98398,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         subject = params.subject = new _AsyncSubject__WEBPACK_IMPORTED_MODULE_1__["AsyncSubject"]();
 
         var handler = function handler() {
-          for (var _len26 = arguments.length, innerArgs = new Array(_len26), _key24 = 0; _key24 < _len26; _key24++) {
-            innerArgs[_key24] = arguments[_key24];
+          for (var _len28 = arguments.length, innerArgs = new Array(_len28), _key26 = 0; _key26 < _len28; _key26++) {
+            innerArgs[_key26] = arguments[_key26];
           }
 
           var err = innerArgs.shift();
 
           if (err) {
-            _this123.add(scheduler.schedule(dispatchError, 0, {
+            _this140.add(scheduler.schedule(dispatchError, 0, {
               err: err,
               subject: subject
             }));
           } else {
             var value = innerArgs.length <= 1 ? innerArgs[0] : innerArgs;
 
-            _this123.add(scheduler.schedule(dispatchNext, 0, {
+            _this140.add(scheduler.schedule(dispatchNext, 0, {
               value: value,
               subject: subject
             }));
@@ -90775,8 +98514,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var NONE = {};
 
     function combineLatest() {
-      for (var _len27 = arguments.length, observables = new Array(_len27), _key25 = 0; _key25 < _len27; _key25++) {
-        observables[_key25] = arguments[_key25];
+      for (var _len29 = arguments.length, observables = new Array(_len29), _key27 = 0; _key27 < _len29; _key27++) {
+        observables[_key27] = arguments[_key27];
       }
 
       var resultSelector = null;
@@ -90817,19 +98556,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var CombineLatestSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB) {
       _inherits(CombineLatestSubscriber, _OuterSubscriber__WEB);
 
-      var _super64 = _createSuper(CombineLatestSubscriber);
+      var _super67 = _createSuper(CombineLatestSubscriber);
 
       function CombineLatestSubscriber(destination, resultSelector) {
-        var _this124;
+        var _this141;
 
         _classCallCheck(this, CombineLatestSubscriber);
 
-        _this124 = _super64.call(this, destination);
-        _this124.resultSelector = resultSelector;
-        _this124.active = 0;
-        _this124.values = [];
-        _this124.observables = [];
-        return _this124;
+        _this141 = _super67.call(this, destination);
+        _this141.resultSelector = resultSelector;
+        _this141.active = 0;
+        _this141.values = [];
+        _this141.observables = [];
+        return _this141;
       }
 
       _createClass2(CombineLatestSubscriber, [{
@@ -91103,8 +98842,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/from.js");
 
     function forkJoin() {
-      for (var _len28 = arguments.length, sources = new Array(_len28), _key26 = 0; _key26 < _len28; _key26++) {
-        sources[_key26] = arguments[_key26];
+      for (var _len30 = arguments.length, sources = new Array(_len30), _key28 = 0; _key28 < _len30; _key28++) {
+        sources[_key28] = arguments[_key28];
       }
 
       if (sources.length === 1) {
@@ -91146,7 +98885,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var completed = 0;
         var emitted = 0;
 
-        var _loop3 = function _loop3(i) {
+        var _loop6 = function _loop6(i) {
           var source = Object(_from__WEBPACK_IMPORTED_MODULE_4__["from"])(sources[i]);
           var hasValue = false;
           subscriber.add(source.subscribe({
@@ -91178,7 +98917,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
 
         for (var i = 0; i < len; i++) {
-          _loop3(i);
+          _loop6(i);
         }
       });
     } //# sourceMappingURL=forkJoin.js.map
@@ -91389,7 +99128,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return _source2.removeListener(eventName, handler);
         };
       } else if (sourceObj && sourceObj.length) {
-        for (var i = 0, _len29 = sourceObj.length; i < _len29; i++) {
+        for (var i = 0, _len31 = sourceObj.length; i < _len31; i++) {
           setupSubscription(sourceObj[i], eventName, handler, subscriber, options);
         }
       } else {
@@ -91468,8 +99207,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       return new _Observable__WEBPACK_IMPORTED_MODULE_0__["Observable"](function (subscriber) {
         var handler = function handler() {
-          for (var _len30 = arguments.length, e = new Array(_len30), _key27 = 0; _key27 < _len30; _key27++) {
-            e[_key27] = arguments[_key27];
+          for (var _len32 = arguments.length, e = new Array(_len32), _key29 = 0; _key29 < _len32; _key29++) {
+            e[_key29] = arguments[_key29];
           }
 
           return subscriber.next(e.length === 1 ? e[0] : e);
@@ -91846,8 +99585,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var concurrent = Number.POSITIVE_INFINITY;
       var scheduler = null;
 
-      for (var _len31 = arguments.length, observables = new Array(_len31), _key28 = 0; _key28 < _len31; _key28++) {
-        observables[_key28] = arguments[_key28];
+      for (var _len33 = arguments.length, observables = new Array(_len33), _key30 = 0; _key30 < _len33; _key30++) {
+        observables[_key30] = arguments[_key30];
       }
 
       var last = observables[observables.length - 1];
@@ -91960,8 +99699,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/scheduled/scheduleArray.js");
 
     function of() {
-      for (var _len32 = arguments.length, args = new Array(_len32), _key29 = 0; _key29 < _len32; _key29++) {
-        args[_key29] = arguments[_key29];
+      for (var _len34 = arguments.length, args = new Array(_len34), _key31 = 0; _key31 < _len34; _key31++) {
+        args[_key31] = arguments[_key31];
       }
 
       var scheduler = args[args.length - 1];
@@ -92023,8 +99762,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/empty.js");
 
     function onErrorResumeNext() {
-      for (var _len33 = arguments.length, sources = new Array(_len33), _key30 = 0; _key30 < _len33; _key30++) {
-        sources[_key30] = arguments[_key30];
+      for (var _len35 = arguments.length, sources = new Array(_len35), _key32 = 0; _key32 < _len35; _key32++) {
+        sources[_key32] = arguments[_key32];
       }
 
       if (sources.length === 0) {
@@ -92263,8 +100002,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/util/subscribeToResult.js");
 
     function race() {
-      for (var _len34 = arguments.length, observables = new Array(_len34), _key31 = 0; _key31 < _len34; _key31++) {
-        observables[_key31] = arguments[_key31];
+      for (var _len36 = arguments.length, observables = new Array(_len36), _key33 = 0; _key33 < _len36; _key33++) {
+        observables[_key33] = arguments[_key33];
       }
 
       if (observables.length === 1) {
@@ -92296,18 +100035,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RaceSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB2) {
       _inherits(RaceSubscriber, _OuterSubscriber__WEB2);
 
-      var _super65 = _createSuper(RaceSubscriber);
+      var _super68 = _createSuper(RaceSubscriber);
 
       function RaceSubscriber(destination) {
-        var _this125;
+        var _this142;
 
         _classCallCheck(this, RaceSubscriber);
 
-        _this125 = _super65.call(this, destination);
-        _this125.hasFirst = false;
-        _this125.observables = [];
-        _this125.subscriptions = [];
-        return _this125;
+        _this142 = _super68.call(this, destination);
+        _this142.hasFirst = false;
+        _this142.observables = [];
+        _this142.subscriptions = [];
+        return _this142;
       }
 
       _createClass2(RaceSubscriber, [{
@@ -92504,9 +100243,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function dispatch(_ref12) {
-      var error = _ref12.error,
-          subscriber = _ref12.subscriber;
+    function dispatch(_ref14) {
+      var error = _ref14.error,
+          subscriber = _ref14.subscriber;
       subscriber.error(error);
     } //# sourceMappingURL=throwError.js.map
 
@@ -92747,8 +100486,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/symbol/iterator.js");
 
     function zip() {
-      for (var _len35 = arguments.length, observables = new Array(_len35), _key32 = 0; _key32 < _len35; _key32++) {
-        observables[_key32] = arguments[_key32];
+      for (var _len37 = arguments.length, observables = new Array(_len37), _key34 = 0; _key34 < _len37; _key34++) {
+        observables[_key34] = arguments[_key34];
       }
 
       var resultSelector = observables[observables.length - 1];
@@ -92780,21 +100519,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ZipSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_5) {
       _inherits(ZipSubscriber, _Subscriber__WEBPACK_5);
 
-      var _super66 = _createSuper(ZipSubscriber);
+      var _super69 = _createSuper(ZipSubscriber);
 
       function ZipSubscriber(destination, resultSelector) {
-        var _this126;
+        var _this143;
 
         var values = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Object.create(null);
 
         _classCallCheck(this, ZipSubscriber);
 
-        _this126 = _super66.call(this, destination);
-        _this126.iterators = [];
-        _this126.active = 0;
-        _this126.resultSelector = typeof resultSelector === 'function' ? resultSelector : null;
-        _this126.values = values;
-        return _this126;
+        _this143 = _super69.call(this, destination);
+        _this143.iterators = [];
+        _this143.active = 0;
+        _this143.resultSelector = typeof resultSelector === 'function' ? resultSelector : null;
+        _this143.values = values;
+        return _this143;
       }
 
       _createClass2(ZipSubscriber, [{
@@ -92863,11 +100602,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var args = [];
 
           for (var _i21 = 0; _i21 < len; _i21++) {
-            var _iterator19 = iterators[_i21];
+            var _iterator23 = iterators[_i21];
 
-            var result = _iterator19.next();
+            var result = _iterator23.next();
 
-            if (_iterator19.hasCompleted()) {
+            if (_iterator23.hasCompleted()) {
               shouldComplete = true;
             }
 
@@ -92985,20 +100724,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ZipBufferIterator = /*#__PURE__*/function (_OuterSubscriber__WEB3) {
       _inherits(ZipBufferIterator, _OuterSubscriber__WEB3);
 
-      var _super67 = _createSuper(ZipBufferIterator);
+      var _super70 = _createSuper(ZipBufferIterator);
 
       function ZipBufferIterator(destination, parent, observable) {
-        var _this127;
+        var _this144;
 
         _classCallCheck(this, ZipBufferIterator);
 
-        _this127 = _super67.call(this, destination);
-        _this127.parent = parent;
-        _this127.observable = observable;
-        _this127.stillUnsubscribed = true;
-        _this127.buffer = [];
-        _this127.isComplete = false;
-        return _this127;
+        _this144 = _super70.call(this, destination);
+        _this144.parent = parent;
+        _this144.observable = observable;
+        _this144.stillUnsubscribed = true;
+        _this144.buffer = [];
+        _this144.isComplete = false;
+        return _this144;
       }
 
       _createClass2(ZipBufferIterator, [{
@@ -93121,17 +100860,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AuditSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB4) {
       _inherits(AuditSubscriber, _OuterSubscriber__WEB4);
 
-      var _super68 = _createSuper(AuditSubscriber);
+      var _super71 = _createSuper(AuditSubscriber);
 
       function AuditSubscriber(destination, durationSelector) {
-        var _this128;
+        var _this145;
 
         _classCallCheck(this, AuditSubscriber);
 
-        _this128 = _super68.call(this, destination);
-        _this128.durationSelector = durationSelector;
-        _this128.hasValue = false;
-        return _this128;
+        _this145 = _super71.call(this, destination);
+        _this145.durationSelector = durationSelector;
+        _this145.hasValue = false;
+        return _this145;
       }
 
       _createClass2(AuditSubscriber, [{
@@ -93304,19 +101043,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var BufferSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB5) {
       _inherits(BufferSubscriber, _OuterSubscriber__WEB5);
 
-      var _super69 = _createSuper(BufferSubscriber);
+      var _super72 = _createSuper(BufferSubscriber);
 
       function BufferSubscriber(destination, closingNotifier) {
-        var _this129;
+        var _this146;
 
         _classCallCheck(this, BufferSubscriber);
 
-        _this129 = _super69.call(this, destination);
-        _this129.buffer = [];
+        _this146 = _super72.call(this, destination);
+        _this146.buffer = [];
 
-        _this129.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this129), closingNotifier));
+        _this146.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this146), closingNotifier));
 
-        return _this129;
+        return _this146;
       }
 
       _createClass2(BufferSubscriber, [{
@@ -93400,17 +101139,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var BufferCountSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_6) {
       _inherits(BufferCountSubscriber, _Subscriber__WEBPACK_6);
 
-      var _super70 = _createSuper(BufferCountSubscriber);
+      var _super73 = _createSuper(BufferCountSubscriber);
 
       function BufferCountSubscriber(destination, bufferSize) {
-        var _this130;
+        var _this147;
 
         _classCallCheck(this, BufferCountSubscriber);
 
-        _this130 = _super70.call(this, destination);
-        _this130.bufferSize = bufferSize;
-        _this130.buffer = [];
-        return _this130;
+        _this147 = _super73.call(this, destination);
+        _this147.bufferSize = bufferSize;
+        _this147.buffer = [];
+        return _this147;
       }
 
       _createClass2(BufferCountSubscriber, [{
@@ -93443,19 +101182,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var BufferSkipCountSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_7) {
       _inherits(BufferSkipCountSubscriber, _Subscriber__WEBPACK_7);
 
-      var _super71 = _createSuper(BufferSkipCountSubscriber);
+      var _super74 = _createSuper(BufferSkipCountSubscriber);
 
       function BufferSkipCountSubscriber(destination, bufferSize, startBufferEvery) {
-        var _this131;
+        var _this148;
 
         _classCallCheck(this, BufferSkipCountSubscriber);
 
-        _this131 = _super71.call(this, destination);
-        _this131.bufferSize = bufferSize;
-        _this131.startBufferEvery = startBufferEvery;
-        _this131.buffers = [];
-        _this131.count = 0;
-        return _this131;
+        _this148 = _super74.call(this, destination);
+        _this148.bufferSize = bufferSize;
+        _this148.startBufferEvery = startBufferEvery;
+        _this148.buffers = [];
+        _this148.count = 0;
+        return _this148;
       }
 
       _createClass2(BufferSkipCountSubscriber, [{
@@ -93599,50 +101338,50 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var BufferTimeSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_8) {
       _inherits(BufferTimeSubscriber, _Subscriber__WEBPACK_8);
 
-      var _super72 = _createSuper(BufferTimeSubscriber);
+      var _super75 = _createSuper(BufferTimeSubscriber);
 
       function BufferTimeSubscriber(destination, bufferTimeSpan, bufferCreationInterval, maxBufferSize, scheduler) {
-        var _this132;
+        var _this149;
 
         _classCallCheck(this, BufferTimeSubscriber);
 
-        _this132 = _super72.call(this, destination);
-        _this132.bufferTimeSpan = bufferTimeSpan;
-        _this132.bufferCreationInterval = bufferCreationInterval;
-        _this132.maxBufferSize = maxBufferSize;
-        _this132.scheduler = scheduler;
-        _this132.contexts = [];
+        _this149 = _super75.call(this, destination);
+        _this149.bufferTimeSpan = bufferTimeSpan;
+        _this149.bufferCreationInterval = bufferCreationInterval;
+        _this149.maxBufferSize = maxBufferSize;
+        _this149.scheduler = scheduler;
+        _this149.contexts = [];
 
-        var context = _this132.openContext();
+        var context = _this149.openContext();
 
-        _this132.timespanOnly = bufferCreationInterval == null || bufferCreationInterval < 0;
+        _this149.timespanOnly = bufferCreationInterval == null || bufferCreationInterval < 0;
 
-        if (_this132.timespanOnly) {
+        if (_this149.timespanOnly) {
           var timeSpanOnlyState = {
-            subscriber: _assertThisInitialized(_this132),
+            subscriber: _assertThisInitialized(_this149),
             context: context,
             bufferTimeSpan: bufferTimeSpan
           };
 
-          _this132.add(context.closeAction = scheduler.schedule(dispatchBufferTimeSpanOnly, bufferTimeSpan, timeSpanOnlyState));
+          _this149.add(context.closeAction = scheduler.schedule(dispatchBufferTimeSpanOnly, bufferTimeSpan, timeSpanOnlyState));
         } else {
           var closeState = {
-            subscriber: _assertThisInitialized(_this132),
+            subscriber: _assertThisInitialized(_this149),
             context: context
           };
           var creationState = {
             bufferTimeSpan: bufferTimeSpan,
             bufferCreationInterval: bufferCreationInterval,
-            subscriber: _assertThisInitialized(_this132),
+            subscriber: _assertThisInitialized(_this149),
             scheduler: scheduler
           };
 
-          _this132.add(context.closeAction = scheduler.schedule(dispatchBufferClose, bufferTimeSpan, closeState));
+          _this149.add(context.closeAction = scheduler.schedule(dispatchBufferClose, bufferTimeSpan, closeState));
 
-          _this132.add(scheduler.schedule(dispatchBufferCreation, bufferCreationInterval, creationState));
+          _this149.add(scheduler.schedule(dispatchBufferCreation, bufferCreationInterval, creationState));
         }
 
-        return _this132;
+        return _this149;
       }
 
       _createClass2(BufferTimeSubscriber, [{
@@ -93839,21 +101578,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var BufferToggleSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB6) {
       _inherits(BufferToggleSubscriber, _OuterSubscriber__WEB6);
 
-      var _super73 = _createSuper(BufferToggleSubscriber);
+      var _super76 = _createSuper(BufferToggleSubscriber);
 
       function BufferToggleSubscriber(destination, openings, closingSelector) {
-        var _this133;
+        var _this150;
 
         _classCallCheck(this, BufferToggleSubscriber);
 
-        _this133 = _super73.call(this, destination);
-        _this133.openings = openings;
-        _this133.closingSelector = closingSelector;
-        _this133.contexts = [];
+        _this150 = _super76.call(this, destination);
+        _this150.openings = openings;
+        _this150.closingSelector = closingSelector;
+        _this150.contexts = [];
 
-        _this133.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this133), openings));
+        _this150.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this150), openings));
 
-        return _this133;
+        return _this150;
       }
 
       _createClass2(BufferToggleSubscriber, [{
@@ -94031,20 +101770,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var BufferWhenSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB7) {
       _inherits(BufferWhenSubscriber, _OuterSubscriber__WEB7);
 
-      var _super74 = _createSuper(BufferWhenSubscriber);
+      var _super77 = _createSuper(BufferWhenSubscriber);
 
       function BufferWhenSubscriber(destination, closingSelector) {
-        var _this134;
+        var _this151;
 
         _classCallCheck(this, BufferWhenSubscriber);
 
-        _this134 = _super74.call(this, destination);
-        _this134.closingSelector = closingSelector;
-        _this134.subscribing = false;
+        _this151 = _super77.call(this, destination);
+        _this151.closingSelector = closingSelector;
+        _this151.subscribing = false;
 
-        _this134.openBuffer();
+        _this151.openBuffer();
 
-        return _this134;
+        return _this151;
       }
 
       _createClass2(BufferWhenSubscriber, [{
@@ -94191,17 +101930,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var CatchSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB8) {
       _inherits(CatchSubscriber, _OuterSubscriber__WEB8);
 
-      var _super75 = _createSuper(CatchSubscriber);
+      var _super78 = _createSuper(CatchSubscriber);
 
       function CatchSubscriber(destination, selector, caught) {
-        var _this135;
+        var _this152;
 
         _classCallCheck(this, CatchSubscriber);
 
-        _this135 = _super75.call(this, destination);
-        _this135.selector = selector;
-        _this135.caught = caught;
-        return _this135;
+        _this152 = _super78.call(this, destination);
+        _this152.selector = selector;
+        _this152.caught = caught;
+        return _this152;
       }
 
       _createClass2(CatchSubscriber, [{
@@ -94315,8 +102054,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var none = {};
 
     function combineLatest() {
-      for (var _len36 = arguments.length, observables = new Array(_len36), _key33 = 0; _key33 < _len36; _key33++) {
-        observables[_key33] = arguments[_key33];
+      for (var _len38 = arguments.length, observables = new Array(_len38), _key35 = 0; _key35 < _len38; _key35++) {
+        observables[_key35] = arguments[_key35];
       }
 
       var project = null;
@@ -94365,8 +102104,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/concat.js");
 
     function concat() {
-      for (var _len37 = arguments.length, observables = new Array(_len37), _key34 = 0; _key34 < _len37; _key34++) {
-        observables[_key34] = arguments[_key34];
+      for (var _len39 = arguments.length, observables = new Array(_len39), _key36 = 0; _key36 < _len39; _key36++) {
+        observables[_key36] = arguments[_key36];
       }
 
       return function (source) {
@@ -94535,19 +102274,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var CountSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_9) {
       _inherits(CountSubscriber, _Subscriber__WEBPACK_9);
 
-      var _super76 = _createSuper(CountSubscriber);
+      var _super79 = _createSuper(CountSubscriber);
 
       function CountSubscriber(destination, predicate, source) {
-        var _this136;
+        var _this153;
 
         _classCallCheck(this, CountSubscriber);
 
-        _this136 = _super76.call(this, destination);
-        _this136.predicate = predicate;
-        _this136.source = source;
-        _this136.count = 0;
-        _this136.index = 0;
-        return _this136;
+        _this153 = _super79.call(this, destination);
+        _this153.predicate = predicate;
+        _this153.source = source;
+        _this153.count = 0;
+        _this153.index = 0;
+        return _this153;
       }
 
       _createClass2(CountSubscriber, [{
@@ -94648,18 +102387,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DebounceSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB9) {
       _inherits(DebounceSubscriber, _OuterSubscriber__WEB9);
 
-      var _super77 = _createSuper(DebounceSubscriber);
+      var _super80 = _createSuper(DebounceSubscriber);
 
       function DebounceSubscriber(destination, durationSelector) {
-        var _this137;
+        var _this154;
 
         _classCallCheck(this, DebounceSubscriber);
 
-        _this137 = _super77.call(this, destination);
-        _this137.durationSelector = durationSelector;
-        _this137.hasValue = false;
-        _this137.durationSubscription = null;
-        return _this137;
+        _this154 = _super80.call(this, destination);
+        _this154.durationSelector = durationSelector;
+        _this154.hasValue = false;
+        _this154.durationSubscription = null;
+        return _this154;
       }
 
       _createClass2(DebounceSubscriber, [{
@@ -94797,20 +102536,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DebounceTimeSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_10) {
       _inherits(DebounceTimeSubscriber, _Subscriber__WEBPACK_10);
 
-      var _super78 = _createSuper(DebounceTimeSubscriber);
+      var _super81 = _createSuper(DebounceTimeSubscriber);
 
       function DebounceTimeSubscriber(destination, dueTime, scheduler) {
-        var _this138;
+        var _this155;
 
         _classCallCheck(this, DebounceTimeSubscriber);
 
-        _this138 = _super78.call(this, destination);
-        _this138.dueTime = dueTime;
-        _this138.scheduler = scheduler;
-        _this138.debouncedSubscription = null;
-        _this138.lastValue = null;
-        _this138.hasValue = false;
-        return _this138;
+        _this155 = _super81.call(this, destination);
+        _this155.dueTime = dueTime;
+        _this155.scheduler = scheduler;
+        _this155.debouncedSubscription = null;
+        _this155.lastValue = null;
+        _this155.hasValue = false;
+        return _this155;
       }
 
       _createClass2(DebounceTimeSubscriber, [{
@@ -94916,17 +102655,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DefaultIfEmptySubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_11) {
       _inherits(DefaultIfEmptySubscriber, _Subscriber__WEBPACK_11);
 
-      var _super79 = _createSuper(DefaultIfEmptySubscriber);
+      var _super82 = _createSuper(DefaultIfEmptySubscriber);
 
       function DefaultIfEmptySubscriber(destination, defaultValue) {
-        var _this139;
+        var _this156;
 
         _classCallCheck(this, DefaultIfEmptySubscriber);
 
-        _this139 = _super79.call(this, destination);
-        _this139.defaultValue = defaultValue;
-        _this139.isEmpty = true;
-        return _this139;
+        _this156 = _super82.call(this, destination);
+        _this156.defaultValue = defaultValue;
+        _this156.isEmpty = true;
+        return _this156;
       }
 
       _createClass2(DefaultIfEmptySubscriber, [{
@@ -95027,20 +102766,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DelaySubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_12) {
       _inherits(DelaySubscriber, _Subscriber__WEBPACK_12);
 
-      var _super80 = _createSuper(DelaySubscriber);
+      var _super83 = _createSuper(DelaySubscriber);
 
       function DelaySubscriber(destination, delay, scheduler) {
-        var _this140;
+        var _this157;
 
         _classCallCheck(this, DelaySubscriber);
 
-        _this140 = _super80.call(this, destination);
-        _this140.delay = delay;
-        _this140.scheduler = scheduler;
-        _this140.queue = [];
-        _this140.active = false;
-        _this140.errored = false;
-        return _this140;
+        _this157 = _super83.call(this, destination);
+        _this157.delay = delay;
+        _this157.scheduler = scheduler;
+        _this157.queue = [];
+        _this157.active = false;
+        _this157.errored = false;
+        return _this157;
       }
 
       _createClass2(DelaySubscriber, [{
@@ -95201,19 +102940,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DelayWhenSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB10) {
       _inherits(DelayWhenSubscriber, _OuterSubscriber__WEB10);
 
-      var _super81 = _createSuper(DelayWhenSubscriber);
+      var _super84 = _createSuper(DelayWhenSubscriber);
 
       function DelayWhenSubscriber(destination, delayDurationSelector) {
-        var _this141;
+        var _this158;
 
         _classCallCheck(this, DelayWhenSubscriber);
 
-        _this141 = _super81.call(this, destination);
-        _this141.delayDurationSelector = delayDurationSelector;
-        _this141.completed = false;
-        _this141.delayNotifierSubscriptions = [];
-        _this141.index = 0;
-        return _this141;
+        _this158 = _super84.call(this, destination);
+        _this158.delayDurationSelector = delayDurationSelector;
+        _this158.completed = false;
+        _this158.delayNotifierSubscriptions = [];
+        _this158.index = 0;
+        return _this158;
       }
 
       _createClass2(DelayWhenSubscriber, [{
@@ -95299,17 +103038,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SubscriptionDelayObservable = /*#__PURE__*/function (_Observable__WEBPACK_4) {
       _inherits(SubscriptionDelayObservable, _Observable__WEBPACK_4);
 
-      var _super82 = _createSuper(SubscriptionDelayObservable);
+      var _super85 = _createSuper(SubscriptionDelayObservable);
 
       function SubscriptionDelayObservable(source, subscriptionDelay) {
-        var _this142;
+        var _this159;
 
         _classCallCheck(this, SubscriptionDelayObservable);
 
-        _this142 = _super82.call(this);
-        _this142.source = source;
-        _this142.subscriptionDelay = subscriptionDelay;
-        return _this142;
+        _this159 = _super85.call(this);
+        _this159.source = source;
+        _this159.subscriptionDelay = subscriptionDelay;
+        return _this159;
       }
 
       _createClass2(SubscriptionDelayObservable, [{
@@ -95325,18 +103064,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SubscriptionDelaySubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_13) {
       _inherits(SubscriptionDelaySubscriber, _Subscriber__WEBPACK_13);
 
-      var _super83 = _createSuper(SubscriptionDelaySubscriber);
+      var _super86 = _createSuper(SubscriptionDelaySubscriber);
 
       function SubscriptionDelaySubscriber(parent, source) {
-        var _this143;
+        var _this160;
 
         _classCallCheck(this, SubscriptionDelaySubscriber);
 
-        _this143 = _super83.call(this);
-        _this143.parent = parent;
-        _this143.source = source;
-        _this143.sourceSubscribed = false;
-        return _this143;
+        _this160 = _super86.call(this);
+        _this160.parent = parent;
+        _this160.source = source;
+        _this160.sourceSubscribed = false;
+        return _this160;
       }
 
       _createClass2(SubscriptionDelaySubscriber, [{
@@ -95424,12 +103163,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DeMaterializeSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_14) {
       _inherits(DeMaterializeSubscriber, _Subscriber__WEBPACK_14);
 
-      var _super84 = _createSuper(DeMaterializeSubscriber);
+      var _super87 = _createSuper(DeMaterializeSubscriber);
 
       function DeMaterializeSubscriber(destination) {
         _classCallCheck(this, DeMaterializeSubscriber);
 
-        return _super84.call(this, destination);
+        return _super87.call(this, destination);
       }
 
       _createClass2(DeMaterializeSubscriber, [{
@@ -95511,22 +103250,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DistinctSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB11) {
       _inherits(DistinctSubscriber, _OuterSubscriber__WEB11);
 
-      var _super85 = _createSuper(DistinctSubscriber);
+      var _super88 = _createSuper(DistinctSubscriber);
 
       function DistinctSubscriber(destination, keySelector, flushes) {
-        var _this144;
+        var _this161;
 
         _classCallCheck(this, DistinctSubscriber);
 
-        _this144 = _super85.call(this, destination);
-        _this144.keySelector = keySelector;
-        _this144.values = new Set();
+        _this161 = _super88.call(this, destination);
+        _this161.keySelector = keySelector;
+        _this161.values = new Set();
 
         if (flushes) {
-          _this144.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this144), flushes));
+          _this161.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this161), flushes));
         }
 
-        return _this144;
+        return _this161;
       }
 
       _createClass2(DistinctSubscriber, [{
@@ -95635,22 +103374,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var DistinctUntilChangedSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_15) {
       _inherits(DistinctUntilChangedSubscriber, _Subscriber__WEBPACK_15);
 
-      var _super86 = _createSuper(DistinctUntilChangedSubscriber);
+      var _super89 = _createSuper(DistinctUntilChangedSubscriber);
 
       function DistinctUntilChangedSubscriber(destination, compare, keySelector) {
-        var _this145;
+        var _this162;
 
         _classCallCheck(this, DistinctUntilChangedSubscriber);
 
-        _this145 = _super86.call(this, destination);
-        _this145.keySelector = keySelector;
-        _this145.hasKey = false;
+        _this162 = _super89.call(this, destination);
+        _this162.keySelector = keySelector;
+        _this162.hasKey = false;
 
         if (typeof compare === 'function') {
-          _this145.compare = compare;
+          _this162.compare = compare;
         }
 
-        return _this145;
+        return _this162;
       }
 
       _createClass2(DistinctUntilChangedSubscriber, [{
@@ -95835,8 +103574,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/of.js");
 
     function endWith() {
-      for (var _len38 = arguments.length, array = new Array(_len38), _key35 = 0; _key35 < _len38; _key35++) {
-        array[_key35] = arguments[_key35];
+      for (var _len40 = arguments.length, array = new Array(_len40), _key37 = 0; _key37 < _len40; _key37++) {
+        array[_key37] = arguments[_key37];
       }
 
       return function (source) {
@@ -95902,20 +103641,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var EverySubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_16) {
       _inherits(EverySubscriber, _Subscriber__WEBPACK_16);
 
-      var _super87 = _createSuper(EverySubscriber);
+      var _super90 = _createSuper(EverySubscriber);
 
       function EverySubscriber(destination, predicate, thisArg, source) {
-        var _this146;
+        var _this163;
 
         _classCallCheck(this, EverySubscriber);
 
-        _this146 = _super87.call(this, destination);
-        _this146.predicate = predicate;
-        _this146.thisArg = thisArg;
-        _this146.source = source;
-        _this146.index = 0;
-        _this146.thisArg = thisArg || _assertThisInitialized(_this146);
-        return _this146;
+        _this163 = _super90.call(this, destination);
+        _this163.predicate = predicate;
+        _this163.thisArg = thisArg;
+        _this163.source = source;
+        _this163.index = 0;
+        _this163.thisArg = thisArg || _assertThisInitialized(_this163);
+        return _this163;
       }
 
       _createClass2(EverySubscriber, [{
@@ -96010,17 +103749,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SwitchFirstSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB12) {
       _inherits(SwitchFirstSubscriber, _OuterSubscriber__WEB12);
 
-      var _super88 = _createSuper(SwitchFirstSubscriber);
+      var _super91 = _createSuper(SwitchFirstSubscriber);
 
       function SwitchFirstSubscriber(destination) {
-        var _this147;
+        var _this164;
 
         _classCallCheck(this, SwitchFirstSubscriber);
 
-        _this147 = _super88.call(this, destination);
-        _this147.hasCompleted = false;
-        _this147.hasSubscription = false;
-        return _this147;
+        _this164 = _super91.call(this, destination);
+        _this164.hasCompleted = false;
+        _this164.hasSubscription = false;
+        return _this164;
       }
 
       _createClass2(SwitchFirstSubscriber, [{
@@ -96145,19 +103884,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ExhaustMapSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB13) {
       _inherits(ExhaustMapSubscriber, _OuterSubscriber__WEB13);
 
-      var _super89 = _createSuper(ExhaustMapSubscriber);
+      var _super92 = _createSuper(ExhaustMapSubscriber);
 
       function ExhaustMapSubscriber(destination, project) {
-        var _this148;
+        var _this165;
 
         _classCallCheck(this, ExhaustMapSubscriber);
 
-        _this148 = _super89.call(this, destination);
-        _this148.project = project;
-        _this148.hasSubscription = false;
-        _this148.hasCompleted = false;
-        _this148.index = 0;
-        return _this148;
+        _this165 = _super92.call(this, destination);
+        _this165.project = project;
+        _this165.hasSubscription = false;
+        _this165.hasCompleted = false;
+        _this165.index = 0;
+        return _this165;
       }
 
       _createClass2(ExhaustMapSubscriber, [{
@@ -96312,26 +104051,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ExpandSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB14) {
       _inherits(ExpandSubscriber, _OuterSubscriber__WEB14);
 
-      var _super90 = _createSuper(ExpandSubscriber);
+      var _super93 = _createSuper(ExpandSubscriber);
 
       function ExpandSubscriber(destination, project, concurrent, scheduler) {
-        var _this149;
+        var _this166;
 
         _classCallCheck(this, ExpandSubscriber);
 
-        _this149 = _super90.call(this, destination);
-        _this149.project = project;
-        _this149.concurrent = concurrent;
-        _this149.scheduler = scheduler;
-        _this149.index = 0;
-        _this149.active = 0;
-        _this149.hasCompleted = false;
+        _this166 = _super93.call(this, destination);
+        _this166.project = project;
+        _this166.concurrent = concurrent;
+        _this166.scheduler = scheduler;
+        _this166.index = 0;
+        _this166.active = 0;
+        _this166.hasCompleted = false;
 
         if (concurrent < Number.POSITIVE_INFINITY) {
-          _this149.buffer = [];
+          _this166.buffer = [];
         }
 
-        return _this149;
+        return _this166;
       }
 
       _createClass2(ExpandSubscriber, [{
@@ -96484,18 +104223,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var FilterSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_17) {
       _inherits(FilterSubscriber, _Subscriber__WEBPACK_17);
 
-      var _super91 = _createSuper(FilterSubscriber);
+      var _super94 = _createSuper(FilterSubscriber);
 
       function FilterSubscriber(destination, predicate, thisArg) {
-        var _this150;
+        var _this167;
 
         _classCallCheck(this, FilterSubscriber);
 
-        _this150 = _super91.call(this, destination);
-        _this150.predicate = predicate;
-        _this150.thisArg = thisArg;
-        _this150.count = 0;
-        return _this150;
+        _this167 = _super94.call(this, destination);
+        _this167.predicate = predicate;
+        _this167.thisArg = thisArg;
+        _this167.count = 0;
+        return _this167;
       }
 
       _createClass2(FilterSubscriber, [{
@@ -96581,18 +104320,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var FinallySubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_18) {
       _inherits(FinallySubscriber, _Subscriber__WEBPACK_18);
 
-      var _super92 = _createSuper(FinallySubscriber);
+      var _super95 = _createSuper(FinallySubscriber);
 
       function FinallySubscriber(destination, callback) {
-        var _this151;
+        var _this168;
 
         _classCallCheck(this, FinallySubscriber);
 
-        _this151 = _super92.call(this, destination);
+        _this168 = _super95.call(this, destination);
 
-        _this151.add(new _Subscription__WEBPACK_IMPORTED_MODULE_1__["Subscription"](callback));
+        _this168.add(new _Subscription__WEBPACK_IMPORTED_MODULE_1__["Subscription"](callback));
 
-        return _this151;
+        return _this168;
       }
 
       return FinallySubscriber;
@@ -96673,20 +104412,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var FindValueSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_19) {
       _inherits(FindValueSubscriber, _Subscriber__WEBPACK_19);
 
-      var _super93 = _createSuper(FindValueSubscriber);
+      var _super96 = _createSuper(FindValueSubscriber);
 
       function FindValueSubscriber(destination, predicate, source, yieldIndex, thisArg) {
-        var _this152;
+        var _this169;
 
         _classCallCheck(this, FindValueSubscriber);
 
-        _this152 = _super93.call(this, destination);
-        _this152.predicate = predicate;
-        _this152.source = source;
-        _this152.yieldIndex = yieldIndex;
-        _this152.thisArg = thisArg;
-        _this152.index = 0;
-        return _this152;
+        _this169 = _super96.call(this, destination);
+        _this169.predicate = predicate;
+        _this169.source = source;
+        _this169.yieldIndex = yieldIndex;
+        _this169.thisArg = thisArg;
+        _this169.index = 0;
+        return _this169;
       }
 
       _createClass2(FindValueSubscriber, [{
@@ -96914,22 +104653,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var GroupBySubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_20) {
       _inherits(GroupBySubscriber, _Subscriber__WEBPACK_20);
 
-      var _super94 = _createSuper(GroupBySubscriber);
+      var _super97 = _createSuper(GroupBySubscriber);
 
       function GroupBySubscriber(destination, keySelector, elementSelector, durationSelector, subjectSelector) {
-        var _this153;
+        var _this170;
 
         _classCallCheck(this, GroupBySubscriber);
 
-        _this153 = _super94.call(this, destination);
-        _this153.keySelector = keySelector;
-        _this153.elementSelector = elementSelector;
-        _this153.durationSelector = durationSelector;
-        _this153.subjectSelector = subjectSelector;
-        _this153.groups = null;
-        _this153.attemptedToUnsubscribe = false;
-        _this153.count = 0;
-        return _this153;
+        _this170 = _super97.call(this, destination);
+        _this170.keySelector = keySelector;
+        _this170.elementSelector = elementSelector;
+        _this170.durationSelector = durationSelector;
+        _this170.subjectSelector = subjectSelector;
+        _this170.groups = null;
+        _this170.attemptedToUnsubscribe = false;
+        _this170.count = 0;
+        return _this170;
       }
 
       _createClass2(GroupBySubscriber, [{
@@ -97044,18 +104783,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var GroupDurationSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_21) {
       _inherits(GroupDurationSubscriber, _Subscriber__WEBPACK_21);
 
-      var _super95 = _createSuper(GroupDurationSubscriber);
+      var _super98 = _createSuper(GroupDurationSubscriber);
 
       function GroupDurationSubscriber(key, group, parent) {
-        var _this154;
+        var _this171;
 
         _classCallCheck(this, GroupDurationSubscriber);
 
-        _this154 = _super95.call(this, group);
-        _this154.key = key;
-        _this154.group = group;
-        _this154.parent = parent;
-        return _this154;
+        _this171 = _super98.call(this, group);
+        _this171.key = key;
+        _this171.group = group;
+        _this171.parent = parent;
+        return _this171;
       }
 
       _createClass2(GroupDurationSubscriber, [{
@@ -97082,18 +104821,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var GroupedObservable = /*#__PURE__*/function (_Observable__WEBPACK_5) {
       _inherits(GroupedObservable, _Observable__WEBPACK_5);
 
-      var _super96 = _createSuper(GroupedObservable);
+      var _super99 = _createSuper(GroupedObservable);
 
       function GroupedObservable(key, groupSubject, refCountSubscription) {
-        var _this155;
+        var _this172;
 
         _classCallCheck(this, GroupedObservable);
 
-        _this155 = _super96.call(this);
-        _this155.key = key;
-        _this155.groupSubject = groupSubject;
-        _this155.refCountSubscription = refCountSubscription;
-        return _this155;
+        _this172 = _super99.call(this);
+        _this172.key = key;
+        _this172.groupSubject = groupSubject;
+        _this172.refCountSubscription = refCountSubscription;
+        return _this172;
       }
 
       _createClass2(GroupedObservable, [{
@@ -97118,17 +104857,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var InnerRefCountSubscription = /*#__PURE__*/function (_Subscription__WEBPAC3) {
       _inherits(InnerRefCountSubscription, _Subscription__WEBPAC3);
 
-      var _super97 = _createSuper(InnerRefCountSubscription);
+      var _super100 = _createSuper(InnerRefCountSubscription);
 
       function InnerRefCountSubscription(parent) {
-        var _this156;
+        var _this173;
 
         _classCallCheck(this, InnerRefCountSubscription);
 
-        _this156 = _super97.call(this);
-        _this156.parent = parent;
+        _this173 = _super100.call(this);
+        _this173.parent = parent;
         parent.count++;
-        return _this156;
+        return _this173;
       }
 
       _createClass2(InnerRefCountSubscription, [{
@@ -97205,12 +104944,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var IgnoreElementsSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_22) {
       _inherits(IgnoreElementsSubscriber, _Subscriber__WEBPACK_22);
 
-      var _super98 = _createSuper(IgnoreElementsSubscriber);
+      var _super101 = _createSuper(IgnoreElementsSubscriber);
 
       function IgnoreElementsSubscriber() {
         _classCallCheck(this, IgnoreElementsSubscriber);
 
-        return _super98.apply(this, arguments);
+        return _super101.apply(this, arguments);
       }
 
       _createClass2(IgnoreElementsSubscriber, [{
@@ -97275,12 +105014,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var IsEmptySubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_23) {
       _inherits(IsEmptySubscriber, _Subscriber__WEBPACK_23);
 
-      var _super99 = _createSuper(IsEmptySubscriber);
+      var _super102 = _createSuper(IsEmptySubscriber);
 
       function IsEmptySubscriber(destination) {
         _classCallCheck(this, IsEmptySubscriber);
 
-        return _super99.call(this, destination);
+        return _super102.call(this, destination);
       }
 
       _createClass2(IsEmptySubscriber, [{
@@ -97443,18 +105182,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var MapSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_24) {
       _inherits(MapSubscriber, _Subscriber__WEBPACK_24);
 
-      var _super100 = _createSuper(MapSubscriber);
+      var _super103 = _createSuper(MapSubscriber);
 
       function MapSubscriber(destination, project, thisArg) {
-        var _this157;
+        var _this174;
 
         _classCallCheck(this, MapSubscriber);
 
-        _this157 = _super100.call(this, destination);
-        _this157.project = project;
-        _this157.count = 0;
-        _this157.thisArg = thisArg || _assertThisInitialized(_this157);
-        return _this157;
+        _this174 = _super103.call(this, destination);
+        _this174.project = project;
+        _this174.count = 0;
+        _this174.thisArg = thisArg || _assertThisInitialized(_this174);
+        return _this174;
       }
 
       _createClass2(MapSubscriber, [{
@@ -97532,16 +105271,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var MapToSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_25) {
       _inherits(MapToSubscriber, _Subscriber__WEBPACK_25);
 
-      var _super101 = _createSuper(MapToSubscriber);
+      var _super104 = _createSuper(MapToSubscriber);
 
       function MapToSubscriber(destination, value) {
-        var _this158;
+        var _this175;
 
         _classCallCheck(this, MapToSubscriber);
 
-        _this158 = _super101.call(this, destination);
-        _this158.value = value;
-        return _this158;
+        _this175 = _super104.call(this, destination);
+        _this175.value = value;
+        return _this175;
       }
 
       _createClass2(MapToSubscriber, [{
@@ -97614,12 +105353,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var MaterializeSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_26) {
       _inherits(MaterializeSubscriber, _Subscriber__WEBPACK_26);
 
-      var _super102 = _createSuper(MaterializeSubscriber);
+      var _super105 = _createSuper(MaterializeSubscriber);
 
       function MaterializeSubscriber(destination) {
         _classCallCheck(this, MaterializeSubscriber);
 
-        return _super102.call(this, destination);
+        return _super105.call(this, destination);
       }
 
       _createClass2(MaterializeSubscriber, [{
@@ -97716,8 +105455,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/merge.js");
 
     function merge() {
-      for (var _len39 = arguments.length, observables = new Array(_len39), _key36 = 0; _key36 < _len39; _key36++) {
-        observables[_key36] = arguments[_key36];
+      for (var _len41 = arguments.length, observables = new Array(_len41), _key38 = 0; _key38 < _len41; _key38++) {
+        observables[_key38] = arguments[_key38];
       }
 
       return function (source) {
@@ -97875,23 +105614,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var MergeMapSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB15) {
       _inherits(MergeMapSubscriber, _OuterSubscriber__WEB15);
 
-      var _super103 = _createSuper(MergeMapSubscriber);
+      var _super106 = _createSuper(MergeMapSubscriber);
 
       function MergeMapSubscriber(destination, project) {
-        var _this159;
+        var _this176;
 
         var concurrent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Number.POSITIVE_INFINITY;
 
         _classCallCheck(this, MergeMapSubscriber);
 
-        _this159 = _super103.call(this, destination);
-        _this159.project = project;
-        _this159.concurrent = concurrent;
-        _this159.hasCompleted = false;
-        _this159.buffer = [];
-        _this159.active = 0;
-        _this159.index = 0;
-        return _this159;
+        _this176 = _super106.call(this, destination);
+        _this176.project = project;
+        _this176.concurrent = concurrent;
+        _this176.hasCompleted = false;
+        _this176.buffer = [];
+        _this176.active = 0;
+        _this176.index = 0;
+        return _this176;
       }
 
       _createClass2(MergeMapSubscriber, [{
@@ -98097,23 +105836,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var MergeScanSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB16) {
       _inherits(MergeScanSubscriber, _OuterSubscriber__WEB16);
 
-      var _super104 = _createSuper(MergeScanSubscriber);
+      var _super107 = _createSuper(MergeScanSubscriber);
 
       function MergeScanSubscriber(destination, accumulator, acc, concurrent) {
-        var _this160;
+        var _this177;
 
         _classCallCheck(this, MergeScanSubscriber);
 
-        _this160 = _super104.call(this, destination);
-        _this160.accumulator = accumulator;
-        _this160.acc = acc;
-        _this160.concurrent = concurrent;
-        _this160.hasValue = false;
-        _this160.hasCompleted = false;
-        _this160.buffer = [];
-        _this160.active = 0;
-        _this160.index = 0;
-        return _this160;
+        _this177 = _super107.call(this, destination);
+        _this177.accumulator = accumulator;
+        _this177.acc = acc;
+        _this177.concurrent = concurrent;
+        _this177.hasValue = false;
+        _this177.hasCompleted = false;
+        _this177.buffer = [];
+        _this177.active = 0;
+        _this177.index = 0;
+        return _this177;
       }
 
       _createClass2(MergeScanSubscriber, [{
@@ -98400,19 +106139,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ObserveOnSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_27) {
       _inherits(ObserveOnSubscriber, _Subscriber__WEBPACK_27);
 
-      var _super105 = _createSuper(ObserveOnSubscriber);
+      var _super108 = _createSuper(ObserveOnSubscriber);
 
       function ObserveOnSubscriber(destination, scheduler) {
-        var _this161;
+        var _this178;
 
         var delay = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
         _classCallCheck(this, ObserveOnSubscriber);
 
-        _this161 = _super105.call(this, destination);
-        _this161.scheduler = scheduler;
-        _this161.delay = delay;
-        return _this161;
+        _this178 = _super108.call(this, destination);
+        _this178.scheduler = scheduler;
+        _this178.delay = delay;
+        return _this178;
       }
 
       _createClass2(ObserveOnSubscriber, [{
@@ -98519,8 +106258,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/util/subscribeToResult.js");
 
     function onErrorResumeNext() {
-      for (var _len40 = arguments.length, nextSources = new Array(_len40), _key37 = 0; _key37 < _len40; _key37++) {
-        nextSources[_key37] = arguments[_key37];
+      for (var _len42 = arguments.length, nextSources = new Array(_len42), _key39 = 0; _key39 < _len42; _key39++) {
+        nextSources[_key39] = arguments[_key39];
       }
 
       if (nextSources.length === 1 && Object(_util_isArray__WEBPACK_IMPORTED_MODULE_1__["isArray"])(nextSources[0])) {
@@ -98533,8 +106272,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function onErrorResumeNextStatic() {
-      for (var _len41 = arguments.length, nextSources = new Array(_len41), _key38 = 0; _key38 < _len41; _key38++) {
-        nextSources[_key38] = arguments[_key38];
+      for (var _len43 = arguments.length, nextSources = new Array(_len43), _key40 = 0; _key40 < _len43; _key40++) {
+        nextSources[_key40] = arguments[_key40];
       }
 
       var source = null;
@@ -98567,17 +106306,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var OnErrorResumeNextSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB17) {
       _inherits(OnErrorResumeNextSubscriber, _OuterSubscriber__WEB17);
 
-      var _super106 = _createSuper(OnErrorResumeNextSubscriber);
+      var _super109 = _createSuper(OnErrorResumeNextSubscriber);
 
       function OnErrorResumeNextSubscriber(destination, nextSources) {
-        var _this162;
+        var _this179;
 
         _classCallCheck(this, OnErrorResumeNextSubscriber);
 
-        _this162 = _super106.call(this, destination);
-        _this162.destination = destination;
-        _this162.nextSources = nextSources;
-        return _this162;
+        _this179 = _super109.call(this, destination);
+        _this179.destination = destination;
+        _this179.nextSources = nextSources;
+        return _this179;
       }
 
       _createClass2(OnErrorResumeNextSubscriber, [{
@@ -98679,16 +106418,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var PairwiseSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_28) {
       _inherits(PairwiseSubscriber, _Subscriber__WEBPACK_28);
 
-      var _super107 = _createSuper(PairwiseSubscriber);
+      var _super110 = _createSuper(PairwiseSubscriber);
 
       function PairwiseSubscriber(destination) {
-        var _this163;
+        var _this180;
 
         _classCallCheck(this, PairwiseSubscriber);
 
-        _this163 = _super107.call(this, destination);
-        _this163.hasPrev = false;
-        return _this163;
+        _this180 = _super110.call(this, destination);
+        _this180.hasPrev = false;
+        return _this180;
       }
 
       _createClass2(PairwiseSubscriber, [{
@@ -98786,8 +106525,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/operators/map.js");
 
     function pluck() {
-      for (var _len42 = arguments.length, properties = new Array(_len42), _key39 = 0; _key39 < _len42; _key39++) {
-        properties[_key39] = arguments[_key39];
+      for (var _len44 = arguments.length, properties = new Array(_len44), _key41 = 0; _key41 < _len44; _key41++) {
+        properties[_key41] = arguments[_key41];
       }
 
       var length = properties.length;
@@ -99034,8 +106773,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/race.js");
 
     function race() {
-      for (var _len43 = arguments.length, observables = new Array(_len43), _key40 = 0; _key40 < _len43; _key40++) {
-        observables[_key40] = arguments[_key40];
+      for (var _len45 = arguments.length, observables = new Array(_len45), _key42 = 0; _key42 < _len45; _key42++) {
+        observables[_key42] = arguments[_key42];
       }
 
       return function raceOperatorFunction(source) {
@@ -99174,16 +106913,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RefCountSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_29) {
       _inherits(RefCountSubscriber, _Subscriber__WEBPACK_29);
 
-      var _super108 = _createSuper(RefCountSubscriber);
+      var _super111 = _createSuper(RefCountSubscriber);
 
       function RefCountSubscriber(destination, connectable) {
-        var _this164;
+        var _this181;
 
         _classCallCheck(this, RefCountSubscriber);
 
-        _this164 = _super108.call(this, destination);
-        _this164.connectable = connectable;
-        return _this164;
+        _this181 = _super111.call(this, destination);
+        _this181.connectable = connectable;
+        return _this181;
       }
 
       _createClass2(RefCountSubscriber, [{
@@ -99294,17 +107033,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RepeatSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_30) {
       _inherits(RepeatSubscriber, _Subscriber__WEBPACK_30);
 
-      var _super109 = _createSuper(RepeatSubscriber);
+      var _super112 = _createSuper(RepeatSubscriber);
 
       function RepeatSubscriber(destination, count, source) {
-        var _this165;
+        var _this182;
 
         _classCallCheck(this, RepeatSubscriber);
 
-        _this165 = _super109.call(this, destination);
-        _this165.count = count;
-        _this165.source = source;
-        return _this165;
+        _this182 = _super112.call(this, destination);
+        _this182.count = count;
+        _this182.source = source;
+        return _this182;
       }
 
       _createClass2(RepeatSubscriber, [{
@@ -99396,18 +107135,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RepeatWhenSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB18) {
       _inherits(RepeatWhenSubscriber, _OuterSubscriber__WEB18);
 
-      var _super110 = _createSuper(RepeatWhenSubscriber);
+      var _super113 = _createSuper(RepeatWhenSubscriber);
 
       function RepeatWhenSubscriber(destination, notifier, source) {
-        var _this166;
+        var _this183;
 
         _classCallCheck(this, RepeatWhenSubscriber);
 
-        _this166 = _super110.call(this, destination);
-        _this166.notifier = notifier;
-        _this166.source = source;
-        _this166.sourceIsBeingSubscribedTo = true;
-        return _this166;
+        _this183 = _super113.call(this, destination);
+        _this183.notifier = notifier;
+        _this183.source = source;
+        _this183.sourceIsBeingSubscribedTo = true;
+        return _this183;
       }
 
       _createClass2(RepeatWhenSubscriber, [{
@@ -99550,17 +107289,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RetrySubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_31) {
       _inherits(RetrySubscriber, _Subscriber__WEBPACK_31);
 
-      var _super111 = _createSuper(RetrySubscriber);
+      var _super114 = _createSuper(RetrySubscriber);
 
       function RetrySubscriber(destination, count, source) {
-        var _this167;
+        var _this184;
 
         _classCallCheck(this, RetrySubscriber);
 
-        _this167 = _super111.call(this, destination);
-        _this167.count = count;
-        _this167.source = source;
-        return _this167;
+        _this184 = _super114.call(this, destination);
+        _this184.count = count;
+        _this184.source = source;
+        return _this184;
       }
 
       _createClass2(RetrySubscriber, [{
@@ -99653,17 +107392,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RetryWhenSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB19) {
       _inherits(RetryWhenSubscriber, _OuterSubscriber__WEB19);
 
-      var _super112 = _createSuper(RetryWhenSubscriber);
+      var _super115 = _createSuper(RetryWhenSubscriber);
 
       function RetryWhenSubscriber(destination, notifier, source) {
-        var _this168;
+        var _this185;
 
         _classCallCheck(this, RetryWhenSubscriber);
 
-        _this168 = _super112.call(this, destination);
-        _this168.notifier = notifier;
-        _this168.source = source;
-        return _this168;
+        _this185 = _super115.call(this, destination);
+        _this185.notifier = notifier;
+        _this185.source = source;
+        return _this185;
       }
 
       _createClass2(RetryWhenSubscriber, [{
@@ -99797,16 +107536,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SampleSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB20) {
       _inherits(SampleSubscriber, _OuterSubscriber__WEB20);
 
-      var _super113 = _createSuper(SampleSubscriber);
+      var _super116 = _createSuper(SampleSubscriber);
 
       function SampleSubscriber() {
-        var _this169;
+        var _this186;
 
         _classCallCheck(this, SampleSubscriber);
 
-        _this169 = _super113.apply(this, arguments);
-        _this169.hasValue = false;
-        return _this169;
+        _this186 = _super116.apply(this, arguments);
+        _this186.hasValue = false;
+        return _this186;
       }
 
       _createClass2(SampleSubscriber, [{
@@ -99902,24 +107641,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SampleTimeSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_32) {
       _inherits(SampleTimeSubscriber, _Subscriber__WEBPACK_32);
 
-      var _super114 = _createSuper(SampleTimeSubscriber);
+      var _super117 = _createSuper(SampleTimeSubscriber);
 
       function SampleTimeSubscriber(destination, period, scheduler) {
-        var _this170;
+        var _this187;
 
         _classCallCheck(this, SampleTimeSubscriber);
 
-        _this170 = _super114.call(this, destination);
-        _this170.period = period;
-        _this170.scheduler = scheduler;
-        _this170.hasValue = false;
+        _this187 = _super117.call(this, destination);
+        _this187.period = period;
+        _this187.scheduler = scheduler;
+        _this187.hasValue = false;
 
-        _this170.add(scheduler.schedule(dispatchNotification, period, {
-          subscriber: _assertThisInitialized(_this170),
+        _this187.add(scheduler.schedule(dispatchNotification, period, {
+          subscriber: _assertThisInitialized(_this187),
           period: period
         }));
 
-        return _this170;
+        return _this187;
       }
 
       _createClass2(SampleTimeSubscriber, [{
@@ -100014,19 +107753,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ScanSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_33) {
       _inherits(ScanSubscriber, _Subscriber__WEBPACK_33);
 
-      var _super115 = _createSuper(ScanSubscriber);
+      var _super118 = _createSuper(ScanSubscriber);
 
       function ScanSubscriber(destination, accumulator, _seed, hasSeed) {
-        var _this171;
+        var _this188;
 
         _classCallCheck(this, ScanSubscriber);
 
-        _this171 = _super115.call(this, destination);
-        _this171.accumulator = accumulator;
-        _this171._seed = _seed;
-        _this171.hasSeed = hasSeed;
-        _this171.index = 0;
-        return _this171;
+        _this188 = _super118.call(this, destination);
+        _this188.accumulator = accumulator;
+        _this188._seed = _seed;
+        _this188.hasSeed = hasSeed;
+        _this188.index = 0;
+        return _this188;
       }
 
       _createClass2(ScanSubscriber, [{
@@ -100137,23 +107876,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SequenceEqualSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_34) {
       _inherits(SequenceEqualSubscriber, _Subscriber__WEBPACK_34);
 
-      var _super116 = _createSuper(SequenceEqualSubscriber);
+      var _super119 = _createSuper(SequenceEqualSubscriber);
 
       function SequenceEqualSubscriber(destination, compareTo, comparator) {
-        var _this172;
+        var _this189;
 
         _classCallCheck(this, SequenceEqualSubscriber);
 
-        _this172 = _super116.call(this, destination);
-        _this172.compareTo = compareTo;
-        _this172.comparator = comparator;
-        _this172._a = [];
-        _this172._b = [];
-        _this172._oneComplete = false;
+        _this189 = _super119.call(this, destination);
+        _this189.compareTo = compareTo;
+        _this189.comparator = comparator;
+        _this189._a = [];
+        _this189._b = [];
+        _this189._oneComplete = false;
 
-        _this172.destination.add(compareTo.subscribe(new SequenceEqualCompareToSubscriber(destination, _assertThisInitialized(_this172))));
+        _this189.destination.add(compareTo.subscribe(new SequenceEqualCompareToSubscriber(destination, _assertThisInitialized(_this189))));
 
-        return _this172;
+        return _this189;
       }
 
       _createClass2(SequenceEqualSubscriber, [{
@@ -100238,16 +107977,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SequenceEqualCompareToSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_35) {
       _inherits(SequenceEqualCompareToSubscriber, _Subscriber__WEBPACK_35);
 
-      var _super117 = _createSuper(SequenceEqualCompareToSubscriber);
+      var _super120 = _createSuper(SequenceEqualCompareToSubscriber);
 
       function SequenceEqualCompareToSubscriber(destination, parent) {
-        var _this173;
+        var _this190;
 
         _classCallCheck(this, SequenceEqualCompareToSubscriber);
 
-        _this173 = _super117.call(this, destination);
-        _this173.parent = parent;
-        return _this173;
+        _this190 = _super120.call(this, destination);
+        _this190.parent = parent;
+        return _this190;
       }
 
       _createClass2(SequenceEqualCompareToSubscriber, [{
@@ -100373,13 +108112,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       };
     }
 
-    function shareReplayOperator(_ref13) {
-      var _ref13$bufferSize = _ref13.bufferSize,
-          bufferSize = _ref13$bufferSize === void 0 ? Number.POSITIVE_INFINITY : _ref13$bufferSize,
-          _ref13$windowTime = _ref13.windowTime,
-          windowTime = _ref13$windowTime === void 0 ? Number.POSITIVE_INFINITY : _ref13$windowTime,
-          useRefCount = _ref13.refCount,
-          scheduler = _ref13.scheduler;
+    function shareReplayOperator(_ref15) {
+      var _ref15$bufferSize = _ref15.bufferSize,
+          bufferSize = _ref15$bufferSize === void 0 ? Number.POSITIVE_INFINITY : _ref15$bufferSize,
+          _ref15$windowTime = _ref15.windowTime,
+          windowTime = _ref15$windowTime === void 0 ? Number.POSITIVE_INFINITY : _ref15$windowTime,
+          useRefCount = _ref15.refCount,
+          scheduler = _ref15.scheduler;
       var subject;
       var refCount = 0;
       var subscription;
@@ -100484,19 +108223,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SingleSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_36) {
       _inherits(SingleSubscriber, _Subscriber__WEBPACK_36);
 
-      var _super118 = _createSuper(SingleSubscriber);
+      var _super121 = _createSuper(SingleSubscriber);
 
       function SingleSubscriber(destination, predicate, source) {
-        var _this174;
+        var _this191;
 
         _classCallCheck(this, SingleSubscriber);
 
-        _this174 = _super118.call(this, destination);
-        _this174.predicate = predicate;
-        _this174.source = source;
-        _this174.seenValue = false;
-        _this174.index = 0;
-        return _this174;
+        _this191 = _super121.call(this, destination);
+        _this191.predicate = predicate;
+        _this191.source = source;
+        _this191.seenValue = false;
+        _this191.index = 0;
+        return _this191;
       }
 
       _createClass2(SingleSubscriber, [{
@@ -100604,17 +108343,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SkipSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_37) {
       _inherits(SkipSubscriber, _Subscriber__WEBPACK_37);
 
-      var _super119 = _createSuper(SkipSubscriber);
+      var _super122 = _createSuper(SkipSubscriber);
 
       function SkipSubscriber(destination, total) {
-        var _this175;
+        var _this192;
 
         _classCallCheck(this, SkipSubscriber);
 
-        _this175 = _super119.call(this, destination);
-        _this175.total = total;
-        _this175.count = 0;
-        return _this175;
+        _this192 = _super122.call(this, destination);
+        _this192.total = total;
+        _this192.count = 0;
+        return _this192;
       }
 
       _createClass2(SkipSubscriber, [{
@@ -100699,18 +108438,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SkipLastSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_38) {
       _inherits(SkipLastSubscriber, _Subscriber__WEBPACK_38);
 
-      var _super120 = _createSuper(SkipLastSubscriber);
+      var _super123 = _createSuper(SkipLastSubscriber);
 
       function SkipLastSubscriber(destination, _skipCount) {
-        var _this176;
+        var _this193;
 
         _classCallCheck(this, SkipLastSubscriber);
 
-        _this176 = _super120.call(this, destination);
-        _this176._skipCount = _skipCount;
-        _this176._count = 0;
-        _this176._ring = new Array(_skipCount);
-        return _this176;
+        _this193 = _super123.call(this, destination);
+        _this193._skipCount = _skipCount;
+        _this193._count = 0;
+        _this193._ring = new Array(_skipCount);
+        return _this193;
       }
 
       _createClass2(SkipLastSubscriber, [{
@@ -100802,29 +108541,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SkipUntilSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB21) {
       _inherits(SkipUntilSubscriber, _OuterSubscriber__WEB21);
 
-      var _super121 = _createSuper(SkipUntilSubscriber);
+      var _super124 = _createSuper(SkipUntilSubscriber);
 
       function SkipUntilSubscriber(destination, notifier) {
-        var _this177;
+        var _this194;
 
         _classCallCheck(this, SkipUntilSubscriber);
 
-        _this177 = _super121.call(this, destination);
-        _this177.hasValue = false;
-        var innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](_assertThisInitialized(_this177), undefined, undefined);
+        _this194 = _super124.call(this, destination);
+        _this194.hasValue = false;
+        var innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](_assertThisInitialized(_this194), undefined, undefined);
 
-        _this177.add(innerSubscriber);
+        _this194.add(innerSubscriber);
 
-        _this177.innerSubscription = innerSubscriber;
-        var innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(_assertThisInitialized(_this177), notifier, undefined, undefined, innerSubscriber);
+        _this194.innerSubscription = innerSubscriber;
+        var innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(_assertThisInitialized(_this194), notifier, undefined, undefined, innerSubscriber);
 
         if (innerSubscription !== innerSubscriber) {
-          _this177.add(innerSubscription);
+          _this194.add(innerSubscription);
 
-          _this177.innerSubscription = innerSubscription;
+          _this194.innerSubscription = innerSubscription;
         }
 
-        return _this177;
+        return _this194;
       }
 
       _createClass2(SkipUntilSubscriber, [{
@@ -100907,18 +108646,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SkipWhileSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_39) {
       _inherits(SkipWhileSubscriber, _Subscriber__WEBPACK_39);
 
-      var _super122 = _createSuper(SkipWhileSubscriber);
+      var _super125 = _createSuper(SkipWhileSubscriber);
 
       function SkipWhileSubscriber(destination, predicate) {
-        var _this178;
+        var _this195;
 
         _classCallCheck(this, SkipWhileSubscriber);
 
-        _this178 = _super122.call(this, destination);
-        _this178.predicate = predicate;
-        _this178.skipping = true;
-        _this178.index = 0;
-        return _this178;
+        _this195 = _super125.call(this, destination);
+        _this195.predicate = predicate;
+        _this195.skipping = true;
+        _this195.index = 0;
+        return _this195;
       }
 
       _createClass2(SkipWhileSubscriber, [{
@@ -100986,8 +108725,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/util/isScheduler.js");
 
     function startWith() {
-      for (var _len44 = arguments.length, array = new Array(_len44), _key41 = 0; _key41 < _len44; _key41++) {
-        array[_key41] = arguments[_key41];
+      for (var _len46 = arguments.length, array = new Array(_len46), _key43 = 0; _key43 < _len46; _key43++) {
+        array[_key43] = arguments[_key43];
       }
 
       var scheduler = array[array.length - 1];
@@ -101189,17 +108928,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var SwitchMapSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB22) {
       _inherits(SwitchMapSubscriber, _OuterSubscriber__WEB22);
 
-      var _super123 = _createSuper(SwitchMapSubscriber);
+      var _super126 = _createSuper(SwitchMapSubscriber);
 
       function SwitchMapSubscriber(destination, project) {
-        var _this179;
+        var _this196;
 
         _classCallCheck(this, SwitchMapSubscriber);
 
-        _this179 = _super123.call(this, destination);
-        _this179.project = project;
-        _this179.index = 0;
-        return _this179;
+        _this196 = _super126.call(this, destination);
+        _this196.project = project;
+        _this196.index = 0;
+        return _this196;
       }
 
       _createClass2(SwitchMapSubscriber, [{
@@ -101386,17 +109125,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var TakeSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_40) {
       _inherits(TakeSubscriber, _Subscriber__WEBPACK_40);
 
-      var _super124 = _createSuper(TakeSubscriber);
+      var _super127 = _createSuper(TakeSubscriber);
 
       function TakeSubscriber(destination, total) {
-        var _this180;
+        var _this197;
 
         _classCallCheck(this, TakeSubscriber);
 
-        _this180 = _super124.call(this, destination);
-        _this180.total = total;
-        _this180.count = 0;
-        return _this180;
+        _this197 = _super127.call(this, destination);
+        _this197.total = total;
+        _this197.count = 0;
+        return _this197;
       }
 
       _createClass2(TakeSubscriber, [{
@@ -101495,18 +109234,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var TakeLastSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_41) {
       _inherits(TakeLastSubscriber, _Subscriber__WEBPACK_41);
 
-      var _super125 = _createSuper(TakeLastSubscriber);
+      var _super128 = _createSuper(TakeLastSubscriber);
 
       function TakeLastSubscriber(destination, total) {
-        var _this181;
+        var _this198;
 
         _classCallCheck(this, TakeLastSubscriber);
 
-        _this181 = _super125.call(this, destination);
-        _this181.total = total;
-        _this181.ring = new Array();
-        _this181.count = 0;
-        return _this181;
+        _this198 = _super128.call(this, destination);
+        _this198.total = total;
+        _this198.ring = new Array();
+        _this198.count = 0;
+        return _this198;
       }
 
       _createClass2(TakeLastSubscriber, [{
@@ -101616,16 +109355,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var TakeUntilSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB23) {
       _inherits(TakeUntilSubscriber, _OuterSubscriber__WEB23);
 
-      var _super126 = _createSuper(TakeUntilSubscriber);
+      var _super129 = _createSuper(TakeUntilSubscriber);
 
       function TakeUntilSubscriber(destination) {
-        var _this182;
+        var _this199;
 
         _classCallCheck(this, TakeUntilSubscriber);
 
-        _this182 = _super126.call(this, destination);
-        _this182.seenValue = false;
-        return _this182;
+        _this199 = _super129.call(this, destination);
+        _this199.seenValue = false;
+        return _this199;
       }
 
       _createClass2(TakeUntilSubscriber, [{
@@ -101700,18 +109439,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var TakeWhileSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_42) {
       _inherits(TakeWhileSubscriber, _Subscriber__WEBPACK_42);
 
-      var _super127 = _createSuper(TakeWhileSubscriber);
+      var _super130 = _createSuper(TakeWhileSubscriber);
 
       function TakeWhileSubscriber(destination, predicate, inclusive) {
-        var _this183;
+        var _this200;
 
         _classCallCheck(this, TakeWhileSubscriber);
 
-        _this183 = _super127.call(this, destination);
-        _this183.predicate = predicate;
-        _this183.inclusive = inclusive;
-        _this183.index = 0;
-        return _this183;
+        _this200 = _super130.call(this, destination);
+        _this200.predicate = predicate;
+        _this200.inclusive = inclusive;
+        _this200.index = 0;
+        return _this200;
       }
 
       _createClass2(TakeWhileSubscriber, [{
@@ -101819,31 +109558,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var TapSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_43) {
       _inherits(TapSubscriber, _Subscriber__WEBPACK_43);
 
-      var _super128 = _createSuper(TapSubscriber);
+      var _super131 = _createSuper(TapSubscriber);
 
       function TapSubscriber(destination, observerOrNext, error, complete) {
-        var _this184;
+        var _this201;
 
         _classCallCheck(this, TapSubscriber);
 
-        _this184 = _super128.call(this, destination);
-        _this184._tapNext = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this184._tapError = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this184._tapComplete = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this184._tapError = error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this184._tapComplete = complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this201 = _super131.call(this, destination);
+        _this201._tapNext = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this201._tapError = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this201._tapComplete = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this201._tapError = error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this201._tapComplete = complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
 
         if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_2__["isFunction"])(observerOrNext)) {
-          _this184._context = _assertThisInitialized(_this184);
-          _this184._tapNext = observerOrNext;
+          _this201._context = _assertThisInitialized(_this201);
+          _this201._tapNext = observerOrNext;
         } else if (observerOrNext) {
-          _this184._context = observerOrNext;
-          _this184._tapNext = observerOrNext.next || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-          _this184._tapError = observerOrNext.error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-          _this184._tapComplete = observerOrNext.complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+          _this201._context = observerOrNext;
+          _this201._tapNext = observerOrNext.next || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+          _this201._tapError = observerOrNext.error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+          _this201._tapComplete = observerOrNext.complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
         }
 
-        return _this184;
+        return _this201;
       }
 
       _createClass2(TapSubscriber, [{
@@ -101963,20 +109702,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ThrottleSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB24) {
       _inherits(ThrottleSubscriber, _OuterSubscriber__WEB24);
 
-      var _super129 = _createSuper(ThrottleSubscriber);
+      var _super132 = _createSuper(ThrottleSubscriber);
 
       function ThrottleSubscriber(destination, durationSelector, _leading, _trailing) {
-        var _this185;
+        var _this202;
 
         _classCallCheck(this, ThrottleSubscriber);
 
-        _this185 = _super129.call(this, destination);
-        _this185.destination = destination;
-        _this185.durationSelector = durationSelector;
-        _this185._leading = _leading;
-        _this185._trailing = _trailing;
-        _this185._hasValue = false;
-        return _this185;
+        _this202 = _super132.call(this, destination);
+        _this202.destination = destination;
+        _this202.durationSelector = durationSelector;
+        _this202._leading = _leading;
+        _this202._trailing = _trailing;
+        _this202._hasValue = false;
+        return _this202;
       }
 
       _createClass2(ThrottleSubscriber, [{
@@ -102130,21 +109869,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ThrottleTimeSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_44) {
       _inherits(ThrottleTimeSubscriber, _Subscriber__WEBPACK_44);
 
-      var _super130 = _createSuper(ThrottleTimeSubscriber);
+      var _super133 = _createSuper(ThrottleTimeSubscriber);
 
       function ThrottleTimeSubscriber(destination, duration, scheduler, leading, trailing) {
-        var _this186;
+        var _this203;
 
         _classCallCheck(this, ThrottleTimeSubscriber);
 
-        _this186 = _super130.call(this, destination);
-        _this186.duration = duration;
-        _this186.scheduler = scheduler;
-        _this186.leading = leading;
-        _this186.trailing = trailing;
-        _this186._hasTrailingValue = false;
-        _this186._trailingValue = null;
-        return _this186;
+        _this203 = _super133.call(this, destination);
+        _this203.duration = duration;
+        _this203.scheduler = scheduler;
+        _this203.leading = leading;
+        _this203.trailing = trailing;
+        _this203._hasTrailingValue = false;
+        _this203._trailingValue = null;
+        return _this203;
       }
 
       _createClass2(ThrottleTimeSubscriber, [{
@@ -102268,17 +110007,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ThrowIfEmptySubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_45) {
       _inherits(ThrowIfEmptySubscriber, _Subscriber__WEBPACK_45);
 
-      var _super131 = _createSuper(ThrowIfEmptySubscriber);
+      var _super134 = _createSuper(ThrowIfEmptySubscriber);
 
       function ThrowIfEmptySubscriber(destination, errorFactory) {
-        var _this187;
+        var _this204;
 
         _classCallCheck(this, ThrowIfEmptySubscriber);
 
-        _this187 = _super131.call(this, destination);
-        _this187.errorFactory = errorFactory;
-        _this187.hasValue = false;
-        return _this187;
+        _this204 = _super134.call(this, destination);
+        _this204.errorFactory = errorFactory;
+        _this204.hasValue = false;
+        return _this204;
       }
 
       _createClass2(ThrowIfEmptySubscriber, [{
@@ -102371,8 +110110,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var scheduler = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _scheduler_async__WEBPACK_IMPORTED_MODULE_0__["async"];
       return function (source) {
         return Object(_observable_defer__WEBPACK_IMPORTED_MODULE_2__["defer"])(function () {
-          return source.pipe(Object(_scan__WEBPACK_IMPORTED_MODULE_1__["scan"])(function (_ref14, value) {
-            var current = _ref14.current;
+          return source.pipe(Object(_scan__WEBPACK_IMPORTED_MODULE_1__["scan"])(function (_ref16, value) {
+            var current = _ref16.current;
             return {
               value: value,
               current: scheduler.now(),
@@ -102382,10 +110121,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             current: scheduler.now(),
             value: undefined,
             last: undefined
-          }), Object(_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (_ref15) {
-            var current = _ref15.current,
-                last = _ref15.last,
-                value = _ref15.value;
+          }), Object(_map__WEBPACK_IMPORTED_MODULE_3__["map"])(function (_ref17) {
+            var current = _ref17.current,
+                last = _ref17.last,
+                value = _ref17.value;
             return new TimeInterval(value, current - last);
           }));
         });
@@ -102532,23 +110271,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var TimeoutWithSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB25) {
       _inherits(TimeoutWithSubscriber, _OuterSubscriber__WEB25);
 
-      var _super132 = _createSuper(TimeoutWithSubscriber);
+      var _super135 = _createSuper(TimeoutWithSubscriber);
 
       function TimeoutWithSubscriber(destination, absoluteTimeout, waitFor, withObservable, scheduler) {
-        var _this188;
+        var _this205;
 
         _classCallCheck(this, TimeoutWithSubscriber);
 
-        _this188 = _super132.call(this, destination);
-        _this188.absoluteTimeout = absoluteTimeout;
-        _this188.waitFor = waitFor;
-        _this188.withObservable = withObservable;
-        _this188.scheduler = scheduler;
-        _this188.action = null;
+        _this205 = _super135.call(this, destination);
+        _this205.absoluteTimeout = absoluteTimeout;
+        _this205.waitFor = waitFor;
+        _this205.withObservable = withObservable;
+        _this205.scheduler = scheduler;
+        _this205.action = null;
 
-        _this188.scheduleTimeout();
+        _this205.scheduleTimeout();
 
-        return _this188;
+        return _this205;
       }
 
       _createClass2(TimeoutWithSubscriber, [{
@@ -102766,17 +110505,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var WindowSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB26) {
       _inherits(WindowSubscriber, _OuterSubscriber__WEB26);
 
-      var _super133 = _createSuper(WindowSubscriber);
+      var _super136 = _createSuper(WindowSubscriber);
 
       function WindowSubscriber(destination) {
-        var _this189;
+        var _this206;
 
         _classCallCheck(this, WindowSubscriber);
 
-        _this189 = _super133.call(this, destination);
-        _this189.window = new _Subject__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
-        destination.next(_this189.window);
-        return _this189;
+        _this206 = _super136.call(this, destination);
+        _this206.window = new _Subject__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
+        destination.next(_this206.window);
+        return _this206;
       }
 
       _createClass2(WindowSubscriber, [{
@@ -102898,21 +110637,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var WindowCountSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_46) {
       _inherits(WindowCountSubscriber, _Subscriber__WEBPACK_46);
 
-      var _super134 = _createSuper(WindowCountSubscriber);
+      var _super137 = _createSuper(WindowCountSubscriber);
 
       function WindowCountSubscriber(destination, windowSize, startWindowEvery) {
-        var _this190;
+        var _this207;
 
         _classCallCheck(this, WindowCountSubscriber);
 
-        _this190 = _super134.call(this, destination);
-        _this190.destination = destination;
-        _this190.windowSize = windowSize;
-        _this190.startWindowEvery = startWindowEvery;
-        _this190.windows = [new _Subject__WEBPACK_IMPORTED_MODULE_1__["Subject"]()];
-        _this190.count = 0;
-        destination.next(_this190.windows[0]);
-        return _this190;
+        _this207 = _super137.call(this, destination);
+        _this207.destination = destination;
+        _this207.windowSize = windowSize;
+        _this207.startWindowEvery = startWindowEvery;
+        _this207.windows = [new _Subject__WEBPACK_IMPORTED_MODULE_1__["Subject"]()];
+        _this207.count = 0;
+        destination.next(_this207.windows[0]);
+        return _this207;
       }
 
       _createClass2(WindowCountSubscriber, [{
@@ -103081,16 +110820,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var CountedSubject = /*#__PURE__*/function (_Subject__WEBPACK_IMP5) {
       _inherits(CountedSubject, _Subject__WEBPACK_IMP5);
 
-      var _super135 = _createSuper(CountedSubject);
+      var _super138 = _createSuper(CountedSubject);
 
       function CountedSubject() {
-        var _this191;
+        var _this208;
 
         _classCallCheck(this, CountedSubject);
 
-        _this191 = _super135.apply(this, arguments);
-        _this191._numberOfNextedValues = 0;
-        return _this191;
+        _this208 = _super138.apply(this, arguments);
+        _this208._numberOfNextedValues = 0;
+        return _this208;
       }
 
       _createClass2(CountedSubject, [{
@@ -103113,50 +110852,50 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var WindowTimeSubscriber = /*#__PURE__*/function (_Subscriber__WEBPACK_47) {
       _inherits(WindowTimeSubscriber, _Subscriber__WEBPACK_47);
 
-      var _super136 = _createSuper(WindowTimeSubscriber);
+      var _super139 = _createSuper(WindowTimeSubscriber);
 
       function WindowTimeSubscriber(destination, windowTimeSpan, windowCreationInterval, maxWindowSize, scheduler) {
-        var _this192;
+        var _this209;
 
         _classCallCheck(this, WindowTimeSubscriber);
 
-        _this192 = _super136.call(this, destination);
-        _this192.destination = destination;
-        _this192.windowTimeSpan = windowTimeSpan;
-        _this192.windowCreationInterval = windowCreationInterval;
-        _this192.maxWindowSize = maxWindowSize;
-        _this192.scheduler = scheduler;
-        _this192.windows = [];
+        _this209 = _super139.call(this, destination);
+        _this209.destination = destination;
+        _this209.windowTimeSpan = windowTimeSpan;
+        _this209.windowCreationInterval = windowCreationInterval;
+        _this209.maxWindowSize = maxWindowSize;
+        _this209.scheduler = scheduler;
+        _this209.windows = [];
 
-        var window = _this192.openWindow();
+        var window = _this209.openWindow();
 
         if (windowCreationInterval !== null && windowCreationInterval >= 0) {
           var closeState = {
-            subscriber: _assertThisInitialized(_this192),
+            subscriber: _assertThisInitialized(_this209),
             window: window,
             context: null
           };
           var creationState = {
             windowTimeSpan: windowTimeSpan,
             windowCreationInterval: windowCreationInterval,
-            subscriber: _assertThisInitialized(_this192),
+            subscriber: _assertThisInitialized(_this209),
             scheduler: scheduler
           };
 
-          _this192.add(scheduler.schedule(dispatchWindowClose, windowTimeSpan, closeState));
+          _this209.add(scheduler.schedule(dispatchWindowClose, windowTimeSpan, closeState));
 
-          _this192.add(scheduler.schedule(dispatchWindowCreation, windowCreationInterval, creationState));
+          _this209.add(scheduler.schedule(dispatchWindowCreation, windowCreationInterval, creationState));
         } else {
           var timeSpanOnlyState = {
-            subscriber: _assertThisInitialized(_this192),
+            subscriber: _assertThisInitialized(_this209),
             window: window,
             windowTimeSpan: windowTimeSpan
           };
 
-          _this192.add(scheduler.schedule(dispatchWindowTimeSpanOnly, windowTimeSpan, timeSpanOnlyState));
+          _this209.add(scheduler.schedule(dispatchWindowTimeSpanOnly, windowTimeSpan, timeSpanOnlyState));
         }
 
-        return _this192;
+        return _this209;
       }
 
       _createClass2(WindowTimeSubscriber, [{
@@ -103345,21 +111084,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var WindowToggleSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB27) {
       _inherits(WindowToggleSubscriber, _OuterSubscriber__WEB27);
 
-      var _super137 = _createSuper(WindowToggleSubscriber);
+      var _super140 = _createSuper(WindowToggleSubscriber);
 
       function WindowToggleSubscriber(destination, openings, closingSelector) {
-        var _this193;
+        var _this210;
 
         _classCallCheck(this, WindowToggleSubscriber);
 
-        _this193 = _super137.call(this, destination);
-        _this193.openings = openings;
-        _this193.closingSelector = closingSelector;
-        _this193.contexts = [];
+        _this210 = _super140.call(this, destination);
+        _this210.openings = openings;
+        _this210.closingSelector = closingSelector;
+        _this210.contexts = [];
 
-        _this193.add(_this193.openSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_3__["subscribeToResult"])(_assertThisInitialized(_this193), openings, openings));
+        _this210.add(_this210.openSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_3__["subscribeToResult"])(_assertThisInitialized(_this210), openings, openings));
 
-        return _this193;
+        return _this210;
       }
 
       _createClass2(WindowToggleSubscriber, [{
@@ -103368,9 +111107,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var contexts = this.contexts;
 
           if (contexts) {
-            var _len45 = contexts.length;
+            var _len47 = contexts.length;
 
-            for (var i = 0; i < _len45; i++) {
+            for (var i = 0; i < _len47; i++) {
               contexts[i].window.next(value);
             }
           }
@@ -103382,10 +111121,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.contexts = null;
 
           if (contexts) {
-            var _len46 = contexts.length;
+            var _len48 = contexts.length;
             var index = -1;
 
-            while (++index < _len46) {
+            while (++index < _len48) {
               var context = contexts[index];
               context.window.error(err);
               context.subscription.unsubscribe();
@@ -103401,10 +111140,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.contexts = null;
 
           if (contexts) {
-            var _len47 = contexts.length;
+            var _len49 = contexts.length;
             var index = -1;
 
-            while (++index < _len47) {
+            while (++index < _len49) {
               var context = contexts[index];
               context.window.complete();
               context.subscription.unsubscribe();
@@ -103420,10 +111159,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.contexts = null;
 
           if (contexts) {
-            var _len48 = contexts.length;
+            var _len50 = contexts.length;
             var index = -1;
 
-            while (++index < _len48) {
+            while (++index < _len50) {
               var context = contexts[index];
               context.window.unsubscribe();
               context.subscription.unsubscribe();
@@ -103565,20 +111304,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var WindowSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB28) {
       _inherits(WindowSubscriber, _OuterSubscriber__WEB28);
 
-      var _super138 = _createSuper(WindowSubscriber);
+      var _super141 = _createSuper(WindowSubscriber);
 
       function WindowSubscriber(destination, closingSelector) {
-        var _this194;
+        var _this211;
 
         _classCallCheck(this, WindowSubscriber);
 
-        _this194 = _super138.call(this, destination);
-        _this194.destination = destination;
-        _this194.closingSelector = closingSelector;
+        _this211 = _super141.call(this, destination);
+        _this211.destination = destination;
+        _this211.closingSelector = closingSelector;
 
-        _this194.openWindow();
+        _this211.openWindow();
 
-        return _this194;
+        return _this211;
       }
 
       _createClass2(WindowSubscriber, [{
@@ -103695,8 +111434,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/util/subscribeToResult.js");
 
     function withLatestFrom() {
-      for (var _len49 = arguments.length, args = new Array(_len49), _key42 = 0; _key42 < _len49; _key42++) {
-        args[_key42] = arguments[_key42];
+      for (var _len51 = arguments.length, args = new Array(_len51), _key44 = 0; _key44 < _len51; _key44++) {
+        args[_key44] = arguments[_key44];
       }
 
       return function (source) {
@@ -103732,31 +111471,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var WithLatestFromSubscriber = /*#__PURE__*/function (_OuterSubscriber__WEB29) {
       _inherits(WithLatestFromSubscriber, _OuterSubscriber__WEB29);
 
-      var _super139 = _createSuper(WithLatestFromSubscriber);
+      var _super142 = _createSuper(WithLatestFromSubscriber);
 
       function WithLatestFromSubscriber(destination, observables, project) {
-        var _this195;
+        var _this212;
 
         _classCallCheck(this, WithLatestFromSubscriber);
 
-        _this195 = _super139.call(this, destination);
-        _this195.observables = observables;
-        _this195.project = project;
-        _this195.toRespond = [];
+        _this212 = _super142.call(this, destination);
+        _this212.observables = observables;
+        _this212.project = project;
+        _this212.toRespond = [];
         var len = observables.length;
-        _this195.values = new Array(len);
+        _this212.values = new Array(len);
 
         for (var i = 0; i < len; i++) {
-          _this195.toRespond.push(i);
+          _this212.toRespond.push(i);
         }
 
         for (var _i22 = 0; _i22 < len; _i22++) {
           var observable = observables[_i22];
 
-          _this195.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this195), observable, observable, _i22));
+          _this212.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this212), observable, observable, _i22));
         }
 
-        return _this195;
+        return _this212;
       }
 
       _createClass2(WithLatestFromSubscriber, [{
@@ -103839,8 +111578,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/zip.js");
 
     function zip() {
-      for (var _len50 = arguments.length, observables = new Array(_len50), _key43 = 0; _key43 < _len50; _key43++) {
-        observables[_key43] = arguments[_key43];
+      for (var _len52 = arguments.length, observables = new Array(_len52), _key45 = 0; _key45 < _len52; _key45++) {
+        observables[_key45] = arguments[_key45];
       }
 
       return function zipOperatorFunction(source) {
@@ -104274,12 +112013,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var Action = /*#__PURE__*/function (_Subscription__WEBPAC4) {
       _inherits(Action, _Subscription__WEBPAC4);
 
-      var _super140 = _createSuper(Action);
+      var _super143 = _createSuper(Action);
 
       function Action(scheduler, work) {
         _classCallCheck(this, Action);
 
-        return _super140.call(this);
+        return _super143.call(this);
       }
 
       _createClass2(Action, [{
@@ -104326,17 +112065,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AnimationFrameAction = /*#__PURE__*/function (_AsyncAction__WEBPACK) {
       _inherits(AnimationFrameAction, _AsyncAction__WEBPACK);
 
-      var _super141 = _createSuper(AnimationFrameAction);
+      var _super144 = _createSuper(AnimationFrameAction);
 
       function AnimationFrameAction(scheduler, work) {
-        var _this196;
+        var _this213;
 
         _classCallCheck(this, AnimationFrameAction);
 
-        _this196 = _super141.call(this, scheduler, work);
-        _this196.scheduler = scheduler;
-        _this196.work = work;
-        return _this196;
+        _this213 = _super144.call(this, scheduler, work);
+        _this213.scheduler = scheduler;
+        _this213.work = work;
+        return _this213;
       }
 
       _createClass2(AnimationFrameAction, [{
@@ -104407,12 +112146,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AnimationFrameScheduler = /*#__PURE__*/function (_AsyncScheduler__WEBP) {
       _inherits(AnimationFrameScheduler, _AsyncScheduler__WEBP);
 
-      var _super142 = _createSuper(AnimationFrameScheduler);
+      var _super145 = _createSuper(AnimationFrameScheduler);
 
       function AnimationFrameScheduler() {
         _classCallCheck(this, AnimationFrameScheduler);
 
-        return _super142.apply(this, arguments);
+        return _super145.apply(this, arguments);
       }
 
       _createClass2(AnimationFrameScheduler, [{
@@ -104486,17 +112225,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AsapAction = /*#__PURE__*/function (_AsyncAction__WEBPACK2) {
       _inherits(AsapAction, _AsyncAction__WEBPACK2);
 
-      var _super143 = _createSuper(AsapAction);
+      var _super146 = _createSuper(AsapAction);
 
       function AsapAction(scheduler, work) {
-        var _this197;
+        var _this214;
 
         _classCallCheck(this, AsapAction);
 
-        _this197 = _super143.call(this, scheduler, work);
-        _this197.scheduler = scheduler;
-        _this197.work = work;
-        return _this197;
+        _this214 = _super146.call(this, scheduler, work);
+        _this214.scheduler = scheduler;
+        _this214.work = work;
+        return _this214;
       }
 
       _createClass2(AsapAction, [{
@@ -104566,12 +112305,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AsapScheduler = /*#__PURE__*/function (_AsyncScheduler__WEBP2) {
       _inherits(AsapScheduler, _AsyncScheduler__WEBP2);
 
-      var _super144 = _createSuper(AsapScheduler);
+      var _super147 = _createSuper(AsapScheduler);
 
       function AsapScheduler() {
         _classCallCheck(this, AsapScheduler);
 
-        return _super144.apply(this, arguments);
+        return _super147.apply(this, arguments);
       }
 
       _createClass2(AsapScheduler, [{
@@ -104639,18 +112378,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AsyncAction = /*#__PURE__*/function (_Action__WEBPACK_IMPO) {
       _inherits(AsyncAction, _Action__WEBPACK_IMPO);
 
-      var _super145 = _createSuper(AsyncAction);
+      var _super148 = _createSuper(AsyncAction);
 
       function AsyncAction(scheduler, work) {
-        var _this198;
+        var _this215;
 
         _classCallCheck(this, AsyncAction);
 
-        _this198 = _super145.call(this, scheduler, work);
-        _this198.scheduler = scheduler;
-        _this198.work = work;
-        _this198.pending = false;
-        return _this198;
+        _this215 = _super148.call(this, scheduler, work);
+        _this215.scheduler = scheduler;
+        _this215.work = work;
+        _this215.pending = false;
+        return _this215;
       }
 
       _createClass2(AsyncAction, [{
@@ -104788,26 +112527,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AsyncScheduler = /*#__PURE__*/function (_Scheduler__WEBPACK_I) {
       _inherits(AsyncScheduler, _Scheduler__WEBPACK_I);
 
-      var _super146 = _createSuper(AsyncScheduler);
+      var _super149 = _createSuper(AsyncScheduler);
 
       function AsyncScheduler(SchedulerAction) {
-        var _this199;
+        var _this216;
 
         var now = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _Scheduler__WEBPACK_IMPORTED_MODULE_0__["Scheduler"].now;
 
         _classCallCheck(this, AsyncScheduler);
 
-        _this199 = _super146.call(this, SchedulerAction, function () {
-          if (AsyncScheduler.delegate && AsyncScheduler.delegate !== _assertThisInitialized(_this199)) {
+        _this216 = _super149.call(this, SchedulerAction, function () {
+          if (AsyncScheduler.delegate && AsyncScheduler.delegate !== _assertThisInitialized(_this216)) {
             return AsyncScheduler.delegate.now();
           } else {
             return now();
           }
         });
-        _this199.actions = [];
-        _this199.active = false;
-        _this199.scheduled = undefined;
-        return _this199;
+        _this216.actions = [];
+        _this216.active = false;
+        _this216.scheduled = undefined;
+        return _this216;
       }
 
       _createClass2(AsyncScheduler, [{
@@ -104889,17 +112628,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var QueueAction = /*#__PURE__*/function (_AsyncAction__WEBPACK3) {
       _inherits(QueueAction, _AsyncAction__WEBPACK3);
 
-      var _super147 = _createSuper(QueueAction);
+      var _super150 = _createSuper(QueueAction);
 
       function QueueAction(scheduler, work) {
-        var _this200;
+        var _this217;
 
         _classCallCheck(this, QueueAction);
 
-        _this200 = _super147.call(this, scheduler, work);
-        _this200.scheduler = scheduler;
-        _this200.work = work;
-        return _this200;
+        _this217 = _super150.call(this, scheduler, work);
+        _this217.scheduler = scheduler;
+        _this217.work = work;
+        return _this217;
       }
 
       _createClass2(QueueAction, [{
@@ -104970,12 +112709,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var QueueScheduler = /*#__PURE__*/function (_AsyncScheduler__WEBP3) {
       _inherits(QueueScheduler, _AsyncScheduler__WEBP3);
 
-      var _super148 = _createSuper(QueueScheduler);
+      var _super151 = _createSuper(QueueScheduler);
 
       function QueueScheduler() {
         _classCallCheck(this, QueueScheduler);
 
-        return _super148.apply(this, arguments);
+        return _super151.apply(this, arguments);
       }
 
       return QueueScheduler;
@@ -105026,23 +112765,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var VirtualTimeScheduler = /*#__PURE__*/function (_AsyncScheduler__WEBP4) {
       _inherits(VirtualTimeScheduler, _AsyncScheduler__WEBP4);
 
-      var _super149 = _createSuper(VirtualTimeScheduler);
+      var _super152 = _createSuper(VirtualTimeScheduler);
 
       function VirtualTimeScheduler() {
-        var _this201;
+        var _this218;
 
         var SchedulerAction = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : VirtualAction;
         var maxFrames = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Number.POSITIVE_INFINITY;
 
         _classCallCheck(this, VirtualTimeScheduler);
 
-        _this201 = _super149.call(this, SchedulerAction, function () {
-          return _this201.frame;
+        _this218 = _super152.call(this, SchedulerAction, function () {
+          return _this218.frame;
         });
-        _this201.maxFrames = maxFrames;
-        _this201.frame = 0;
-        _this201.index = -1;
-        return _this201;
+        _this218.maxFrames = maxFrames;
+        _this218.frame = 0;
+        _this218.index = -1;
+        return _this218;
       }
 
       _createClass2(VirtualTimeScheduler, [{
@@ -105079,22 +112818,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var VirtualAction = /*#__PURE__*/function (_AsyncAction__WEBPACK4) {
       _inherits(VirtualAction, _AsyncAction__WEBPACK4);
 
-      var _super150 = _createSuper(VirtualAction);
+      var _super153 = _createSuper(VirtualAction);
 
       function VirtualAction(scheduler, work) {
-        var _this202;
+        var _this219;
 
         var index = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : scheduler.index += 1;
 
         _classCallCheck(this, VirtualAction);
 
-        _this202 = _super150.call(this, scheduler, work);
-        _this202.scheduler = scheduler;
-        _this202.work = work;
-        _this202.index = index;
-        _this202.active = true;
-        _this202.index = scheduler.index = index;
-        return _this202;
+        _this219 = _super153.call(this, scheduler, work);
+        _this219.scheduler = scheduler;
+        _this219.work = work;
+        _this219.index = index;
+        _this219.active = true;
+        _this219.index = scheduler.index = index;
+        return _this219;
       }
 
       _createClass2(VirtualAction, [{
@@ -106204,8 +113943,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/util/identity.js");
 
     function pipe() {
-      for (var _len51 = arguments.length, fns = new Array(_len51), _key44 = 0; _key44 < _len51; _key44++) {
-        fns[_key44] = arguments[_key44];
+      for (var _len53 = arguments.length, fns = new Array(_len53), _key46 = 0; _key46 < _len53; _key46++) {
+        fns[_key46] = arguments[_key46];
       }
 
       return pipeFromArray(fns);
@@ -106347,7 +114086,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var subscribeToArray = function subscribeToArray(array) {
       return function (subscriber) {
-        for (var i = 0, _len52 = array.length; i < _len52 && !subscriber.closed; i++) {
+        for (var i = 0, _len54 = array.length; i < _len54 && !subscriber.closed; i++) {
           subscriber.next(array[i]);
         }
 
@@ -107883,6 +115622,610 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./node_modules/tslib/tslib.es6.js":
+  /*!*****************************************!*\
+    !*** ./node_modules/tslib/tslib.es6.js ***!
+    \*****************************************/
+
+  /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+
+  /***/
+  function node_modulesTslibTslibEs6Js(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__extends", function () {
+      return __extends;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__assign", function () {
+      return _assign;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__rest", function () {
+      return __rest;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__decorate", function () {
+      return __decorate;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__param", function () {
+      return __param;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__metadata", function () {
+      return __metadata;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__awaiter", function () {
+      return __awaiter;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__generator", function () {
+      return __generator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__createBinding", function () {
+      return __createBinding;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__exportStar", function () {
+      return __exportStar;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__values", function () {
+      return __values;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__read", function () {
+      return __read;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__spread", function () {
+      return __spread;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__spreadArrays", function () {
+      return __spreadArrays;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__await", function () {
+      return __await;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function () {
+      return __asyncGenerator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function () {
+      return __asyncDelegator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncValues", function () {
+      return __asyncValues;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function () {
+      return __makeTemplateObject;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__importStar", function () {
+      return __importStar;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__importDefault", function () {
+      return __importDefault;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function () {
+      return __classPrivateFieldGet;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function () {
+      return __classPrivateFieldSet;
+    });
+    /*! *****************************************************************************
+    Copyright (c) Microsoft Corporation.
+    
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted.
+    
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+    PERFORMANCE OF THIS SOFTWARE.
+    ***************************************************************************** */
+
+    /* global Reflect, Promise */
+
+
+    var _extendStatics = function extendStatics(d, b) {
+      _extendStatics = Object.setPrototypeOf || {
+        __proto__: []
+      } instanceof Array && function (d, b) {
+        d.__proto__ = b;
+      } || function (d, b) {
+        for (var p in b) {
+          if (b.hasOwnProperty(p)) d[p] = b[p];
+        }
+      };
+
+      return _extendStatics(d, b);
+    };
+
+    function __extends(d, b) {
+      _extendStatics(d, b);
+
+      function __() {
+        this.constructor = d;
+      }
+
+      d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    }
+
+    var _assign = function __assign() {
+      _assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+
+          for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+          }
+        }
+
+        return t;
+      };
+
+      return _assign.apply(this, arguments);
+    };
+
+    function __rest(s, e) {
+      var t = {};
+
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+      }
+
+      if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+      }
+      return t;
+    }
+
+    function __decorate(decorators, target, key, desc) {
+      var c = arguments.length,
+          r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+          d;
+      if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+      }
+      return c > 3 && r && Object.defineProperty(target, key, r), r;
+    }
+
+    function __param(paramIndex, decorator) {
+      return function (target, key) {
+        decorator(target, key, paramIndex);
+      };
+    }
+
+    function __metadata(metadataKey, metadataValue) {
+      if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+    }
+
+    function __awaiter(thisArg, _arguments, P, generator) {
+      function adopt(value) {
+        return value instanceof P ? value : new P(function (resolve) {
+          resolve(value);
+        });
+      }
+
+      return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) {
+          try {
+            step(generator.next(value));
+          } catch (e) {
+            reject(e);
+          }
+        }
+
+        function rejected(value) {
+          try {
+            step(generator["throw"](value));
+          } catch (e) {
+            reject(e);
+          }
+        }
+
+        function step(result) {
+          result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+        }
+
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+      });
+    }
+
+    function __generator(thisArg, body) {
+      var _ = {
+        label: 0,
+        sent: function sent() {
+          if (t[0] & 1) throw t[1];
+          return t[1];
+        },
+        trys: [],
+        ops: []
+      },
+          f,
+          y,
+          t,
+          g;
+      return g = {
+        next: verb(0),
+        "throw": verb(1),
+        "return": verb(2)
+      }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+        return this;
+      }), g;
+
+      function verb(n) {
+        return function (v) {
+          return step([n, v]);
+        };
+      }
+
+      function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+
+        while (_) {
+          try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+
+            switch (op[0]) {
+              case 0:
+              case 1:
+                t = op;
+                break;
+
+              case 4:
+                _.label++;
+                return {
+                  value: op[1],
+                  done: false
+                };
+
+              case 5:
+                _.label++;
+                y = op[1];
+                op = [0];
+                continue;
+
+              case 7:
+                op = _.ops.pop();
+
+                _.trys.pop();
+
+                continue;
+
+              default:
+                if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                  _ = 0;
+                  continue;
+                }
+
+                if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                  _.label = op[1];
+                  break;
+                }
+
+                if (op[0] === 6 && _.label < t[1]) {
+                  _.label = t[1];
+                  t = op;
+                  break;
+                }
+
+                if (t && _.label < t[2]) {
+                  _.label = t[2];
+
+                  _.ops.push(op);
+
+                  break;
+                }
+
+                if (t[2]) _.ops.pop();
+
+                _.trys.pop();
+
+                continue;
+            }
+
+            op = body.call(thisArg, _);
+          } catch (e) {
+            op = [6, e];
+            y = 0;
+          } finally {
+            f = t = 0;
+          }
+        }
+
+        if (op[0] & 5) throw op[1];
+        return {
+          value: op[0] ? op[1] : void 0,
+          done: true
+        };
+      }
+    }
+
+    function __createBinding(o, m, k, k2) {
+      if (k2 === undefined) k2 = k;
+      o[k2] = m[k];
+    }
+
+    function __exportStar(m, exports) {
+      for (var p in m) {
+        if (p !== "default" && !exports.hasOwnProperty(p)) exports[p] = m[p];
+      }
+    }
+
+    function __values(o) {
+      var s = typeof Symbol === "function" && Symbol.iterator,
+          m = s && o[s],
+          i = 0;
+      if (m) return m.call(o);
+      if (o && typeof o.length === "number") return {
+        next: function next() {
+          if (o && i >= o.length) o = void 0;
+          return {
+            value: o && o[i++],
+            done: !o
+          };
+        }
+      };
+      throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+    }
+
+    function __read(o, n) {
+      var m = typeof Symbol === "function" && o[Symbol.iterator];
+      if (!m) return o;
+      var i = m.call(o),
+          r,
+          ar = [],
+          e;
+
+      try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+          ar.push(r.value);
+        }
+      } catch (error) {
+        e = {
+          error: error
+        };
+      } finally {
+        try {
+          if (r && !r.done && (m = i["return"])) m.call(i);
+        } finally {
+          if (e) throw e.error;
+        }
+      }
+
+      return ar;
+    }
+
+    function __spread() {
+      for (var ar = [], i = 0; i < arguments.length; i++) {
+        ar = ar.concat(__read(arguments[i]));
+      }
+
+      return ar;
+    }
+
+    function __spreadArrays() {
+      for (var s = 0, i = 0, il = arguments.length; i < il; i++) {
+        s += arguments[i].length;
+      }
+
+      for (var r = Array(s), k = 0, i = 0; i < il; i++) {
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) {
+          r[k] = a[j];
+        }
+      }
+
+      return r;
+    }
+
+    ;
+
+    function __await(v) {
+      return this instanceof __await ? (this.v = v, this) : new __await(v);
+    }
+
+    function __asyncGenerator(thisArg, _arguments, generator) {
+      if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+      var g = generator.apply(thisArg, _arguments || []),
+          i,
+          q = [];
+      return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
+        return this;
+      }, i;
+
+      function verb(n) {
+        if (g[n]) i[n] = function (v) {
+          return new Promise(function (a, b) {
+            q.push([n, v, a, b]) > 1 || resume(n, v);
+          });
+        };
+      }
+
+      function resume(n, v) {
+        try {
+          step(g[n](v));
+        } catch (e) {
+          settle(q[0][3], e);
+        }
+      }
+
+      function step(r) {
+        r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
+      }
+
+      function fulfill(value) {
+        resume("next", value);
+      }
+
+      function reject(value) {
+        resume("throw", value);
+      }
+
+      function settle(f, v) {
+        if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
+      }
+    }
+
+    function __asyncDelegator(o) {
+      var i, p;
+      return i = {}, verb("next"), verb("throw", function (e) {
+        throw e;
+      }), verb("return"), i[Symbol.iterator] = function () {
+        return this;
+      }, i;
+
+      function verb(n, f) {
+        i[n] = o[n] ? function (v) {
+          return (p = !p) ? {
+            value: __await(o[n](v)),
+            done: n === "return"
+          } : f ? f(v) : v;
+        } : f;
+      }
+    }
+
+    function __asyncValues(o) {
+      if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+      var m = o[Symbol.asyncIterator],
+          i;
+      return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
+        return this;
+      }, i);
+
+      function verb(n) {
+        i[n] = o[n] && function (v) {
+          return new Promise(function (resolve, reject) {
+            v = o[n](v), settle(resolve, reject, v.done, v.value);
+          });
+        };
+      }
+
+      function settle(resolve, reject, d, v) {
+        Promise.resolve(v).then(function (v) {
+          resolve({
+            value: v,
+            done: d
+          });
+        }, reject);
+      }
+    }
+
+    function __makeTemplateObject(cooked, raw) {
+      if (Object.defineProperty) {
+        Object.defineProperty(cooked, "raw", {
+          value: raw
+        });
+      } else {
+        cooked.raw = raw;
+      }
+
+      return cooked;
+    }
+
+    ;
+
+    function __importStar(mod) {
+      if (mod && mod.__esModule) return mod;
+      var result = {};
+      if (mod != null) for (var k in mod) {
+        if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+      }
+      result["default"] = mod;
+      return result;
+    }
+
+    function __importDefault(mod) {
+      return mod && mod.__esModule ? mod : {
+        "default": mod
+      };
+    }
+
+    function __classPrivateFieldGet(receiver, privateMap) {
+      if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to get private field on non-instance");
+      }
+
+      return privateMap.get(receiver);
+    }
+
+    function __classPrivateFieldSet(receiver, privateMap, value) {
+      if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to set private field on non-instance");
+      }
+
+      privateMap.set(receiver, value);
+      return value;
+    }
+    /***/
+
+  },
+
+  /***/
   "./node_modules/video-worker/src/video-worker.esm.js":
   /*!***********************************************************!*\
     !*** ./node_modules/video-worker/src/video-worker.esm.js ***!
@@ -107930,15 +116273,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       },
       resolve: function resolve() {
-        for (var _len53 = arguments.length, args = new Array(_len53), _key45 = 0; _key45 < _len53; _key45++) {
-          args[_key45] = arguments[_key45];
+        for (var _len55 = arguments.length, args = new Array(_len55), _key47 = 0; _key47 < _len55; _key47++) {
+          args[_key47] = arguments[_key47];
         }
 
         this.execute(this.done, args);
       },
       reject: function reject() {
-        for (var _len54 = arguments.length, args = new Array(_len54), _key46 = 0; _key46 < _len54; _key46++) {
-          args[_key46] = arguments[_key46];
+        for (var _len56 = arguments.length, args = new Array(_len56), _key48 = 0; _key48 < _len56; _key48++) {
+          args[_key48] = arguments[_key48];
         }
 
         this.execute(this.fail, args);
@@ -107991,8 +116334,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(VideoWorker, [{
         key: "extend",
         value: function extend() {
-          for (var _len55 = arguments.length, args = new Array(_len55), _key47 = 0; _key47 < _len55; _key47++) {
-            args[_key47] = arguments[_key47];
+          for (var _len57 = arguments.length, args = new Array(_len57), _key49 = 0; _key49 < _len57; _key49++) {
+            args[_key49] = arguments[_key49];
           }
 
           var out = args[0] || {};
@@ -108082,7 +116425,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "off",
         value: function off(name, callback) {
-          var _this203 = this;
+          var _this220 = this;
 
           if (!this.userEventsList || !this.userEventsList[name]) {
             return;
@@ -108093,7 +116436,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           } else {
             this.userEventsList[name].forEach(function (val, key) {
               if (val === callback) {
-                _this203.userEventsList[name][key] = false;
+                _this220.userEventsList[name][key] = false;
               }
             });
           }
@@ -108101,17 +116444,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "fire",
         value: function fire(name) {
-          var _this204 = this;
+          var _this221 = this;
 
-          for (var _len56 = arguments.length, args = new Array(_len56 > 1 ? _len56 - 1 : 0), _key48 = 1; _key48 < _len56; _key48++) {
-            args[_key48 - 1] = arguments[_key48];
+          for (var _len58 = arguments.length, args = new Array(_len58 > 1 ? _len58 - 1 : 0), _key50 = 1; _key50 < _len58; _key50++) {
+            args[_key50 - 1] = arguments[_key50];
           }
 
           if (this.userEventsList && 'undefined' !== typeof this.userEventsList[name]) {
             this.userEventsList[name].forEach(function (val) {
               // call with all arguments
               if (val) {
-                val.apply(_this204, args);
+                val.apply(_this221, args);
               }
             });
           }
