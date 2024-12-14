@@ -668,7 +668,7 @@ class ResumeComponent {
     }
 }
 ResumeComponent.ɵfac = function ResumeComponent_Factory(t) { return new (t || ResumeComponent)(); };
-ResumeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ResumeComponent, selectors: [["app-resume"]], decls: 54, vars: 0, consts: [[1, "main-container", 2, "height", "100vh"], ["data-text", "Gabriel Madeira"], ["xmlns", "http://www.w3.org/2000/svg", "viewBox", "0 0 640 512", 1, "main-icon"], ["d", "M64 96c0-35.3 28.7-64 64-64H512c35.3 0 64 28.7 64 64V352H512V96H128V352H64V96zM0 403.2C0 392.6 8.6 384 19.2 384H620.8c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"], ["id", "about", 1, "container"], [1, "row"], [1, "col-sm-12", "text-center", "section-title"], [1, "col-md-3", "col-sm-4", "offset-md-2", "offset-3", "col-6", "offset-sm-0"], ["src", "../assets/images/profile.jpg", 1, "img-fluid", "img-thumbnail"], [1, "col-10", "offset-1", "offset-sm-0", "col-md-5", "col-sm-8", "text-justify", "about-span"], [2, "color", "#2d80c4"], ["href", "https://www.linkedin.com/in/gabriel-madeira", "target", "_blank", 1, "fa", "fa-linkedin"], ["href", "mailto:gabr.madeira@gmail.com", "target", "_blank", 1, "fa", "fa-envelope"], ["href", "https://github.com/gabrielmadeira", "target", "_blank", 1, "fa", "fa-github"], ["id", "experiences", 1, "container-fluid", "container-var"], [1, "col", "text-center", "section-title"], [1, "col", "text-center", "subsection-title"], ["imgUrl", "assets/images/dfki.png", "imgLink", "https://www.dfki.de/", "cardTitle", "Exchange Student", "institution", "German Research Center for Artificial Intelligence (DFKI)", "period", "April 2023 - March 2024", "location", "Kaiserslautern - Germany", "description", "Working in the Smart Data & Knowledge Services department as part of an exchange program."], ["imgUrl", "assets/images/inf.png", "imgLink", "https://www.inf.ufrgs.br/site/en/", "cardTitle", "Undergraduate Researcher", "institution", "Computer Graphics and Image Processing Research Group", "period", "June 2022 - November 2022", "location", "Porto Alegre - RS - Brazil", "description", "\n    \u2022 Advised by Prof. <a href='https://www.inf.ufrgs.br/~oliveira/' target='_blank'><b>Manuel M. Oliveira</b></a>. <br>\n    \u2022 Study of deep learning techniques applied to image classification and segmentation.\n    "], ["imgUrl", "assets/images/nelogica.png", "imgLink", "https://www.nelogica.com.br/", "cardTitle", "Software Development Intern (Back-end)", "institution", "Nelogica", "period", "October 2021 - March 2022", "location", "Porto Alegre - RS - Brazil", "description", "\n    \u2022 Implementation of a database event proxy REST API service, in the OpenAPI Specification, almost zeroing the rate of accumulated DB commands in the message service for clients. <br>\n    \u2022 Implementation of a service dynamic installer, making the process of creating specific new instances easier. <br>\n    \u2022 Implementation of replaceable tags feature in the body of a message in the notification service for clients. <br>\n    \u2022 Technologies: Delphi.\n    "], ["imgUrl", "assets/images/nelogica.png", "imgLink", "https://www.nelogica.com.br/", "cardTitle", "Software Development Intern (Front-end)", "institution", "Nelogica", "period", "February 2021 - September 2021", "location", "Porto Alegre - RS - Brazil", "description", "\n    \u2022 Helping to develop a web platform to operate in the financial market. <br>\n    \u2022 Creation of a virtual wallet component, which simulates a real exchange wallet. <br>\n    \u2022 Login screen loading optimization, using asynchronous imports in JavaScript, ~47% reduction in file size required for the login screen. <br>\n    \u2022 Asset conversion method from several different quote sources using JavaScript promises. <br>\n    \u2022 Technologies: Vue.js, JavaScript, CSS, HTML.\n    "], ["imgUrl", "assets/images/ginfo.png", "imgLink", "", "cardTitle", "Undergraduate Researcher", "institution", "Information Management Research Group - FURG", "period", "April 2018 - July 2020", "location", "Rio Grande - RS - Brazil", "description", "\n    \u2022 Advised by Prof. <a href='https://scholar.google.com/citations?user=DF7aOYMAAAAJ&hl=en' target='_blank'><b>Eduardo Borges</b></a>.<br>\n    \u2022 Cleaning anomalies in a database of more than 500 thousand rows with Postgresql. <br>\n    \u2022 Development of a recursive algorithm forthe visualization of academic trees. <br>\n    \u2022 Developed <a href='http://thegoldtree.c3.furg.br' target='_blank'><b>The Gold Tree</b></a>, a web tool for academic genealogy analysis using HTML, CSS, Javascript and Postgresql. <br>\n    \u2022 Study of several machine learning technical algorithms. <br>\n    \u2022 The Nearest Centroid algorithm and TF-IDF method were used to model an advisor recommendation system. <br>\n    <br>\n    <b>Publications:</b> <br>\n    <a href='https://www.researchgate.net/publication/333435352_The_Gold_Tree_An_Information_System_for_Analyzing_Academic_Genealogy' target='_blank'><b>[1]</b></a> Madeira, G., Borges, E.N., Baranano, M., Nascimento, P.K., Lucca, G., de Fatima Maia, M., Santos, H.S. and Dimuro, G.P., 2019. The Gold Tree: An Information System for Analyzing Academic Genealogy. In Proceedings of the ICEIS 2019 (pp. 114-120). <br>\n    <a href='https://www.researchgate.net/publication/339384557_A_Tool_for_Analyzing_Academic_Genealogy' target='_blank'><b>[2]</b></a> Madeira, G., Borges, E.N., Lucca, G., Santos, H. and Dimuro, G., 2019. A tool for analyzing academic genealogy. In Lecture Notes in Business Information Processing, vol 378, (pp. 443\u2013456). <br>\n    <a href='https://www.scitepress.org/Papers/2021/104426/104426.pdf' target='_blank'><b>[3]</b></a> Madeira, G., Borges, E.N., Lucca, G., de Carvalho Segundo, W., Wieczynski, J.C., Santos, H.S. and Dimuro, G.P., 2021. Using Academic Genealogy for Recommending Supervisors. In Proceedings of the ICEIS 2021 (pp. 885-892).\n    "], ["imgUrl", "assets/images/qwertyp.png", "imgLink", "", "cardTitle", "Computer Technician", "institution", "Qwerty News Portal", "period", "April 2016 - July 2017", "location", "Dom Pedrito - RS - Brazil", "description", " \n    \u2022 Developed a Arrival and departure control system using HTML, CSS, Javascript, PHP, MySql. <br>\n    \u2022 Developed a Transparency portal using HTML, CSS, Javascript, PHP, MySql. <br>\n    \u2022 Video editing and art creation for the news portal."], ["imgUrl", "assets/images/rptu.png", "imgLink", "https://rptu.de/", "cardTitle", "Computer Science Exchange Student", "institution", "Rheinland-Pf\u00E4lzische Technische Universit\u00E4t Kaiserslautern-Landau", "period", "April 2023 - March 2024", "location", "Kaiserslautern - Germany", "description", "Attending Master's classes as part of an exchange program."], ["imgUrl", "assets/images/ufrgs.png", "imgLink", "http://www.ufrgs.br/english/home", "cardTitle", "Computer Science Undergraduate", "institution", "Federal University of Rio Grande do Sul", "period", "March 2020 - Present", "location", "Porto Alegre - RS - Brazil", "description", "GPA: 9.40/10.00"], ["imgUrl", "assets/images/furg.png", "imgLink", "https://www.furg.br/en/", "cardTitle", "Computer Engineering Undergraduate", "institution", "Federal University of Rio Grande (FURG)", "period", "March 2019 - December 2019", "location", "Rio Grande - RS - Brazil", "description", "GPA: 9.40/10.00<br>\n    (university and course transfer after one year)"], ["imgUrl", "assets/images/furg.png", "imgLink", "https://www.furg.br/en/", "cardTitle", "Information Systems Undergraduate", "institution", "Federal University of Rio Grande (FURG)", "period", "March 2018 - December 2018", "location", "Rio Grande - RS - Brazil", "description", "GPA: 9.62/10.00<br>\n    (course transfer after one year)"], ["imgUrl", "assets/images/qwertye.png", "imgLink", "", "cardTitle", "Technical course - Computing Technician", "institution", "Qwerty Escola", "period", "March 2015 - December 2016", "location", "Dom Pedrito - RS - Brazil", "description", "GPA: 9.32/10.00"], ["id", "skills", 1, "container-fluid"], [1, "col", "text-center"], ["id", "projects", 1, "container-fluid", 2, "background-color", "#dadada"], [1, "col"]], template: function ResumeComponent_Template(rf, ctx) { if (rf & 1) {
+ResumeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ResumeComponent, selectors: [["app-resume"]], decls: 54, vars: 0, consts: [[1, "main-container", 2, "height", "100vh"], ["data-text", "Gabriel Madeira"], ["xmlns", "http://www.w3.org/2000/svg", "viewBox", "0 0 640 512", 1, "main-icon"], ["d", "M64 96c0-35.3 28.7-64 64-64H512c35.3 0 64 28.7 64 64V352H512V96H128V352H64V96zM0 403.2C0 392.6 8.6 384 19.2 384H620.8c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"], ["id", "about", 1, "container"], [1, "row"], [1, "col-sm-12", "text-center", "section-title"], [1, "col-md-3", "col-sm-4", "offset-md-2", "offset-3", "col-6", "offset-sm-0"], ["src", "../assets/images/profile.jpg", 1, "img-fluid", "img-thumbnail"], [1, "col-10", "offset-1", "offset-sm-0", "col-md-5", "col-sm-8", "text-justify", "about-span"], [2, "color", "#2d80c4"], ["href", "https://www.linkedin.com/in/gabriel-madeira", "target", "_blank", 1, "fa", "fa-linkedin"], ["href", "mailto:gabr.madeira@gmail.com", "target", "_blank", 1, "fa", "fa-envelope"], ["href", "https://github.com/gabrielmadeira", "target", "_blank", 1, "fa", "fa-github"], ["id", "experiences", 1, "container-fluid", "container-var"], [1, "col", "text-center", "section-title"], [1, "col", "text-center", "subsection-title"], ["imgUrl", "assets/images/aprix.png", "imgLink", "https://aprix.com.br/home-en/", "cardTitle", "Software Engineer", "institution", "Aprix", "period", "May 2024 - Present", "location", "Porto Alegre - Brazil", "description", "\n    <b>Technology stack:</b> Python, Pandas, Angular, Docker, PostgreSQL, Microsoft Azure.\n  "], ["imgUrl", "assets/images/dfki.png", "imgLink", "https://www.dfki.de/", "cardTitle", "Exchange Student", "institution", "German Research Center for Artificial Intelligence (DFKI)", "period", "April 2023 - March 2024", "location", "Kaiserslautern - Germany", "description", "\n    \u2022 Designed and developed a visualization tool for the exploration of generic and large knowledge graphs through filtering, exploration, and grouping features.<br>\n    \u2022 Implemented the tool module in three different knowledge graph environments: DBpedia and two private knowledge bases.<br>\n    \u2022 Conducted a 10-user evaluation where the tool outperformed the baseline in one of the two defined user tasks and reached a 79.5 score in the System Usability Scale method.<br>\n    <b>Technology stack:</b> Java, Spring Boot, Vue.js, D3.js, SPARQL.\n  "], ["imgUrl", "assets/images/inf.png", "imgLink", "https://www.inf.ufrgs.br/site/en/", "cardTitle", "Undergraduate Researcher", "institution", "Computer Graphics and Image Processing Research Group", "period", "June 2022 - November 2022", "location", "Porto Alegre - Brazil", "description", "\n    \u2022 Executed performance tests of existing trained classification/segmentation models (cytology field) fine-tuning with the group\u2019s private oral cell image dataset.<br>\n    \u2022 Studied deep learning techniques applied to image classification and segmentation.<br>\n    <b>Technology stack:</b> TensorFlow, Python.\n    "], ["imgUrl", "assets/images/nelogica.png", "imgLink", "https://www.nelogica.com.br/", "cardTitle", "Software Development Intern", "institution", "Nelogica", "period", "February 2021 - March 2022", "location", "Porto Alegre - Brazil", "description", "\n    <b>Back-end team (October 2021 \u2013 March 2022):</b><br>\n    \u2022 Implemented a database event proxy REST API service, in the OpenAPI Specification, almost zeroing the rate of accumulated database commands in the notification service.<br>\n    \u2022 Created a service dynamic installer, making the process of creating specific new instances easier.<br>\n    \u2022 Implemented the replaceable tags feature in the body of a message in the notification service for clients.<br>\n    \u2022 <b>Technology stack:</b> Delphi.<br>\n\n    <b>Front-end team (February 2021 \u2013 September 2021):</b><br>\n    \u2022 Developed a simulated exchange wallet component for the crypto trading web platform, supporting virtual positions.<br>\n    \u2022 Optimized the login screen loading with JavaScript asynchronous imports, reducing its required file size by 47%.<br>\n    \u2022 Designed an asset conversion method from several different quote sources using JavaScript promises.<br>\n    \u2022 <b>Technology stack:</b> Vue.js, JavaScript, CSS, HTML.\n    "], ["imgUrl", "assets/images/ginfo.png", "imgLink", "", "cardTitle", "Undergraduate Researcher", "institution", "Information Management Research Group - FURG", "period", "April 2018 - July 2020", "location", "Rio Grande - Brazil", "description", "\n    \u2022 Applied the Nearest Centroid algorithm and TF-IDF method to build an advisor recommendation system.<br>\n    \u2022 Developed The Gold Tree, a web tool for academic genealogy analysis.<br>\n    \u2022 Cleaned anomalies in a database with more than 500 thousand rows.<br>\n    \u2022 Received a research scholarship.<br>\n    \u2022 <b>Technology stack:</b>  PostgreSQL, JavaScript, HTML, CSS, Python, Scikit-Learn.\n    <br>\n    <b>Publications:</b> <br>\n    <a href='https://www.researchgate.net/publication/333435352_The_Gold_Tree_An_Information_System_for_Analyzing_Academic_Genealogy' target='_blank'><b>[1]</b></a> Madeira, G., Borges, E.N., Baranano, M., Nascimento, P.K., Lucca, G., de Fatima Maia, M., Santos, H.S. and Dimuro, G.P., 2019. The Gold Tree: An Information System for Analyzing Academic Genealogy. In Proceedings of the ICEIS 2019 (pp. 114-120). <br>\n    <a href='https://www.researchgate.net/publication/339384557_A_Tool_for_Analyzing_Academic_Genealogy' target='_blank'><b>[2]</b></a> Madeira, G., Borges, E.N., Lucca, G., Santos, H. and Dimuro, G., 2019. A tool for analyzing academic genealogy. In Lecture Notes in Business Information Processing, vol 378, (pp. 443\u2013456). <br>\n    <a href='https://www.scitepress.org/Papers/2021/104426/104426.pdf' target='_blank'><b>[3]</b></a> Madeira, G., Borges, E.N., Lucca, G., de Carvalho Segundo, W., Wieczynski, J.C., Santos, H.S. and Dimuro, G.P., 2021. Using Academic Genealogy for Recommending Supervisors. In Proceedings of the ICEIS 2021 (pp. 885-892).\n    "], ["imgUrl", "assets/images/qwertyp.png", "imgLink", "", "cardTitle", "Computer Technician", "institution", "Qwerty News Portal", "period", "April 2016 - July 2017", "location", "Dom Pedrito - Brazil", "description", " \n    \u2022 Developed an arrival and departure control web system for internal employees.<br>\n    \u2022 Developed a web transparency portal.<br>\n    \u2022 <b>Technology stack:</b> PHP, HTML, CSS, JavaScript, MySQL.\n    "], ["imgUrl", "assets/images/ufrgs.png", "imgLink", "http://www.ufrgs.br/english/home", "cardTitle", "Bachelor's degree, Computer Science", "institution", "Federal University of Rio Grande do Sul", "period", "March 2020 - August 2024", "location", "Porto Alegre - Brazil", "description", "GPA: 9.40/10.00 - Magna cum Laude<br>\n    5th best Brazilian university according to the Times Higher Education\u2019s World University Ranking 2024.\n    "], ["imgUrl", "assets/images/rptu.png", "imgLink", "https://rptu.de/", "cardTitle", "Exchange Program, Computer Science", "institution", "Rheinland-Pf\u00E4lzische Technische Universit\u00E4t Kaiserslautern-Landau", "period", "April 2023 - March 2024", "location", "Kaiserslautern - Germany", "description", "Attending Master's classes as part of an exchange program."], ["imgUrl", "assets/images/furg.png", "imgLink", "https://www.furg.br/en/", "cardTitle", "Bachelor's degree, Computer Engineering", "institution", "Federal University of Rio Grande (FURG)", "period", "March 2019 - December 2019", "location", "Rio Grande - Brazil", "description", "GPA: 9.40/10.00<br>\n    (university and course transfer after one year)"], ["imgUrl", "assets/images/furg.png", "imgLink", "https://www.furg.br/en/", "cardTitle", "Bachelor's degree, Information Systems", "institution", "Federal University of Rio Grande (FURG)", "period", "March 2018 - December 2018", "location", "Rio Grande - Brazil", "description", "GPA: 9.62/10.00<br>\n    (course transfer after one year)"], ["imgUrl", "assets/images/qwertye.png", "imgLink", "", "cardTitle", "Technical course, Computing Technician", "institution", "Qwerty Escola", "period", "March 2015 - December 2016", "location", "Dom Pedrito - Brazil", "description", "GPA: 9.32/10.00<br>\n    Some of the topics covered:<br>\n\n    \u2022 Logic and Programming Languages\n    \u2022 Operating Systems\n    \u2022 Hardware\n    \u2022 Interpretation of Computer System Specifications\n    \u2022 Databases\n    \u2022 Programming Logic\n    \u2022 Operating System\n    \u2022 Types of User Interfaces\n    \u2022 Designing, Analyzing, and Planning Software Development\n    "], ["id", "skills", 1, "container-fluid"], [1, "col", "text-center"], ["id", "projects", 1, "container-fluid", 2, "background-color", "#dadada"], [1, "col"]], template: function ResumeComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-navbar");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div");
@@ -697,11 +697,11 @@ ResumeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "span");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Hey, I'm Gabriel,");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "span", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Computer Science Student \uD83D\uDCBB");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "a ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "a", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Software Engineer \uD83D\uDCBB");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "@ Federal University of Rio Grande do Sul \uD83C\uDFDB");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "a", 11);
@@ -814,20 +814,15 @@ function SkillsComponent_div_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const skill_r3 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](skill_r3.name);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](skill_r3.time);
 } }
 function SkillsComponent_div_8_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -838,10 +833,10 @@ function SkillsComponent_div_8_Template(rf, ctx) { if (rf & 1) {
 } }
 function SkillsComponent_div_12_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -856,11 +851,7 @@ class SkillsComponent {
     constructor() {
         this.programLangList = [
             {
-                name: "JavaScript",
-                time: "2 years"
-            },
-            {
-                name: "SQL",
+                name: "JavaScript / TypeScript",
                 time: "2 years"
             },
             {
@@ -868,23 +859,26 @@ class SkillsComponent {
                 time: "2 years"
             },
             {
-                name: "C/C++",
+                name: "Java",
                 time: "1 year"
+            },
+            {
+                name: "C++",
+                time: "1 year"
+            },
+            {
+                name: "SQL",
+                time: "2 years"
             },
             {
                 name: "PHP",
                 time: "1 year"
-            },
-            {
-                name: "Java",
-                time: "6 months"
-            },
-            {
-                name: "Delphi",
-                time: "4 months"
             }
         ];
         this.techList = [
+            {
+                name: "Angular",
+            },
             {
                 name: "Vue.js",
             },
@@ -901,13 +895,13 @@ class SkillsComponent {
                 name: "Docker",
             },
             {
+                name: "Microsoft Azure",
+            },
+            {
                 name: "Scikit-Learn, Tensorflow",
             },
             {
                 name: "HTML, CSS",
-            },
-            {
-                name: "Angular",
             },
             {
                 name: "Qt",
@@ -1032,13 +1026,13 @@ class SkillsComponent {
 SkillsComponent.ɵfac = function SkillsComponent_Factory(t) { return new (t || SkillsComponent)(); };
 SkillsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SkillsComponent, selectors: [["app-skills"]], hostBindings: function SkillsComponent_HostBindings(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("resize", function SkillsComponent_resize_HostBindingHandler($event) { return ctx.onResize($event); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresolveWindow"]);
-    } }, decls: 13, vars: 3, consts: [[1, "row"], [1, "col-md-4", "col-10", "offset-1", "offset-md-0", "text-center", "star-skills"], ["class", "row", 4, "ngFor", "ngForOf"], [1, "col", 2, "text-align", "right"], [1, "col", 2, "text-align", "left"], [1, "col"]], template: function SkillsComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 13, vars: 3, consts: [[1, "row"], [1, "col-md-4", "col-10", "offset-1", "offset-md-0", "text-center", "star-skills"], ["class", "row", 4, "ngFor", "ngForOf"], [1, "col"], [1, "col", 2, "text-align", "right"], [1, "col", 2, "text-align", "left"]], template: function SkillsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h2");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Programming Languages");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, SkillsComponent_div_4_Template, 5, 2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, SkillsComponent_div_4_Template, 3, 1, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "h2");
